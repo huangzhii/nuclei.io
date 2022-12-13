@@ -1,0 +1,10 @@
+2022-08-13 20:03:34.479 *** Start program *** Start program
+2022-08-13 20:03:43.964 *** User Login *** id=640475916; email=zhihuang@stanford.edu; firstname=Zhi; lastname=Huang.
+2022-08-13 20:03:51.158 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S0425
+2022-08-13 20:03:53.375 *** Open processed data
+2022-08-13 20:03:53.376 *** Preload all statistics at once.
+2022-08-13 20:03:54.175 *** Nuclei stat data loaded, took 0.80 seconds. Total number of nuclei: 954361
+2022-08-13 20:03:58.470 *** CACHEDIR=/home/zhihuang/.cache/matplotlib
+2022-08-13 20:03:58.472 *** Using fontManager instance from /home/zhihuang/.cache/matplotlib/fontlist-v330.json
+2022-08-13 20:03:58.729 *** Loaded backend qtagg version unknown.
+2022-08-13 20:05:19.056 *** Program closed.

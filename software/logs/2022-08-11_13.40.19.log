@@ -1,0 +1,28 @@
+2022-08-11 13:40:19.627 *** Start program *** Start program
+2022-08-11 13:40:33.269 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S1054
+2022-08-11 13:40:35.160 *** Open processed data
+2022-08-11 13:40:35.161 *** Preload all statistics at once.
+2022-08-11 13:40:35.387 *** Nuclei stat data loaded, took 0.23 seconds. Total number of nuclei: 230851
+2022-08-11 13:40:38.161 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:40:38.173 *** Get cell color spent 0.01 seconds.
+2022-08-11 13:40:38.312 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:40:38.316 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:40:38.397 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:40:38.402 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:40:38.747 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:40:38.750 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:40:38.907 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:40:38.908 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:40:38.934 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:40:38.935 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:40:39.120 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:40:39.122 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:40:39.164 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:40:39.165 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:40:39.908 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:40:39.909 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:40:39.976 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:40:39.977 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:40:43.296 *** Interactive label *** (double click) click on screen. screen: (544, 431); slide: (72078, 53392). case_id: S1054, slide_id: E52, Nuclei index selected: 138869
+2022-08-11 13:40:52.513 *** Interactive label *** (double click) click on screen. screen: (787, 567); slide: (72139, 53426). case_id: S1054, slide_id: E52, Nuclei index selected: 136895
+2022-08-11 13:41:16.303 *** Program closed.

@@ -1,0 +1,101 @@
+2022-08-12 16:55:31.979 *** Start program *** Start program
+2022-08-12 16:55:36.668 *** starting thread (client mode): 0xa04ca520
+2022-08-12 16:55:36.668 *** Local version/idstring: SSH-2.0-paramiko_2.11.0
+2022-08-12 16:55:36.691 *** Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2022-08-12 16:55:36.692 *** Connected (version 2.0, client OpenSSH_5.3)
+2022-08-12 16:55:36.709 *** === Key exchange possibilities ===
+2022-08-12 16:55:36.710 *** kex algos: diffie-hellman-group-exchange-sha256, diffie-hellman-group-exchange-sha1, diffie-hellman-group14-sha1, diffie-hellman-group1-sha1
+2022-08-12 16:55:36.710 *** server key: ssh-rsa, ssh-rsa-cert-v01@openssh.com, ssh-dss
+2022-08-12 16:55:36.710 *** client encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-08-12 16:55:36.710 *** server encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-08-12 16:55:36.710 *** client mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-08-12 16:55:36.710 *** server mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-08-12 16:55:36.710 *** client compress: none, zlib@openssh.com
+2022-08-12 16:55:36.710 *** server compress: none, zlib@openssh.com
+2022-08-12 16:55:36.710 *** client lang: <none>
+2022-08-12 16:55:36.711 *** server lang: <none>
+2022-08-12 16:55:36.711 *** kex follows: False
+2022-08-12 16:55:36.711 *** === Key exchange agreements ===
+2022-08-12 16:55:36.711 *** Kex: diffie-hellman-group-exchange-sha256
+2022-08-12 16:55:36.711 *** HostKey: ssh-rsa
+2022-08-12 16:55:36.711 *** Cipher: aes128-ctr
+2022-08-12 16:55:36.711 *** MAC: hmac-sha2-256
+2022-08-12 16:55:36.712 *** Compression: none
+2022-08-12 16:55:36.712 *** === End of kex handshake ===
+2022-08-12 16:55:36.769 *** Got server p (2048 bits)
+2022-08-12 16:55:36.832 *** kex engine KexGexSHA256 specified hash_algo <built-in function openssl_sha256>
+2022-08-12 16:55:36.832 *** Switch to new keys ...
+2022-08-12 16:55:36.832 *** Adding ssh-rsa host key for 173.201.181.247: b'cca345f774a2d98448d0bcc78f04075d'
+2022-08-12 16:55:36.907 *** userauth is OK
+2022-08-12 16:55:36.930 *** Authentication (password) successful!
+2022-08-12 16:55:36.931 *** [chan 0] Max packet in: 32768 bytes
+2022-08-12 16:55:36.949 *** [chan 0] Max packet out: 32768 bytes
+2022-08-12 16:55:36.949 *** Secsh channel 0 opened.
+2022-08-12 16:55:36.969 *** [chan 0] Sesch channel 0 request ok
+2022-08-12 16:55:36.987 *** [chan 0] Opened sftp connection (server version 3)
+2022-08-12 16:55:36.991 *** [chan 0] stat(b'/home/b6o162rzivzp/NucFinder_DB/05313943FB3B68B7/interactive_nuclei_dict.pickle')
+2022-08-12 16:55:37.009 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/05313943FB3B68B7/interactive_nuclei_dict.pickle', 'rb')
+2022-08-12 16:55:37.028 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/05313943FB3B68B7/interactive_nuclei_dict.pickle', 'rb') -> 00000000
+2022-08-12 16:55:37.912 *** [chan 0] close(00000000)
+2022-08-12 16:55:48.234 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S0425
+2022-08-12 16:55:51.239 *** Open processed data
+2022-08-12 16:55:51.239 *** Preload all statistics at once.
+2022-08-12 16:55:52.036 *** Nuclei stat data loaded, took 0.80 seconds. Total number of nuclei: 954361
+2022-08-12 16:55:53.852 *** Interactive label *** Apply to case start.
+2022-08-12 16:55:57.653 *** Interactive label *** Apply to case done.
+2022-08-12 16:55:58.363 *** Interactive label *** Apply to case finish overlay create.
+2022-08-12 16:55:58.367 *** Process image overlay spent 0.00 seconds.
+2022-08-12 16:55:58.368 *** Get cell color spent 0.00 seconds.
+2022-08-12 16:56:10.031 *** Interactive label *** Apply to case done.
+2022-08-12 16:56:12.719 *** Mouse movement (LeftButton) ***  Mouse coords: (552, 454) (63716, 53671)
+2022-08-12 16:56:12.745 *** Mouse movement (LeftButton) ***  Mouse coords: (553, 453) (63715, 53671)
+2022-08-12 16:56:12.757 *** Mouse movement (LeftButton) ***  Mouse coords: (555, 452) (63875, 53671)
+2022-08-12 16:56:12.773 *** Mouse movement (LeftButton) ***  Mouse coords: (556, 451) (63715, 53670)
+2022-08-12 16:56:12.790 *** Mouse movement (LeftButton) ***  Mouse coords: (558, 450) (63875, 53670)
+2022-08-12 16:56:12.806 *** Mouse movement (LeftButton) ***  Mouse coords: (560, 449) (63875, 53670)
+2022-08-12 16:56:12.823 *** Mouse movement (LeftButton) ***  Mouse coords: (561, 448) (63715, 53670)
+2022-08-12 16:56:12.840 *** Mouse movement (LeftButton) ***  Mouse coords: (562, 447) (63715, 53670)
+2022-08-12 16:56:12.856 *** Mouse movement (LeftButton) ***  Mouse coords: (563, 447) (63716, 53831)
+2022-08-12 16:56:14.226 *** Mouse movement (LeftButton) ***  Mouse coords: (537, 439) (59396, 52551)
+2022-08-12 16:56:14.240 *** Mouse movement (LeftButton) ***  Mouse coords: (538, 440) (59395, 52711)
+2022-08-12 16:56:14.256 *** Mouse movement (LeftButton) ***  Mouse coords: (545, 447) (60355, 53670)
+2022-08-12 16:56:14.273 *** Mouse movement (LeftButton) ***  Mouse coords: (548, 449) (59715, 52870)
+2022-08-12 16:56:14.290 *** Mouse movement (LeftButton) ***  Mouse coords: (551, 451) (59715, 52870)
+2022-08-12 16:56:14.306 *** Mouse movement (LeftButton) ***  Mouse coords: (556, 454) (60035, 53030)
+2022-08-12 16:56:14.323 *** Mouse movement (LeftButton) ***  Mouse coords: (563, 459) (60355, 53351)
+2022-08-12 16:56:14.340 *** Mouse movement (LeftButton) ***  Mouse coords: (568, 462) (60035, 53031)
+2022-08-12 16:56:14.356 *** Mouse movement (LeftButton) ***  Mouse coords: (573, 465) (60035, 53031)
+2022-08-12 16:56:14.373 *** Mouse movement (LeftButton) ***  Mouse coords: (576, 467) (59715, 52871)
+2022-08-12 16:56:14.390 *** Mouse movement (LeftButton) ***  Mouse coords: (578, 468) (59555, 52711)
+2022-08-12 16:56:14.406 *** Mouse movement (LeftButton) ***  Mouse coords: (581, 469) (59715, 52711)
+2022-08-12 16:56:14.423 *** Mouse movement (LeftButton) ***  Mouse coords: (581, 470) (59235, 52711)
+2022-08-12 16:56:21.981 *** Mouse movement (LeftButton) ***  Mouse coords: (817, 467) (69202, 58257)
+2022-08-12 16:56:21.992 *** Mouse movement (LeftButton) ***  Mouse coords: (816, 471) (69202, 58361)
+2022-08-12 16:56:22.007 *** Mouse movement (LeftButton) ***  Mouse coords: (813, 481) (69097, 58674)
+2022-08-12 16:56:22.023 *** Mouse movement (LeftButton) ***  Mouse coords: (809, 493) (69045, 58779)
+2022-08-12 16:56:22.040 *** Mouse movement (LeftButton) ***  Mouse coords: (806, 497) (69097, 58361)
+2022-08-12 16:56:22.057 *** Mouse movement (LeftButton) ***  Mouse coords: (802, 506) (69045, 58622)
+2022-08-12 16:56:22.073 *** Mouse movement (LeftButton) ***  Mouse coords: (801, 509) (69202, 58309)
+2022-08-12 16:56:22.090 *** Mouse movement (LeftButton) ***  Mouse coords: (800, 512) (69202, 58309)
+2022-08-12 16:56:22.759 *** Process image overlay spent 0.00 seconds.
+2022-08-12 16:56:22.765 *** Get cell color spent 0.01 seconds.
+2022-08-12 16:56:23.373 *** Process image overlay spent 0.00 seconds.
+2022-08-12 16:56:23.375 *** Get cell color spent 0.00 seconds.
+2022-08-12 16:56:23.645 *** Process image overlay spent 0.00 seconds.
+2022-08-12 16:56:23.648 *** Get cell color spent 0.00 seconds.
+2022-08-12 16:56:29.161 *** Interactive label *** Apply to case done.
+2022-08-12 16:56:32.339 *** Mouse movement (LeftButton) ***  Mouse coords: (655, 461) (64998, 57871)
+2022-08-12 16:56:32.357 *** Mouse movement (LeftButton) ***  Mouse coords: (657, 455) (65002, 57859)
+2022-08-12 16:56:32.373 *** Mouse movement (LeftButton) ***  Mouse coords: (666, 442) (65023, 57837)
+2022-08-12 16:56:32.390 *** Mouse movement (LeftButton) ***  Mouse coords: (675, 429) (65024, 57836)
+2022-08-12 16:56:32.406 *** Mouse movement (LeftButton) ***  Mouse coords: (688, 416) (65036, 57837)
+2022-08-12 16:56:32.423 *** Mouse movement (LeftButton) ***  Mouse coords: (697, 411) (65024, 57862)
+2022-08-12 16:56:32.440 *** Mouse movement (LeftButton) ***  Mouse coords: (702, 407) (65011, 57865)
+2022-08-12 16:56:32.456 *** Mouse movement (LeftButton) ***  Mouse coords: (706, 405) (65008, 57872)
+2022-08-12 16:56:32.473 *** Mouse movement (LeftButton) ***  Mouse coords: (706, 404) (64995, 57875)
+2022-08-12 16:56:32.520 *** Process image overlay spent 0.00 seconds.
+2022-08-12 16:56:32.522 *** Get cell color spent 0.00 seconds.
+2022-08-12 16:56:33.491 *** Process image overlay spent 0.00 seconds.
+2022-08-12 16:56:33.503 *** Get cell color spent 0.01 seconds.
+2022-08-12 16:58:19.273 *** Program closed.
+2022-08-12 16:58:19.319 *** EOF in transport thread

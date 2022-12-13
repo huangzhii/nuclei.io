@@ -1,0 +1,101 @@
+2022-08-31 14:11:17.795 *** Start program *** Start program
+2022-08-31 14:11:25.539 *** Open case *** /Applications/XAMPP/xamppfiles/htdocs/20220722_Eric_Yang
+2022-08-31 14:11:30.085 *** Open processed data
+2022-08-31 14:11:30.086 *** Preload all statistics at once.
+2022-08-31 14:11:30.633 *** Nuclei stat data loaded, took 0.55 seconds. Total number of nuclei: 670699
+2022-08-31 14:11:36.012 *** Mouse movement (LeftButton) ***  Mouse coords: (616, 380) (91852, 36664)
+2022-08-31 14:11:44.318 *** Mouse movement (LeftButton) ***  Mouse coords: (861, 323) (100643, 51247)
+2022-08-31 14:11:46.552 *** Interactive label *** (double click) click on screen. screen: (663, 310); slide: (100178, 51247). case_id: 20220722_Eric_Yang, slide_id: 3BQMJY_44661.svs, Nuclei index selected: 513000
+2022-08-31 14:11:46.573 *** Interactive label *** Apply to case start.
+2022-08-31 14:11:48.105 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 14:11:49.125 *** Mouse movement (LeftButton) ***  Mouse coords: (812, 304) (100260, 51244)
+2022-08-31 14:11:49.206 *** Mouse movement (LeftButton) ***  Mouse coords: (812, 304) (100259, 51244)
+2022-08-31 14:11:49.242 *** Mouse movement (LeftButton) ***  Mouse coords: (812, 318) (100259, 51252)
+2022-08-31 14:11:49.287 *** Mouse movement (LeftButton) ***  Mouse coords: (812, 341) (100259, 51256)
+2022-08-31 14:11:49.333 *** Mouse movement (LeftButton) ***  Mouse coords: (812, 351) (100259, 51250)
+2022-08-31 14:11:49.384 *** Mouse movement (LeftButton) ***  Mouse coords: (812, 356) (100259, 51247)
+2022-08-31 14:11:49.433 *** Mouse movement (LeftButton) ***  Mouse coords: (812, 356) (100259, 51244)
+2022-08-31 14:11:49.458 *** Mouse movement (LeftButton) ***  Mouse coords: (812, 356) (100259, 51244)
+2022-08-31 14:11:49.479 *** Mouse movement (LeftButton) ***  Mouse coords: (812, 356) (100259, 51244)
+2022-08-31 14:11:50.172 *** Interactive label *** (double click) click on screen. screen: (794, 351); slide: (100249, 51241). case_id: 20220722_Eric_Yang, slide_id: 3BQMJY_44661.svs, Nuclei index selected: 512050
+2022-08-31 14:11:50.195 *** Interactive label *** Apply to case start.
+2022-08-31 14:11:50.817 *** Mouse movement (LeftButton) ***  Mouse coords: (868, 234) (100290, 51176)
+2022-08-31 14:11:50.877 *** Mouse movement (LeftButton) ***  Mouse coords: (868, 245) (100290, 51182)
+2022-08-31 14:11:50.924 *** Mouse movement (LeftButton) ***  Mouse coords: (866, 262) (100289, 51186)
+2022-08-31 14:11:50.971 *** Mouse movement (LeftButton) ***  Mouse coords: (866, 262) (100290, 51176)
+2022-08-31 14:11:50.993 *** Mouse movement (LeftButton) ***  Mouse coords: (866, 262) (100290, 51176)
+2022-08-31 14:11:51.016 *** Mouse movement (LeftButton) ***  Mouse coords: (866, 263) (100290, 51176)
+2022-08-31 14:11:51.038 *** Mouse movement (LeftButton) ***  Mouse coords: (866, 264) (100290, 51177)
+2022-08-31 14:11:51.841 *** Interactive label *** (double click) click on screen. screen: (793, 370); slide: (100249, 51234). case_id: 20220722_Eric_Yang, slide_id: 3BQMJY_44661.svs, Nuclei index selected: 512050
+2022-08-31 14:11:51.854 *** Interactive label *** Apply to case start.
+2022-08-31 14:11:52.260 *** Mouse movement (LeftButton) ***  Mouse coords: (847, 295) (100279, 51193)
+2022-08-31 14:11:52.348 *** Mouse movement (LeftButton) ***  Mouse coords: (847, 295) (100279, 51193)
+2022-08-31 14:11:52.391 *** Mouse movement (LeftButton) ***  Mouse coords: (847, 283) (100279, 51186)
+2022-08-31 14:11:52.442 *** Mouse movement (LeftButton) ***  Mouse coords: (847, 275) (100279, 51189)
+2022-08-31 14:11:52.590 *** Mouse movement (LeftButton) ***  Mouse coords: (847, 274) (100279, 51192)
+2022-08-31 14:11:52.657 *** Mouse movement (LeftButton) ***  Mouse coords: (848, 272) (100280, 51192)
+2022-08-31 14:11:52.701 *** Mouse movement (LeftButton) ***  Mouse coords: (849, 272) (100279, 51193)
+2022-08-31 14:11:53.994 *** Mouse movement (LeftButton) ***  Mouse coords: (717, 385) (100207, 51256)
+2022-08-31 14:11:54.106 *** Mouse movement (LeftButton) ***  Mouse coords: (717, 385) (100207, 51256)
+2022-08-31 14:11:54.146 *** Mouse movement (LeftButton) ***  Mouse coords: (718, 368) (100207, 51246)
+2022-08-31 14:11:54.191 *** Mouse movement (LeftButton) ***  Mouse coords: (734, 321) (100216, 51230)
+2022-08-31 14:11:54.238 *** Mouse movement (LeftButton) ***  Mouse coords: (741, 306) (100211, 51248)
+2022-08-31 14:11:54.286 *** Mouse movement (LeftButton) ***  Mouse coords: (742, 304) (100207, 51255)
+2022-08-31 14:11:54.348 *** Mouse movement (LeftButton) ***  Mouse coords: (742, 304) (100207, 51256)
+2022-08-31 14:11:57.416 *** Mouse movement (LeftButton) ***  Mouse coords: (927, 338) (100309, 51275)
+2022-08-31 14:11:57.512 *** Mouse movement (LeftButton) ***  Mouse coords: (904, 374) (100297, 51293)
+2022-08-31 14:11:57.560 *** Mouse movement (LeftButton) ***  Mouse coords: (883, 404) (100297, 51291)
+2022-08-31 14:11:57.609 *** Mouse movement (LeftButton) ***  Mouse coords: (879, 411) (100307, 51278)
+2022-08-31 14:11:57.658 *** Mouse movement (LeftButton) ***  Mouse coords: (878, 411) (100308, 51274)
+2022-08-31 14:11:58.497 *** Interactive label *** (double click) click on screen. screen: (781, 345); slide: (100256, 51237). case_id: 20220722_Eric_Yang, slide_id: 3BQMJY_44661.svs, Nuclei index selected: 512050
+2022-08-31 14:11:58.519 *** Interactive label *** Apply to case start.
+2022-08-31 14:11:59.069 *** Mouse movement (LeftButton) ***  Mouse coords: (890, 328) (100316, 51228)
+2022-08-31 14:11:59.173 *** Mouse movement (LeftButton) ***  Mouse coords: (890, 328) (100316, 51228)
+2022-08-31 14:11:59.213 *** Mouse movement (LeftButton) ***  Mouse coords: (890, 342) (100316, 51236)
+2022-08-31 14:11:59.259 *** Mouse movement (LeftButton) ***  Mouse coords: (890, 378) (100316, 51248)
+2022-08-31 14:11:59.305 *** Mouse movement (LeftButton) ***  Mouse coords: (890, 388) (100316, 51233)
+2022-08-31 14:11:59.351 *** Mouse movement (LeftButton) ***  Mouse coords: (890, 389) (100316, 51229)
+2022-08-31 14:12:00.330 *** Interactive label *** (double click) click on screen. screen: (775, 413); slide: (100253, 51241). case_id: 20220722_Eric_Yang, slide_id: 3BQMJY_44661.svs, Nuclei index selected: 512050
+2022-08-31 14:12:00.343 *** Interactive label *** Apply to case start.
+2022-08-31 14:12:01.058 *** Mouse movement (LeftButton) ***  Mouse coords: (875, 425) (100308, 51248)
+2022-08-31 14:12:01.116 *** Mouse movement (LeftButton) ***  Mouse coords: (875, 410) (100308, 51239)
+2022-08-31 14:12:01.163 *** Mouse movement (LeftButton) ***  Mouse coords: (877, 388) (100309, 51236)
+2022-08-31 14:12:01.210 *** Mouse movement (LeftButton) ***  Mouse coords: (877, 373) (100308, 51240)
+2022-08-31 14:12:01.256 *** Mouse movement (LeftButton) ***  Mouse coords: (877, 372) (100308, 51247)
+2022-08-31 14:12:01.301 *** Mouse movement (LeftButton) ***  Mouse coords: (877, 371) (100308, 51248)
+2022-08-31 14:12:01.324 *** Mouse movement (LeftButton) ***  Mouse coords: (877, 371) (100308, 51248)
+2022-08-31 14:12:01.926 *** Mouse movement (LeftButton) ***  Mouse coords: (777, 352) (100253, 51237)
+2022-08-31 14:12:02.084 *** Interactive label *** (double click) click on screen. screen: (777, 352); slide: (100253, 51237). case_id: 20220722_Eric_Yang, slide_id: 3BQMJY_44661.svs, Nuclei index selected: 512050
+2022-08-31 14:12:02.100 *** Interactive label *** Apply to case start.
+2022-08-31 14:12:02.681 *** Mouse movement (LeftButton) ***  Mouse coords: (863, 350) (100300, 51236)
+2022-08-31 14:12:02.727 *** Mouse movement (LeftButton) ***  Mouse coords: (864, 338) (100301, 51230)
+2022-08-31 14:12:02.775 *** Mouse movement (LeftButton) ***  Mouse coords: (870, 322) (100303, 51227)
+2022-08-31 14:12:02.821 *** Mouse movement (LeftButton) ***  Mouse coords: (871, 319) (100301, 51234)
+2022-08-31 14:12:02.867 *** Mouse movement (LeftButton) ***  Mouse coords: (871, 318) (100300, 51236)
+2022-08-31 14:12:03.500 *** Mouse movement (LeftButton) ***  Mouse coords: (879, 307) (100304, 51230)
+2022-08-31 14:12:03.567 *** Mouse movement (LeftButton) ***  Mouse coords: (875, 352) (100302, 51254)
+2022-08-31 14:12:03.616 *** Mouse movement (LeftButton) ***  Mouse coords: (872, 378) (100302, 51245)
+2022-08-31 14:12:03.667 *** Mouse movement (LeftButton) ***  Mouse coords: (872, 381) (100304, 51231)
+2022-08-31 14:12:05.355 *** Interactive label *** (double click) click on screen. screen: (639, 405); slide: (100175, 51244). case_id: 20220722_Eric_Yang, slide_id: 3BQMJY_44661.svs, Nuclei index selected: 513000
+2022-08-31 14:12:05.391 *** Interactive label *** Apply to case start.
+2022-08-31 14:12:07.334 *** Interactive label *** Apply to case done.
+2022-08-31 14:12:09.249 *** Interactive label *** Apply to case finish overlay create.
+2022-08-31 14:12:09.282 *** Mouse movement (LeftButton) ***  Mouse coords: (750, 461) (100237, 51274)
+2022-08-31 14:12:09.825 *** Mouse movement (LeftButton) ***  Mouse coords: (750, 461) (100217, 51305)
+2022-08-31 14:12:09.884 *** Mouse movement (LeftButton) ***  Mouse coords: (750, 458) (100217, 51304)
+2022-08-31 14:12:09.933 *** Mouse movement (LeftButton) ***  Mouse coords: (750, 450) (100217, 51300)
+2022-08-31 14:12:09.984 *** Mouse movement (LeftButton) ***  Mouse coords: (753, 440) (100218, 51300)
+2022-08-31 14:12:10.033 *** Mouse movement (LeftButton) ***  Mouse coords: (755, 437) (100219, 51303)
+2022-08-31 14:12:10.083 *** Mouse movement (LeftButton) ***  Mouse coords: (755, 437) (100217, 51305)
+2022-08-31 14:12:11.023 *** Interactive label *** (double click) click on screen. screen: (818, 316); slide: (100251, 51238). case_id: 20220722_Eric_Yang, slide_id: 3BQMJY_44661.svs, Nuclei index selected: 512050
+2022-08-31 14:12:11.038 *** Interactive label *** Apply to case start.
+2022-08-31 14:12:12.268 *** Mouse movement (LeftButton) ***  Mouse coords: (878, 413) (100284, 51292)
+2022-08-31 14:12:12.465 *** Mouse movement (LeftButton) ***  Mouse coords: (878, 414) (100284, 51293)
+2022-08-31 14:12:12.542 *** Mouse movement (LeftButton) ***  Mouse coords: (854, 423) (100271, 51297)
+2022-08-31 14:12:12.591 *** Mouse movement (LeftButton) ***  Mouse coords: (821, 438) (100266, 51300)
+2022-08-31 14:12:12.638 *** Mouse movement (LeftButton) ***  Mouse coords: (819, 439) (100283, 51292)
+2022-08-31 14:12:12.683 *** Mouse movement (LeftButton) ***  Mouse coords: (818, 439) (100283, 51292)
+2022-08-31 14:12:13.350 *** Mouse movement (LeftButton) ***  Mouse coords: (877, 359) (100317, 51248)
+2022-08-31 14:12:13.410 *** Mouse movement (LeftButton) ***  Mouse coords: (875, 365) (100316, 51252)
+2022-08-31 14:12:13.458 *** Mouse movement (LeftButton) ***  Mouse coords: (874, 367) (100316, 51249)
+2022-08-31 14:12:17.064 *** Program closed.

@@ -1,0 +1,54 @@
+2022-08-12 12:05:34.617 *** Start program *** Start program
+2022-08-12 12:05:40.767 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S0425
+2022-08-12 12:05:46.433 *** Open processed data
+2022-08-12 12:05:46.434 *** Preload all statistics at once.
+2022-08-12 12:05:47.262 *** Nuclei stat data loaded, took 0.83 seconds. Total number of nuclei: 954361
+2022-08-12 12:05:53.884 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:05:53.927 *** Get cell color spent 0.04 seconds.
+2022-08-12 12:05:54.041 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:05:54.052 *** Get cell color spent 0.01 seconds.
+2022-08-12 12:05:54.099 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:05:54.111 *** Get cell color spent 0.01 seconds.
+2022-08-12 12:05:54.412 *** Mouse movement (LeftButton) ***  Mouse coords: (409, 271) (28103, 52938)
+2022-08-12 12:05:54.445 *** Mouse movement (LeftButton) ***  Mouse coords: (429, 302) (28208, 53106)
+2022-08-12 12:05:54.462 *** Mouse movement (LeftButton) ***  Mouse coords: (456, 339) (28248, 53139)
+2022-08-12 12:05:54.479 *** Mouse movement (LeftButton) ***  Mouse coords: (510, 404) (28398, 53295)
+2022-08-12 12:05:54.496 *** Mouse movement (LeftButton) ***  Mouse coords: (516, 411) (28130, 52972)
+2022-08-12 12:05:54.518 *** Mouse movement (LeftButton) ***  Mouse coords: (563, 460) (28359, 53206)
+2022-08-12 12:05:54.529 *** Mouse movement (LeftButton) ***  Mouse coords: (598, 492) (28292, 53112)
+2022-08-12 12:05:54.545 *** Mouse movement (LeftButton) ***  Mouse coords: (616, 507) (28197, 53016)
+2022-08-12 12:05:54.563 *** Mouse movement (LeftButton) ***  Mouse coords: (654, 536) (28309, 53095)
+2022-08-12 12:05:54.581 *** Mouse movement (LeftButton) ***  Mouse coords: (676, 548) (28219, 52999)
+2022-08-12 12:05:54.595 *** Mouse movement (LeftButton) ***  Mouse coords: (684, 552) (28142, 52956)
+2022-08-12 12:05:54.612 *** Mouse movement (LeftButton) ***  Mouse coords: (689, 555) (28125, 52949)
+2022-08-12 12:05:54.634 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:05:54.651 *** Get cell color spent 0.02 seconds.
+2022-08-12 12:05:54.691 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:05:54.708 *** Get cell color spent 0.02 seconds.
+2022-08-12 12:05:56.121 *** Keyboard input *** key pressed: key: 68; text: "d"
+2022-08-12 12:05:56.152 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:05:56.168 *** Get cell color spent 0.02 seconds.
+2022-08-12 12:05:56.206 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:05:56.222 *** Get cell color spent 0.02 seconds.
+2022-08-12 12:05:59.289 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:05:59.307 *** Get cell color spent 0.02 seconds.
+2022-08-12 12:05:59.370 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:05:59.386 *** Get cell color spent 0.02 seconds.
+2022-08-12 12:05:59.491 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:05:59.505 *** Get cell color spent 0.01 seconds.
+2022-08-12 12:05:59.569 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:05:59.582 *** Get cell color spent 0.01 seconds.
+2022-08-12 12:05:59.616 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:05:59.630 *** Get cell color spent 0.01 seconds.
+2022-08-12 12:06:01.766 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:06:01.774 *** Get cell color spent 0.01 seconds.
+2022-08-12 12:06:01.918 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:06:01.921 *** Get cell color spent 0.00 seconds.
+2022-08-12 12:06:01.983 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:06:01.987 *** Get cell color spent 0.00 seconds.
+2022-08-12 12:06:03.492 *** Keyboard input *** key pressed: key: 68; text: "d"
+2022-08-12 12:06:03.518 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:06:03.520 *** Get cell color spent 0.00 seconds.
+2022-08-12 12:06:03.574 *** Process image overlay spent 0.00 seconds.
+2022-08-12 12:06:03.577 *** Get cell color spent 0.00 seconds.
+2022-08-12 12:07:45.659 *** Program closed.

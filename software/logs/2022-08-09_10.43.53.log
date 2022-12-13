@@ -1,0 +1,22 @@
+2022-08-09 10:43:53.360 *** Start program *** Start program
+2022-08-09 10:44:02.202 *** Open processed data
+2022-08-09 10:44:02.202 *** Preload all statistics at once.
+2022-08-09 10:44:03.329 *** Nuclei stat data loaded, took 1.13 seconds. Total number of nuclei: 1470268
+2022-08-09 10:44:08.717 *** Mouse movement ***  Mouse coords: (357, 497) (37621, 63328)
+2022-08-09 10:44:08.742 *** Mouse movement ***  Mouse coords: (364, 497) (37800, 63328)
+2022-08-09 10:44:08.777 *** Mouse movement ***  Mouse coords: (382, 497) (38129, 63328)
+2022-08-09 10:44:08.793 *** Mouse movement ***  Mouse coords: (393, 499) (37919, 63388)
+2022-08-09 10:44:08.809 *** Mouse movement ***  Mouse coords: (405, 500) (37949, 63358)
+2022-08-09 10:44:08.826 *** Mouse movement ***  Mouse coords: (418, 503) (37979, 63417)
+2022-08-09 10:44:08.842 *** Mouse movement ***  Mouse coords: (428, 504) (37890, 63358)
+2022-08-09 10:44:08.860 *** Mouse movement ***  Mouse coords: (440, 505) (37949, 63358)
+2022-08-09 10:44:08.880 *** Mouse movement ***  Mouse coords: (448, 506) (37830, 63358)
+2022-08-09 10:44:08.892 *** Mouse movement ***  Mouse coords: (456, 507) (37830, 63358)
+2022-08-09 10:44:08.909 *** Mouse movement ***  Mouse coords: (461, 508) (37740, 63358)
+2022-08-09 10:44:08.926 *** Mouse movement ***  Mouse coords: (467, 508) (37770, 63328)
+2022-08-09 10:44:08.943 *** Mouse movement ***  Mouse coords: (472, 509) (37740, 63357)
+2022-08-09 10:44:08.963 *** Mouse movement ***  Mouse coords: (474, 509) (37651, 63328)
+2022-08-09 10:44:09.417 *** Process image overlay spent 0.01 seconds.
+2022-08-09 10:44:09.540 *** Get cell color spent 0.12 seconds.
+2022-08-09 10:44:09.566 *** Process image overlay spent 0.01 seconds.
+2022-08-09 10:44:09.677 *** Get cell color spent 0.11 seconds.

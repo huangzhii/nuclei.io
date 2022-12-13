@@ -1,0 +1,9 @@
+index,value
+ssh_IP,XX.XX.XX.XX
+ssh_user,username
+ssh_pwd,pwd
+remote_path,/home/xxxx/NucFinder_DB/
+db_IP,XX.XX.XX.XX
+db_user,desktopportal
+db_dbname,db_name
+db_pwd,pwd

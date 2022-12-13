@@ -1,0 +1,15 @@
+2022-08-13 20:01:50.850 *** Start program *** Start program
+2022-08-13 20:02:00.444 *** User Login *** id=640475916; email=zhihuang@stanford.edu; firstname=Zhi; lastname=Huang.
+2022-08-13 20:02:05.663 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S0425
+2022-08-13 20:02:07.814 *** Open processed data
+2022-08-13 20:02:07.815 *** Preload all statistics at once.
+2022-08-13 20:02:08.654 *** Nuclei stat data loaded, took 0.84 seconds. Total number of nuclei: 954361
+2022-08-13 20:02:12.976 *** Mouse movement (LeftButton) ***  Mouse coords: (379, 403) (36036, 45511)
+2022-08-13 20:02:12.990 *** Mouse movement (LeftButton) ***  Mouse coords: (379, 404) (36036, 45510)
+2022-08-13 20:02:13.006 *** Mouse movement (LeftButton) ***  Mouse coords: (378, 411) (35876, 46470)
+2022-08-13 20:02:13.022 *** Mouse movement (LeftButton) ***  Mouse coords: (377, 415) (35876, 45991)
+2022-08-13 20:02:13.039 *** Mouse movement (LeftButton) ***  Mouse coords: (377, 417) (36036, 45671)
+2022-08-13 20:02:13.056 *** Mouse movement (LeftButton) ***  Mouse coords: (376, 422) (35876, 46151)
+2022-08-13 20:02:13.072 *** Mouse movement (LeftButton) ***  Mouse coords: (376, 427) (36035, 46151)
+2022-08-13 20:02:13.089 *** Mouse movement (LeftButton) ***  Mouse coords: (376, 431) (36035, 45991)
+2022-08-13 20:02:30.298 *** Program closed.

@@ -1,0 +1,35 @@
+2022-07-31 20:12:42.199 *** Start program *** Start program
+2022-07-31 20:12:48.913 *** Mouse movement ***  Mouse coords: (675, 434) (87104, 42334)
+2022-07-31 20:12:49.184 *** Keyboard input *** key pressed: key: 32; text: " "
+2022-07-31 20:12:49.534 *** Keyboard input *** key pressed: key: 32; text: " "
+2022-07-31 20:12:49.932 *** Mouse movement ***  Mouse coords: (586, 450) (72864, 44894)
+2022-07-31 20:12:50.915 *** Mouse movement ***  Mouse coords: (520, 451) (62463, 45054)
+2022-07-31 20:12:51.028 *** Mouse movement ***  Mouse coords: (519, 450) (62463, 44894)
+2022-07-31 20:12:51.039 *** Mouse movement ***  Mouse coords: (524, 450) (63423, 45054)
+2022-07-31 20:12:51.054 *** Mouse movement ***  Mouse coords: (542, 450) (65503, 45054)
+2022-07-31 20:12:51.093 *** Mouse movement ***  Mouse coords: (595, 450) (71103, 45054)
+2022-07-31 20:12:51.118 *** Mouse movement ***  Mouse coords: (627, 450) (67743, 45054)
+2022-07-31 20:12:51.143 *** Mouse movement ***  Mouse coords: (648, 450) (65984, 45054)
+2022-07-31 20:12:51.169 *** Mouse movement ***  Mouse coords: (661, 450) (64704, 45054)
+2022-07-31 20:12:51.210 *** Mouse movement ***  Mouse coords: (666, 450) (63424, 45054)
+2022-07-31 20:12:51.235 *** Mouse movement ***  Mouse coords: (668, 450) (62943, 45054)
+2022-07-31 20:12:51.254 *** Mouse movement ***  Mouse coords: (671, 447) (63103, 44574)
+2022-07-31 20:12:51.263 *** Mouse movement ***  Mouse coords: (671, 447) (62623, 45054)
+2022-07-31 20:12:51.272 *** Mouse movement ***  Mouse coords: (672, 446) (62783, 44894)
+2022-07-31 20:12:51.280 *** Mouse movement ***  Mouse coords: (672, 446) (62623, 45054)
+2022-07-31 20:12:51.290 *** Mouse movement ***  Mouse coords: (673, 446) (62783, 45054)
+2022-07-31 20:12:51.302 *** Mouse movement ***  Mouse coords: (673, 445) (62623, 44894)
+2022-07-31 20:12:51.312 *** Mouse movement ***  Mouse coords: (673, 445) (62623, 45054)
+2022-07-31 20:12:51.321 *** Mouse movement ***  Mouse coords: (673, 445) (62623, 45054)
+2022-07-31 20:12:51.329 *** Mouse movement ***  Mouse coords: (673, 444) (62623, 44894)
+2022-07-31 20:12:51.341 *** Mouse movement ***  Mouse coords: (673, 444) (62623, 45054)
+2022-07-31 20:12:51.853 *** Keyboard input *** key pressed: key: 87; text: "w"
+2022-07-31 20:12:52.515 *** Keyboard input *** key pressed: key: 87; text: "w"
+2022-07-31 20:12:52.714 *** Keyboard input *** key pressed: key: 83; text: "s"
+2022-07-31 20:12:54.684 *** Keyboard input *** key pressed: key: 16777249; text: ""
+2022-07-31 20:12:54.794 *** Keyboard input *** key pressed: key: 61; text: ""
+2022-07-31 20:12:56.927 *** Keyboard input *** key pressed: key: 87; text: "w"
+2022-07-31 20:12:57.120 *** Keyboard input *** key pressed: key: 83; text: "s"
+2022-07-31 20:12:57.247 *** Keyboard input *** key pressed: key: 68; text: "d"
+2022-07-31 20:12:57.384 *** Keyboard input *** key pressed: key: 65; text: "a"
+2022-07-31 20:12:57.459 *** Keyboard input *** key pressed: key: 83; text: "s"

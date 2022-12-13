@@ -1,0 +1,23 @@
+2022-08-11 14:06:48.500 *** Start program *** Start program
+2022-08-11 14:06:57.635 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S2525
+2022-08-11 14:06:59.727 *** Open processed data
+2022-08-11 14:06:59.728 *** Preload all statistics at once.
+2022-08-11 14:07:00.738 *** Nuclei stat data loaded, took 1.01 seconds. Total number of nuclei: 1277309
+2022-08-11 14:07:04.952 *** Process image overlay spent 0.00 seconds.
+2022-08-11 14:07:04.958 *** Get cell color spent 0.01 seconds.
+2022-08-11 14:07:05.085 *** Process image overlay spent 0.00 seconds.
+2022-08-11 14:07:05.088 *** Get cell color spent 0.00 seconds.
+2022-08-11 14:07:05.242 *** Process image overlay spent 0.00 seconds.
+2022-08-11 14:07:05.244 *** Get cell color spent 0.00 seconds.
+2022-08-11 14:07:05.450 *** Process image overlay spent 0.00 seconds.
+2022-08-11 14:07:05.452 *** Get cell color spent 0.00 seconds.
+2022-08-11 14:07:05.551 *** Process image overlay spent 0.01 seconds.
+2022-08-11 14:07:05.553 *** Get cell color spent 0.00 seconds.
+2022-08-11 14:07:07.779 *** Mouse movement (LeftButton) ***  Mouse coords: (671, 327) (68384, 58848)
+2022-08-11 14:07:07.909 *** Interactive label *** (double click) click on screen. screen: (671, 327); slide: (68384, 58848). case_id: S2525, slide_id: A14, Nuclei index selected: 1133034
+2022-08-11 14:07:16.991 *** Interactive label *** (double click) click on screen. screen: (746, 320); slide: (68410, 58846). case_id: S2525, slide_id: A14, Nuclei index selected: 1128989
+2022-08-11 14:07:19.639 *** Interactive label *** (double click) click on screen. screen: (719, 434); slide: (68400, 58884). case_id: S2525, slide_id: A14, Nuclei index selected: 1131904
+2022-08-11 14:07:21.261 *** Interactive label *** (double click) click on screen. screen: (409, 547); slide: (68295, 58923). case_id: S2525, slide_id: A14, Nuclei index selected: 1134598
+2022-08-11 14:07:25.317 *** Interactive label *** (double click) click on screen. screen: (809, 545); slide: (68431, 58922). case_id: S2525, slide_id: A14, Nuclei index selected: 1129345
+2022-08-11 14:07:34.737 *** Interactive label *** (double click) click on screen. screen: (908, 331); slide: (68465, 58849). case_id: S2525, slide_id: A14, Nuclei index selected: 1128765
+2022-08-11 14:20:37.016 *** Program closed.

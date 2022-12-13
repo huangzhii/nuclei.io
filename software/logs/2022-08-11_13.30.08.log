@@ -1,0 +1,34 @@
+2022-08-11 13:30:08.561 *** Start program *** Start program
+2022-08-11 13:30:17.567 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S1054
+2022-08-11 13:30:20.187 *** Open processed data
+2022-08-11 13:30:20.187 *** Preload all statistics at once.
+2022-08-11 13:30:21.486 *** Nuclei stat data loaded, took 1.30 seconds. Total number of nuclei: 230851
+2022-08-11 13:30:23.679 *** Mouse movement (LeftButton) ***  Mouse coords: (962, 490) (66710, 49714)
+2022-08-11 13:30:23.707 *** Mouse movement (LeftButton) ***  Mouse coords: (945, 494) (66263, 49804)
+2022-08-11 13:30:23.741 *** Mouse movement (LeftButton) ***  Mouse coords: (859, 499) (64202, 49833)
+2022-08-11 13:30:23.756 *** Mouse movement (LeftButton) ***  Mouse coords: (829, 503) (65874, 49803)
+2022-08-11 13:30:23.773 *** Mouse movement (LeftButton) ***  Mouse coords: (776, 510) (65188, 49893)
+2022-08-11 13:30:23.789 *** Mouse movement (LeftButton) ***  Mouse coords: (733, 516) (65486, 49863)
+2022-08-11 13:30:23.806 *** Mouse movement (LeftButton) ***  Mouse coords: (683, 520) (65278, 49804)
+2022-08-11 13:30:23.823 *** Mouse movement (LeftButton) ***  Mouse coords: (649, 523) (65755, 49773)
+2022-08-11 13:30:23.840 *** Mouse movement (LeftButton) ***  Mouse coords: (621, 524) (65934, 49714)
+2022-08-11 13:30:23.856 *** Mouse movement (LeftButton) ***  Mouse coords: (606, 524) (66322, 49684)
+2022-08-11 13:30:23.873 *** Mouse movement (LeftButton) ***  Mouse coords: (601, 524) (66621, 49684)
+2022-08-11 13:30:23.889 *** Mouse movement (LeftButton) ***  Mouse coords: (599, 524) (66710, 49684)
+2022-08-11 13:30:24.149 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:30:24.173 *** Get cell color spent 0.02 seconds.
+2022-08-11 13:30:24.392 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:30:24.402 *** Get cell color spent 0.01 seconds.
+2022-08-11 13:30:24.500 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:30:24.509 *** Get cell color spent 0.01 seconds.
+2022-08-11 13:30:24.811 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:30:24.816 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:30:24.897 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:30:24.901 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:30:25.941 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:30:25.943 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:30:26.218 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:30:26.219 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:30:26.244 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:30:26.246 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:31:31.143 *** Program closed.

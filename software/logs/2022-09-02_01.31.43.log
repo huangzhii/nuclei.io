@@ -1,0 +1,21 @@
+2022-09-02 01:31:43.368 *** Start program *** Start program
+2022-09-02 01:31:53.914 *** Open case *** /Applications/XAMPP/xamppfiles/htdocs/20220722_Eric_Yang
+2022-09-02 01:31:57.825 *** Open processed data
+2022-09-02 01:31:57.825 *** Preload all statistics at once.
+2022-09-02 01:31:58.959 *** Nuclei stat data loaded, took 1.13 seconds. Total number of nuclei: 843996
+2022-09-02 01:32:12.966 *** User Login *** id=640475916; email=zhihuang@stanford.edu; firstname=Zhi; lastname=Huang.
+2022-09-02 01:32:14.957 *** Mouse movement (LeftButton) ***  Mouse coords: (614, 401) (102568, 35416)
+2022-09-02 01:32:15.006 *** Mouse movement (LeftButton) ***  Mouse coords: (614, 405) (102568, 36056)
+2022-09-02 01:32:15.035 *** Mouse movement (LeftButton) ***  Mouse coords: (614, 407) (102568, 35736)
+2022-09-02 01:32:15.055 *** Mouse movement (LeftButton) ***  Mouse coords: (614, 408) (102568, 35576)
+2022-09-02 01:32:15.075 *** Mouse movement (LeftButton) ***  Mouse coords: (614, 408) (102568, 35416)
+2022-09-02 01:32:15.095 *** Mouse movement (LeftButton) ***  Mouse coords: (614, 408) (102568, 35416)
+2022-09-02 01:32:23.660 *** Mouse movement (LeftButton) ***  Mouse coords: (693, 576) (103427, 39054)
+2022-09-02 01:32:23.819 *** Interactive label *** (double click) click on screen. screen: (694, 576); slide: (103428, 39054). case_id: 20220722_Eric_Yang, slide_id: 3BNI3N_44662.svs, Nuclei index selected: 503175
+2022-09-02 01:32:24.076 *** Interactive label *** Apply to case start.
+2022-09-02 01:32:26.760 *** Mouse movement (LeftButton) ***  Mouse coords: (418, 567) (103206, 39047)
+2022-09-02 01:32:26.910 *** Interactive label *** (double click) click on screen. screen: (418, 568); slide: (103206, 39048). case_id: 20220722_Eric_Yang, slide_id: 3BNI3N_44662.svs, Nuclei index selected: 503053
+2022-09-02 01:32:27.178 *** Interactive label *** Apply to case start.
+2022-09-02 01:32:30.018 *** Interactive label *** Apply to case done.
+2022-09-02 01:32:30.181 *** Interactive label *** Apply to case finish overlay create.
+2022-09-02 01:32:51.869 *** Program closed.

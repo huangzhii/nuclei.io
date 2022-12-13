@@ -1,0 +1,56 @@
+2022-08-08 17:42:04.460 *** Start program *** Start program
+2022-08-08 17:42:36.908 *** Open processed data
+2022-08-08 17:42:36.909 *** Preload all statistics at once.
+2022-08-08 17:42:38.293 *** Nuclei stat data loaded, took 1.38 seconds. Total number of nuclei: 1698203
+2022-08-08 17:42:44.294 *** Mouse movement ***  Mouse coords: (367, 434) (36864, 44974)
+2022-08-08 17:42:46.484 *** Mouse movement ***  Mouse coords: (340, 521) (35776, 43945)
+2022-08-08 17:42:46.517 *** Mouse movement ***  Mouse coords: (347, 519) (35981, 43876)
+2022-08-08 17:42:46.534 *** Mouse movement ***  Mouse coords: (419, 485) (38217, 42776)
+2022-08-08 17:42:46.544 *** Mouse movement ***  Mouse coords: (473, 460) (37597, 43086)
+2022-08-08 17:42:46.559 *** Mouse movement ***  Mouse coords: (480, 456) (35982, 43807)
+2022-08-08 17:42:46.575 *** Mouse movement ***  Mouse coords: (579, 405) (39144, 42192)
+2022-08-08 17:42:46.583 *** Mouse movement ***  Mouse coords: (609, 387) (36773, 43326)
+2022-08-08 17:42:46.592 *** Mouse movement ***  Mouse coords: (634, 372) (36600, 43430)
+2022-08-08 17:42:46.600 *** Mouse movement ***  Mouse coords: (648, 363) (36222, 43635)
+2022-08-08 17:42:46.615 *** Mouse movement ***  Mouse coords: (659, 354) (36120, 43636)
+2022-08-08 17:42:46.633 *** Mouse movement ***  Mouse coords: (697, 324) (37047, 42913)
+2022-08-08 17:42:46.641 *** Mouse movement ***  Mouse coords: (705, 318) (36016, 43739)
+2022-08-08 17:42:46.648 *** Mouse movement ***  Mouse coords: (711, 313) (35947, 43773)
+2022-08-08 17:42:46.663 *** Mouse movement ***  Mouse coords: (716, 309) (35913, 43808)
+2022-08-08 17:42:46.682 *** Mouse movement ***  Mouse coords: (723, 303) (35982, 43738)
+2022-08-08 17:42:46.690 *** Mouse movement ***  Mouse coords: (730, 299) (35981, 43808)
+2022-08-08 17:42:46.709 *** Mouse movement ***  Mouse coords: (733, 297) (35845, 43876)
+2022-08-08 17:42:46.724 *** Mouse movement ***  Mouse coords: (740, 291) (35981, 43739)
+2022-08-08 17:42:46.733 *** Mouse movement ***  Mouse coords: (742, 290) (35810, 43910)
+2022-08-08 17:42:46.741 *** Mouse movement ***  Mouse coords: (744, 289) (35810, 43911)
+2022-08-08 17:42:46.758 *** Mouse movement ***  Mouse coords: (744, 288) (35741, 43911)
+2022-08-08 17:42:46.775 *** Mouse movement ***  Mouse coords: (746, 286) (35810, 43876)
+2022-08-08 17:42:47.127 *** Mouse movement ***  Mouse coords: (385, 414) (23330, 48345)
+2022-08-08 17:42:47.217 *** Mouse movement ***  Mouse coords: (385, 415) (23364, 48380)
+2022-08-08 17:42:47.237 *** Mouse movement ***  Mouse coords: (387, 414) (23432, 48310)
+2022-08-08 17:42:47.248 *** Mouse movement ***  Mouse coords: (399, 406) (23777, 48070)
+2022-08-08 17:42:47.263 *** Mouse movement ***  Mouse coords: (439, 383) (24739, 47555)
+2022-08-08 17:42:47.292 *** Mouse movement ***  Mouse coords: (566, 316) (27730, 46041)
+2022-08-08 17:42:47.308 *** Mouse movement ***  Mouse coords: (694, 257) (27765, 46317)
+2022-08-08 17:42:47.316 *** Mouse movement ***  Mouse coords: (728, 243) (24533, 47864)
+2022-08-08 17:42:47.325 *** Mouse movement ***  Mouse coords: (760, 230) (24464, 47898)
+2022-08-08 17:42:47.344 *** Mouse movement ***  Mouse coords: (779, 223) (24017, 48104)
+2022-08-08 17:42:47.356 *** Mouse movement ***  Mouse coords: (816, 209) (24636, 47864)
+2022-08-08 17:42:47.365 *** Mouse movement ***  Mouse coords: (833, 204) (23949, 48173)
+2022-08-08 17:42:47.374 *** Mouse movement ***  Mouse coords: (839, 202) (23570, 48276)
+2022-08-08 17:42:47.392 *** Mouse movement ***  Mouse coords: (843, 202) (23501, 48345)
+2022-08-08 17:42:47.403 *** Mouse movement ***  Mouse coords: (847, 201) (23502, 48311)
+2022-08-08 17:42:47.410 *** Mouse movement ***  Mouse coords: (848, 201) (23398, 48345)
+2022-08-08 17:42:47.417 *** Mouse movement ***  Mouse coords: (848, 201) (23364, 48345)
+2022-08-08 17:42:47.431 *** Mouse movement ***  Mouse coords: (849, 200) (23399, 48310)
+2022-08-08 17:42:47.442 *** Mouse movement ***  Mouse coords: (849, 200) (23364, 48345)
+2022-08-08 17:42:47.573 *** Keyboard input *** key pressed: key: 32; text: " "
+2022-08-08 17:42:47.833 *** Keyboard input *** key pressed: key: 32; text: " "
+2022-08-08 17:42:48.057 *** Keyboard input *** key pressed: key: 32; text: " "
+2022-08-08 17:42:48.264 *** Keyboard input *** key pressed: key: 32; text: " "
+2022-08-08 17:42:48.537 *** Keyboard input *** key pressed: key: 32; text: " "
+2022-08-08 17:42:48.782 *** Keyboard input *** key pressed: key: 32; text: " "
+2022-08-08 17:42:48.947 *** Keyboard input *** key pressed: key: 32; text: " "
+2022-08-08 17:42:49.117 *** Keyboard input *** key pressed: key: 32; text: " "
+2022-08-08 17:42:49.305 *** Keyboard input *** key pressed: key: 32; text: " "
+2022-08-08 17:42:50.068 *** Program closed.

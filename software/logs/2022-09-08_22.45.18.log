@@ -1,0 +1,50 @@
+2022-09-08 22:45:18.372 *** Start program *** Start program
+2022-09-08 22:45:29.032 *** Open case *** /home/zhihuang/Desktop/A14
+2022-09-08 22:45:31.241 *** Open processed data
+2022-09-08 22:45:31.241 *** Preload all statistics at once.
+2022-09-08 22:45:32.680 *** Nuclei stat data loaded, took 1.44 seconds. Total number of nuclei: 1470268
+2022-09-08 22:45:56.208 *** starting thread (client mode): 0x5fc95460
+2022-09-08 22:45:56.208 *** Local version/idstring: SSH-2.0-paramiko_2.11.0
+2022-09-08 22:45:56.234 *** Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2022-09-08 22:45:56.234 *** Connected (version 2.0, client OpenSSH_5.3)
+2022-09-08 22:45:56.253 *** === Key exchange possibilities ===
+2022-09-08 22:45:56.253 *** kex algos: diffie-hellman-group-exchange-sha256, diffie-hellman-group-exchange-sha1, diffie-hellman-group14-sha1, diffie-hellman-group1-sha1
+2022-09-08 22:45:56.254 *** server key: ssh-rsa, ssh-rsa-cert-v01@openssh.com, ssh-dss
+2022-09-08 22:45:56.254 *** client encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-08 22:45:56.254 *** server encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-08 22:45:56.254 *** client mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-08 22:45:56.254 *** server mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-08 22:45:56.254 *** client compress: none, zlib@openssh.com
+2022-09-08 22:45:56.254 *** server compress: none, zlib@openssh.com
+2022-09-08 22:45:56.254 *** client lang: <none>
+2022-09-08 22:45:56.254 *** server lang: <none>
+2022-09-08 22:45:56.254 *** kex follows: False
+2022-09-08 22:45:56.254 *** === Key exchange agreements ===
+2022-09-08 22:45:56.254 *** Kex: diffie-hellman-group-exchange-sha256
+2022-09-08 22:45:56.255 *** HostKey: ssh-rsa
+2022-09-08 22:45:56.255 *** Cipher: aes128-ctr
+2022-09-08 22:45:56.255 *** MAC: hmac-sha2-256
+2022-09-08 22:45:56.255 *** Compression: none
+2022-09-08 22:45:56.255 *** === End of kex handshake ===
+2022-09-08 22:45:56.316 *** Got server p (2048 bits)
+2022-09-08 22:45:56.393 *** kex engine KexGexSHA256 specified hash_algo <built-in function openssl_sha256>
+2022-09-08 22:45:56.393 *** Switch to new keys ...
+2022-09-08 22:45:56.394 *** Adding ssh-rsa host key for 173.201.181.247: b'cca345f774a2d98448d0bcc78f04075d'
+2022-09-08 22:45:56.473 *** userauth is OK
+2022-09-08 22:45:56.499 *** Authentication (password) successful!
+2022-09-08 22:45:56.500 *** [chan 0] Max packet in: 32768 bytes
+2022-09-08 22:45:56.521 *** [chan 0] Max packet out: 32768 bytes
+2022-09-08 22:45:56.522 *** Secsh channel 0 opened.
+2022-09-08 22:45:56.544 *** [chan 0] Sesch channel 0 request ok
+2022-09-08 22:45:56.566 *** [chan 0] Opened sftp connection (server version 3)
+2022-09-08 22:45:56.567 *** [chan 0] stat(b'/home/b6o162rzivzp/NucFinder_DB/CFB1B411265361DF/interactive_nuclei_dict.pickle')
+2022-09-08 22:45:56.589 *** [chan 0] stat(b'/home/b6o162rzivzp/NucFinder_DB/CFB1B411265361DF/model.pickle')
+2022-09-08 22:45:56.610 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/CFB1B411265361DF/model.pickle', 'rb')
+2022-09-08 22:45:56.631 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/CFB1B411265361DF/model.pickle', 'rb') -> 00000000
+2022-09-08 22:45:56.795 *** [chan 0] close(00000000)
+2022-09-08 22:45:56.837 *** Interactive label *** Apply to case start.
+2022-09-08 22:46:03.593 *** Interactive label *** Apply to case done.
+2022-09-08 22:46:06.333 *** Interactive label *** Apply to case finish overlay create.
+2022-09-08 23:00:39.717 *** Interactive label *** Review annotations/active learning start.
+2022-09-09 00:18:32.358 *** Program closed.
+2022-09-09 00:18:32.407 *** EOF in transport thread

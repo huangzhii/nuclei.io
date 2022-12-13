@@ -1,0 +1,114 @@
+2022-09-02 16:01:43.988 *** Start program *** Start program
+2022-09-02 16:02:11.199 *** User Login *** id=640475916; email=zhihuang@stanford.edu; firstname=Zhi; lastname=Huang.
+2022-09-02 16:02:21.870 *** Open case *** /Applications/XAMPP/xamppfiles/htdocs/20220722_Eric_Yang
+2022-09-02 16:02:27.361 *** Open processed data
+2022-09-02 16:02:27.362 *** Preload all statistics at once.
+2022-09-02 16:02:28.351 *** Nuclei stat data loaded, took 0.99 seconds. Total number of nuclei: 843996
+2022-09-02 16:02:45.421 *** Mouse movement (LeftButton) ***  Mouse coords: (439, 484) (100774, 26512)
+2022-09-02 16:02:45.572 *** Interactive label *** (double click) click on screen. screen: (439, 484); slide: (100774, 26512). case_id: 20220722_Eric_Yang, slide_id: 3BNI3N_44662.svs, Nuclei index selected: 305495
+2022-09-02 16:02:45.811 *** Interactive label *** Apply to case start.
+2022-09-02 16:02:48.263 *** Mouse movement (LeftButton) ***  Mouse coords: (507, 478) (100831, 26506)
+2022-09-02 16:02:49.088 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-02 16:02:49.092 *** Process image overlay spent 0.00 seconds.
+2022-09-02 16:02:49.094 *** Get cell color spent 0.00 seconds.
+2022-09-02 16:02:49.685 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-02 16:02:50.052 *** Keyboard input *** key pressed: key: 88; text: "x"
+2022-09-02 16:02:50.451 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-02 16:02:50.459 *** Process image overlay spent 0.01 seconds.
+2022-09-02 16:02:50.462 *** Get cell color spent 0.00 seconds.
+2022-09-02 16:02:53.719 *** Interactive label *** (double click) click on screen. screen: (1023, 447); slide: (101269, 26480). case_id: 20220722_Eric_Yang, slide_id: 3BNI3N_44662.svs, Nuclei index selected: 304989
+2022-09-02 16:02:53.947 *** Interactive label *** Apply to case start.
+2022-09-02 16:02:56.911 *** Interactive label *** Apply to case done.
+2022-09-02 16:02:57.076 *** Interactive label *** Apply to case finish overlay create.
+2022-09-02 16:02:57.078 *** Process image overlay spent 0.00 seconds.
+2022-09-02 16:02:57.080 *** Get cell color spent 0.00 seconds.
+2022-09-02 16:02:59.664 *** Interactive label: Sync start.
+2022-09-02 16:02:59.687 *** starting thread (client mode): 0x57289190
+2022-09-02 16:02:59.688 *** Local version/idstring: SSH-2.0-paramiko_2.11.0
+2022-09-02 16:02:59.712 *** Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2022-09-02 16:02:59.712 *** Connected (version 2.0, client OpenSSH_5.3)
+2022-09-02 16:02:59.731 *** === Key exchange possibilities ===
+2022-09-02 16:02:59.731 *** kex algos: diffie-hellman-group-exchange-sha256, diffie-hellman-group-exchange-sha1, diffie-hellman-group14-sha1, diffie-hellman-group1-sha1
+2022-09-02 16:02:59.731 *** server key: ssh-rsa, ssh-rsa-cert-v01@openssh.com, ssh-dss
+2022-09-02 16:02:59.731 *** client encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-02 16:02:59.731 *** server encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-02 16:02:59.731 *** client mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-02 16:02:59.731 *** server mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-02 16:02:59.731 *** client compress: none, zlib@openssh.com
+2022-09-02 16:02:59.731 *** server compress: none, zlib@openssh.com
+2022-09-02 16:02:59.731 *** client lang: <none>
+2022-09-02 16:02:59.731 *** server lang: <none>
+2022-09-02 16:02:59.731 *** kex follows: False
+2022-09-02 16:02:59.731 *** === Key exchange agreements ===
+2022-09-02 16:02:59.731 *** Kex: diffie-hellman-group-exchange-sha256
+2022-09-02 16:02:59.731 *** HostKey: ssh-rsa
+2022-09-02 16:02:59.731 *** Cipher: aes128-ctr
+2022-09-02 16:02:59.732 *** MAC: hmac-sha2-256
+2022-09-02 16:02:59.732 *** Compression: none
+2022-09-02 16:02:59.732 *** === End of kex handshake ===
+2022-09-02 16:02:59.792 *** Got server p (2048 bits)
+2022-09-02 16:02:59.885 *** kex engine KexGexSHA256 specified hash_algo <built-in function openssl_sha256>
+2022-09-02 16:02:59.886 *** Switch to new keys ...
+2022-09-02 16:02:59.886 *** Adding ssh-rsa host key for 173.201.181.247: b'cca345f774a2d98448d0bcc78f04075d'
+2022-09-02 16:02:59.962 *** userauth is OK
+2022-09-02 16:02:59.986 *** Authentication (password) successful!
+2022-09-02 16:02:59.987 *** [chan 0] Max packet in: 32768 bytes
+2022-09-02 16:03:00.008 *** [chan 0] Max packet out: 32768 bytes
+2022-09-02 16:03:00.008 *** Secsh channel 0 opened.
+2022-09-02 16:03:00.031 *** [chan 0] Sesch channel 0 request ok
+2022-09-02 16:03:00.036 *** [chan 0] EOF received (0)
+2022-09-02 16:03:00.037 *** [chan 0] EOF sent (0)
+2022-09-02 16:03:00.037 *** [chan 1] Max packet in: 32768 bytes
+2022-09-02 16:03:00.117 *** [chan 1] Max packet out: 32768 bytes
+2022-09-02 16:03:00.117 *** Secsh channel 1 opened.
+2022-09-02 16:03:00.139 *** [chan 1] Sesch channel 1 request ok
+2022-09-02 16:03:00.163 *** [chan 1] Opened sftp connection (server version 3)
+2022-09-02 16:03:00.165 *** [chan 1] open(b'/home/b6o162rzivzp/NucFinder_DB/EC5C572DE4D27153/model.pickle', 'wb')
+2022-09-02 16:03:00.186 *** [chan 1] open(b'/home/b6o162rzivzp/NucFinder_DB/EC5C572DE4D27153/model.pickle', 'wb') -> 00000000
+2022-09-02 16:03:00.187 *** [chan 1] close(00000000)
+2022-09-02 16:03:00.228 *** [chan 1] stat(b'/home/b6o162rzivzp/NucFinder_DB/EC5C572DE4D27153/model.pickle')
+2022-09-02 16:03:00.254 *** [chan 1] sftp session closed.
+2022-09-02 16:03:00.255 *** [chan 1] EOF sent (1)
+2022-09-02 16:03:00.356 *** EOF in transport thread
+2022-09-02 16:03:00.447 *** Interactive label: Sync finished.
+2022-09-02 16:03:10.518 *** Keyboard input *** key pressed: key: 16777249; text: ""
+2022-09-02 16:03:15.488 *** starting thread (client mode): 0x18b9e50
+2022-09-02 16:03:15.488 *** Local version/idstring: SSH-2.0-paramiko_2.11.0
+2022-09-02 16:03:15.514 *** Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2022-09-02 16:03:15.514 *** Connected (version 2.0, client OpenSSH_5.3)
+2022-09-02 16:03:15.534 *** === Key exchange possibilities ===
+2022-09-02 16:03:15.534 *** kex algos: diffie-hellman-group-exchange-sha256, diffie-hellman-group-exchange-sha1, diffie-hellman-group14-sha1, diffie-hellman-group1-sha1
+2022-09-02 16:03:15.535 *** server key: ssh-rsa, ssh-rsa-cert-v01@openssh.com, ssh-dss
+2022-09-02 16:03:15.535 *** client encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-02 16:03:15.535 *** server encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-02 16:03:15.535 *** client mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-02 16:03:15.535 *** server mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-02 16:03:15.535 *** client compress: none, zlib@openssh.com
+2022-09-02 16:03:15.535 *** server compress: none, zlib@openssh.com
+2022-09-02 16:03:15.536 *** client lang: <none>
+2022-09-02 16:03:15.536 *** server lang: <none>
+2022-09-02 16:03:15.536 *** kex follows: False
+2022-09-02 16:03:15.536 *** === Key exchange agreements ===
+2022-09-02 16:03:15.536 *** Kex: diffie-hellman-group-exchange-sha256
+2022-09-02 16:03:15.536 *** HostKey: ssh-rsa
+2022-09-02 16:03:15.537 *** Cipher: aes128-ctr
+2022-09-02 16:03:15.537 *** MAC: hmac-sha2-256
+2022-09-02 16:03:15.537 *** Compression: none
+2022-09-02 16:03:15.537 *** === End of kex handshake ===
+2022-09-02 16:03:15.596 *** Got server p (2048 bits)
+2022-09-02 16:03:15.695 *** kex engine KexGexSHA256 specified hash_algo <built-in function openssl_sha256>
+2022-09-02 16:03:15.696 *** Switch to new keys ...
+2022-09-02 16:03:15.696 *** Adding ssh-rsa host key for 173.201.181.247: b'cca345f774a2d98448d0bcc78f04075d'
+2022-09-02 16:03:15.775 *** userauth is OK
+2022-09-02 16:03:15.800 *** Authentication (password) successful!
+2022-09-02 16:03:15.800 *** [chan 0] Max packet in: 32768 bytes
+2022-09-02 16:03:15.820 *** [chan 0] Max packet out: 32768 bytes
+2022-09-02 16:03:15.821 *** Secsh channel 0 opened.
+2022-09-02 16:03:15.842 *** [chan 0] Sesch channel 0 request ok
+2022-09-02 16:03:15.862 *** [chan 0] Opened sftp connection (server version 3)
+2022-09-02 16:03:15.862 *** [chan 0] stat(b'/home/b6o162rzivzp/NucFinder_DB/EC5C572DE4D27153/interactive_nuclei_dict.pickle')
+2022-09-02 16:03:15.882 *** [chan 0] stat(b'/home/b6o162rzivzp/NucFinder_DB/EC5C572DE4D27153/model.pickle')
+2022-09-02 16:03:15.902 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/EC5C572DE4D27153/model.pickle', 'rb')
+2022-09-02 16:03:15.922 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/EC5C572DE4D27153/model.pickle', 'rb') -> 00000000
+2022-09-02 16:03:15.984 *** [chan 0] close(00000000)
+2022-09-02 16:03:39.465 *** Program closed.

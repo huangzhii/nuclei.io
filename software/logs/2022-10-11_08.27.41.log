@@ -1,0 +1,399 @@
+2022-10-11 08:27:41.560 *** Start program *** Start program
+2022-10-11 08:28:31.606 *** User Login *** id=640475916; email=zhihuang@stanford.edu; firstname=Zhi; lastname=Huang.
+2022-10-11 08:28:41.262 *** starting thread (client mode): 0xf8494070
+2022-10-11 08:28:41.263 *** Local version/idstring: SSH-2.0-paramiko_2.11.0
+2022-10-11 08:28:41.286 *** Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2022-10-11 08:28:41.286 *** Connected (version 2.0, client OpenSSH_5.3)
+2022-10-11 08:28:41.304 *** === Key exchange possibilities ===
+2022-10-11 08:28:41.304 *** kex algos: diffie-hellman-group-exchange-sha256, diffie-hellman-group-exchange-sha1, diffie-hellman-group14-sha1, diffie-hellman-group1-sha1
+2022-10-11 08:28:41.304 *** server key: ssh-rsa, ssh-rsa-cert-v01@openssh.com, ssh-dss
+2022-10-11 08:28:41.304 *** client encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-10-11 08:28:41.304 *** server encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-10-11 08:28:41.304 *** client mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-10-11 08:28:41.304 *** server mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-10-11 08:28:41.304 *** client compress: none, zlib@openssh.com
+2022-10-11 08:28:41.304 *** server compress: none, zlib@openssh.com
+2022-10-11 08:28:41.304 *** client lang: <none>
+2022-10-11 08:28:41.304 *** server lang: <none>
+2022-10-11 08:28:41.304 *** kex follows: False
+2022-10-11 08:28:41.304 *** === Key exchange agreements ===
+2022-10-11 08:28:41.305 *** Kex: diffie-hellman-group-exchange-sha256
+2022-10-11 08:28:41.305 *** HostKey: ssh-rsa
+2022-10-11 08:28:41.305 *** Cipher: aes128-ctr
+2022-10-11 08:28:41.305 *** MAC: hmac-sha2-256
+2022-10-11 08:28:41.305 *** Compression: none
+2022-10-11 08:28:41.305 *** === End of kex handshake ===
+2022-10-11 08:28:41.364 *** Got server p (2048 bits)
+2022-10-11 08:28:41.446 *** kex engine KexGexSHA256 specified hash_algo <built-in function openssl_sha256>
+2022-10-11 08:28:41.447 *** Switch to new keys ...
+2022-10-11 08:28:41.447 *** Adding ssh-rsa host key for 173.201.181.247: b'cca345f774a2d98448d0bcc78f04075d'
+2022-10-11 08:28:41.521 *** userauth is OK
+2022-10-11 08:28:41.544 *** Authentication (password) successful!
+2022-10-11 08:28:41.545 *** [chan 0] Max packet in: 32768 bytes
+2022-10-11 08:28:41.564 *** [chan 0] Max packet out: 32768 bytes
+2022-10-11 08:28:41.564 *** Secsh channel 0 opened.
+2022-10-11 08:28:41.585 *** [chan 0] Sesch channel 0 request ok
+2022-10-11 08:28:41.604 *** [chan 0] Opened sftp connection (server version 3)
+2022-10-11 08:28:41.604 *** [chan 0] stat(b'/home/b6o162rzivzp/NucFinder_DB/229B31AB520EBDB6/interactive_nuclei_dict.pickle')
+2022-10-11 08:28:41.623 *** [chan 0] stat(b'/home/b6o162rzivzp/NucFinder_DB/229B31AB520EBDB6/model.pickle')
+2022-10-11 08:28:41.642 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/229B31AB520EBDB6/model.pickle', 'rb')
+2022-10-11 08:28:41.661 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/229B31AB520EBDB6/model.pickle', 'rb') -> 00000000
+2022-10-11 08:28:42.518 *** [chan 0] close(00000000)
+2022-10-11 08:28:52.732 *** Open case *** /Applications/XAMPP/xamppfiles/htdocs/20220722_Eric_Yang
+2022-10-11 08:29:15.702 *** Open processed data
+2022-10-11 08:29:15.703 *** Preload all statistics at once.
+2022-10-11 08:29:16.130 *** Nuclei stat data loaded, took 0.43 seconds. Total number of nuclei: 191468
+2022-10-11 08:29:16.759 *** Interactive label *** Apply to case start.
+2022-10-11 08:29:19.871 *** Interactive label *** Apply to case done.
+2022-10-11 08:29:20.236 *** Interactive label *** Apply to case finish overlay create.
+2022-10-11 08:29:29.826 *** Mouse movement (LeftButton) ***  Mouse coords: (620, 437) (39076, 16471)
+2022-10-11 08:29:36.888 *** Mouse movement (LeftButton) ***  Mouse coords: (1046, 160) (71170, 15078)
+2022-10-11 08:29:36.969 *** Mouse movement (LeftButton) ***  Mouse coords: (1046, 160) (71170, 15078)
+2022-10-11 08:29:36.999 *** Mouse movement (LeftButton) ***  Mouse coords: (1046, 176) (71170, 15118)
+2022-10-11 08:29:37.023 *** Mouse movement (LeftButton) ***  Mouse coords: (1045, 205) (71168, 15149)
+2022-10-11 08:29:37.045 *** Mouse movement (LeftButton) ***  Mouse coords: (1038, 240) (71153, 15164)
+2022-10-11 08:29:37.067 *** Mouse movement (LeftButton) ***  Mouse coords: (1033, 263) (71157, 15135)
+2022-10-11 08:29:37.088 *** Mouse movement (LeftButton) ***  Mouse coords: (1029, 299) (71161, 15166)
+2022-10-11 08:29:37.112 *** Mouse movement (LeftButton) ***  Mouse coords: (1029, 326) (71170, 15144)
+2022-10-11 08:29:37.134 *** Mouse movement (LeftButton) ***  Mouse coords: (1029, 337) (71170, 15105)
+2022-10-11 08:29:37.157 *** Mouse movement (LeftButton) ***  Mouse coords: (1029, 341) (71170, 15088)
+2022-10-11 08:29:37.197 *** Mouse movement (LeftButton) ***  Mouse coords: (1029, 346) (71170, 15091)
+2022-10-11 08:29:37.240 *** Mouse movement (LeftButton) ***  Mouse coords: (1028, 350) (71167, 15087)
+2022-10-11 08:29:37.676 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-10-11 08:29:37.679 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:29:37.686 *** Get cell color spent 0.01 seconds.
+2022-10-11 08:29:39.684 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:29:39.688 *** Get cell color spent 0.00 seconds.
+2022-10-11 08:29:40.093 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:29:40.105 *** Get cell color spent 0.01 seconds.
+2022-10-11 08:29:41.938 *** Mouse movement (LeftButton) ***  Mouse coords: (640, 119) (61389, 8835)
+2022-10-11 08:29:42.020 *** Mouse movement (LeftButton) ***  Mouse coords: (768, 191) (64586, 10634)
+2022-10-11 08:29:42.050 *** Mouse movement (LeftButton) ***  Mouse coords: (828, 234) (62888, 9909)
+2022-10-11 08:29:42.073 *** Mouse movement (LeftButton) ***  Mouse coords: (874, 268) (62538, 9684)
+2022-10-11 08:29:42.099 *** Mouse movement (LeftButton) ***  Mouse coords: (904, 290) (62138, 9385)
+2022-10-11 08:29:42.121 *** Mouse movement (LeftButton) ***  Mouse coords: (930, 309) (62039, 9309)
+2022-10-11 08:29:42.147 *** Mouse movement (LeftButton) ***  Mouse coords: (950, 321) (61888, 9135)
+2022-10-11 08:29:42.189 *** Mouse movement (LeftButton) ***  Mouse coords: (952, 322) (61439, 8860)
+2022-10-11 08:29:42.231 *** Mouse movement (LeftButton) ***  Mouse coords: (952, 323) (61389, 8860)
+2022-10-11 08:29:42.273 *** Mouse movement (LeftButton) ***  Mouse coords: (951, 325) (61364, 8885)
+2022-10-11 08:29:43.279 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:29:43.297 *** Get cell color spent 0.02 seconds.
+2022-10-11 08:29:43.401 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:29:43.419 *** Get cell color spent 0.02 seconds.
+2022-10-11 08:29:43.517 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:29:43.534 *** Get cell color spent 0.02 seconds.
+2022-10-11 08:29:43.950 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:29:43.963 *** Get cell color spent 0.01 seconds.
+2022-10-11 08:29:44.319 *** Mouse movement (LeftButton) ***  Mouse coords: (467, 291) (57346, 8316)
+2022-10-11 08:29:44.360 *** Mouse movement (LeftButton) ***  Mouse coords: (490, 291) (57503, 8316)
+2022-10-11 08:29:44.385 *** Mouse movement (LeftButton) ***  Mouse coords: (534, 291) (57652, 8316)
+2022-10-11 08:29:44.407 *** Mouse movement (LeftButton) ***  Mouse coords: (554, 291) (57481, 8316)
+2022-10-11 08:29:44.428 *** Mouse movement (LeftButton) ***  Mouse coords: (599, 291) (57659, 8316)
+2022-10-11 08:29:44.456 *** Mouse movement (LeftButton) ***  Mouse coords: (664, 291) (57801, 8316)
+2022-10-11 08:29:44.480 *** Mouse movement (LeftButton) ***  Mouse coords: (712, 291) (57680, 8316)
+2022-10-11 08:29:44.503 *** Mouse movement (LeftButton) ***  Mouse coords: (752, 299) (57624, 8373)
+2022-10-11 08:29:44.524 *** Mouse movement (LeftButton) ***  Mouse coords: (769, 305) (57460, 8359)
+2022-10-11 08:29:44.554 *** Mouse movement (LeftButton) ***  Mouse coords: (779, 310) (57410, 8351)
+2022-10-11 08:29:44.587 *** Mouse movement (LeftButton) ***  Mouse coords: (787, 315) (57396, 8352)
+2022-10-11 08:29:44.611 *** Mouse movement (LeftButton) ***  Mouse coords: (787, 316) (57339, 8323)
+2022-10-11 08:29:44.639 *** Mouse movement (LeftButton) ***  Mouse coords: (787, 316) (57339, 8316)
+2022-10-11 08:29:44.753 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:29:44.763 *** Get cell color spent 0.01 seconds.
+2022-10-11 08:29:46.024 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:29:46.026 *** Get cell color spent 0.00 seconds.
+2022-10-11 08:29:47.724 *** Interactive label *** Review annotations/active learning start.
+2022-10-11 08:34:17.211 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 57108
+2022-10-11 08:34:17.483 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 51595
+2022-10-11 08:34:17.756 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 54906
+2022-10-11 08:34:17.988 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 140944
+2022-10-11 08:34:18.239 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 76342
+2022-10-11 08:34:18.484 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 154613
+2022-10-11 08:34:18.783 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 41174
+2022-10-11 08:34:19.049 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 64978
+2022-10-11 08:34:19.307 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 93327
+2022-10-11 08:34:19.567 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 51644
+2022-10-11 08:34:21.165 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 39351
+2022-10-11 08:34:21.392 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 85721
+2022-10-11 08:34:21.631 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 42426
+2022-10-11 08:34:21.888 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 38138
+2022-10-11 08:34:22.131 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 44177
+2022-10-11 08:34:22.380 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 126929
+2022-10-11 08:34:22.611 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 122930
+2022-10-11 08:34:22.843 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 150091
+2022-10-11 08:34:23.080 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 17534
+2022-10-11 08:34:23.316 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 83370
+2022-10-11 08:34:23.566 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 166017
+2022-10-11 08:34:23.816 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 160066
+2022-10-11 08:34:24.050 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 58510
+2022-10-11 08:34:24.297 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 58880
+2022-10-11 08:34:24.535 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 176365
+2022-10-11 08:34:24.773 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 187505
+2022-10-11 08:34:25.600 *** Interactive label *** Apply to case start.
+2022-10-11 08:34:28.922 *** Interactive label *** Apply to case done.
+2022-10-11 08:34:28.986 *** Interactive label *** Apply to case finish overlay create.
+2022-10-11 08:34:28.987 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:34:28.990 *** Get cell color spent 0.00 seconds.
+2022-10-11 08:37:35.203 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 2325
+2022-10-11 08:37:35.464 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 106364
+2022-10-11 08:37:35.695 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 72596
+2022-10-11 08:37:35.944 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 138289
+2022-10-11 08:37:36.201 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 61899
+2022-10-11 08:37:36.454 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 11022
+2022-10-11 08:37:36.714 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 162199
+2022-10-11 08:37:36.994 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 21535
+2022-10-11 08:37:37.251 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 69000
+2022-10-11 08:37:37.494 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 51664
+2022-10-11 08:37:37.845 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 38959
+2022-10-11 08:37:38.083 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 37443
+2022-10-11 08:37:38.337 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 93196
+2022-10-11 08:37:38.576 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 32851
+2022-10-11 08:37:38.831 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 28923
+2022-10-11 08:37:39.086 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 184168
+2022-10-11 08:37:39.327 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 190248
+2022-10-11 08:37:39.565 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 107735
+2022-10-11 08:37:40.251 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 180943
+2022-10-11 08:37:40.508 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 12760
+2022-10-11 08:37:40.747 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 7973
+2022-10-11 08:37:40.998 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 82610
+2022-10-11 08:37:41.252 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 166594
+2022-10-11 08:37:42.059 *** Interactive label *** Apply to case start.
+2022-10-11 08:37:45.166 *** Interactive label *** Apply to case done.
+2022-10-11 08:37:45.226 *** Interactive label *** Apply to case finish overlay create.
+2022-10-11 08:37:45.227 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:37:45.229 *** Get cell color spent 0.00 seconds.
+2022-10-11 08:40:31.735 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 11538
+2022-10-11 08:40:32.498 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 25824
+2022-10-11 08:40:33.131 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 95463
+2022-10-11 08:40:33.843 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 67689
+2022-10-11 08:40:34.096 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 43214
+2022-10-11 08:40:34.353 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 182143
+2022-10-11 08:40:34.594 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 51094
+2022-10-11 08:40:34.846 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 82618
+2022-10-11 08:40:37.110 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 55805
+2022-10-11 08:40:37.355 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 111658
+2022-10-11 08:40:37.590 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 188727
+2022-10-11 08:40:37.824 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 34885
+2022-10-11 08:40:38.071 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 105394
+2022-10-11 08:40:38.309 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 12369
+2022-10-11 08:40:38.644 *** Interactive label *** Apply to case start.
+2022-10-11 08:40:42.461 *** Interactive label *** Apply to case done.
+2022-10-11 08:40:42.520 *** Interactive label *** Apply to case finish overlay create.
+2022-10-11 08:40:42.521 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:40:42.524 *** Get cell color spent 0.00 seconds.
+2022-10-11 08:43:32.347 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 97608
+2022-10-11 08:43:33.311 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 45959
+2022-10-11 08:43:33.564 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 16579
+2022-10-11 08:43:33.821 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 81605
+2022-10-11 08:43:34.072 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 57363
+2022-10-11 08:43:34.313 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 172599
+2022-10-11 08:43:34.548 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 14100
+2022-10-11 08:43:34.800 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 135444
+2022-10-11 08:43:35.043 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 180124
+2022-10-11 08:43:35.333 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 16131
+2022-10-11 08:43:35.583 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 191104
+2022-10-11 08:43:35.823 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 97123
+2022-10-11 08:43:36.072 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 126767
+2022-10-11 08:43:36.315 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 12624
+2022-10-11 08:43:36.552 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 16670
+2022-10-11 08:43:36.792 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 37252
+2022-10-11 08:43:37.187 *** Interactive label *** Apply to case start.
+2022-10-11 08:43:40.683 *** Interactive label *** Apply to case done.
+2022-10-11 08:43:40.745 *** Interactive label *** Apply to case finish overlay create.
+2022-10-11 08:43:40.746 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:43:40.748 *** Get cell color spent 0.00 seconds.
+2022-10-11 08:46:53.735 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 131638
+2022-10-11 08:46:54.991 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 1700
+2022-10-11 08:46:55.717 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 166368
+2022-10-11 08:46:56.399 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 6869
+2022-10-11 08:46:56.636 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 55605
+2022-10-11 08:46:56.889 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 14417
+2022-10-11 08:46:57.132 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 106495
+2022-10-11 08:46:57.438 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 168698
+2022-10-11 08:46:57.689 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 140180
+2022-10-11 08:46:57.930 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 29118
+2022-10-11 08:46:58.179 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 51600
+2022-10-11 08:46:58.417 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 4278
+2022-10-11 08:46:58.656 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 96067
+2022-10-11 08:46:58.906 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 50854
+2022-10-11 08:46:59.149 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 130145
+2022-10-11 08:46:59.385 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 30072
+2022-10-11 08:46:59.625 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 52392
+2022-10-11 08:46:59.865 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 89810
+2022-10-11 08:47:00.107 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 2942
+2022-10-11 08:47:00.913 *** Interactive label *** Apply to case start.
+2022-10-11 08:47:04.226 *** Interactive label *** Apply to case done.
+2022-10-11 08:47:04.293 *** Interactive label *** Apply to case finish overlay create.
+2022-10-11 08:47:04.295 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:47:04.297 *** Get cell color spent 0.00 seconds.
+2022-10-11 08:49:39.795 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 53503
+2022-10-11 08:49:40.572 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 84287
+2022-10-11 08:49:41.302 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 40121
+2022-10-11 08:49:41.598 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 170852
+2022-10-11 08:49:41.858 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 59780
+2022-10-11 08:49:42.098 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 91114
+2022-10-11 08:49:42.351 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 66278
+2022-10-11 08:49:42.655 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 176012
+2022-10-11 08:49:42.893 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 7028
+2022-10-11 08:49:43.144 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 16031
+2022-10-11 08:49:43.398 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 126537
+2022-10-11 08:49:43.638 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 87617
+2022-10-11 08:49:43.888 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 76523
+2022-10-11 08:49:44.143 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 178303
+2022-10-11 08:49:44.383 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 51613
+2022-10-11 08:49:44.630 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 56862
+2022-10-11 08:49:44.873 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 24807
+2022-10-11 08:49:45.216 *** Interactive label *** Apply to case start.
+2022-10-11 08:49:48.402 *** Interactive label *** Apply to case done.
+2022-10-11 08:49:48.460 *** Interactive label *** Apply to case finish overlay create.
+2022-10-11 08:49:48.462 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:49:48.464 *** Get cell color spent 0.00 seconds.
+2022-10-11 08:52:43.444 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 152209
+2022-10-11 08:52:44.146 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 151869
+2022-10-11 08:52:44.398 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 71249
+2022-10-11 08:52:44.642 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 54951
+2022-10-11 08:52:44.885 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 52962
+2022-10-11 08:52:45.127 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 55891
+2022-10-11 08:52:45.369 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 58646
+2022-10-11 08:52:45.602 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 178357
+2022-10-11 08:52:45.867 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 55254
+2022-10-11 08:52:46.111 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 27165
+2022-10-11 08:52:46.349 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 187127
+2022-10-11 08:52:46.601 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 57367
+2022-10-11 08:52:46.918 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 18217
+2022-10-11 08:52:47.179 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 42098
+2022-10-11 08:52:47.433 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 116
+2022-10-11 08:52:47.676 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 120172
+2022-10-11 08:52:47.915 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 150508
+2022-10-11 08:52:48.147 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 157271
+2022-10-11 08:52:48.395 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 189683
+2022-10-11 08:52:48.647 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 54133
+2022-10-11 08:52:48.901 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 15258
+2022-10-11 08:52:49.138 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 25288
+2022-10-11 08:52:49.505 *** Interactive label *** Apply to case start.
+2022-10-11 08:52:52.881 *** Interactive label *** Apply to case done.
+2022-10-11 08:52:52.949 *** Interactive label *** Apply to case finish overlay create.
+2022-10-11 08:52:52.952 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:52:52.954 *** Get cell color spent 0.00 seconds.
+2022-10-11 08:54:24.412 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 182351
+2022-10-11 08:54:25.172 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 116042
+2022-10-11 08:54:25.905 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 145577
+2022-10-11 08:54:26.150 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 37669
+2022-10-11 08:54:26.393 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 188583
+2022-10-11 08:55:01.798 *** Interactive label *** Apply to case start.
+2022-10-11 08:55:04.727 *** Interactive label *** Apply to case done.
+2022-10-11 08:55:04.793 *** Interactive label *** Apply to case finish overlay create.
+2022-10-11 08:55:04.794 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:55:04.796 *** Get cell color spent 0.00 seconds.
+2022-10-11 08:56:27.406 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 131228
+2022-10-11 08:56:28.115 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 11676
+2022-10-11 08:56:28.729 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 189093
+2022-10-11 08:56:28.977 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 25181
+2022-10-11 08:56:29.232 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 162021
+2022-10-11 08:56:29.580 *** Interactive label *** Apply to case start.
+2022-10-11 08:56:32.648 *** Interactive label *** Apply to case done.
+2022-10-11 08:56:32.717 *** Interactive label *** Apply to case finish overlay create.
+2022-10-11 08:56:32.718 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:56:32.720 *** Get cell color spent 0.00 seconds.
+2022-10-11 08:58:07.838 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 1572
+2022-10-11 08:58:08.723 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 51531
+2022-10-11 08:58:08.965 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 81624
+2022-10-11 08:58:09.543 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 57560
+2022-10-11 08:58:10.111 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 15774
+2022-10-11 08:58:10.354 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 178108
+2022-10-11 08:58:10.655 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 74422
+2022-10-11 08:58:10.903 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 73699
+2022-10-11 08:58:11.156 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 28579
+2022-10-11 08:58:11.411 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 160720
+2022-10-11 08:58:11.749 *** Interactive label *** Apply to case start.
+2022-10-11 08:58:14.904 *** Interactive label *** Apply to case done.
+2022-10-11 08:58:14.971 *** Interactive label *** Apply to case finish overlay create.
+2022-10-11 08:58:14.973 *** Process image overlay spent 0.00 seconds.
+2022-10-11 08:58:14.975 *** Get cell color spent 0.00 seconds.
+2022-10-11 09:00:02.173 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 123600
+2022-10-11 09:00:02.790 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 25833
+2022-10-11 09:00:03.054 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 26882
+2022-10-11 09:00:03.301 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 25554
+2022-10-11 09:00:03.546 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 181611
+2022-10-11 09:00:03.789 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 15004
+2022-10-11 09:00:04.042 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 128248
+2022-10-11 09:00:04.285 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 88829
+2022-10-11 09:00:04.528 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 13640
+2022-10-11 09:00:04.760 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 61670
+2022-10-11 09:00:05.117 *** Interactive label *** Apply to case start.
+2022-10-11 09:00:08.214 *** Interactive label *** Apply to case done.
+2022-10-11 09:00:08.283 *** Interactive label *** Apply to case finish overlay create.
+2022-10-11 09:00:08.300 *** Process image overlay spent 0.00 seconds.
+2022-10-11 09:00:08.302 *** Get cell color spent 0.00 seconds.
+2022-10-11 10:08:29.959 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 54655
+2022-10-11 10:08:30.284 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 179565
+2022-10-11 10:08:30.545 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 166360
+2022-10-11 10:08:30.890 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 123372
+2022-10-11 10:08:31.137 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 51201
+2022-10-11 10:08:31.387 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 188114
+2022-10-11 10:08:31.622 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 180001
+2022-10-11 10:08:31.856 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 5293
+2022-10-11 10:08:32.094 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 93778
+2022-10-11 10:08:32.325 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 51003
+2022-10-11 10:08:32.576 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_20.svs, Nuclei index selected: 127498
+2022-10-11 10:08:32.997 *** Interactive label *** Apply to case start.
+2022-10-11 10:08:36.521 *** Interactive label *** Apply to case done.
+2022-10-11 10:08:36.595 *** Interactive label *** Apply to case finish overlay create.
+2022-10-11 10:08:36.597 *** Process image overlay spent 0.00 seconds.
+2022-10-11 10:08:36.599 *** Get cell color spent 0.00 seconds.
+2022-10-11 10:08:38.733 *** Interactive label: Review annotations finished.
+2022-10-11 10:08:38.770 *** Interactive label *** Apply to case start.
+2022-10-11 10:08:38.772 *** Interactive label *** Apply to case finish overlay create.
+2022-10-11 10:08:38.775 *** Process image overlay spent 0.00 seconds.
+2022-10-11 10:08:38.778 *** Get cell color spent 0.00 seconds.
+2022-10-11 10:08:42.803 *** Keyboard input *** key pressed: key: 16777248; text: ""
+2022-10-11 10:08:57.481 *** Interactive label: Sync start.
+2022-10-11 10:08:57.510 *** starting thread (client mode): 0x3268f70
+2022-10-11 10:08:57.510 *** Local version/idstring: SSH-2.0-paramiko_2.11.0
+2022-10-11 10:08:57.538 *** Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2022-10-11 10:08:57.538 *** Connected (version 2.0, client OpenSSH_5.3)
+2022-10-11 10:08:57.560 *** === Key exchange possibilities ===
+2022-10-11 10:08:57.560 *** kex algos: diffie-hellman-group-exchange-sha256, diffie-hellman-group-exchange-sha1, diffie-hellman-group14-sha1, diffie-hellman-group1-sha1
+2022-10-11 10:08:57.560 *** server key: ssh-rsa, ssh-rsa-cert-v01@openssh.com, ssh-dss
+2022-10-11 10:08:57.560 *** client encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-10-11 10:08:57.560 *** server encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-10-11 10:08:57.560 *** client mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-10-11 10:08:57.560 *** server mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-10-11 10:08:57.560 *** client compress: none, zlib@openssh.com
+2022-10-11 10:08:57.560 *** server compress: none, zlib@openssh.com
+2022-10-11 10:08:57.561 *** client lang: <none>
+2022-10-11 10:08:57.561 *** server lang: <none>
+2022-10-11 10:08:57.561 *** kex follows: False
+2022-10-11 10:08:57.561 *** === Key exchange agreements ===
+2022-10-11 10:08:57.561 *** Kex: diffie-hellman-group-exchange-sha256
+2022-10-11 10:08:57.561 *** HostKey: ssh-rsa
+2022-10-11 10:08:57.561 *** Cipher: aes128-ctr
+2022-10-11 10:08:57.561 *** MAC: hmac-sha2-256
+2022-10-11 10:08:57.561 *** Compression: none
+2022-10-11 10:08:57.561 *** === End of kex handshake ===
+2022-10-11 10:08:57.619 *** Got server p (2048 bits)
+2022-10-11 10:08:57.704 *** kex engine KexGexSHA256 specified hash_algo <built-in function openssl_sha256>
+2022-10-11 10:08:57.705 *** Switch to new keys ...
+2022-10-11 10:08:57.705 *** Adding ssh-rsa host key for 173.201.181.247: b'cca345f774a2d98448d0bcc78f04075d'
+2022-10-11 10:08:57.781 *** userauth is OK
+2022-10-11 10:08:59.348 *** Authentication (password) successful!
+2022-10-11 10:08:59.374 *** [chan 0] Max packet in: 32768 bytes
+2022-10-11 10:08:59.396 *** [chan 0] Max packet out: 32768 bytes
+2022-10-11 10:08:59.396 *** Secsh channel 0 opened.
+2022-10-11 10:08:59.418 *** [chan 0] Sesch channel 0 request ok
+2022-10-11 10:08:59.423 *** [chan 0] EOF received (0)
+2022-10-11 10:08:59.424 *** [chan 1] Max packet in: 32768 bytes
+2022-10-11 10:08:59.424 *** [chan 0] EOF sent (0)
+2022-10-11 10:08:59.444 *** [chan 1] Max packet out: 32768 bytes
+2022-10-11 10:08:59.444 *** Secsh channel 1 opened.
+2022-10-11 10:08:59.524 *** [chan 1] Sesch channel 1 request ok
+2022-10-11 10:08:59.544 *** [chan 1] Opened sftp connection (server version 3)
+2022-10-11 10:08:59.544 *** [chan 1] open(b'/home/b6o162rzivzp/NucFinder_DB/5C13C0941673F44C/model.pickle', 'wb')
+2022-10-11 10:08:59.565 *** [chan 1] open(b'/home/b6o162rzivzp/NucFinder_DB/5C13C0941673F44C/model.pickle', 'wb') -> 00000000
+2022-10-11 10:09:00.174 *** [chan 1] close(00000000)
+2022-10-11 10:09:00.273 *** [chan 1] stat(b'/home/b6o162rzivzp/NucFinder_DB/5C13C0941673F44C/model.pickle')
+2022-10-11 10:09:00.293 *** [chan 1] sftp session closed.
+2022-10-11 10:09:00.293 *** [chan 1] EOF sent (1)
+2022-10-11 10:09:00.394 *** EOF in transport thread
+2022-10-11 10:09:00.485 *** Interactive label: Sync finished.
+2022-10-11 10:09:03.848 *** Program closed.
+2022-10-11 10:09:03.895 *** EOF in transport thread

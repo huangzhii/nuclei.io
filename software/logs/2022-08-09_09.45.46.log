@@ -1,0 +1,52 @@
+2022-08-09 09:45:46.904 *** Start program *** Start program
+2022-08-09 09:45:56.779 *** Open processed data
+2022-08-09 09:45:58.949 *** Mouse movement ***  Mouse coords: (475, 378) (65525, 31837)
+2022-08-09 09:45:58.967 *** Mouse movement ***  Mouse coords: (482, 391) (65609, 31991)
+2022-08-09 09:45:58.983 *** Mouse movement ***  Mouse coords: (498, 415) (65763, 32178)
+2022-08-09 09:45:58.999 *** Mouse movement ***  Mouse coords: (528, 452) (66002, 32401)
+2022-08-09 09:45:59.016 *** Mouse movement ***  Mouse coords: (563, 494) (66087, 32485)
+2022-08-09 09:45:59.037 *** Mouse movement ***  Mouse coords: (605, 534) (66206, 32451)
+2022-08-09 09:45:59.054 *** Mouse movement ***  Mouse coords: (638, 562) (66053, 32247)
+2022-08-09 09:45:59.066 *** Mouse movement ***  Mouse coords: (660, 577) (65866, 32025)
+2022-08-09 09:45:59.083 *** Mouse movement ***  Mouse coords: (675, 588) (65745, 31957)
+2022-08-09 09:45:59.100 *** Mouse movement ***  Mouse coords: (681, 592) (65593, 31837)
+2022-08-09 09:45:59.118 *** Mouse movement ***  Mouse coords: (681, 593) (65490, 31786)
+2022-08-09 09:46:02.272 *** Mouse movement ***  Mouse coords: (527, 487) (62975, 26340)
+2022-08-09 09:46:02.284 *** Mouse movement ***  Mouse coords: (527, 490) (62974, 26340)
+2022-08-09 09:46:02.300 *** Mouse movement ***  Mouse coords: (528, 494) (62975, 26341)
+2022-08-09 09:46:02.316 *** Mouse movement ***  Mouse coords: (529, 501) (62975, 26344)
+2022-08-09 09:46:02.333 *** Mouse movement ***  Mouse coords: (532, 518) (62977, 26355)
+2022-08-09 09:46:02.349 *** Mouse movement ***  Mouse coords: (533, 525) (62975, 26344)
+2022-08-09 09:46:02.366 *** Mouse movement ***  Mouse coords: (536, 533) (62977, 26346)
+2022-08-09 09:46:02.382 *** Mouse movement ***  Mouse coords: (536, 536) (62974, 26340)
+2022-08-09 09:46:02.399 *** Mouse movement ***  Mouse coords: (537, 537) (62975, 26338)
+2022-08-09 09:46:33.681 *** Open processed data
+2022-08-09 09:46:33.682 *** Preload all statistics at once.
+2022-08-09 09:46:47.905 *** Nuclei stat data loaded, took 14.22 seconds. Total number of nuclei: 2617964
+2022-08-09 09:46:54.848 *** Mouse movement ***  Mouse coords: (656, 383) (82107, 45470)
+2022-08-09 09:46:54.866 *** Mouse movement ***  Mouse coords: (654, 387) (81950, 45940)
+2022-08-09 09:46:54.883 *** Mouse movement ***  Mouse coords: (651, 391) (81794, 45941)
+2022-08-09 09:46:54.900 *** Mouse movement ***  Mouse coords: (647, 396) (81637, 46097)
+2022-08-09 09:46:54.916 *** Mouse movement ***  Mouse coords: (642, 403) (81480, 46411)
+2022-08-09 09:46:54.933 *** Mouse movement ***  Mouse coords: (639, 407) (81793, 45940)
+2022-08-09 09:46:54.950 *** Mouse movement ***  Mouse coords: (636, 412) (81794, 46097)
+2022-08-09 09:46:54.970 *** Mouse movement ***  Mouse coords: (629, 421) (81166, 46724)
+2022-08-09 09:46:54.983 *** Mouse movement ***  Mouse coords: (626, 424) (81793, 45784)
+2022-08-09 09:46:55.000 *** Mouse movement ***  Mouse coords: (620, 428) (81324, 45940)
+2022-08-09 09:46:55.016 *** Mouse movement ***  Mouse coords: (618, 430) (81950, 45627)
+2022-08-09 09:46:55.033 *** Mouse movement ***  Mouse coords: (617, 431) (82107, 45470)
+2022-08-09 09:46:56.196 *** Process image overlay spent 0.01 seconds.
+2022-08-09 09:46:56.325 *** Get cell color spent 0.13 seconds.
+2022-08-09 09:46:56.421 *** Process image overlay spent 0.01 seconds.
+2022-08-09 09:46:56.455 *** Get cell color spent 0.03 seconds.
+2022-08-09 09:46:56.479 *** Process image overlay spent 0.01 seconds.
+2022-08-09 09:46:56.535 *** Get cell color spent 0.06 seconds.
+2022-08-09 09:46:56.879 *** Process image overlay spent 0.01 seconds.
+2022-08-09 09:46:56.892 *** Get cell color spent 0.01 seconds.
+2022-08-09 09:46:57.097 *** Process image overlay spent 0.01 seconds.
+2022-08-09 09:46:57.099 *** Get cell color spent 0.00 seconds.
+2022-08-09 09:46:57.510 *** Process image overlay spent 0.01 seconds.
+2022-08-09 09:46:57.511 *** Get cell color spent 0.00 seconds.
+2022-08-09 09:47:01.511 *** Process image overlay spent 0.01 seconds.
+2022-08-09 09:47:01.513 *** Get cell color spent 0.00 seconds.
+2022-08-09 10:11:18.805 *** Program closed.

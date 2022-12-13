@@ -1,0 +1,71 @@
+2022-08-11 22:14:16.643 *** Start program *** Start program
+2022-08-11 22:14:27.170 *** Open case *** /media/zhihuang/Drive3/Google_Colon_lnm_pos_2015_slides/slides/S0425
+2022-08-11 22:14:29.929 *** Open processed data
+2022-08-11 22:14:29.929 *** Preload all statistics at once.
+2022-08-11 22:14:31.045 *** Nuclei stat data loaded, took 1.12 seconds. Total number of nuclei: 954361
+2022-08-11 22:14:40.441 *** Process image overlay spent 0.01 seconds.
+2022-08-11 22:14:40.506 *** Get cell color spent 0.06 seconds.
+2022-08-11 22:14:40.830 *** Process image overlay spent 0.01 seconds.
+2022-08-11 22:14:40.845 *** Get cell color spent 0.01 seconds.
+2022-08-11 22:14:40.957 *** Process image overlay spent 0.01 seconds.
+2022-08-11 22:14:40.967 *** Get cell color spent 0.01 seconds.
+2022-08-11 22:14:41.133 *** Process image overlay spent 0.01 seconds.
+2022-08-11 22:14:41.138 *** Get cell color spent 0.01 seconds.
+2022-08-11 22:14:41.249 *** Process image overlay spent 0.01 seconds.
+2022-08-11 22:14:41.255 *** Get cell color spent 0.01 seconds.
+2022-08-11 22:14:41.823 *** Process image overlay spent 0.01 seconds.
+2022-08-11 22:14:41.828 *** Get cell color spent 0.00 seconds.
+2022-08-11 22:14:42.019 *** Process image overlay spent 0.01 seconds.
+2022-08-11 22:14:42.022 *** Get cell color spent 0.00 seconds.
+2022-08-11 22:14:42.082 *** Process image overlay spent 0.01 seconds.
+2022-08-11 22:14:42.087 *** Get cell color spent 0.00 seconds.
+2022-08-11 22:14:44.564 *** Mouse movement (LeftButton) ***  Mouse coords: (756, 158) (40207, 51261)
+2022-08-11 22:14:44.571 *** Mouse movement (LeftButton) ***  Mouse coords: (757, 159) (40208, 51262)
+2022-08-11 22:14:44.579 *** Mouse movement (LeftButton) ***  Mouse coords: (758, 160) (40209, 51263)
+2022-08-11 22:14:44.592 *** Mouse movement (LeftButton) ***  Mouse coords: (760, 163) (40211, 51266)
+2022-08-11 22:14:44.608 *** Mouse movement (LeftButton) ***  Mouse coords: (766, 170) (40217, 51274)
+2022-08-11 22:14:44.624 *** Mouse movement (LeftButton) ***  Mouse coords: (785, 184) (40237, 51288)
+2022-08-11 22:14:44.641 *** Mouse movement (LeftButton) ***  Mouse coords: (799, 193) (40251, 51298)
+2022-08-11 22:14:44.658 *** Mouse movement (LeftButton) ***  Mouse coords: (836, 217) (40290, 51323)
+2022-08-11 22:14:44.675 *** Mouse movement (LeftButton) ***  Mouse coords: (866, 235) (40321, 51341)
+2022-08-11 22:14:44.691 *** Mouse movement (LeftButton) ***  Mouse coords: (906, 256) (40363, 51363)
+2022-08-11 22:14:44.708 *** Mouse movement (LeftButton) ***  Mouse coords: (917, 262) (40374, 51369)
+2022-08-11 22:14:44.725 *** Mouse movement (LeftButton) ***  Mouse coords: (921, 265) (40378, 51372)
+2022-08-11 22:14:44.917 *** Mouse movement (LeftButton) ***  Mouse coords: (921, 266) (40378, 51374)
+2022-08-11 22:14:44.927 *** Mouse movement (LeftButton) ***  Mouse coords: (922, 268) (40379, 51376)
+2022-08-11 22:14:44.942 *** Mouse movement (LeftButton) ***  Mouse coords: (922, 274) (40379, 51382)
+2022-08-11 22:14:44.958 *** Mouse movement (LeftButton) ***  Mouse coords: (923, 279) (40380, 51387)
+2022-08-11 22:14:44.974 *** Mouse movement (LeftButton) ***  Mouse coords: (923, 282) (40380, 51390)
+2022-08-11 22:14:44.991 *** Mouse movement (LeftButton) ***  Mouse coords: (924, 288) (40381, 51396)
+2022-08-11 22:14:45.141 *** Mouse movement (LeftButton) ***  Mouse coords: (924, 289) (40381, 51397)
+2022-08-11 22:14:45.149 *** Mouse movement (LeftButton) ***  Mouse coords: (924, 290) (40381, 51398)
+2022-08-11 22:14:45.158 *** Mouse movement (LeftButton) ***  Mouse coords: (924, 291) (40381, 51400)
+2022-08-11 22:14:45.174 *** Mouse movement (LeftButton) ***  Mouse coords: (924, 292) (40381, 51401)
+2022-08-11 22:14:47.983 *** Process image overlay spent 0.01 seconds.
+2022-08-11 22:14:47.987 *** Get cell color spent 0.00 seconds.
+2022-08-11 22:14:48.181 *** Process image overlay spent 0.01 seconds.
+2022-08-11 22:14:48.184 *** Get cell color spent 0.00 seconds.
+2022-08-11 22:14:48.884 *** Mouse movement (LeftButton) ***  Mouse coords: (145, 328) (39140, 51339)
+2022-08-11 22:14:48.891 *** Mouse movement (LeftButton) ***  Mouse coords: (145, 329) (39140, 51341)
+2022-08-11 22:14:48.908 *** Mouse movement (LeftButton) ***  Mouse coords: (145, 333) (39140, 51348)
+2022-08-11 22:14:48.924 *** Mouse movement (LeftButton) ***  Mouse coords: (149, 343) (39147, 51366)
+2022-08-11 22:14:48.941 *** Mouse movement (LeftButton) ***  Mouse coords: (150, 346) (39149, 51372)
+2022-08-11 22:14:48.958 *** Mouse movement (LeftButton) ***  Mouse coords: (164, 366) (39174, 51408)
+2022-08-11 22:14:48.974 *** Mouse movement (LeftButton) ***  Mouse coords: (190, 395) (39222, 51461)
+2022-08-11 22:14:48.991 *** Mouse movement (LeftButton) ***  Mouse coords: (202, 407) (39244, 51483)
+2022-08-11 22:14:49.008 *** Mouse movement (LeftButton) ***  Mouse coords: (220, 421) (39276, 51508)
+2022-08-11 22:14:49.024 *** Mouse movement (LeftButton) ***  Mouse coords: (231, 428) (39296, 51521)
+2022-08-11 22:14:49.041 *** Mouse movement (LeftButton) ***  Mouse coords: (242, 434) (39316, 51532)
+2022-08-11 22:14:49.057 *** Mouse movement (LeftButton) ***  Mouse coords: (245, 435) (39322, 51534)
+2022-08-11 22:14:49.124 *** Mouse movement (LeftButton) ***  Mouse coords: (245, 436) (39322, 51536)
+2022-08-11 22:14:49.142 *** Mouse movement (LeftButton) ***  Mouse coords: (246, 436) (39324, 51536)
+2022-08-11 22:14:49.158 *** Mouse movement (LeftButton) ***  Mouse coords: (247, 437) (39325, 51537)
+2022-08-11 22:14:49.175 *** Mouse movement (LeftButton) ***  Mouse coords: (250, 439) (39331, 51541)
+2022-08-11 22:14:49.191 *** Mouse movement (LeftButton) ***  Mouse coords: (263, 444) (39354, 51550)
+2022-08-11 22:14:49.208 *** Mouse movement (LeftButton) ***  Mouse coords: (278, 449) (39382, 51559)
+2022-08-11 22:14:49.224 *** Mouse movement (LeftButton) ***  Mouse coords: (289, 451) (39402, 51563)
+2022-08-11 22:14:49.241 *** Mouse movement (LeftButton) ***  Mouse coords: (293, 451) (39409, 51563)
+2022-08-11 22:14:52.284 *** Interactive label *** Apply to case start.
+2022-08-11 22:14:52.366 *** CACHEDIR=/home/zhihuang/.cache/matplotlib
+2022-08-11 22:14:52.367 *** Using fontManager instance from /home/zhihuang/.cache/matplotlib/fontlist-v330.json
+2022-08-11 22:14:52.875 *** Loaded backend qtagg version unknown.

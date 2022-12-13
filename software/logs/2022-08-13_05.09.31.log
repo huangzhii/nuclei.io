@@ -1,0 +1,81 @@
+2022-08-13 05:09:31.620 *** Start program *** Start program
+2022-08-13 05:09:38.664 *** Open case *** /media/zhihuang/Drive3/Google_Colon_lnm_pos_2015_slides/slides/S0425
+2022-08-13 05:09:40.823 *** Open processed data
+2022-08-13 05:09:40.824 *** Preload all statistics at once.
+2022-08-13 05:09:41.825 *** Nuclei stat data loaded, took 1.00 seconds. Total number of nuclei: 954361
+2022-08-13 05:09:48.213 *** starting thread (client mode): 0x66b52ee0
+2022-08-13 05:09:48.213 *** Local version/idstring: SSH-2.0-paramiko_2.11.0
+2022-08-13 05:09:48.238 *** Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2022-08-13 05:09:48.239 *** Connected (version 2.0, client OpenSSH_5.3)
+2022-08-13 05:09:48.257 *** === Key exchange possibilities ===
+2022-08-13 05:09:48.258 *** kex algos: diffie-hellman-group-exchange-sha256, diffie-hellman-group-exchange-sha1, diffie-hellman-group14-sha1, diffie-hellman-group1-sha1
+2022-08-13 05:09:48.258 *** server key: ssh-rsa, ssh-rsa-cert-v01@openssh.com, ssh-dss
+2022-08-13 05:09:48.258 *** client encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-08-13 05:09:48.258 *** server encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-08-13 05:09:48.258 *** client mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-08-13 05:09:48.258 *** server mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-08-13 05:09:48.258 *** client compress: none, zlib@openssh.com
+2022-08-13 05:09:48.259 *** server compress: none, zlib@openssh.com
+2022-08-13 05:09:48.259 *** client lang: <none>
+2022-08-13 05:09:48.259 *** server lang: <none>
+2022-08-13 05:09:48.259 *** kex follows: False
+2022-08-13 05:09:48.259 *** === Key exchange agreements ===
+2022-08-13 05:09:48.260 *** Kex: diffie-hellman-group-exchange-sha256
+2022-08-13 05:09:48.260 *** HostKey: ssh-rsa
+2022-08-13 05:09:48.260 *** Cipher: aes128-ctr
+2022-08-13 05:09:48.260 *** MAC: hmac-sha2-256
+2022-08-13 05:09:48.261 *** Compression: none
+2022-08-13 05:09:48.261 *** === End of kex handshake ===
+2022-08-13 05:09:48.320 *** Got server p (2048 bits)
+2022-08-13 05:09:48.432 *** kex engine KexGexSHA256 specified hash_algo <built-in function openssl_sha256>
+2022-08-13 05:09:48.433 *** Switch to new keys ...
+2022-08-13 05:09:48.433 *** Adding ssh-rsa host key for 173.201.181.247: b'cca345f774a2d98448d0bcc78f04075d'
+2022-08-13 05:09:48.512 *** userauth is OK
+2022-08-13 05:09:48.537 *** Authentication (password) successful!
+2022-08-13 05:09:48.538 *** [chan 0] Max packet in: 32768 bytes
+2022-08-13 05:09:48.559 *** [chan 0] Max packet out: 32768 bytes
+2022-08-13 05:09:48.560 *** Secsh channel 0 opened.
+2022-08-13 05:09:48.581 *** [chan 0] Sesch channel 0 request ok
+2022-08-13 05:09:48.602 *** [chan 0] Opened sftp connection (server version 3)
+2022-08-13 05:09:48.609 *** [chan 0] stat(b'/home/b6o162rzivzp/NucFinder_DB/05313943FB3B68B7/interactive_nuclei_dict.pickle')
+2022-08-13 05:09:48.630 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/05313943FB3B68B7/interactive_nuclei_dict.pickle', 'rb')
+2022-08-13 05:09:48.651 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/05313943FB3B68B7/interactive_nuclei_dict.pickle', 'rb') -> 00000000
+2022-08-13 05:09:49.683 *** [chan 0] close(00000000)
+2022-08-13 05:09:49.991 *** Interactive label *** Apply to case start.
+2022-08-13 05:09:56.047 *** Interactive label *** Apply to case done.
+2022-08-13 05:09:56.912 *** Interactive label *** Apply to case finish overlay create.
+2022-08-13 05:10:02.595 *** Mouse movement (LeftButton) ***  Mouse coords: (1649, 798) (36759, 41525)
+2022-08-13 05:10:02.660 *** Mouse movement (LeftButton) ***  Mouse coords: (1584, 782) (35665, 41269)
+2022-08-13 05:10:02.725 *** Mouse movement (LeftButton) ***  Mouse coords: (1569, 777) (36520, 41456)
+2022-08-13 05:10:04.414 *** Mouse movement (LeftButton) ***  Mouse coords: (1504, 780) (35666, 41593)
+2022-08-13 05:10:04.476 *** Mouse movement (LeftButton) ***  Mouse coords: (1483, 760) (35324, 41252)
+2022-08-13 05:10:04.547 *** Mouse movement (LeftButton) ***  Mouse coords: (1443, 717) (35000, 40858)
+2022-08-13 05:10:04.592 *** Mouse movement (LeftButton) ***  Mouse coords: (1431, 707) (35478, 41422)
+2022-08-13 05:10:04.633 *** Mouse movement (LeftButton) ***  Mouse coords: (1425, 703) (35580, 41525)
+2022-08-13 05:10:04.674 *** Mouse movement (LeftButton) ***  Mouse coords: (1423, 702) (35649, 41576)
+2022-08-13 05:10:05.940 *** Mouse movement (LeftButton) ***  Mouse coords: (1405, 699) (35375, 41542)
+2022-08-13 05:10:05.993 *** Mouse movement (LeftButton) ***  Mouse coords: (1365, 670) (34692, 41063)
+2022-08-13 05:10:06.059 *** Mouse movement (LeftButton) ***  Mouse coords: (1239, 604) (33222, 40432)
+2022-08-13 05:10:06.101 *** Mouse movement (LeftButton) ***  Mouse coords: (1175, 577) (34282, 41097)
+2022-08-13 05:10:06.141 *** Mouse movement (LeftButton) ***  Mouse coords: (1172, 577) (35324, 41559)
+2022-08-13 05:10:07.935 *** Mouse movement (LeftButton) ***  Mouse coords: (1327, 520) (38023, 40586)
+2022-08-13 05:10:07.995 *** Mouse movement (LeftButton) ***  Mouse coords: (1357, 558) (38535, 41218)
+2022-08-13 05:10:08.062 *** Mouse movement (LeftButton) ***  Mouse coords: (1401, 613) (38775, 41508)
+2022-08-13 05:10:08.104 *** Mouse movement (LeftButton) ***  Mouse coords: (1419, 632) (38331, 40894)
+2022-08-13 05:10:08.146 *** Mouse movement (LeftButton) ***  Mouse coords: (1421, 634) (38057, 40603)
+2022-08-13 05:10:09.290 *** Mouse movement (LeftButton) ***  Mouse coords: (1406, 677) (37766, 41304)
+2022-08-13 05:10:09.360 *** Mouse movement (LeftButton) ***  Mouse coords: (1308, 613) (36092, 40227)
+2022-08-13 05:10:09.425 *** Mouse movement (LeftButton) ***  Mouse coords: (1247, 586) (36724, 40860)
+2022-08-13 05:10:22.744 *** Mouse movement (LeftButton) ***  Mouse coords: (1310, 812) (38842, 45182)
+2022-08-13 05:10:22.810 *** Mouse movement (LeftButton) ***  Mouse coords: (1316, 819) (38962, 45302)
+2022-08-13 05:10:22.880 *** Mouse movement (LeftButton) ***  Mouse coords: (1415, 867) (40550, 46002)
+2022-08-13 05:10:22.923 *** Mouse movement (LeftButton) ***  Mouse coords: (1421, 870) (38962, 45233)
+2022-08-13 05:10:24.356 *** Mouse movement (LeftButton) ***  Mouse coords: (1594, 729) (41814, 42773)
+2022-08-13 05:10:24.426 *** Mouse movement (LeftButton) ***  Mouse coords: (1629, 703) (42412, 42346)
+2022-08-13 05:10:24.497 *** Mouse movement (LeftButton) ***  Mouse coords: (1696, 657) (42959, 42004)
+2022-08-13 05:10:24.538 *** Mouse movement (LeftButton) ***  Mouse coords: (1726, 642) (42326, 42534)
+2022-08-13 05:10:24.581 *** Mouse movement (LeftButton) ***  Mouse coords: (1746, 629) (42156, 42568)
+2022-08-13 05:10:24.623 *** Mouse movement (LeftButton) ***  Mouse coords: (1755, 622) (41968, 42670)
+2022-08-13 05:10:24.664 *** Mouse movement (LeftButton) ***  Mouse coords: (1756, 621) (41831, 42773)
+2022-08-13 05:10:28.669 *** Program closed.
+2022-08-13 05:10:28.702 *** EOF in transport thread

@@ -1,0 +1,23 @@
+2022-08-12 00:33:45.641 *** Start program *** Start program
+2022-08-12 00:34:07.839 *** Open case *** /media/zhihuang/Drive3/Google_Colon_lnm_pos_2015_slides/slides/S1054
+2022-08-12 00:34:09.987 *** Open processed data
+2022-08-12 00:34:09.989 *** Preload all statistics at once.
+2022-08-12 00:34:10.295 *** Nuclei stat data loaded, took 0.31 seconds. Total number of nuclei: 230851
+2022-08-12 00:34:15.209 *** Mouse movement (LeftButton) ***  Mouse coords: (590, 338) (70311, 52334)
+2022-08-12 00:34:15.238 *** Mouse movement (LeftButton) ***  Mouse coords: (586, 345) (70222, 52484)
+2022-08-12 00:34:15.255 *** Mouse movement (LeftButton) ***  Mouse coords: (580, 352) (70162, 52484)
+2022-08-12 00:34:15.275 *** Mouse movement (LeftButton) ***  Mouse coords: (576, 358) (70221, 52454)
+2022-08-12 00:34:15.290 *** Mouse movement (LeftButton) ***  Mouse coords: (570, 364) (70162, 52455)
+2022-08-12 00:34:15.306 *** Mouse movement (LeftButton) ***  Mouse coords: (565, 371) (70192, 52484)
+2022-08-12 00:34:15.322 *** Mouse movement (LeftButton) ***  Mouse coords: (559, 376) (70162, 52424)
+2022-08-12 00:34:15.337 *** Mouse movement (LeftButton) ***  Mouse coords: (554, 381) (70192, 52424)
+2022-08-12 00:34:15.354 *** Mouse movement (LeftButton) ***  Mouse coords: (550, 384) (70221, 52365)
+2022-08-12 00:34:15.371 *** Mouse movement (LeftButton) ***  Mouse coords: (547, 387) (70252, 52364)
+2022-08-12 00:34:15.387 *** Mouse movement (LeftButton) ***  Mouse coords: (545, 389) (70281, 52335)
+2022-08-12 00:34:15.404 *** Mouse movement (LeftButton) ***  Mouse coords: (542, 391) (70251, 52335)
+2022-08-12 00:34:15.428 *** Mouse movement (LeftButton) ***  Mouse coords: (542, 392) (70341, 52304)
+2022-08-12 00:34:15.437 *** Mouse movement (LeftButton) ***  Mouse coords: (541, 392) (70311, 52275)
+2022-08-12 00:34:15.990 *** Process image overlay spent 0.00 seconds.
+2022-08-12 00:34:16.033 *** Get cell color spent 0.04 seconds.
+2022-08-12 00:34:16.529 *** Process image overlay spent 0.00 seconds.
+2022-08-12 00:34:16.569 *** Get cell color spent 0.04 seconds.

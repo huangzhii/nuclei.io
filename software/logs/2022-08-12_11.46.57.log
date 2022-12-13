@@ -1,0 +1,125 @@
+2022-08-12 11:46:57.164 *** Start program *** Start program
+2022-08-12 11:47:15.005 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S0425
+2022-08-12 11:47:17.581 *** Open processed data
+2022-08-12 11:47:17.582 *** Preload all statistics at once.
+2022-08-12 11:47:18.391 *** Nuclei stat data loaded, took 0.81 seconds. Total number of nuclei: 954361
+2022-08-12 11:47:21.738 *** Mouse movement (LeftButton) ***  Mouse coords: (11, 516) (34107, 41863)
+2022-08-12 11:47:21.759 *** Mouse movement (LeftButton) ***  Mouse coords: (22, 509) (34405, 41654)
+2022-08-12 11:47:21.776 *** Mouse movement (LeftButton) ***  Mouse coords: (59, 497) (35182, 41505)
+2022-08-12 11:47:21.793 *** Mouse movement (LeftButton) ***  Mouse coords: (95, 484) (35151, 41475)
+2022-08-12 11:47:21.809 *** Mouse movement (LeftButton) ***  Mouse coords: (138, 467) (35361, 41356)
+2022-08-12 11:47:21.826 *** Mouse movement (LeftButton) ***  Mouse coords: (172, 452) (35092, 41415)
+2022-08-12 11:47:21.842 *** Mouse movement (LeftButton) ***  Mouse coords: (213, 431) (35301, 41236)
+2022-08-12 11:47:21.859 *** Mouse movement (LeftButton) ***  Mouse coords: (282, 395) (36137, 40788)
+2022-08-12 11:47:21.876 *** Mouse movement (LeftButton) ***  Mouse coords: (336, 366) (35689, 40997)
+2022-08-12 11:47:21.892 *** Mouse movement (LeftButton) ***  Mouse coords: (371, 348) (35122, 41326)
+2022-08-12 11:47:21.909 *** Mouse movement (LeftButton) ***  Mouse coords: (418, 327) (35480, 41236)
+2022-08-12 11:47:21.926 *** Mouse movement (LeftButton) ***  Mouse coords: (488, 304) (36167, 41176)
+2022-08-12 11:47:21.942 *** Mouse movement (LeftButton) ***  Mouse coords: (496, 300) (34316, 41744)
+2022-08-12 11:47:21.959 *** Mouse movement (LeftButton) ***  Mouse coords: (536, 288) (35271, 41505)
+2022-08-12 11:47:21.976 *** Mouse movement (LeftButton) ***  Mouse coords: (563, 280) (34883, 41624)
+2022-08-12 11:47:21.992 *** Mouse movement (LeftButton) ***  Mouse coords: (573, 277) (34376, 41773)
+2022-08-12 11:47:22.009 *** Mouse movement (LeftButton) ***  Mouse coords: (590, 271) (34584, 41684)
+2022-08-12 11:47:22.026 *** Mouse movement (LeftButton) ***  Mouse coords: (591, 269) (34107, 41803)
+2022-08-12 11:47:22.397 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:22.445 *** Get cell color spent 0.05 seconds.
+2022-08-12 11:47:22.519 *** Process image overlay spent 0.01 seconds.
+2022-08-12 11:47:22.536 *** Get cell color spent 0.02 seconds.
+2022-08-12 11:47:22.745 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:22.756 *** Get cell color spent 0.01 seconds.
+2022-08-12 11:47:22.984 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:22.988 *** Get cell color spent 0.00 seconds.
+2022-08-12 11:47:23.184 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:23.189 *** Get cell color spent 0.00 seconds.
+2022-08-12 11:47:25.263 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:25.265 *** Get cell color spent 0.00 seconds.
+2022-08-12 11:47:25.304 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:25.306 *** Get cell color spent 0.00 seconds.
+2022-08-12 11:47:25.347 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:25.348 *** Get cell color spent 0.00 seconds.
+2022-08-12 11:47:25.364 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:25.366 *** Get cell color spent 0.00 seconds.
+2022-08-12 11:47:29.196 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:29.199 *** Get cell color spent 0.00 seconds.
+2022-08-12 11:47:29.256 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:29.261 *** Get cell color spent 0.00 seconds.
+2022-08-12 11:47:29.346 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:29.351 *** Get cell color spent 0.00 seconds.
+2022-08-12 11:47:29.653 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:29.664 *** Get cell color spent 0.01 seconds.
+2022-08-12 11:47:29.864 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:29.875 *** Get cell color spent 0.01 seconds.
+2022-08-12 11:47:30.186 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:30.219 *** Get cell color spent 0.03 seconds.
+2022-08-12 11:47:30.273 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:30.304 *** Get cell color spent 0.03 seconds.
+2022-08-12 11:47:31.680 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:31.756 *** Get cell color spent 0.08 seconds.
+2022-08-12 11:47:32.880 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:32.961 *** Get cell color spent 0.08 seconds.
+2022-08-12 11:47:33.084 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:33.110 *** Get cell color spent 0.03 seconds.
+2022-08-12 11:47:33.157 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:33.183 *** Get cell color spent 0.03 seconds.
+2022-08-12 11:47:34.218 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:34.291 *** Get cell color spent 0.07 seconds.
+2022-08-12 11:47:34.395 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:34.465 *** Get cell color spent 0.07 seconds.
+2022-08-12 11:47:35.167 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:35.193 *** Get cell color spent 0.03 seconds.
+2022-08-12 11:47:35.240 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:35.265 *** Get cell color spent 0.02 seconds.
+2022-08-12 11:47:35.317 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:35.326 *** Get cell color spent 0.01 seconds.
+2022-08-12 11:47:35.489 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:35.498 *** Get cell color spent 0.01 seconds.
+2022-08-12 11:47:35.681 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:35.685 *** Get cell color spent 0.00 seconds.
+2022-08-12 11:47:35.809 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:35.811 *** Get cell color spent 0.00 seconds.
+2022-08-12 11:47:35.839 *** Process image overlay spent 0.00 seconds.
+2022-08-12 11:47:35.841 *** Get cell color spent 0.00 seconds.
+2022-08-12 11:47:36.724 *** Mouse movement (LeftButton) ***  Mouse coords: (288, 209) (26398, 42304)
+2022-08-12 11:47:36.741 *** Mouse movement (LeftButton) ***  Mouse coords: (293, 215) (26404, 42311)
+2022-08-12 11:47:36.759 *** Mouse movement (LeftButton) ***  Mouse coords: (303, 225) (26414, 42321)
+2022-08-12 11:47:36.776 *** Mouse movement (LeftButton) ***  Mouse coords: (334, 248) (26446, 42345)
+2022-08-12 11:47:36.793 *** Mouse movement (LeftButton) ***  Mouse coords: (357, 263) (26470, 42360)
+2022-08-12 11:47:36.809 *** Mouse movement (LeftButton) ***  Mouse coords: (373, 273) (26487, 42371)
+2022-08-12 11:47:36.826 *** Mouse movement (LeftButton) ***  Mouse coords: (398, 287) (26513, 42385)
+2022-08-12 11:47:36.842 *** Mouse movement (LeftButton) ***  Mouse coords: (423, 297) (26539, 42396)
+2022-08-12 11:47:36.859 *** Mouse movement (LeftButton) ***  Mouse coords: (449, 307) (26566, 42406)
+2022-08-12 11:47:36.876 *** Mouse movement (LeftButton) ***  Mouse coords: (454, 309) (26571, 42408)
+2022-08-12 11:47:36.892 *** Mouse movement (LeftButton) ***  Mouse coords: (462, 313) (26579, 42412)
+2022-08-12 11:47:36.909 *** Mouse movement (LeftButton) ***  Mouse coords: (464, 313) (26581, 42412)
+2022-08-12 11:47:37.837 *** Interactive label *** Apply to case start.
+2022-08-12 11:47:38.284 *** Mouse movement (LeftButton) ***  Mouse coords: (131, 493) (26235, 42599)
+2022-08-12 11:47:38.303 *** Mouse movement (LeftButton) ***  Mouse coords: (144, 507) (26249, 42614)
+2022-08-12 11:47:38.318 *** Mouse movement (LeftButton) ***  Mouse coords: (171, 529) (26277, 42637)
+2022-08-12 11:47:38.327 *** Mouse movement (LeftButton) ***  Mouse coords: (190, 542) (26296, 42650)
+2022-08-12 11:47:38.342 *** Mouse movement (LeftButton) ***  Mouse coords: (209, 554) (26316, 42663)
+2022-08-12 11:47:38.359 *** Mouse movement (LeftButton) ***  Mouse coords: (245, 576) (26354, 42686)
+2022-08-12 11:47:38.376 *** Mouse movement (LeftButton) ***  Mouse coords: (259, 583) (26368, 42693)
+2022-08-12 11:47:38.392 *** Mouse movement (LeftButton) ***  Mouse coords: (264, 586) (26373, 42696)
+2022-08-12 11:47:38.410 *** Mouse movement (LeftButton) ***  Mouse coords: (268, 588) (26378, 42698)
+2022-08-12 11:47:38.426 *** Mouse movement (LeftButton) ***  Mouse coords: (270, 590) (26380, 42700)
+2022-08-12 11:47:38.443 *** Mouse movement (LeftButton) ***  Mouse coords: (272, 592) (26382, 42702)
+2022-08-12 11:47:38.532 *** Mouse movement (LeftButton) ***  Mouse coords: (272, 593) (26382, 42703)
+2022-08-12 11:47:38.548 *** Mouse movement (LeftButton) ***  Mouse coords: (272, 595) (26382, 42705)
+2022-08-12 11:47:38.564 *** Mouse movement (LeftButton) ***  Mouse coords: (273, 602) (26383, 42713)
+2022-08-12 11:47:38.576 *** Mouse movement (LeftButton) ***  Mouse coords: (275, 607) (26385, 42718)
+2022-08-12 11:47:38.592 *** Mouse movement (LeftButton) ***  Mouse coords: (277, 612) (26387, 42723)
+2022-08-12 11:47:38.609 *** Mouse movement (LeftButton) ***  Mouse coords: (279, 615) (26389, 42726)
+2022-08-12 11:47:38.626 *** Mouse movement (LeftButton) ***  Mouse coords: (282, 619) (26392, 42730)
+2022-08-12 11:47:38.642 *** Mouse movement (LeftButton) ***  Mouse coords: (283, 621) (26393, 42733)
+2022-08-12 11:47:38.659 *** Mouse movement (LeftButton) ***  Mouse coords: (284, 621) (26394, 42733)
+2022-08-12 11:47:38.688 *** Mouse movement (LeftButton) ***  Mouse coords: (284, 622) (26394, 42734)
+2022-08-12 11:47:38.697 *** Mouse movement (LeftButton) ***  Mouse coords: (284, 623) (26394, 42735)
+2022-08-12 11:47:38.709 *** Mouse movement (LeftButton) ***  Mouse coords: (285, 625) (26395, 42737)
+2022-08-12 11:47:38.726 *** Mouse movement (LeftButton) ***  Mouse coords: (288, 632) (26398, 42744)
+2022-08-12 11:47:38.743 *** Mouse movement (LeftButton) ***  Mouse coords: (292, 642) (26402, 42754)
+2022-08-12 11:47:38.759 *** Mouse movement (LeftButton) ***  Mouse coords: (293, 646) (26404, 42759)
+2022-08-12 11:47:38.776 *** Mouse movement (LeftButton) ***  Mouse coords: (294, 649) (26405, 42762)
+2022-08-12 11:47:38.824 *** Mouse movement (LeftButton) ***  Mouse coords: (294, 650) (26405, 42763)
+2022-08-12 11:47:39.787 *** Interactive label *** Apply to case start.
+2022-08-12 11:47:41.698 *** Interactive label *** Apply to case done.
+2022-08-12 11:47:58.037 *** Program closed.

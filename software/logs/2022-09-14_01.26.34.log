@@ -1,0 +1,888 @@
+2022-09-14 01:26:34.605 *** Start program *** Start program
+2022-09-14 01:26:52.046 *** Open case *** /Applications/XAMPP/xamppfiles/htdocs/20220722_Eric_Yang
+2022-09-14 01:26:58.382 *** Keyboard input *** key pressed: key: 96; text: "`"
+2022-09-14 01:27:05.330 *** starting thread (client mode): 0x901d5c70
+2022-09-14 01:27:05.331 *** Local version/idstring: SSH-2.0-paramiko_2.11.0
+2022-09-14 01:27:05.355 *** Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2022-09-14 01:27:05.355 *** Connected (version 2.0, client OpenSSH_5.3)
+2022-09-14 01:27:05.375 *** === Key exchange possibilities ===
+2022-09-14 01:27:05.375 *** kex algos: diffie-hellman-group-exchange-sha256, diffie-hellman-group-exchange-sha1, diffie-hellman-group14-sha1, diffie-hellman-group1-sha1
+2022-09-14 01:27:05.375 *** server key: ssh-rsa, ssh-rsa-cert-v01@openssh.com, ssh-dss
+2022-09-14 01:27:05.375 *** client encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-14 01:27:05.375 *** server encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-14 01:27:05.375 *** client mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-14 01:27:05.375 *** server mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-14 01:27:05.375 *** client compress: none, zlib@openssh.com
+2022-09-14 01:27:05.375 *** server compress: none, zlib@openssh.com
+2022-09-14 01:27:05.375 *** client lang: <none>
+2022-09-14 01:27:05.375 *** server lang: <none>
+2022-09-14 01:27:05.376 *** kex follows: False
+2022-09-14 01:27:05.376 *** === Key exchange agreements ===
+2022-09-14 01:27:05.376 *** Kex: diffie-hellman-group-exchange-sha256
+2022-09-14 01:27:05.376 *** HostKey: ssh-rsa
+2022-09-14 01:27:05.376 *** Cipher: aes128-ctr
+2022-09-14 01:27:05.376 *** MAC: hmac-sha2-256
+2022-09-14 01:27:05.376 *** Compression: none
+2022-09-14 01:27:05.376 *** === End of kex handshake ===
+2022-09-14 01:27:05.439 *** Got server p (2048 bits)
+2022-09-14 01:27:05.577 *** kex engine KexGexSHA256 specified hash_algo <built-in function openssl_sha256>
+2022-09-14 01:27:05.578 *** Switch to new keys ...
+2022-09-14 01:27:05.579 *** Adding ssh-rsa host key for 173.201.181.247: b'cca345f774a2d98448d0bcc78f04075d'
+2022-09-14 01:27:05.660 *** userauth is OK
+2022-09-14 01:27:05.686 *** Authentication (password) successful!
+2022-09-14 01:27:05.686 *** [chan 0] Max packet in: 32768 bytes
+2022-09-14 01:27:05.707 *** [chan 0] Max packet out: 32768 bytes
+2022-09-14 01:27:05.707 *** Secsh channel 0 opened.
+2022-09-14 01:27:05.729 *** [chan 0] Sesch channel 0 request ok
+2022-09-14 01:27:05.762 *** [chan 0] Opened sftp connection (server version 3)
+2022-09-14 01:27:05.762 *** [chan 0] stat(b'/home/b6o162rzivzp/NucFinder_DB/3E4F1863BEC8CC26/interactive_nuclei_dict.pickle')
+2022-09-14 01:27:05.785 *** [chan 0] stat(b'/home/b6o162rzivzp/NucFinder_DB/3E4F1863BEC8CC26/model.pickle')
+2022-09-14 01:27:05.806 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/3E4F1863BEC8CC26/model.pickle', 'rb')
+2022-09-14 01:27:05.827 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/3E4F1863BEC8CC26/model.pickle', 'rb') -> 00000000
+2022-09-14 01:27:07.414 *** [chan 0] close(00000000)
+2022-09-14 01:27:11.779 *** Open processed data
+2022-09-14 01:27:11.779 *** Preload all statistics at once.
+2022-09-14 01:27:12.827 *** Nuclei stat data loaded, took 1.05 seconds. Total number of nuclei: 443911
+2022-09-14 01:27:14.279 *** Interactive label *** Apply to case start.
+2022-09-14 01:27:17.767 *** Interactive label *** Apply to case done.
+2022-09-14 01:27:17.912 *** Interactive label *** Apply to case finish overlay create.
+2022-09-14 01:27:20.527 *** Mouse movement (LeftButton) ***  Mouse coords: (129, 393) (64328, 38394)
+2022-09-14 01:27:20.597 *** Mouse movement (LeftButton) ***  Mouse coords: (130, 393) (64373, 38394)
+2022-09-14 01:27:20.625 *** Mouse movement (LeftButton) ***  Mouse coords: (142, 393) (64865, 38394)
+2022-09-14 01:27:20.668 *** Mouse movement (LeftButton) ***  Mouse coords: (199, 393) (66881, 38394)
+2022-09-14 01:27:20.708 *** Mouse movement (LeftButton) ***  Mouse coords: (406, 393) (73598, 38394)
+2022-09-14 01:27:20.730 *** Mouse movement (LeftButton) ***  Mouse coords: (660, 392) (75703, 38349)
+2022-09-14 01:27:20.754 *** Mouse movement (LeftButton) ***  Mouse coords: (821, 387) (71538, 38171)
+2022-09-14 01:27:20.777 *** Mouse movement (LeftButton) ***  Mouse coords: (904, 385) (68045, 38304)
+2022-09-14 01:27:20.797 *** Mouse movement (LeftButton) ***  Mouse coords: (928, 385) (65403, 38394)
+2022-09-14 01:27:20.821 *** Mouse movement (LeftButton) ***  Mouse coords: (943, 385) (65000, 38394)
+2022-09-14 01:27:20.845 *** Mouse movement (LeftButton) ***  Mouse coords: (945, 384) (64417, 38349)
+2022-09-14 01:27:21.257 *** Mouse movement (LeftButton) ***  Mouse coords: (639, 382) (50624, 38305)
+2022-09-14 01:27:21.322 *** Mouse movement (LeftButton) ***  Mouse coords: (642, 382) (50759, 38305)
+2022-09-14 01:27:21.350 *** Mouse movement (LeftButton) ***  Mouse coords: (712, 382) (53759, 38305)
+2022-09-14 01:27:21.388 *** Mouse movement (LeftButton) ***  Mouse coords: (823, 382) (55595, 38305)
+2022-09-14 01:27:21.410 *** Mouse movement (LeftButton) ***  Mouse coords: (1011, 382) (59043, 38305)
+2022-09-14 01:27:21.430 *** Mouse movement (LeftButton) ***  Mouse coords: (1101, 382) (54654, 38305)
+2022-09-14 01:27:21.453 *** Mouse movement (LeftButton) ***  Mouse coords: (1202, 382) (55148, 38305)
+2022-09-14 01:27:21.476 *** Mouse movement (LeftButton) ***  Mouse coords: (1237, 382) (52191, 38305)
+2022-09-14 01:27:21.498 *** Mouse movement (LeftButton) ***  Mouse coords: (1256, 382) (51475, 38305)
+2022-09-14 01:27:21.521 *** Mouse movement (LeftButton) ***  Mouse coords: (1259, 382) (50758, 38305)
+2022-09-14 01:27:21.558 *** Mouse movement (LeftButton) ***  Mouse coords: (1259, 382) (50624, 38305)
+2022-09-14 01:27:22.954 *** Mouse movement (LeftButton) ***  Mouse coords: (306, 304) (54496, 42152)
+2022-09-14 01:27:23.056 *** Mouse movement (LeftButton) ***  Mouse coords: (306, 305) (54496, 42165)
+2022-09-14 01:27:23.087 *** Mouse movement (LeftButton) ***  Mouse coords: (340, 304) (54927, 42139)
+2022-09-14 01:27:23.108 *** Mouse movement (LeftButton) ***  Mouse coords: (369, 297) (54862, 42064)
+2022-09-14 01:27:23.132 *** Mouse movement (LeftButton) ***  Mouse coords: (466, 264) (55724, 41734)
+2022-09-14 01:27:23.152 *** Mouse movement (LeftButton) ***  Mouse coords: (603, 205) (56230, 41406)
+2022-09-14 01:27:23.174 *** Mouse movement (LeftButton) ***  Mouse coords: (740, 135) (56229, 41266)
+2022-09-14 01:27:23.195 *** Mouse movement (LeftButton) ***  Mouse coords: (791, 105) (55142, 41772)
+2022-09-14 01:27:23.218 *** Mouse movement (LeftButton) ***  Mouse coords: (813, 84) (54774, 41886)
+2022-09-14 01:27:23.239 *** Mouse movement (LeftButton) ***  Mouse coords: (813, 78) (54496, 42077)
+2022-09-14 01:27:23.258 *** Mouse movement (LeftButton) ***  Mouse coords: (812, 77) (54483, 42139)
+2022-09-14 01:27:24.075 *** Mouse movement (LeftButton) ***  Mouse coords: (16, 112) (1855, 59396)
+2022-09-14 01:27:24.717 *** Mouse movement (LeftButton) ***  Mouse coords: (849, 163) (12396, 60041)
+2022-09-14 01:27:24.796 *** Mouse movement (LeftButton) ***  Mouse coords: (847, 165) (12371, 60080)
+2022-09-14 01:27:24.816 *** Mouse movement (LeftButton) ***  Mouse coords: (796, 219) (11750, 60737)
+2022-09-14 01:27:24.854 *** Mouse movement (LeftButton) ***  Mouse coords: (745, 271) (11751, 60712)
+2022-09-14 01:27:24.876 *** Mouse movement (LeftButton) ***  Mouse coords: (651, 375) (11206, 61370)
+2022-09-14 01:27:24.899 *** Mouse movement (LeftButton) ***  Mouse coords: (605, 424) (11814, 60674)
+2022-09-14 01:27:24.921 *** Mouse movement (LeftButton) ***  Mouse coords: (563, 472) (11865, 60662)
+2022-09-14 01:27:24.943 *** Mouse movement (LeftButton) ***  Mouse coords: (541, 501) (12117, 60421)
+2022-09-14 01:27:24.965 *** Mouse movement (LeftButton) ***  Mouse coords: (534, 513) (12308, 60205)
+2022-09-14 01:27:24.984 *** Mouse movement (LeftButton) ***  Mouse coords: (532, 522) (12371, 60168)
+2022-09-14 01:27:25.006 *** Mouse movement (LeftButton) ***  Mouse coords: (531, 529) (12383, 60143)
+2022-09-14 01:27:25.026 *** Mouse movement (LeftButton) ***  Mouse coords: (530, 530) (12383, 60066)
+2022-09-14 01:27:25.904 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:25.912 *** Process image overlay spent 0.01 seconds.
+2022-09-14 01:27:25.973 *** Get cell color spent 0.06 seconds.
+2022-09-14 01:27:27.051 *** Keyboard input *** key pressed: key: 88; text: "x"
+2022-09-14 01:27:27.513 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:27.975 *** Keyboard input *** key pressed: key: 88; text: "x"
+2022-09-14 01:27:28.471 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:28.765 *** Keyboard input *** key pressed: key: 88; text: "x"
+2022-09-14 01:27:29.342 *** Mouse movement (LeftButton) ***  Mouse coords: (709, 381) (15059, 57267)
+2022-09-14 01:27:29.943 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:29.997 *** Get cell color spent 0.05 seconds.
+2022-09-14 01:27:30.323 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:30.364 *** Get cell color spent 0.04 seconds.
+2022-09-14 01:27:30.685 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:30.692 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:27:32.029 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:32.031 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:27:32.603 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:33.209 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:33.213 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:33.218 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:27:33.536 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:34.108 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:34.114 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:34.120 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:27:34.453 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:35.193 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:35.198 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:35.204 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:27:35.467 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:36.128 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:36.136 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:36.141 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:27:36.375 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:36.796 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:36.802 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:36.808 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:27:37.160 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:37.661 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:37.666 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:37.672 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:27:37.953 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:39.595 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:39.600 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:39.606 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:27:40.122 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:40.898 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:40.905 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:40.911 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:27:41.142 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:42.164 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:42.168 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:42.171 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:27:42.596 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:43.800 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:43.803 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:43.806 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:27:44.212 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:44.905 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:44.911 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:27:44.917 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:27:45.206 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:47.367 *** Open processed data
+2022-09-14 01:27:47.369 *** Preload all statistics at once.
+2022-09-14 01:27:48.745 *** Nuclei stat data loaded, took 1.38 seconds. Total number of nuclei: 604435
+2022-09-14 01:27:50.727 *** Interactive label *** Apply to case start.
+2022-09-14 01:27:53.620 *** Interactive label *** Apply to case done.
+2022-09-14 01:27:53.760 *** Interactive label *** Apply to case finish overlay create.
+2022-09-14 01:27:55.385 *** Mouse movement (LeftButton) ***  Mouse coords: (880, 155) (26192, 27200)
+2022-09-14 01:27:55.498 *** Mouse movement (LeftButton) ***  Mouse coords: (880, 156) (26192, 27295)
+2022-09-14 01:27:55.535 *** Mouse movement (LeftButton) ***  Mouse coords: (845, 202) (22891, 31538)
+2022-09-14 01:27:55.558 *** Mouse movement (LeftButton) ***  Mouse coords: (778, 287) (19874, 35216)
+2022-09-14 01:27:55.579 *** Mouse movement (LeftButton) ***  Mouse coords: (713, 351) (20062, 33235)
+2022-09-14 01:27:55.601 *** Mouse movement (LeftButton) ***  Mouse coords: (621, 421) (17516, 33801)
+2022-09-14 01:27:55.624 *** Mouse movement (LeftButton) ***  Mouse coords: (568, 456) (21194, 30501)
+2022-09-14 01:27:55.662 *** Mouse movement (LeftButton) ***  Mouse coords: (545, 471) (24023, 28615)
+2022-09-14 01:27:55.710 *** Mouse movement (LeftButton) ***  Mouse coords: (538, 475) (25532, 27577)
+2022-09-14 01:27:55.731 *** Mouse movement (LeftButton) ***  Mouse coords: (538, 475) (26192, 27200)
+2022-09-14 01:27:55.751 *** Mouse movement (LeftButton) ***  Mouse coords: (537, 475) (26098, 27200)
+2022-09-14 01:27:55.771 *** Mouse movement (LeftButton) ***  Mouse coords: (537, 475) (26192, 27200)
+2022-09-14 01:27:55.791 *** Mouse movement (LeftButton) ***  Mouse coords: (537, 475) (26192, 27200)
+2022-09-14 01:27:55.811 *** Mouse movement (LeftButton) ***  Mouse coords: (536, 475) (26097, 27200)
+2022-09-14 01:27:55.833 *** Mouse movement (LeftButton) ***  Mouse coords: (536, 475) (26192, 27200)
+2022-09-14 01:27:57.205 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:58.123 *** Mouse movement (LeftButton) ***  Mouse coords: (551, 409) (15955, 23105)
+2022-09-14 01:27:58.167 *** Mouse movement (LeftButton) ***  Mouse coords: (541, 409) (15430, 23105)
+2022-09-14 01:27:58.191 *** Mouse movement (LeftButton) ***  Mouse coords: (529, 409) (15325, 23105)
+2022-09-14 01:27:58.213 *** Mouse movement (LeftButton) ***  Mouse coords: (522, 409) (15587, 23105)
+2022-09-14 01:27:58.232 *** Mouse movement (LeftButton) ***  Mouse coords: (519, 409) (15798, 23105)
+2022-09-14 01:27:58.258 *** Mouse movement (LeftButton) ***  Mouse coords: (514, 409) (15692, 23105)
+2022-09-14 01:27:58.300 *** Mouse movement (LeftButton) ***  Mouse coords: (512, 409) (15850, 23105)
+2022-09-14 01:27:58.490 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:58.780 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:59.025 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:59.296 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:27:59.585 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:00.164 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:00.433 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:02.844 *** Mouse movement (LeftButton) ***  Mouse coords: (574, 497) (33389, 23402)
+2022-09-14 01:28:02.914 *** Mouse movement (LeftButton) ***  Mouse coords: (575, 497) (33397, 23402)
+2022-09-14 01:28:02.958 *** Mouse movement (LeftButton) ***  Mouse coords: (607, 497) (33519, 23402)
+2022-09-14 01:28:02.979 *** Mouse movement (LeftButton) ***  Mouse coords: (668, 497) (33633, 23402)
+2022-09-14 01:28:02.999 *** Mouse movement (LeftButton) ***  Mouse coords: (772, 497) (33803, 23402)
+2022-09-14 01:28:03.021 *** Mouse movement (LeftButton) ***  Mouse coords: (830, 497) (33621, 23402)
+2022-09-14 01:28:03.040 *** Mouse movement (LeftButton) ***  Mouse coords: (871, 497) (33554, 23402)
+2022-09-14 01:28:03.063 *** Mouse movement (LeftButton) ***  Mouse coords: (884, 497) (33445, 23402)
+2022-09-14 01:28:03.083 *** Mouse movement (LeftButton) ***  Mouse coords: (892, 497) (33424, 23402)
+2022-09-14 01:28:03.105 *** Mouse movement (LeftButton) ***  Mouse coords: (892, 497) (33393, 23402)
+2022-09-14 01:28:03.131 *** Mouse movement (LeftButton) ***  Mouse coords: (892, 497) (33393, 23402)
+2022-09-14 01:28:03.157 *** Mouse movement (LeftButton) ***  Mouse coords: (892, 497) (33393, 23402)
+2022-09-14 01:28:27.055 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:27.060 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:28:27.070 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:28:28.033 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:28:28.036 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:28:28.315 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:28:28.317 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:28:28.715 *** Mouse movement (LeftButton) ***  Mouse coords: (687, 453) (33120, 23470)
+2022-09-14 01:28:28.759 *** Mouse movement (LeftButton) ***  Mouse coords: (748, 453) (33213, 23470)
+2022-09-14 01:28:28.784 *** Mouse movement (LeftButton) ***  Mouse coords: (834, 456) (33251, 23475)
+2022-09-14 01:28:28.805 *** Mouse movement (LeftButton) ***  Mouse coords: (870, 464) (33175, 23482)
+2022-09-14 01:28:28.824 *** Mouse movement (LeftButton) ***  Mouse coords: (886, 468) (33144, 23476)
+2022-09-14 01:28:28.850 *** Mouse movement (LeftButton) ***  Mouse coords: (903, 473) (33146, 23478)
+2022-09-14 01:28:28.869 *** Mouse movement (LeftButton) ***  Mouse coords: (916, 477) (33140, 23476)
+2022-09-14 01:28:28.889 *** Mouse movement (LeftButton) ***  Mouse coords: (918, 478) (33123, 23472)
+2022-09-14 01:28:28.910 *** Mouse movement (LeftButton) ***  Mouse coords: (919, 478) (33122, 23470)
+2022-09-14 01:28:28.934 *** Mouse movement (LeftButton) ***  Mouse coords: (919, 478) (33120, 23470)
+2022-09-14 01:28:28.954 *** Mouse movement (LeftButton) ***  Mouse coords: (919, 478) (33120, 23470)
+2022-09-14 01:28:28.974 *** Mouse movement (LeftButton) ***  Mouse coords: (914, 478) (33112, 23470)
+2022-09-14 01:28:29.055 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:28:29.057 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:28:29.323 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:29.789 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:29.794 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:28:29.799 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:28:30.214 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:30.584 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:30.590 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:28:30.595 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:28:30.978 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:31.711 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:31.717 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:28:31.722 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:28:32.040 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:32.403 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:32.407 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:28:32.411 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:28:32.753 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:33.169 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:33.174 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:28:33.179 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:28:33.489 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:33.778 *** Mouse movement (LeftButton) ***  Mouse coords: (800, 494) (32946, 23494)
+2022-09-14 01:28:33.873 *** Mouse movement (LeftButton) ***  Mouse coords: (801, 493) (32948, 23492)
+2022-09-14 01:28:33.907 *** Mouse movement (LeftButton) ***  Mouse coords: (813, 493) (32964, 23494)
+2022-09-14 01:28:33.928 *** Mouse movement (LeftButton) ***  Mouse coords: (824, 493) (32963, 23494)
+2022-09-14 01:28:33.949 *** Mouse movement (LeftButton) ***  Mouse coords: (887, 493) (33042, 23494)
+2022-09-14 01:28:33.972 *** Mouse movement (LeftButton) ***  Mouse coords: (921, 493) (32998, 23494)
+2022-09-14 01:28:33.992 *** Mouse movement (LeftButton) ***  Mouse coords: (951, 493) (32991, 23494)
+2022-09-14 01:28:34.013 *** Mouse movement (LeftButton) ***  Mouse coords: (961, 493) (32962, 23494)
+2022-09-14 01:28:34.033 *** Mouse movement (LeftButton) ***  Mouse coords: (982, 493) (32978, 23494)
+2022-09-14 01:28:34.055 *** Mouse movement (LeftButton) ***  Mouse coords: (984, 493) (32949, 23494)
+2022-09-14 01:28:34.079 *** Mouse movement (LeftButton) ***  Mouse coords: (984, 493) (32946, 23494)
+2022-09-14 01:28:34.100 *** Mouse movement (LeftButton) ***  Mouse coords: (984, 493) (32946, 23494)
+2022-09-14 01:28:34.387 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:34.392 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:28:34.397 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:28:34.724 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:35.027 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:35.033 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:28:35.039 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:28:35.388 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:35.891 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:35.896 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:28:35.901 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:28:36.107 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:28:36.776 *** Interactive label *** Apply to case start.
+2022-09-14 01:28:36.779 *** Interactive label *** Apply to case finish overlay create.
+2022-09-14 01:28:41.965 *** Mouse movement (LeftButton) ***  Mouse coords: (843, 415) (32731, 23376)
+2022-09-14 01:28:42.002 *** Mouse movement (LeftButton) ***  Mouse coords: (838, 418) (32723, 23380)
+2022-09-14 01:28:42.024 *** Mouse movement (LeftButton) ***  Mouse coords: (838, 419) (32731, 23378)
+2022-09-14 01:28:42.043 *** Mouse movement (LeftButton) ***  Mouse coords: (834, 422) (32725, 23380)
+2022-09-14 01:28:42.063 *** Mouse movement (LeftButton) ***  Mouse coords: (832, 423) (32728, 23378)
+2022-09-14 01:28:42.089 *** Mouse movement (LeftButton) ***  Mouse coords: (830, 423) (32728, 23376)
+2022-09-14 01:28:42.110 *** Mouse movement (LeftButton) ***  Mouse coords: (829, 423) (32729, 23376)
+2022-09-14 01:28:42.131 *** Mouse movement (LeftButton) ***  Mouse coords: (828, 423) (32730, 23376)
+2022-09-14 01:28:42.150 *** Mouse movement (LeftButton) ***  Mouse coords: (827, 423) (32729, 23376)
+2022-09-14 01:28:42.171 *** Mouse movement (LeftButton) ***  Mouse coords: (827, 423) (32731, 23376)
+2022-09-14 01:28:42.197 *** Mouse movement (LeftButton) ***  Mouse coords: (826, 423) (32730, 23376)
+2022-09-14 01:28:43.979 *** Interactive label *** Review annotations/active learning start.
+2022-09-14 01:29:39.738 *** Interactive label: Review annotations finished.
+2022-09-14 01:29:39.770 *** Interactive label *** Apply to case start.
+2022-09-14 01:29:39.779 *** Interactive label *** Apply to case finish overlay create.
+2022-09-14 01:29:40.933 *** Interactive label *** Review annotations/active learning start.
+2022-09-14 01:30:26.227 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 150175
+2022-09-14 01:30:26.271 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 216234
+2022-09-14 01:30:26.305 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 98273
+2022-09-14 01:30:26.339 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 250469
+2022-09-14 01:30:26.372 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 149624
+2022-09-14 01:30:26.403 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 259527
+2022-09-14 01:30:26.435 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 305807
+2022-09-14 01:30:26.468 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 192355
+2022-09-14 01:30:26.500 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 356880
+2022-09-14 01:30:26.531 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 356235
+2022-09-14 01:30:26.563 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 207217
+2022-09-14 01:30:26.651 *** Interactive label *** Apply to case start.
+2022-09-14 01:30:30.897 *** Interactive label *** Apply to case done.
+2022-09-14 01:30:31.010 *** Interactive label *** Apply to case finish overlay create.
+2022-09-14 01:30:33.347 *** Interactive label: Review annotations finished.
+2022-09-14 01:30:33.377 *** Interactive label *** Apply to case start.
+2022-09-14 01:30:33.384 *** Interactive label *** Apply to case finish overlay create.
+2022-09-14 01:30:33.904 *** Mouse movement (LeftButton) ***  Mouse coords: (907, 552) (32854, 23572)
+2022-09-14 01:30:34.023 *** Mouse movement (LeftButton) ***  Mouse coords: (907, 552) (32854, 23572)
+2022-09-14 01:30:34.061 *** Mouse movement (LeftButton) ***  Mouse coords: (898, 552) (32841, 23572)
+2022-09-14 01:30:34.089 *** Mouse movement (LeftButton) ***  Mouse coords: (885, 552) (32834, 23572)
+2022-09-14 01:30:34.109 *** Mouse movement (LeftButton) ***  Mouse coords: (872, 554) (32834, 23575)
+2022-09-14 01:30:34.129 *** Mouse movement (LeftButton) ***  Mouse coords: (867, 555) (32846, 23574)
+2022-09-14 01:30:34.150 *** Mouse movement (LeftButton) ***  Mouse coords: (859, 556) (32842, 23573)
+2022-09-14 01:30:34.195 *** Mouse movement (LeftButton) ***  Mouse coords: (856, 557) (32850, 23574)
+2022-09-14 01:30:34.216 *** Mouse movement (LeftButton) ***  Mouse coords: (854, 557) (32851, 23572)
+2022-09-14 01:30:34.238 *** Mouse movement (LeftButton) ***  Mouse coords: (851, 558) (32849, 23573)
+2022-09-14 01:30:34.264 *** Mouse movement (LeftButton) ***  Mouse coords: (850, 559) (32852, 23574)
+2022-09-14 01:30:35.000 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:35.010 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:35.013 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:30:35.623 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:36.168 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:36.174 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:36.179 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:30:36.483 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:36.708 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:36.714 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:36.719 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:30:37.139 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:37.947 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:37.953 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:37.959 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:30:38.273 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:38.873 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:38.880 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:38.885 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:30:39.266 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:39.436 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:39.442 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:39.447 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:30:39.878 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:40.348 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:40.354 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:40.359 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:30:40.660 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:41.018 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:41.024 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:41.029 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:30:41.312 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:41.696 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:41.701 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:41.707 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:30:42.105 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:42.381 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:42.386 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:42.391 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:30:42.781 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:43.238 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:43.244 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:43.250 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:30:43.535 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:43.880 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:43.885 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:43.890 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:30:44.184 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:44.463 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:44.468 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:44.473 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:30:44.708 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:44.952 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:44.958 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:44.964 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:30:45.260 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:45.547 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:45.552 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:45.557 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:30:45.862 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:46.109 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:30:46.118 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:30:46.123 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:30:46.399 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:31:09.791 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:31:09.798 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:09.824 *** Get cell color spent 0.03 seconds.
+2022-09-14 01:31:11.178 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:11.201 *** Get cell color spent 0.02 seconds.
+2022-09-14 01:31:11.267 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:31:11.616 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:31:11.622 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:11.661 *** Get cell color spent 0.04 seconds.
+2022-09-14 01:31:12.788 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:12.820 *** Get cell color spent 0.03 seconds.
+2022-09-14 01:31:12.968 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:13.011 *** Get cell color spent 0.04 seconds.
+2022-09-14 01:31:13.743 *** Mouse movement (LeftButton) ***  Mouse coords: (693, 281) (32206, 19183)
+2022-09-14 01:31:14.403 *** Mouse movement (LeftButton) ***  Mouse coords: (707, 229) (32411, 18421)
+2022-09-14 01:31:14.488 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:14.530 *** Get cell color spent 0.04 seconds.
+2022-09-14 01:31:14.987 *** Mouse movement (LeftButton) ***  Mouse coords: (726, 195) (32676, 17923)
+2022-09-14 01:31:15.099 *** Mouse movement (LeftButton) ***  Mouse coords: (726, 195) (32676, 17923)
+2022-09-14 01:31:15.134 *** Mouse movement (LeftButton) ***  Mouse coords: (715, 226) (32514, 18377)
+2022-09-14 01:31:15.156 *** Mouse movement (LeftButton) ***  Mouse coords: (702, 259) (32486, 18407)
+2022-09-14 01:31:15.175 *** Mouse movement (LeftButton) ***  Mouse coords: (694, 278) (32559, 18201)
+2022-09-14 01:31:15.197 *** Mouse movement (LeftButton) ***  Mouse coords: (671, 331) (32339, 18700)
+2022-09-14 01:31:15.219 *** Mouse movement (LeftButton) ***  Mouse coords: (626, 438) (32016, 19491)
+2022-09-14 01:31:15.239 *** Mouse movement (LeftButton) ***  Mouse coords: (612, 486) (32471, 18626)
+2022-09-14 01:31:15.263 *** Mouse movement (LeftButton) ***  Mouse coords: (602, 537) (32529, 18671)
+2022-09-14 01:31:15.283 *** Mouse movement (LeftButton) ***  Mouse coords: (599, 554) (32633, 18172)
+2022-09-14 01:31:15.303 *** Mouse movement (LeftButton) ***  Mouse coords: (599, 562) (32676, 18040)
+2022-09-14 01:31:15.326 *** Mouse movement (LeftButton) ***  Mouse coords: (599, 563) (32676, 17938)
+2022-09-14 01:31:15.346 *** Mouse movement (LeftButton) ***  Mouse coords: (599, 563) (32676, 17923)
+2022-09-14 01:31:15.382 *** Mouse movement (LeftButton) ***  Mouse coords: (599, 563) (32676, 17923)
+2022-09-14 01:31:15.418 *** Mouse movement (LeftButton) ***  Mouse coords: (599, 563) (32676, 17923)
+2022-09-14 01:31:15.438 *** Mouse movement (LeftButton) ***  Mouse coords: (598, 563) (32661, 17923)
+2022-09-14 01:31:15.489 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:15.528 *** Get cell color spent 0.04 seconds.
+2022-09-14 01:31:16.808 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:16.838 *** Get cell color spent 0.03 seconds.
+2022-09-14 01:31:17.093 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:17.101 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:31:17.687 *** Mouse movement (LeftButton) ***  Mouse coords: (687, 159) (32753, 16234)
+2022-09-14 01:31:17.757 *** Mouse movement (LeftButton) ***  Mouse coords: (688, 159) (32757, 16234)
+2022-09-14 01:31:17.788 *** Mouse movement (LeftButton) ***  Mouse coords: (688, 178) (32753, 16313)
+2022-09-14 01:31:17.808 *** Mouse movement (LeftButton) ***  Mouse coords: (688, 242) (32753, 16500)
+2022-09-14 01:31:17.846 *** Mouse movement (LeftButton) ***  Mouse coords: (688, 299) (32753, 16471)
+2022-09-14 01:31:17.868 *** Mouse movement (LeftButton) ***  Mouse coords: (688, 343) (32753, 16418)
+2022-09-14 01:31:17.887 *** Mouse movement (LeftButton) ***  Mouse coords: (688, 381) (32753, 16392)
+2022-09-14 01:31:17.910 *** Mouse movement (LeftButton) ***  Mouse coords: (688, 392) (32753, 16279)
+2022-09-14 01:31:17.929 *** Mouse movement (LeftButton) ***  Mouse coords: (688, 397) (32753, 16255)
+2022-09-14 01:31:17.952 *** Mouse movement (LeftButton) ***  Mouse coords: (688, 397) (32753, 16234)
+2022-09-14 01:31:18.001 *** Mouse movement (LeftButton) ***  Mouse coords: (688, 397) (32753, 16234)
+2022-09-14 01:31:18.020 *** Mouse movement (LeftButton) ***  Mouse coords: (686, 400) (32745, 16247)
+2022-09-14 01:31:18.041 *** Mouse movement (LeftButton) ***  Mouse coords: (684, 402) (32744, 16242)
+2022-09-14 01:31:18.128 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:18.135 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:31:18.439 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:18.445 *** Get cell color spent 0.01 seconds.
+2022-09-14 01:31:18.718 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:18.720 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:31:18.823 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:18.827 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:31:18.880 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:18.882 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:31:18.947 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:18.948 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:31:18.993 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:18.995 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:31:19.039 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:19.041 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:31:19.079 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:19.081 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:31:19.496 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:31:20.155 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:31:20.161 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:20.165 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:31:20.462 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:31:20.961 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:31:20.966 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:20.970 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:31:21.250 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:31:21.587 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:31:21.592 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:31:21.595 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:31:21.865 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:31:35.408 *** Interactive label *** Review annotations/active learning start.
+2022-09-14 01:33:15.824 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 520393
+2022-09-14 01:33:15.871 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 460781
+2022-09-14 01:33:15.904 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 216296
+2022-09-14 01:33:15.936 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 206783
+2022-09-14 01:33:15.968 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 135329
+2022-09-14 01:33:16.000 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 288023
+2022-09-14 01:33:16.032 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 283915
+2022-09-14 01:33:16.064 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 136519
+2022-09-14 01:33:16.097 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 445747
+2022-09-14 01:33:16.128 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 262581
+2022-09-14 01:33:16.158 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 136889
+2022-09-14 01:33:16.190 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 267733
+2022-09-14 01:33:16.223 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 520265
+2022-09-14 01:33:16.255 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 362711
+2022-09-14 01:33:16.368 *** Interactive label *** Apply to case start.
+2022-09-14 01:33:20.608 *** Interactive label *** Apply to case done.
+2022-09-14 01:33:20.727 *** Interactive label *** Apply to case finish overlay create.
+2022-09-14 01:37:41.740 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 347785
+2022-09-14 01:37:41.780 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 151394
+2022-09-14 01:37:41.814 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 444204
+2022-09-14 01:37:41.847 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 130528
+2022-09-14 01:37:41.879 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 554528
+2022-09-14 01:37:41.910 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 363319
+2022-09-14 01:37:41.943 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 453253
+2022-09-14 01:37:41.976 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 249932
+2022-09-14 01:37:42.007 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 282591
+2022-09-14 01:37:42.040 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 363120
+2022-09-14 01:37:42.071 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 135938
+2022-09-14 01:37:42.105 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 556219
+2022-09-14 01:37:42.137 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 42104
+2022-09-14 01:37:42.170 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 209674
+2022-09-14 01:37:42.202 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 524326
+2022-09-14 01:37:42.233 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 521409
+2022-09-14 01:37:42.266 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 266041
+2022-09-14 01:37:42.297 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 521172
+2022-09-14 01:37:42.329 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 365527
+2022-09-14 01:37:42.360 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 139057
+2022-09-14 01:37:42.392 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 361844
+2022-09-14 01:37:42.425 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 306876
+2022-09-14 01:37:42.458 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 460572
+2022-09-14 01:37:42.490 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 217187
+2022-09-14 01:37:42.521 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 600683
+2022-09-14 01:37:42.553 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 523397
+2022-09-14 01:37:42.586 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 283473
+2022-09-14 01:37:42.617 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 216030
+2022-09-14 01:37:42.649 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 130855
+2022-09-14 01:37:42.681 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 148852
+2022-09-14 01:37:42.712 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 171138
+2022-09-14 01:37:42.746 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 303953
+2022-09-14 01:37:42.778 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 463261
+2022-09-14 01:37:42.810 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 402656
+2022-09-14 01:37:42.842 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 347775
+2022-09-14 01:37:42.873 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 135654
+2022-09-14 01:37:42.905 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 153401
+2022-09-14 01:37:42.936 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 362582
+2022-09-14 01:37:42.968 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 151903
+2022-09-14 01:37:43.000 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 151718
+2022-09-14 01:37:43.032 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 149049
+2022-09-14 01:37:43.066 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 250790
+2022-09-14 01:37:43.098 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 282524
+2022-09-14 01:37:43.130 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 367533
+2022-09-14 01:37:43.163 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 554762
+2022-09-14 01:37:43.272 *** Interactive label *** Apply to case start.
+2022-09-14 01:37:47.516 *** Interactive label *** Apply to case done.
+2022-09-14 01:37:47.628 *** Interactive label *** Apply to case finish overlay create.
+2022-09-14 01:37:51.993 *** Interactive label: Review annotations finished.
+2022-09-14 01:37:52.021 *** Interactive label *** Apply to case start.
+2022-09-14 01:37:52.030 *** Interactive label *** Apply to case finish overlay create.
+2022-09-14 01:37:55.236 *** Mouse movement (LeftButton) ***  Mouse coords: (1009, 520) (32706, 16554)
+2022-09-14 01:37:55.281 *** Mouse movement (LeftButton) ***  Mouse coords: (979, 520) (32654, 16554)
+2022-09-14 01:37:55.304 *** Mouse movement (LeftButton) ***  Mouse coords: (895, 520) (32560, 16554)
+2022-09-14 01:37:55.325 *** Mouse movement (LeftButton) ***  Mouse coords: (810, 520) (32558, 16554)
+2022-09-14 01:37:55.344 *** Mouse movement (LeftButton) ***  Mouse coords: (760, 520) (32619, 16554)
+2022-09-14 01:37:55.363 *** Mouse movement (LeftButton) ***  Mouse coords: (696, 520) (32595, 16554)
+2022-09-14 01:37:55.385 *** Mouse movement (LeftButton) ***  Mouse coords: (629, 520) (32589, 16554)
+2022-09-14 01:37:55.413 *** Mouse movement (LeftButton) ***  Mouse coords: (605, 520) (32664, 16554)
+2022-09-14 01:37:55.434 *** Mouse movement (LeftButton) ***  Mouse coords: (589, 520) (32678, 16554)
+2022-09-14 01:37:55.454 *** Mouse movement (LeftButton) ***  Mouse coords: (585, 520) (32700, 16554)
+2022-09-14 01:37:55.474 *** Mouse movement (LeftButton) ***  Mouse coords: (584, 520) (32704, 16554)
+2022-09-14 01:37:55.494 *** Mouse movement (LeftButton) ***  Mouse coords: (584, 519) (32706, 16552)
+2022-09-14 01:37:55.517 *** Mouse movement (LeftButton) ***  Mouse coords: (584, 518) (32706, 16552)
+2022-09-14 01:37:56.692 *** Mouse movement (LeftButton) ***  Mouse coords: (818, 552) (33113, 16614)
+2022-09-14 01:37:56.728 *** Mouse movement (LeftButton) ***  Mouse coords: (818, 516) (33113, 16551)
+2022-09-14 01:37:56.751 *** Mouse movement (LeftButton) ***  Mouse coords: (818, 476) (33113, 16544)
+2022-09-14 01:37:56.772 *** Mouse movement (LeftButton) ***  Mouse coords: (818, 452) (33113, 16573)
+2022-09-14 01:37:56.793 *** Mouse movement (LeftButton) ***  Mouse coords: (818, 407) (33113, 16535)
+2022-09-14 01:37:56.813 *** Mouse movement (LeftButton) ***  Mouse coords: (818, 362) (33113, 16536)
+2022-09-14 01:37:56.847 *** Mouse movement (LeftButton) ***  Mouse coords: (818, 349) (33113, 16591)
+2022-09-14 01:37:56.872 *** Mouse movement (LeftButton) ***  Mouse coords: (818, 338) (33113, 16595)
+2022-09-14 01:37:56.892 *** Mouse movement (LeftButton) ***  Mouse coords: (818, 338) (33113, 16614)
+2022-09-14 01:37:56.911 *** Mouse movement (LeftButton) ***  Mouse coords: (817, 338) (33111, 16614)
+2022-09-14 01:37:56.934 *** Mouse movement (LeftButton) ***  Mouse coords: (817, 338) (33113, 16614)
+2022-09-14 01:38:15.285 *** Mouse movement (LeftButton) ***  Mouse coords: (583, 258) (30595, 16949)
+2022-09-14 01:38:15.417 *** Mouse movement (LeftButton) ***  Mouse coords: (583, 258) (30595, 16949)
+2022-09-14 01:38:15.451 *** Mouse movement (LeftButton) ***  Mouse coords: (583, 266) (30595, 16976)
+2022-09-14 01:38:15.474 *** Mouse movement (LeftButton) ***  Mouse coords: (583, 276) (30595, 16983)
+2022-09-14 01:38:15.492 *** Mouse movement (LeftButton) ***  Mouse coords: (583, 282) (30595, 16969)
+2022-09-14 01:38:15.517 *** Mouse movement (LeftButton) ***  Mouse coords: (582, 297) (30592, 17000)
+2022-09-14 01:38:15.536 *** Mouse movement (LeftButton) ***  Mouse coords: (567, 330) (30544, 17060)
+2022-09-14 01:38:15.558 *** Mouse movement (LeftButton) ***  Mouse coords: (544, 354) (30517, 17031)
+2022-09-14 01:38:15.577 *** Mouse movement (LeftButton) ***  Mouse coords: (523, 367) (30524, 16993)
+2022-09-14 01:38:15.600 *** Mouse movement (LeftButton) ***  Mouse coords: (481, 386) (30453, 17013)
+2022-09-14 01:38:15.628 *** Mouse movement (LeftButton) ***  Mouse coords: (413, 399) (30365, 16993)
+2022-09-14 01:38:15.654 *** Mouse movement (LeftButton) ***  Mouse coords: (399, 400) (30547, 16952)
+2022-09-14 01:38:15.674 *** Mouse movement (LeftButton) ***  Mouse coords: (377, 400) (30521, 16949)
+2022-09-14 01:38:15.696 *** Mouse movement (LeftButton) ***  Mouse coords: (360, 400) (30537, 16949)
+2022-09-14 01:38:15.716 *** Mouse movement (LeftButton) ***  Mouse coords: (349, 397) (30558, 16939)
+2022-09-14 01:38:15.739 *** Mouse movement (LeftButton) ***  Mouse coords: (341, 392) (30568, 16932)
+2022-09-14 01:38:15.760 *** Mouse movement (LeftButton) ***  Mouse coords: (339, 390) (30588, 16943)
+2022-09-14 01:38:15.782 *** Mouse movement (LeftButton) ***  Mouse coords: (338, 387) (30592, 16938)
+2022-09-14 01:38:16.268 *** Mouse movement (LeftButton) ***  Mouse coords: (874, 328) (32409, 16750)
+2022-09-14 01:38:16.334 *** Mouse movement (LeftButton) ***  Mouse coords: (873, 328) (32405, 16750)
+2022-09-14 01:38:16.363 *** Mouse movement (LeftButton) ***  Mouse coords: (863, 328) (32375, 16750)
+2022-09-14 01:38:16.383 *** Mouse movement (LeftButton) ***  Mouse coords: (844, 328) (32345, 16750)
+2022-09-14 01:38:16.404 *** Mouse movement (LeftButton) ***  Mouse coords: (832, 328) (32369, 16750)
+2022-09-14 01:38:16.424 *** Mouse movement (LeftButton) ***  Mouse coords: (807, 328) (32324, 16750)
+2022-09-14 01:38:16.447 *** Mouse movement (LeftButton) ***  Mouse coords: (754, 328) (32230, 16750)
+2022-09-14 01:38:16.466 *** Mouse movement (LeftButton) ***  Mouse coords: (713, 330) (32270, 16756)
+2022-09-14 01:38:16.488 *** Mouse movement (LeftButton) ***  Mouse coords: (665, 333) (32246, 16761)
+2022-09-14 01:38:16.508 *** Mouse movement (LeftButton) ***  Mouse coords: (649, 335) (32355, 16756)
+2022-09-14 01:38:16.527 *** Mouse movement (LeftButton) ***  Mouse coords: (638, 336) (32372, 16754)
+2022-09-14 01:38:16.550 *** Mouse movement (LeftButton) ***  Mouse coords: (632, 337) (32389, 16753)
+2022-09-14 01:38:16.570 *** Mouse movement (LeftButton) ***  Mouse coords: (632, 337) (32409, 16750)
+2022-09-14 01:38:16.593 *** Mouse movement (LeftButton) ***  Mouse coords: (631, 337) (32405, 16750)
+2022-09-14 01:38:16.612 *** Mouse movement (LeftButton) ***  Mouse coords: (631, 336) (32409, 16747)
+2022-09-14 01:38:18.305 *** Mouse movement (LeftButton) ***  Mouse coords: (923, 249) (31796, 16883)
+2022-09-14 01:38:18.425 *** Mouse movement (LeftButton) ***  Mouse coords: (923, 249) (31796, 16883)
+2022-09-14 01:38:18.461 *** Mouse movement (LeftButton) ***  Mouse coords: (888, 271) (31742, 16917)
+2022-09-14 01:38:18.484 *** Mouse movement (LeftButton) ***  Mouse coords: (848, 296) (31736, 16921)
+2022-09-14 01:38:18.504 *** Mouse movement (LeftButton) ***  Mouse coords: (806, 320) (31732, 16919)
+2022-09-14 01:38:18.524 *** Mouse movement (LeftButton) ***  Mouse coords: (760, 341) (31726, 16915)
+2022-09-14 01:38:18.543 *** Mouse movement (LeftButton) ***  Mouse coords: (677, 373) (31670, 16932)
+2022-09-14 01:38:18.567 *** Mouse movement (LeftButton) ***  Mouse coords: (638, 386) (31737, 16903)
+2022-09-14 01:38:18.587 *** Mouse movement (LeftButton) ***  Mouse coords: (605, 395) (31745, 16896)
+2022-09-14 01:38:18.607 *** Mouse movement (LeftButton) ***  Mouse coords: (593, 400) (31778, 16891)
+2022-09-14 01:38:18.629 *** Mouse movement (LeftButton) ***  Mouse coords: (587, 403) (31787, 16887)
+2022-09-14 01:38:18.654 *** Mouse movement (LeftButton) ***  Mouse coords: (586, 404) (31795, 16885)
+2022-09-14 01:38:18.674 *** Mouse movement (LeftButton) ***  Mouse coords: (585, 404) (31794, 16883)
+2022-09-14 01:38:18.693 *** Mouse movement (LeftButton) ***  Mouse coords: (585, 404) (31796, 16883)
+2022-09-14 01:38:18.713 *** Mouse movement (LeftButton) ***  Mouse coords: (585, 404) (31796, 16883)
+2022-09-14 01:38:18.741 *** Mouse movement (LeftButton) ***  Mouse coords: (584, 404) (31795, 16883)
+2022-09-14 01:38:19.347 *** Mouse movement (LeftButton) ***  Mouse coords: (689, 353) (31955, 16805)
+2022-09-14 01:38:19.434 *** Mouse movement (LeftButton) ***  Mouse coords: (688, 353) (31953, 16805)
+2022-09-14 01:38:19.460 *** Mouse movement (LeftButton) ***  Mouse coords: (675, 360) (31934, 16816)
+2022-09-14 01:38:19.499 *** Mouse movement (LeftButton) ***  Mouse coords: (646, 381) (31910, 16837)
+2022-09-14 01:38:19.519 *** Mouse movement (LeftButton) ***  Mouse coords: (622, 397) (31917, 16829)
+2022-09-14 01:38:19.538 *** Mouse movement (LeftButton) ***  Mouse coords: (608, 408) (31933, 16822)
+2022-09-14 01:38:19.562 *** Mouse movement (LeftButton) ***  Mouse coords: (586, 422) (31921, 16826)
+2022-09-14 01:38:19.582 *** Mouse movement (LeftButton) ***  Mouse coords: (567, 433) (31925, 16822)
+2022-09-14 01:38:19.602 *** Mouse movement (LeftButton) ***  Mouse coords: (559, 437) (31942, 16811)
+2022-09-14 01:38:19.622 *** Mouse movement (LeftButton) ***  Mouse coords: (557, 438) (31951, 16807)
+2022-09-14 01:38:19.652 *** Mouse movement (LeftButton) ***  Mouse coords: (555, 438) (31950, 16805)
+2022-09-14 01:38:19.679 *** Mouse movement (LeftButton) ***  Mouse coords: (554, 439) (31953, 16806)
+2022-09-14 01:38:19.698 *** Mouse movement (LeftButton) ***  Mouse coords: (554, 439) (31954, 16805)
+2022-09-14 01:38:19.719 *** Mouse movement (LeftButton) ***  Mouse coords: (553, 439) (31952, 16805)
+2022-09-14 01:38:19.745 *** Mouse movement (LeftButton) ***  Mouse coords: (553, 438) (31954, 16804)
+2022-09-14 01:38:20.229 *** Mouse movement (LeftButton) ***  Mouse coords: (665, 375) (32125, 16709)
+2022-09-14 01:38:20.334 *** Mouse movement (LeftButton) ***  Mouse coords: (665, 375) (32125, 16709)
+2022-09-14 01:38:20.364 *** Mouse movement (LeftButton) ***  Mouse coords: (650, 377) (32102, 16712)
+2022-09-14 01:38:20.386 *** Mouse movement (LeftButton) ***  Mouse coords: (608, 384) (32061, 16720)
+2022-09-14 01:38:20.405 *** Mouse movement (LeftButton) ***  Mouse coords: (583, 388) (32087, 16715)
+2022-09-14 01:38:20.425 *** Mouse movement (LeftButton) ***  Mouse coords: (561, 390) (32092, 16712)
+2022-09-14 01:38:20.446 *** Mouse movement (LeftButton) ***  Mouse coords: (553, 391) (32112, 16710)
+2022-09-14 01:38:20.475 *** Mouse movement (LeftButton) ***  Mouse coords: (533, 393) (32095, 16712)
+2022-09-14 01:38:20.501 *** Mouse movement (LeftButton) ***  Mouse coords: (520, 393) (32105, 16709)
+2022-09-14 01:38:21.828 *** Mouse movement (LeftButton) ***  Mouse coords: (830, 308) (31621, 16854)
+2022-09-14 01:38:21.934 *** Mouse movement (LeftButton) ***  Mouse coords: (829, 308) (31620, 16854)
+2022-09-14 01:38:22.037 *** Mouse movement (LeftButton) ***  Mouse coords: (683, 308) (31479, 16854)
+2022-09-14 01:38:22.079 *** Mouse movement (LeftButton) ***  Mouse coords: (480, 308) (31424, 16854)
+2022-09-14 01:38:22.151 *** Mouse movement (LeftButton) ***  Mouse coords: (461, 308) (31602, 16854)
+2022-09-14 01:38:22.232 *** Mouse movement (LeftButton) ***  Mouse coords: (447, 311) (31608, 16857)
+2022-09-14 01:38:22.621 *** Mouse movement (LeftButton) ***  Mouse coords: (854, 351) (32017, 16893)
+2022-09-14 01:38:22.737 *** Mouse movement (LeftButton) ***  Mouse coords: (828, 351) (31990, 16893)
+2022-09-14 01:38:22.819 *** Mouse movement (LeftButton) ***  Mouse coords: (644, 325) (31837, 16868)
+2022-09-14 01:38:22.885 *** Mouse movement (LeftButton) ***  Mouse coords: (416, 258) (31794, 16828)
+2022-09-14 01:38:22.964 *** Mouse movement (LeftButton) ***  Mouse coords: (378, 249) (31979, 16884)
+2022-09-14 01:38:23.018 *** Mouse movement (LeftButton) ***  Mouse coords: (378, 248) (32016, 16892)
+2022-09-14 01:38:23.530 *** Mouse movement (LeftButton) ***  Mouse coords: (692, 320) (32322, 16963)
+2022-09-14 01:38:24.461 *** Mouse movement (LeftButton) ***  Mouse coords: (690, 203) (32320, 16849)
+2022-09-14 01:38:24.543 *** Mouse movement (LeftButton) ***  Mouse coords: (700, 301) (32330, 16944)
+2022-09-14 01:38:24.625 *** Mouse movement (LeftButton) ***  Mouse coords: (719, 348) (32338, 16895)
+2022-09-14 01:38:24.690 *** Mouse movement (LeftButton) ***  Mouse coords: (735, 384) (32336, 16884)
+2022-09-14 01:38:24.773 *** Mouse movement (LeftButton) ***  Mouse coords: (733, 386) (32318, 16851)
+2022-09-14 01:38:24.906 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:24.908 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:24.910 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:25.329 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:26.528 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:26.533 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:26.537 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:26.850 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:27.596 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:27.601 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:27.605 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:27.950 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:28.296 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:28.302 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:28.306 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:28.656 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:28.994 *** Mouse movement (LeftButton) ***  Mouse coords: (710, 370) (32298, 16834)
+2022-09-14 01:38:29.113 *** Mouse movement (LeftButton) ***  Mouse coords: (710, 240) (32298, 16708)
+2022-09-14 01:38:29.155 *** Mouse movement (LeftButton) ***  Mouse coords: (716, 190) (32303, 16786)
+2022-09-14 01:38:29.200 *** Mouse movement (LeftButton) ***  Mouse coords: (729, 148) (32311, 16795)
+2022-09-14 01:38:29.241 *** Mouse movement (LeftButton) ***  Mouse coords: (731, 144) (32300, 16831)
+2022-09-14 01:38:29.625 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:29.630 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:29.634 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:29.999 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:30.394 *** Mouse movement (LeftButton) ***  Mouse coords: (697, 502) (32265, 17183)
+2022-09-14 01:38:30.475 *** Mouse movement (LeftButton) ***  Mouse coords: (698, 331) (32266, 17017)
+2022-09-14 01:38:30.544 *** Mouse movement (LeftButton) ***  Mouse coords: (702, 288) (32269, 17141)
+2022-09-14 01:38:30.624 *** Mouse movement (LeftButton) ***  Mouse coords: (703, 279) (32266, 17174)
+2022-09-14 01:38:30.826 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:30.829 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:30.831 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:31.145 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:31.508 *** Mouse movement (LeftButton) ***  Mouse coords: (701, 511) (32263, 17409)
+2022-09-14 01:38:31.585 *** Mouse movement (LeftButton) ***  Mouse coords: (701, 512) (32263, 17410)
+2022-09-14 01:38:31.654 *** Mouse movement (LeftButton) ***  Mouse coords: (701, 487) (32263, 17384)
+2022-09-14 01:38:31.734 *** Mouse movement (LeftButton) ***  Mouse coords: (796, 259) (32355, 17188)
+2022-09-14 01:38:31.814 *** Mouse movement (LeftButton) ***  Mouse coords: (843, 189) (32309, 17340)
+2022-09-14 01:38:31.911 *** Mouse movement (LeftButton) ***  Mouse coords: (848, 181) (32268, 17402)
+2022-09-14 01:38:31.952 *** Mouse movement (LeftButton) ***  Mouse coords: (848, 181) (32263, 17409)
+2022-09-14 01:38:31.994 *** Mouse movement (LeftButton) ***  Mouse coords: (848, 181) (32263, 17409)
+2022-09-14 01:38:33.011 *** Mouse movement (LeftButton) ***  Mouse coords: (756, 432) (32173, 17653)
+2022-09-14 01:38:33.138 *** Mouse movement (LeftButton) ***  Mouse coords: (764, 313) (32181, 17538)
+2022-09-14 01:38:33.205 *** Mouse movement (LeftButton) ***  Mouse coords: (808, 202) (32216, 17546)
+2022-09-14 01:38:33.289 *** Mouse movement (LeftButton) ***  Mouse coords: (831, 164) (32195, 17617)
+2022-09-14 01:38:33.368 *** Mouse movement (LeftButton) ***  Mouse coords: (834, 161) (32176, 17651)
+2022-09-14 01:38:33.448 *** Mouse movement (LeftButton) ***  Mouse coords: (833, 159) (32172, 17652)
+2022-09-14 01:38:34.106 *** Mouse movement (LeftButton) ***  Mouse coords: (813, 267) (32154, 17759)
+2022-09-14 01:38:34.185 *** Mouse movement (LeftButton) ***  Mouse coords: (814, 269) (32155, 17761)
+2022-09-14 01:38:34.272 *** Mouse movement (LeftButton) ***  Mouse coords: (797, 315) (32137, 17804)
+2022-09-14 01:38:34.339 *** Mouse movement (LeftButton) ***  Mouse coords: (756, 419) (32114, 17860)
+2022-09-14 01:38:34.421 *** Mouse movement (LeftButton) ***  Mouse coords: (750, 433) (32149, 17773)
+2022-09-14 01:38:34.521 *** Mouse movement (LeftButton) ***  Mouse coords: (750, 433) (32154, 17759)
+2022-09-14 01:38:34.564 *** Mouse movement (LeftButton) ***  Mouse coords: (749, 435) (32153, 17761)
+2022-09-14 01:38:34.630 *** Mouse movement (LeftButton) ***  Mouse coords: (744, 448) (32149, 17772)
+2022-09-14 01:38:34.710 *** Mouse movement (LeftButton) ***  Mouse coords: (738, 462) (32148, 17772)
+2022-09-14 01:38:34.790 *** Mouse movement (LeftButton) ***  Mouse coords: (738, 463) (32154, 17760)
+2022-09-14 01:38:34.992 *** Mouse movement (LeftButton) ***  Mouse coords: (738, 463) (32154, 17759)
+2022-09-14 01:38:35.065 *** Mouse movement (LeftButton) ***  Mouse coords: (741, 438) (32157, 17735)
+2022-09-14 01:38:35.132 *** Mouse movement (LeftButton) ***  Mouse coords: (751, 399) (32164, 17721)
+2022-09-14 01:38:35.212 *** Mouse movement (LeftButton) ***  Mouse coords: (789, 274) (32191, 17637)
+2022-09-14 01:38:35.294 *** Mouse movement (LeftButton) ***  Mouse coords: (827, 191) (32191, 17678)
+2022-09-14 01:38:35.374 *** Mouse movement (LeftButton) ***  Mouse coords: (851, 142) (32177, 17712)
+2022-09-14 01:38:35.455 *** Mouse movement (LeftButton) ***  Mouse coords: (861, 121) (32164, 17738)
+2022-09-14 01:38:35.537 *** Mouse movement (LeftButton) ***  Mouse coords: (861, 120) (32154, 17758)
+2022-09-14 01:38:35.615 *** Mouse movement (LeftButton) ***  Mouse coords: (860, 119) (32153, 17758)
+2022-09-14 01:38:38.170 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:38.178 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:38.181 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:38.485 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:39.052 *** Mouse movement (LeftButton) ***  Mouse coords: (738, 495) (32035, 18125)
+2022-09-14 01:38:39.133 *** Mouse movement (LeftButton) ***  Mouse coords: (774, 422) (32070, 18054)
+2022-09-14 01:38:39.200 *** Mouse movement (LeftButton) ***  Mouse coords: (792, 397) (32052, 18101)
+2022-09-14 01:38:39.281 *** Mouse movement (LeftButton) ***  Mouse coords: (812, 377) (32055, 18105)
+2022-09-14 01:38:39.360 *** Mouse movement (LeftButton) ***  Mouse coords: (813, 377) (32036, 18125)
+2022-09-14 01:38:39.441 *** Mouse movement (LeftButton) ***  Mouse coords: (813, 377) (32035, 18125)
+2022-09-14 01:38:40.148 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:40.153 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:40.157 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:40.749 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:41.134 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:41.137 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:41.139 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:41.449 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:41.823 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:41.828 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:41.832 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:42.147 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:42.898 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:42.903 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:42.907 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:43.187 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:43.587 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:43.593 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:43.597 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:43.923 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:44.340 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:44.346 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:44.350 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:44.662 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:44.952 *** Mouse movement (LeftButton) ***  Mouse coords: (806, 468) (32028, 18214)
+2022-09-14 01:38:45.038 *** Mouse movement (LeftButton) ***  Mouse coords: (737, 468) (31961, 18214)
+2022-09-14 01:38:45.103 *** Mouse movement (LeftButton) ***  Mouse coords: (647, 468) (31940, 18214)
+2022-09-14 01:38:45.183 *** Mouse movement (LeftButton) ***  Mouse coords: (603, 469) (31985, 18215)
+2022-09-14 01:38:45.263 *** Mouse movement (LeftButton) ***  Mouse coords: (602, 470) (32028, 18215)
+2022-09-14 01:38:45.553 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:45.558 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:45.561 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:45.941 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:46.921 *** Mouse movement (LeftButton) ***  Mouse coords: (722, 513) (32144, 18256)
+2022-09-14 01:38:47.000 *** Mouse movement (LeftButton) ***  Mouse coords: (722, 513) (32144, 18256)
+2022-09-14 01:38:47.040 *** Mouse movement (LeftButton) ***  Mouse coords: (722, 482) (32144, 18226)
+2022-09-14 01:38:47.105 *** Mouse movement (LeftButton) ***  Mouse coords: (722, 415) (32144, 18190)
+2022-09-14 01:38:47.184 *** Mouse movement (LeftButton) ***  Mouse coords: (765, 141) (32186, 17990)
+2022-09-14 01:38:47.266 *** Mouse movement (LeftButton) ***  Mouse coords: (778, 101) (32157, 18217)
+2022-09-14 01:38:47.348 *** Mouse movement (LeftButton) ***  Mouse coords: (779, 100) (32145, 18255)
+2022-09-14 01:38:47.430 *** Mouse movement (LeftButton) ***  Mouse coords: (779, 100) (32144, 18256)
+2022-09-14 01:38:47.607 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:47.610 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:47.613 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:48.025 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:48.347 *** Mouse movement (LeftButton) ***  Mouse coords: (823, 551) (32187, 18695)
+2022-09-14 01:38:48.492 *** Mouse movement (LeftButton) ***  Mouse coords: (823, 551) (32187, 18695)
+2022-09-14 01:38:48.551 *** Mouse movement (LeftButton) ***  Mouse coords: (720, 456) (32086, 18602)
+2022-09-14 01:38:48.619 *** Mouse movement (LeftButton) ***  Mouse coords: (671, 409) (32140, 18650)
+2022-09-14 01:38:48.714 *** Mouse movement (LeftButton) ***  Mouse coords: (658, 398) (32174, 18684)
+2022-09-14 01:38:48.779 *** Mouse movement (LeftButton) ***  Mouse coords: (658, 398) (32187, 18695)
+2022-09-14 01:38:48.984 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:48.988 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:48.991 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:49.390 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:49.772 *** Mouse movement (LeftButton) ***  Mouse coords: (863, 467) (32387, 18762)
+2022-09-14 01:38:49.892 *** Mouse movement (LeftButton) ***  Mouse coords: (862, 467) (32386, 18762)
+2022-09-14 01:38:49.991 *** Mouse movement (LeftButton) ***  Mouse coords: (800, 453) (32326, 18748)
+2022-09-14 01:38:50.031 *** Mouse movement (LeftButton) ***  Mouse coords: (680, 404) (32270, 18715)
+2022-09-14 01:38:50.072 *** Mouse movement (LeftButton) ***  Mouse coords: (593, 366) (32303, 18725)
+2022-09-14 01:38:50.114 *** Mouse movement (LeftButton) ***  Mouse coords: (555, 351) (32350, 18747)
+2022-09-14 01:38:50.182 *** Mouse movement (LeftButton) ***  Mouse coords: (547, 346) (32379, 18757)
+2022-09-14 01:38:50.261 *** Mouse movement (LeftButton) ***  Mouse coords: (546, 346) (32386, 18762)
+2022-09-14 01:38:50.776 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:50.782 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:50.786 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:51.112 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:51.430 *** Mouse movement (LeftButton) ***  Mouse coords: (863, 621) (32696, 19030)
+2022-09-14 01:38:51.542 *** Mouse movement (LeftButton) ***  Mouse coords: (863, 621) (32696, 19030)
+2022-09-14 01:38:51.598 *** Mouse movement (LeftButton) ***  Mouse coords: (768, 540) (32603, 18951)
+2022-09-14 01:38:51.663 *** Mouse movement (LeftButton) ***  Mouse coords: (667, 452) (32598, 18944)
+2022-09-14 01:38:51.718 *** Mouse movement (LeftButton) ***  Mouse coords: (618, 405) (32648, 18985)
+2022-09-14 01:38:51.763 *** Mouse movement (LeftButton) ***  Mouse coords: (572, 351) (32651, 18977)
+2022-09-14 01:38:51.846 *** Mouse movement (LeftButton) ***  Mouse coords: (572, 351) (32696, 19030)
+2022-09-14 01:38:51.886 *** Mouse movement (LeftButton) ***  Mouse coords: (572, 351) (32696, 19030)
+2022-09-14 01:38:51.926 *** Mouse movement (LeftButton) ***  Mouse coords: (572, 351) (32696, 19030)
+2022-09-14 01:38:52.215 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:52.220 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:52.224 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:52.553 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:53.203 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:53.209 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:53.213 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:53.592 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:53.908 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:38:53.912 *** Process image overlay spent 0.00 seconds.
+2022-09-14 01:38:53.914 *** Get cell color spent 0.00 seconds.
+2022-09-14 01:38:54.239 *** Keyboard input *** key pressed: key: 90; text: "z"
+2022-09-14 01:39:00.151 *** Interactive label *** Review annotations/active learning start.
+2022-09-14 01:42:57.978 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 327591
+2022-09-14 01:42:58.028 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 304145
+2022-09-14 01:42:58.062 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 363786
+2022-09-14 01:42:58.094 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 558055
+2022-09-14 01:42:58.127 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 551171
+2022-09-14 01:42:58.160 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 584782
+2022-09-14 01:42:58.607 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 592092
+2022-09-14 01:42:58.640 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 365092
+2022-09-14 01:42:58.674 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 282807
+2022-09-14 01:42:58.707 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 338998
+2022-09-14 01:42:58.739 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 206869
+2022-09-14 01:42:58.773 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 124602
+2022-09-14 01:42:58.806 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 9183
+2022-09-14 01:42:58.838 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 584743
+2022-09-14 01:42:58.870 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 88541
+2022-09-14 01:42:58.903 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 206824
+2022-09-14 01:42:58.936 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 130160
+2022-09-14 01:42:58.970 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 460798
+2022-09-14 01:42:59.004 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 25496
+2022-09-14 01:42:59.037 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 206901
+2022-09-14 01:42:59.072 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 444718
+2022-09-14 01:42:59.108 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 130438
+2022-09-14 01:42:59.142 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 367029
+2022-09-14 01:42:59.176 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 379654
+2022-09-14 01:42:59.211 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 135759
+2022-09-14 01:42:59.244 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 216051
+2022-09-14 01:42:59.278 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 277964
+2022-09-14 01:42:59.313 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 99783
+2022-09-14 01:42:59.348 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 285545
+2022-09-14 01:42:59.381 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 585405
+2022-09-14 01:42:59.413 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 170349
+2022-09-14 01:42:59.446 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 284917
+2022-09-14 01:42:59.478 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 230076
+2022-09-14 01:42:59.510 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 445913
+2022-09-14 01:42:59.541 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 286069
+2022-09-14 01:42:59.573 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 211789
+2022-09-14 01:42:59.606 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 520689
+2022-09-14 01:42:59.637 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 135411
+2022-09-14 01:42:59.670 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 263289
+2022-09-14 01:42:59.703 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 151330
+2022-09-14 01:42:59.737 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 283567
+2022-09-14 01:42:59.772 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 596191
+2022-09-14 01:42:59.806 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 266075
+2022-09-14 01:42:59.840 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 285873
+2022-09-14 01:42:59.874 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 137192
+2022-09-14 01:42:59.907 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 563866
+2022-09-14 01:42:59.941 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 154761
+2022-09-14 01:42:59.975 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 229681
+2022-09-14 01:43:00.009 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 379504
+2022-09-14 01:43:00.043 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 152263
+2022-09-14 01:43:00.077 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 286157
+2022-09-14 01:43:00.111 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 361928
+2022-09-14 01:43:00.143 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 304408
+2022-09-14 01:43:00.175 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 286389
+2022-09-14 01:43:00.207 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 601076
+2022-09-14 01:43:00.240 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 134942
+2022-09-14 01:43:00.272 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 593659
+2022-09-14 01:43:00.305 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 288879
+2022-09-14 01:43:00.337 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 208122
+2022-09-14 01:43:00.369 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 592366
+2022-09-14 01:43:00.502 *** Interactive label *** Apply to case start.
+2022-09-14 01:43:04.670 *** Interactive label *** Apply to case done.
+2022-09-14 01:43:04.786 *** Interactive label *** Apply to case finish overlay create.
+2022-09-14 01:48:49.074 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 133025
+2022-09-14 01:48:49.128 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 250178
+2022-09-14 01:48:49.162 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 365044
+2022-09-14 01:48:49.197 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 149719
+2022-09-14 01:48:49.232 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 236459
+2022-09-14 01:48:49.266 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 304621
+2022-09-14 01:48:49.299 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 363515
+2022-09-14 01:48:49.332 *** Interactive label *** (active learning) click on screen. case_id: 20220722_Eric_Yang, slide_id: A_Train_03.svs, Nuclei index selected: 193308
+2022-09-14 01:48:49.476 *** Interactive label *** Apply to case start.
+2022-09-14 01:48:53.853 *** Interactive label *** Apply to case done.
+2022-09-14 01:48:53.973 *** Interactive label *** Apply to case finish overlay create.
+2022-09-14 01:50:44.210 *** Program closed.
+2022-09-14 01:50:44.305 *** EOF in transport thread

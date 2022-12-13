@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+  <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
+
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/crypto-js.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <!--popper.js should load before bootstrap.js and after jquery.js-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+  <script src="js/crypto-js.min.js"></script>
+  <script src="https://kit.fontawesome.com/0c31ad6a35.js" crossorigin="anonymous"></script>
+  
+
+</head>
+
+<body>
+    <div class="container">
+    <div class="card shadow-lg border-1 rounded-lg" id="login_div">
+        <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+        <div class="card-body">
+            <form method='post' id='loginform'>
+                <div class="form-group">
+                    <label class="small mb-1" for="inputEmailAddress">Email</label>
+                    <input class="form-control py-4" id="inputEmailAddress" type="email" name="email" placeholder="Enter email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+                </div>
+                <div class="form-group">
+                    <label class="small mb-1" for="inputPassword">Password</label>
+                    <input class="form-control py-4" id="inputPassword" type="password" name="password" placeholder="Enter password" required/>
+                </div>
+                <p class="text-secondary small">We use <a href="javascript:void(0)" id='SHA256_link'>SHA-256</a> to encrypt and protect your password.</p>
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
+                        <label class="custom-control-label" for="rememberPasswordCheck">Remember password</label>
+                    </div>
+                </div>
+                <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                    <a class="small" href="javascript:void(0)" id="gotoPassword">Forgot Password?</a>
+                    <input class="btn btn-primary" type="submit" value="Login"></input>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer text-center">
+            <div class="small"><a href="javascript:void(0)" id="gotoRegister">Need an account? Sign up!</a></div>
+        </div>
+    </div>
+
+    <div class="card shadow-lg border-1 rounded-lg" id="register_div" style="display: none;">
+        <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
+        <div class="card-body">
+            <form method='post' id='registerform' oninput='password2.setCustomValidity(password.value != password2.value ? "Passwords do not match." : "")'>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="small mb-1" for="inputFirstName">First Name</label>
+                            <input class="form-control py-4" id="inputFirstName" type="text" name="firstname" placeholder="Enter first name" pattern=".{2,}" oninvalid="setCustomValidity('Must Be Longer Than 2 Characters');" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="small mb-1" for="inputLastName">Last Name</label>
+                            <input class="form-control py-4" id="inputLastName" type="text" name="lastname" placeholder="Enter last name" pattern=".{2,}" oninvalid="setCustomValidity('Must Be Longer Than 2 Characters');" required/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="small mb-1" for="inputEmailAddress">Email</label>
+                    <input class="form-control py-4" id="inputEmailAddress" type="email" name="email" aria-describedby="emailHelp" placeholder="Enter email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+                </div>
+                <div class="form-group">
+                    <label class="small mb-1" for="inputAffiliation">Affiliation / Institute</label>
+                    <input class="form-control py-4" id="inputAffiliation" type="text" name="affiliation" aria-describedby="University" placeholder="Your affiliation"/>
+                </div>
+                <div class="form-group">
+                    <label class="small mb-1" for="inputTitle">Title</label>
+                    <input class="form-control py-4" id="inputTitle" type="text" name="title" aria-describedby="Title" placeholder="Your title"/>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="small mb-1" for="inputPassword">Password</label>
+                            <input class="form-control py-4" id="inputPassword" type="password" name="password" placeholder="Enter password" pattern=".{6,}" oninvalid="setCustomValidity('Must Be Longer Than 6 Characters');" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
+                            <input class="form-control py-4" id="inputConfirmPassword" type="password" name="password2" placeholder="Confirm password" required/>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-secondary small">We use <a href="https://en.wikipedia.org/wiki/SHA-2" target="_blank">SHA-256</a> to encrypt and protect your password.</p>
+                <div class="form-group mt-4 mb-0"><input class="btn btn-primary btn-block" type="submit" value="Create Account"></input></div>
+            </form>
+        </div>
+        <div class="card-footer text-center">
+            <div class="small"><a href="#" id="gotoLogin">Have an account? Go to login</a></div>
+        </div>
+    </div>
+</div>
+
+</html>
+
+
+<script>
+    // Preventing using space key to scroll down.
+    window.onkeydown = function(e) {
+        var elem = e.target.nodename;
+        if( elem !== 'TEXTAREA' && elem != 'INPUT' ) {
+            return !(e.keyCode == 32);
+        }
+    };
+    function disableSelection(target){
+    if (typeof target.onselectstart!="undefined") //For IE 
+        target.onselectstart=function(){return false}
+    else if (typeof target.style.MozUserSelect!="undefined") //For Firefox
+        target.style.MozUserSelect="none"
+    else //All other route (For Opera)
+        target.onmousedown=function(){return false}
+    target.style.cursor = "default"
+    }
+    disableSelection(document.body)
+</script>
+
+
+<script>
+
+    backend = null;
+    new QWebChannel(qt.webChannelTransport, function(channel) {
+        backend = channel.objects.backend;
+        
+        backend.sendjson_to_js.connect(function(jsonarray) {
+            var jsonObj = JSON.parse(jsonarray);
+            if (jsonObj.hasOwnProperty('action')) {
+                //backend.log(jsonarray);
+            }
+        });
+
+    });
+
+    function getFormData($form){
+        var unindexed_array = $form.serializeArray();
+        var indexed_array = {};
+
+        $.map(unindexed_array, function(n, i){
+            indexed_array[n['name']] = n['value'];
+        });
+
+        return indexed_array;
+    }
+
+
+
+  $(document).ready(function(){
+
+    $('#gotoRegister').on("click", function(){
+        $('#login_div').hide();
+        $('#register_div').show();
+    })
+
+    $('#gotoLogin').on("click", function(){
+        $('#login_div').show();
+        $('#register_div').hide();
+    })
+
+
+    $("#gotoPassword").click(function(){
+        //forgot password
+        backend.openlink('https://www.nuclei.io/main/html/login/password.html');
+    });
+    
+    
+    $("#SHA256_link").click(function(){
+        backend.openlink('https://en.wikipedia.org/wiki/SHA-2');
+    });
+
+
+    var $form = $('#loginform');
+    $form.submit(function (e){
+        e.preventDefault();
+        var form_data = getFormData($(this));
+        form_data.password = CryptoJS.SHA256(form_data.password).toString();
+        //console.log(form_data);
+        console.log('Start login...')
+        $.ajax({
+            type: 'post',
+            url: 'https://nuclei.io/php/login.php',
+            data: form_data,
+            success: function(data) {
+                var jsonstring_str = data.substring(data.indexOf("{") - 1);
+                jsonstring = JSON.parse(jsonstring_str);
+                if (jsonstring.loginstatus.valueOf() === 'success'){
+                    //$( "#profilebox" ).load( "profile/profile.html");
+                    userid = jsonstring['id'];
+                    backend.update_user_profile(jsonstring_str);
+                }
+                if (jsonstring.loginstatus.valueOf() === 'fail'){
+                    console.log(jsonstring.message);
+                    backend.log('FAIL');
+                    backend.log(jsonstring.message);
+                    alert(jsonstring.message);
+                }
+            },
+            error: function(e) {
+                console.log(e);
+                backend.log('ERROR');
+                backend.log(e);
+            }
+        });
+    });
+
+
+    var $form_register = $('#registerform');
+      $form_register.submit(function (e){
+        e.preventDefault();
+        var form_data = getFormData($(this));
+        if (form_data.password.valueOf() != form_data.password2.valueOf()){
+            alert('Password different!');
+        }
+        else{
+            delete form_data.password2;
+            form_data.password = CryptoJS.SHA256(form_data.password).toString()
+            //console.log(form_data);
+            $.ajax({
+                type: 'post',
+                url: 'https://nuclei.io/php/register.php',
+                data: form_data,
+                success: function(data) {
+                    var jsonstring = data.substring(data.indexOf("{"));
+                    //console.log(jsonstring);
+                    jsonstring = JSON.parse(jsonstring);
+                    //console.log(jsonstring);
+                    if (jsonstring.registerstatus.valueOf() === 'success'){
+                        alert('You have successfully registered a new account.\nYou can now log in.');
+                        $('#login_div').show();
+                        $('#register_div').hide();
+                    }
+                    if (jsonstring.registerstatus.valueOf() === 'fail'){
+                        console.log(jsonstring.message);
+                        alert(jsonstring.message);
+                    }
+                },
+                error: function(e) {
+                    console.log(e);
+                }
+            });
+        }
+      });
+
+  });
+</script>

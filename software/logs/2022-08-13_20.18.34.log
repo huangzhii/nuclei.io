@@ -1,0 +1,18 @@
+2022-08-13 20:18:34.850 *** Start program *** Start program
+2022-08-13 20:18:42.131 *** User Login *** id=640475916; email=zhihuang@stanford.edu; firstname=Zhi; lastname=Huang.
+2022-08-13 20:18:51.509 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S0425
+2022-08-13 20:18:54.065 *** Open processed data
+2022-08-13 20:18:54.066 *** Preload all statistics at once.
+2022-08-13 20:18:54.869 *** Nuclei stat data loaded, took 0.80 seconds. Total number of nuclei: 954361
+2022-08-13 20:18:59.165 *** CACHEDIR=/home/zhihuang/.cache/matplotlib
+2022-08-13 20:18:59.166 *** Using fontManager instance from /home/zhihuang/.cache/matplotlib/fontlist-v330.json
+2022-08-13 20:18:59.424 *** Loaded backend qtagg version unknown.
+2022-08-13 20:19:49.252 *** Mouse movement (LeftButton) ***  Mouse coords: (598, 364) (70265, 41701)
+2022-08-13 20:19:49.275 *** Mouse movement (LeftButton) ***  Mouse coords: (598, 370) (70265, 42501)
+2022-08-13 20:19:49.292 *** Mouse movement (LeftButton) ***  Mouse coords: (603, 380) (71065, 43141)
+2022-08-13 20:19:49.309 *** Mouse movement (LeftButton) ***  Mouse coords: (608, 388) (71065, 42821)
+2022-08-13 20:19:49.325 *** Mouse movement (LeftButton) ***  Mouse coords: (612, 393) (70905, 42341)
+2022-08-13 20:19:49.342 *** Mouse movement (LeftButton) ***  Mouse coords: (616, 396) (70905, 42021)
+2022-08-13 20:19:49.358 *** Mouse movement (LeftButton) ***  Mouse coords: (624, 402) (71545, 42501)
+2022-08-13 20:19:49.375 *** Mouse movement (LeftButton) ***  Mouse coords: (628, 405) (70905, 42021)
+2022-08-13 20:19:49.392 *** Mouse movement (LeftButton) ***  Mouse coords: (630, 405) (70585, 41541)

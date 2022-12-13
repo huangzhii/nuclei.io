@@ -1,0 +1,10 @@
+2022-08-11 20:48:27.954 *** Start program *** Start program
+2022-08-11 20:48:53.898 *** Open case *** /media/zhihuang/Drive3/Google_Colon_lnm_pos_2015_slides/slides/S1054
+2022-08-11 20:49:08.678 *** Open processed data
+2022-08-11 20:49:08.678 *** Preload all statistics at once.
+2022-08-11 20:49:09.233 *** Nuclei stat data loaded, took 0.56 seconds. Total number of nuclei: 230851
+2022-08-11 20:49:14.029 *** Process image overlay spent 0.00 seconds.
+2022-08-11 20:49:14.047 *** Get cell color spent 0.02 seconds.
+2022-08-11 20:49:14.156 *** Process image overlay spent 0.00 seconds.
+2022-08-11 20:49:14.168 *** Get cell color spent 0.01 seconds.
+2022-08-11 20:49:30.962 *** Program closed.

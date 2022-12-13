@@ -1,0 +1,226 @@
+2022-08-31 15:17:26.866 *** Start program *** Start program
+2022-08-31 15:18:09.223 *** Open case *** /Applications/XAMPP/xamppfiles/htdocs/20220722_Eric_Yang
+2022-08-31 15:18:15.831 *** Open processed data
+2022-08-31 15:18:15.832 *** Preload all statistics at once.
+2022-08-31 15:18:16.510 *** Nuclei stat data loaded, took 0.68 seconds. Total number of nuclei: 843996
+2022-08-31 15:18:21.737 *** Mouse movement (LeftButton) ***  Mouse coords: (636, 526) (52674, 11244)
+2022-08-31 15:18:21.831 *** Mouse movement (LeftButton) ***  Mouse coords: (636, 526) (52674, 11244)
+2022-08-31 15:18:21.866 *** Mouse movement (LeftButton) ***  Mouse coords: (581, 486) (49998, 9298)
+2022-08-31 15:18:21.888 *** Mouse movement (LeftButton) ***  Mouse coords: (516, 437) (49511, 8860)
+2022-08-31 15:18:21.913 *** Mouse movement (LeftButton) ***  Mouse coords: (472, 406) (50533, 9735)
+2022-08-31 15:18:21.934 *** Mouse movement (LeftButton) ***  Mouse coords: (373, 332) (47857, 7644)
+2022-08-31 15:18:21.956 *** Mouse movement (LeftButton) ***  Mouse coords: (323, 291) (50242, 9249)
+2022-08-31 15:18:21.977 *** Mouse movement (LeftButton) ***  Mouse coords: (288, 254) (50971, 9444)
+2022-08-31 15:18:21.996 *** Mouse movement (LeftButton) ***  Mouse coords: (279, 240) (52236, 10562)
+2022-08-31 15:18:22.018 *** Mouse movement (LeftButton) ***  Mouse coords: (273, 220) (52382, 10271)
+2022-08-31 15:18:22.038 *** Mouse movement (LeftButton) ***  Mouse coords: (273, 208) (52674, 10660)
+2022-08-31 15:18:22.056 *** Mouse movement (LeftButton) ***  Mouse coords: (273, 205) (52674, 11099)
+2022-08-31 15:18:22.452 *** Mouse movement (LeftButton) ***  Mouse coords: (623, 597) (69703, 30317)
+2022-08-31 15:18:22.548 *** Mouse movement (LeftButton) ***  Mouse coords: (623, 597) (69703, 30317)
+2022-08-31 15:18:22.583 *** Mouse movement (LeftButton) ***  Mouse coords: (600, 595) (68584, 30219)
+2022-08-31 15:18:22.605 *** Mouse movement (LeftButton) ***  Mouse coords: (547, 578) (67125, 29490)
+2022-08-31 15:18:22.624 *** Mouse movement (LeftButton) ***  Mouse coords: (468, 544) (65859, 28663)
+2022-08-31 15:18:22.646 *** Mouse movement (LeftButton) ***  Mouse coords: (436, 530) (68146, 29636)
+2022-08-31 15:18:22.666 *** Mouse movement (LeftButton) ***  Mouse coords: (419, 522) (68876, 29927)
+2022-08-31 15:18:22.687 *** Mouse movement (LeftButton) ***  Mouse coords: (407, 517) (69119, 30074)
+2022-08-31 15:18:22.708 *** Mouse movement (LeftButton) ***  Mouse coords: (406, 517) (69654, 30317)
+2022-08-31 15:18:27.126 *** Mouse movement (LeftButton) ***  Mouse coords: (710, 320) (69570, 31619)
+2022-08-31 15:18:27.282 *** Mouse movement (LeftButton) ***  Mouse coords: (711, 320) (69571, 31619)
+2022-08-31 15:18:27.322 *** Mouse movement (LeftButton) ***  Mouse coords: (706, 323) (69565, 31622)
+2022-08-31 15:18:27.343 *** Mouse movement (LeftButton) ***  Mouse coords: (702, 326) (69566, 31622)
+2022-08-31 15:18:27.366 *** Mouse movement (LeftButton) ***  Mouse coords: (696, 330) (69564, 31623)
+2022-08-31 15:18:27.385 *** Mouse movement (LeftButton) ***  Mouse coords: (689, 335) (69563, 31624)
+2022-08-31 15:18:27.410 *** Mouse movement (LeftButton) ***  Mouse coords: (685, 336) (69566, 31620)
+2022-08-31 15:18:27.435 *** Mouse movement (LeftButton) ***  Mouse coords: (683, 337) (69568, 31620)
+2022-08-31 15:18:27.457 *** Mouse movement (LeftButton) ***  Mouse coords: (683, 337) (69570, 31619)
+2022-08-31 15:18:34.663 *** Mouse movement (LeftButton) ***  Mouse coords: (856, 342) (69696, 31575)
+2022-08-31 15:18:35.135 *** Mouse movement (LeftButton) ***  Mouse coords: (816, 430) (69655, 31664)
+2022-08-31 15:18:35.256 *** Mouse movement (LeftButton) ***  Mouse coords: (815, 430) (69655, 31663)
+2022-08-31 15:18:35.284 *** Mouse movement (LeftButton) ***  Mouse coords: (816, 420) (69657, 31653)
+2022-08-31 15:18:35.326 *** Mouse movement (LeftButton) ***  Mouse coords: (829, 392) (69669, 31635)
+2022-08-31 15:18:35.370 *** Mouse movement (LeftButton) ***  Mouse coords: (847, 358) (69674, 31629)
+2022-08-31 15:18:35.394 *** Mouse movement (LeftButton) ***  Mouse coords: (855, 345) (69665, 31649)
+2022-08-31 15:18:35.418 *** Mouse movement (LeftButton) ***  Mouse coords: (858, 341) (69659, 31659)
+2022-08-31 15:18:35.440 *** Mouse movement (LeftButton) ***  Mouse coords: (859, 340) (69657, 31662)
+2022-08-31 15:18:35.464 *** Mouse movement (LeftButton) ***  Mouse coords: (860, 340) (69657, 31663)
+2022-08-31 15:18:35.498 *** Mouse movement (LeftButton) ***  Mouse coords: (860, 340) (69656, 31663)
+2022-08-31 15:18:35.542 *** Mouse movement (LeftButton) ***  Mouse coords: (860, 339) (69656, 31662)
+2022-08-31 15:18:41.844 *** Mouse movement (LeftButton) ***  Mouse coords: (828, 570) (69623, 31896)
+2022-08-31 15:18:42.085 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:18:42.422 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:18:42.620 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:18:42.817 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:18:44.162 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:18:44.452 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:18:44.702 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:18:44.942 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:18:45.546 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:18:47.809 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:18:48.051 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:18:48.359 *** Mouse movement (LeftButton) ***  Mouse coords: (827, 170) (69776, 31620)
+2022-08-31 15:18:48.431 *** Mouse movement (LeftButton) ***  Mouse coords: (828, 169) (69777, 31619)
+2022-08-31 15:18:48.457 *** Mouse movement (LeftButton) ***  Mouse coords: (844, 178) (69793, 31628)
+2022-08-31 15:18:48.479 *** Mouse movement (LeftButton) ***  Mouse coords: (877, 202) (69826, 31652)
+2022-08-31 15:18:48.499 *** Mouse movement (LeftButton) ***  Mouse coords: (919, 240) (69868, 31690)
+2022-08-31 15:18:48.518 *** Mouse movement (LeftButton) ***  Mouse coords: (935, 258) (69884, 31708)
+2022-08-31 15:18:48.538 *** Mouse movement (LeftButton) ***  Mouse coords: (952, 277) (69901, 31727)
+2022-08-31 15:18:48.557 *** Mouse movement (LeftButton) ***  Mouse coords: (961, 289) (69911, 31739)
+2022-08-31 15:18:48.577 *** Mouse movement (LeftButton) ***  Mouse coords: (963, 293) (69913, 31743)
+2022-08-31 15:18:48.596 *** Mouse movement (LeftButton) ***  Mouse coords: (964, 293) (69914, 31743)
+2022-08-31 15:18:48.616 *** Mouse movement (LeftButton) ***  Mouse coords: (964, 293) (69914, 31743)
+2022-08-31 15:18:50.597 *** Interactive label *** Apply to case start.
+2022-08-31 15:18:51.894 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:18:52.251 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:18:53.902 *** Mouse movement (LeftButton) ***  Mouse coords: (820, 274) (69867, 31528)
+2022-08-31 15:18:54.326 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:18:54.615 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:19:07.723 *** Mouse movement (LeftButton) ***  Mouse coords: (979, 413) (70027, 31668)
+2022-08-31 15:19:08.104 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:19:09.155 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:19:09.494 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:19:12.269 *** Mouse movement (LeftButton) ***  Mouse coords: (750, 179) (69843, 31202)
+2022-08-31 15:19:12.323 *** Mouse movement (LeftButton) ***  Mouse coords: (750, 179) (69843, 31202)
+2022-08-31 15:19:12.344 *** Mouse movement (LeftButton) ***  Mouse coords: (753, 179) (69849, 31202)
+2022-08-31 15:19:12.365 *** Mouse movement (LeftButton) ***  Mouse coords: (771, 192) (69886, 31229)
+2022-08-31 15:19:12.386 *** Mouse movement (LeftButton) ***  Mouse coords: (787, 206) (69918, 31257)
+2022-08-31 15:19:12.406 *** Mouse movement (LeftButton) ***  Mouse coords: (798, 215) (69941, 31275)
+2022-08-31 15:19:12.426 *** Mouse movement (LeftButton) ***  Mouse coords: (804, 221) (69953, 31287)
+2022-08-31 15:19:12.445 *** Mouse movement (LeftButton) ***  Mouse coords: (811, 227) (69967, 31299)
+2022-08-31 15:19:12.465 *** Mouse movement (LeftButton) ***  Mouse coords: (812, 228) (69969, 31301)
+2022-08-31 15:19:12.484 *** Mouse movement (LeftButton) ***  Mouse coords: (814, 229) (69973, 31303)
+2022-08-31 15:19:13.629 *** Interactive label *** Apply to case start.
+2022-08-31 15:19:16.153 *** Interactive label *** Apply to case done.
+2022-08-31 15:19:20.695 *** Interactive label *** Apply to case finish overlay create.
+2022-08-31 15:19:22.201 *** Mouse movement (LeftButton) ***  Mouse coords: (859, 451) (70151, 31576)
+2022-08-31 15:19:22.736 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:19:23.209 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:19:23.448 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:19:23.644 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:19:23.912 *** Keyboard input *** key pressed: key: 77; text: "m"
+2022-08-31 15:19:23.923 *** Process image overlay spent 0.01 seconds.
+2022-08-31 15:19:23.928 *** Get cell color spent 0.01 seconds.
+2022-08-31 15:19:24.411 *** Keyboard input *** key pressed: key: 77; text: "m"
+2022-08-31 15:19:24.757 *** Keyboard input *** key pressed: key: 77; text: "m"
+2022-08-31 15:19:24.765 *** Process image overlay spent 0.01 seconds.
+2022-08-31 15:19:24.771 *** Get cell color spent 0.01 seconds.
+2022-08-31 15:19:25.097 *** Keyboard input *** key pressed: key: 77; text: "m"
+2022-08-31 15:19:27.477 *** Mouse movement (LeftButton) ***  Mouse coords: (516, 639) (69456, 31957)
+2022-08-31 15:19:27.548 *** Mouse movement (LeftButton) ***  Mouse coords: (516, 639) (69456, 31957)
+2022-08-31 15:19:27.572 *** Mouse movement (LeftButton) ***  Mouse coords: (517, 639) (69458, 31957)
+2022-08-31 15:19:27.594 *** Mouse movement (LeftButton) ***  Mouse coords: (519, 639) (69462, 31957)
+2022-08-31 15:19:27.615 *** Mouse movement (LeftButton) ***  Mouse coords: (526, 639) (69476, 31957)
+2022-08-31 15:19:27.634 *** Mouse movement (LeftButton) ***  Mouse coords: (541, 639) (69507, 31957)
+2022-08-31 15:19:27.654 *** Mouse movement (LeftButton) ***  Mouse coords: (562, 639) (69549, 31957)
+2022-08-31 15:19:27.673 *** Mouse movement (LeftButton) ***  Mouse coords: (576, 641) (69578, 31961)
+2022-08-31 15:19:27.692 *** Mouse movement (LeftButton) ***  Mouse coords: (588, 641) (69602, 31961)
+2022-08-31 15:19:27.713 *** Mouse movement (LeftButton) ***  Mouse coords: (595, 641) (69616, 31961)
+2022-08-31 15:19:27.732 *** Mouse movement (LeftButton) ***  Mouse coords: (600, 641) (69626, 31961)
+2022-08-31 15:19:27.752 *** Mouse movement (LeftButton) ***  Mouse coords: (605, 641) (69636, 31961)
+2022-08-31 15:19:27.772 *** Mouse movement (LeftButton) ***  Mouse coords: (608, 641) (69642, 31961)
+2022-08-31 15:19:27.792 *** Mouse movement (LeftButton) ***  Mouse coords: (610, 641) (69646, 31961)
+2022-08-31 15:19:27.812 *** Mouse movement (LeftButton) ***  Mouse coords: (611, 641) (69648, 31961)
+2022-08-31 15:19:27.832 *** Mouse movement (LeftButton) ***  Mouse coords: (612, 641) (69650, 31961)
+2022-08-31 15:19:29.844 *** Mouse movement (LeftButton) ***  Mouse coords: (540, 526) (69505, 31728)
+2022-08-31 15:19:29.906 *** Mouse movement (LeftButton) ***  Mouse coords: (540, 527) (69503, 31728)
+2022-08-31 15:19:29.933 *** Mouse movement (LeftButton) ***  Mouse coords: (547, 534) (69517, 31740)
+2022-08-31 15:19:29.954 *** Mouse movement (LeftButton) ***  Mouse coords: (560, 548) (69529, 31755)
+2022-08-31 15:19:29.975 *** Mouse movement (LeftButton) ***  Mouse coords: (575, 563) (69534, 31756)
+2022-08-31 15:19:30.002 *** Mouse movement (LeftButton) ***  Mouse coords: (584, 571) (69521, 31742)
+2022-08-31 15:19:30.047 *** Mouse movement (LeftButton) ***  Mouse coords: (586, 573) (69507, 31730)
+2022-08-31 15:19:30.070 *** Mouse movement (LeftButton) ***  Mouse coords: (585, 573) (69501, 31726)
+2022-08-31 15:19:30.092 *** Mouse movement (LeftButton) ***  Mouse coords: (584, 573) (69501, 31726)
+2022-08-31 15:19:30.254 *** Process image overlay spent 0.00 seconds.
+2022-08-31 15:19:30.257 *** Get cell color spent 0.00 seconds.
+2022-08-31 15:19:31.853 *** Mouse movement (LeftButton) ***  Mouse coords: (413, 729) (69157, 32042)
+2022-08-31 15:19:31.931 *** Mouse movement (LeftButton) ***  Mouse coords: (413, 729) (69155, 32044)
+2022-08-31 15:19:31.958 *** Mouse movement (LeftButton) ***  Mouse coords: (413, 714) (69155, 32014)
+2022-08-31 15:19:31.981 *** Mouse movement (LeftButton) ***  Mouse coords: (413, 695) (69155, 32005)
+2022-08-31 15:19:32.002 *** Mouse movement (LeftButton) ***  Mouse coords: (413, 688) (69155, 32030)
+2022-08-31 15:19:32.032 *** Mouse movement (LeftButton) ***  Mouse coords: (413, 667) (69155, 32001)
+2022-08-31 15:19:32.073 *** Mouse movement (LeftButton) ***  Mouse coords: (413, 638) (69155, 31986)
+2022-08-31 15:19:32.095 *** Mouse movement (LeftButton) ***  Mouse coords: (413, 636) (69155, 32040)
+2022-08-31 15:19:32.148 *** Mouse movement (LeftButton) ***  Mouse coords: (413, 636) (69155, 32044)
+2022-08-31 15:19:33.269 *** Mouse movement (LeftButton) ***  Mouse coords: (450, 702) (69229, 32177)
+2022-08-31 15:19:33.348 *** Mouse movement (LeftButton) ***  Mouse coords: (451, 702) (69231, 32179)
+2022-08-31 15:19:33.375 *** Mouse movement (LeftButton) ***  Mouse coords: (435, 702) (69197, 32179)
+2022-08-31 15:19:33.398 *** Mouse movement (LeftButton) ***  Mouse coords: (422, 702) (69203, 32179)
+2022-08-31 15:19:33.421 *** Mouse movement (LeftButton) ***  Mouse coords: (412, 702) (69209, 32179)
+2022-08-31 15:19:33.452 *** Mouse movement (LeftButton) ***  Mouse coords: (394, 702) (69192, 32179)
+2022-08-31 15:19:33.482 *** Mouse movement (LeftButton) ***  Mouse coords: (386, 702) (69213, 32179)
+2022-08-31 15:19:33.675 *** Process image overlay spent 0.00 seconds.
+2022-08-31 15:19:33.677 *** Get cell color spent 0.00 seconds.
+2022-08-31 15:19:35.044 *** Mouse movement (LeftButton) ***  Mouse coords: (457, 640) (69373, 32054)
+2022-08-31 15:19:35.139 *** Mouse movement (LeftButton) ***  Mouse coords: (458, 639) (69375, 32054)
+2022-08-31 15:19:35.165 *** Mouse movement (LeftButton) ***  Mouse coords: (470, 648) (69397, 32074)
+2022-08-31 15:19:35.188 *** Mouse movement (LeftButton) ***  Mouse coords: (487, 660) (69407, 32080)
+2022-08-31 15:19:35.217 *** Mouse movement (LeftButton) ***  Mouse coords: (496, 665) (69392, 32066)
+2022-08-31 15:19:35.238 *** Mouse movement (LeftButton) ***  Mouse coords: (516, 674) (69413, 32075)
+2022-08-31 15:19:35.260 *** Mouse movement (LeftButton) ***  Mouse coords: (525, 677) (69391, 32062)
+2022-08-31 15:19:35.282 *** Mouse movement (LeftButton) ***  Mouse coords: (526, 677) (69375, 32056)
+2022-08-31 15:19:35.302 *** Mouse movement (LeftButton) ***  Mouse coords: (526, 677) (69373, 32056)
+2022-08-31 15:19:35.352 *** Mouse movement (LeftButton) ***  Mouse coords: (524, 677) (69369, 32056)
+2022-08-31 15:19:36.985 *** Mouse movement (LeftButton) ***  Mouse coords: (705, 518) (69740, 31734)
+2022-08-31 15:19:37.065 *** Mouse movement (LeftButton) ***  Mouse coords: (705, 518) (69740, 31734)
+2022-08-31 15:19:37.098 *** Mouse movement (LeftButton) ***  Mouse coords: (701, 518) (69732, 31734)
+2022-08-31 15:19:37.120 *** Mouse movement (LeftButton) ***  Mouse coords: (698, 518) (69734, 31734)
+2022-08-31 15:19:37.147 *** Mouse movement (LeftButton) ***  Mouse coords: (691, 518) (69725, 31734)
+2022-08-31 15:19:37.168 *** Mouse movement (LeftButton) ***  Mouse coords: (687, 518) (69732, 31734)
+2022-08-31 15:19:37.189 *** Mouse movement (LeftButton) ***  Mouse coords: (686, 518) (69738, 31734)
+2022-08-31 15:19:39.170 *** Mouse movement (LeftButton) ***  Mouse coords: (579, 569) (69524, 31837)
+2022-08-31 15:19:39.223 *** Mouse movement (LeftButton) ***  Mouse coords: (580, 568) (69526, 31835)
+2022-08-31 15:19:39.254 *** Mouse movement (LeftButton) ***  Mouse coords: (590, 568) (69544, 31837)
+2022-08-31 15:19:39.281 *** Mouse movement (LeftButton) ***  Mouse coords: (596, 568) (69536, 31837)
+2022-08-31 15:19:39.303 *** Mouse movement (LeftButton) ***  Mouse coords: (619, 568) (69571, 31837)
+2022-08-31 15:19:39.326 *** Mouse movement (LeftButton) ***  Mouse coords: (634, 568) (69554, 31837)
+2022-08-31 15:19:39.348 *** Mouse movement (LeftButton) ***  Mouse coords: (641, 568) (69538, 31837)
+2022-08-31 15:19:39.369 *** Mouse movement (LeftButton) ***  Mouse coords: (641, 568) (69524, 31837)
+2022-08-31 15:19:39.401 *** Mouse movement (LeftButton) ***  Mouse coords: (641, 568) (69524, 31837)
+2022-08-31 15:19:39.456 *** Mouse movement (LeftButton) ***  Mouse coords: (641, 568) (69524, 31837)
+2022-08-31 15:19:40.282 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:19:40.703 *** Mouse movement (LeftButton) ***  Mouse coords: (622, 584) (69486, 31869)
+2022-08-31 15:19:40.815 *** Mouse movement (LeftButton) ***  Mouse coords: (622, 584) (69486, 31869)
+2022-08-31 15:19:40.852 *** Mouse movement (LeftButton) ***  Mouse coords: (608, 584) (69457, 31869)
+2022-08-31 15:19:40.876 *** Mouse movement (LeftButton) ***  Mouse coords: (584, 584) (69438, 31869)
+2022-08-31 15:19:40.898 *** Mouse movement (LeftButton) ***  Mouse coords: (570, 584) (69457, 31869)
+2022-08-31 15:19:40.919 *** Mouse movement (LeftButton) ***  Mouse coords: (565, 584) (69476, 31869)
+2022-08-31 15:19:40.941 *** Mouse movement (LeftButton) ***  Mouse coords: (559, 584) (69474, 31869)
+2022-08-31 15:19:40.961 *** Mouse movement (LeftButton) ***  Mouse coords: (553, 585) (69474, 31871)
+2022-08-31 15:19:40.999 *** Mouse movement (LeftButton) ***  Mouse coords: (552, 585) (69484, 31869)
+2022-08-31 15:19:41.026 *** Mouse movement (LeftButton) ***  Mouse coords: (550, 585) (69482, 31869)
+2022-08-31 15:19:41.744 *** Mouse movement (LeftButton) ***  Mouse coords: (584, 563) (69555, 31825)
+2022-08-31 15:19:41.848 *** Mouse movement (LeftButton) ***  Mouse coords: (584, 563) (69555, 31825)
+2022-08-31 15:19:41.881 *** Mouse movement (LeftButton) ***  Mouse coords: (579, 568) (69545, 31835)
+2022-08-31 15:19:41.905 *** Mouse movement (LeftButton) ***  Mouse coords: (577, 571) (69551, 31831)
+2022-08-31 15:19:41.927 *** Mouse movement (LeftButton) ***  Mouse coords: (572, 579) (69544, 31841)
+2022-08-31 15:19:41.948 *** Mouse movement (LeftButton) ***  Mouse coords: (570, 583) (69551, 31833)
+2022-08-31 15:19:41.969 *** Mouse movement (LeftButton) ***  Mouse coords: (569, 588) (69553, 31836)
+2022-08-31 15:19:41.990 *** Mouse movement (LeftButton) ***  Mouse coords: (569, 594) (69555, 31837)
+2022-08-31 15:19:42.021 *** Mouse movement (LeftButton) ***  Mouse coords: (569, 596) (69555, 31829)
+2022-08-31 15:19:42.068 *** Mouse movement (LeftButton) ***  Mouse coords: (569, 599) (69555, 31831)
+2022-08-31 15:19:42.455 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:19:43.002 *** Mouse movement (LeftButton) ***  Mouse coords: (576, 556) (69570, 31738)
+2022-08-31 15:19:43.081 *** Mouse movement (LeftButton) ***  Mouse coords: (576, 556) (69570, 31738)
+2022-08-31 15:19:43.121 *** Mouse movement (LeftButton) ***  Mouse coords: (601, 556) (69620, 31738)
+2022-08-31 15:19:43.150 *** Mouse movement (LeftButton) ***  Mouse coords: (626, 556) (69621, 31738)
+2022-08-31 15:19:43.175 *** Mouse movement (LeftButton) ***  Mouse coords: (632, 556) (69582, 31738)
+2022-08-31 15:19:43.196 *** Mouse movement (LeftButton) ***  Mouse coords: (639, 556) (69584, 31738)
+2022-08-31 15:19:43.217 *** Mouse movement (LeftButton) ***  Mouse coords: (643, 556) (69578, 31738)
+2022-08-31 15:19:43.645 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:19:44.208 *** Mouse movement (LeftButton) ***  Mouse coords: (641, 556) (69566, 31738)
+2022-08-31 15:19:44.252 *** Mouse movement (LeftButton) ***  Mouse coords: (632, 556) (69550, 31738)
+2022-08-31 15:19:44.298 *** Mouse movement (LeftButton) ***  Mouse coords: (627, 556) (69558, 31738)
+2022-08-31 15:19:44.321 *** Mouse movement (LeftButton) ***  Mouse coords: (624, 556) (69562, 31738)
+2022-08-31 15:19:44.343 *** Mouse movement (LeftButton) ***  Mouse coords: (622, 557) (69564, 31740)
+2022-08-31 15:19:44.365 *** Mouse movement (LeftButton) ***  Mouse coords: (622, 558) (69568, 31740)
+2022-08-31 15:19:44.395 *** Mouse movement (LeftButton) ***  Mouse coords: (621, 558) (69566, 31738)
+2022-08-31 15:19:44.438 *** Mouse movement (LeftButton) ***  Mouse coords: (620, 558) (69566, 31738)
+2022-08-31 15:19:44.459 *** Mouse movement (LeftButton) ***  Mouse coords: (618, 557) (69564, 31736)
+2022-08-31 15:19:44.976 *** Keyboard input *** key pressed: key: 78; text: "n"
+2022-08-31 15:19:45.533 *** Mouse movement (LeftButton) ***  Mouse coords: (606, 554) (69543, 31732)
+2022-08-31 15:19:45.586 *** Mouse movement (LeftButton) ***  Mouse coords: (578, 554) (69487, 31732)
+2022-08-31 15:19:45.611 *** Mouse movement (LeftButton) ***  Mouse coords: (559, 554) (69504, 31732)
+2022-08-31 15:19:45.632 *** Mouse movement (LeftButton) ***  Mouse coords: (548, 554) (69521, 31732)
+2022-08-31 15:19:45.654 *** Mouse movement (LeftButton) ***  Mouse coords: (546, 554) (69539, 31732)
+2022-08-31 15:19:45.675 *** Mouse movement (LeftButton) ***  Mouse coords: (545, 554) (69541, 31732)
+2022-08-31 15:19:45.725 *** Mouse movement (LeftButton) ***  Mouse coords: (545, 554) (69543, 31732)
+2022-08-31 15:19:47.241 *** Program closed.

@@ -1,0 +1,97 @@
+
+<div class="card mt-4">
+    <div class="card-body">
+        <h4 class="text-center font-weight-light my-4">Slide Annotation</h4>
+        
+        <div class="row">
+            <div class="col-12">
+                <table id="anno-datatable" class="display"></table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+
+    function setup_datatable(dataset_in, backend){
+        backend.log('-------------- js: setup_datatable.');
+        var n_of_rows = Object.keys(dataset_in).length;
+
+        backend.log('n_of_rows: '+n_of_rows);
+        backend.log(dataset_in);
+
+        var dataset = [];
+        var table = null;
+        for (var r=0; r<n_of_rows; r++){
+            var row = dataset_in[r];
+            var id = row['id'];
+            backend.log('row: ' + r + '  ID='+ id)
+            var shapeType = row['shapeType'];
+            var createTime = row['createTime'];
+            var objectClass = row['objectClass'];
+            
+            var id_div = "<div id='annotation_id'>"+id+"</div>";
+            var objectClass_div = "<div id='objectClass'>"+objectClass+"</div>";
+            var shapeType_div = "<div id='shapeType'>"+shapeType+"</div>";
+            //var createTime_div = "<div id='createTime'>"+createTime+"</div>";
+            var delete_div = "<button type='button' class='btn btn-danger remove_annotation' id='"+id+"' row_idx='"+r+"'><i class='fa-solid fa-trash-can'></i></button>"
+            dataset[r] = [id_div, objectClass_div, shapeType_div, delete_div];
+        }
+        
+        table = $('#anno-datatable').DataTable( {
+            scrollCollapse: true,
+            paging: false,
+            destroy: true, // destroy option that can be used to DataTables that you know that it is going to destroy the existing table to apply the new options.
+            bInfo: false,
+            sorting: false,
+            searching: false,
+            data: dataset,
+            columns: [
+                { title: "ID" },{ title: "Annotation" },{ title: "Shape"},{ title: "Operation" }
+            ],
+            columnDefs: [
+                {
+                    "targets": [ 0 ],
+                    "visible": false,
+                    "searchable": false
+                }
+            ]
+        });
+
+            
+        $('#anno-datatable tbody').on('click', 'tr', function () {
+            var data = table.row( this ).data();
+            //var id = $(this).find('#annotation_id').text();
+            var id = $(this).find('.remove_annotation').attr('id');
+            backend.log( 'You clicked on '+id+'\'s row');
+            backend.annotation_highlight_selected(id);
+        });
+
+        $('.remove_annotation').on('click', function () {
+            e = this;
+            var id = $(this).attr('id');
+            
+            row = $(this).parent().parent();
+            row.remove();
+            backend.remove_annotation(id);
+
+            var jsondata = {id: id};
+            $.ajax({
+                type: 'post',
+                url: 'https://nuclei.io/php/delete_annotation.php',
+                data: jsondata,
+                success: function(data) {
+                    //backend.log(data);
+                },
+                error: function(e) {
+                    backend.log(e);
+                }
+            });
+
+        });
+        
+    }
+
+</script>

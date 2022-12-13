@@ -1,0 +1,32 @@
+2022-08-11 15:02:07.045 *** Start program *** Start program
+2022-08-11 15:02:16.082 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S0425
+2022-08-11 15:02:18.170 *** Open processed data
+2022-08-11 15:02:18.170 *** Preload all statistics at once.
+2022-08-11 15:02:18.967 *** Nuclei stat data loaded, took 0.80 seconds. Total number of nuclei: 954361
+2022-08-11 15:02:24.421 *** Process image overlay spent 0.00 seconds.
+2022-08-11 15:02:24.431 *** Get cell color spent 0.01 seconds.
+2022-08-11 15:02:24.516 *** Process image overlay spent 0.00 seconds.
+2022-08-11 15:02:24.526 *** Get cell color spent 0.01 seconds.
+2022-08-11 15:02:24.694 *** Process image overlay spent 0.00 seconds.
+2022-08-11 15:02:24.695 *** Get cell color spent 0.00 seconds.
+2022-08-11 15:02:24.761 *** Process image overlay spent 0.00 seconds.
+2022-08-11 15:02:24.762 *** Get cell color spent 0.00 seconds.
+2022-08-11 15:02:48.634 *** Keyboard input *** key pressed: key: 16777249; text: ""
+2022-08-11 15:02:50.107 *** Keyboard input *** key pressed: key: 16777249; text: ""
+2022-08-11 15:02:54.815 *** Keyboard input *** key pressed: key: 16777249; text: ""
+2022-08-11 15:03:08.532 *** Interactive label *** (double click) click on screen. screen: (618, 264); slide: (55785, 51344). case_id: S0425, slide_id: A9, Nuclei index selected: 616440
+2022-08-11 15:03:10.857 *** Mouse movement (LeftButton) ***  Mouse coords: (681, 247) (55822, 51334)
+2022-08-11 15:03:10.878 *** Mouse movement (LeftButton) ***  Mouse coords: (678, 247) (55820, 51335)
+2022-08-11 15:03:10.892 *** Mouse movement (LeftButton) ***  Mouse coords: (673, 246) (55819, 51334)
+2022-08-11 15:03:10.905 *** Mouse movement (LeftButton) ***  Mouse coords: (669, 246) (55820, 51335)
+2022-08-11 15:03:10.922 *** Mouse movement (LeftButton) ***  Mouse coords: (666, 246) (55820, 51335)
+2022-08-11 15:03:10.938 *** Mouse movement (LeftButton) ***  Mouse coords: (664, 245) (55821, 51335)
+2022-08-11 15:03:10.959 *** Process image overlay spent 0.00 seconds.
+2022-08-11 15:03:10.960 *** Get cell color spent 0.00 seconds.
+2022-08-11 15:03:13.243 *** Interactive label *** (double click) click on screen. screen: (671, 209); slide: (55826, 51314). case_id: S0425, slide_id: A9, Nuclei index selected: 617111
+2022-08-11 15:03:24.290 *** Interactive label *** (double click) click on screen. screen: (601, 262); slide: (55785, 51345). case_id: S0425, slide_id: A9, Nuclei index selected: 616440
+2022-08-11 15:03:32.352 *** Interactive label *** (double click) click on screen. screen: (682, 206); slide: (55833, 51312). case_id: S0425, slide_id: A9, Nuclei index selected: 617111
+2022-08-11 15:03:34.505 *** Interactive label *** (double click) click on screen. screen: (702, 314); slide: (55845, 51376). case_id: S0425, slide_id: A9, Nuclei index selected: 619688
+2022-08-11 15:03:36.087 *** Interactive label *** (double click) click on screen. screen: (673, 343); slide: (55827, 51393). case_id: S0425, slide_id: A9, Nuclei index selected: 617197
+2022-08-11 15:03:39.330 *** Interactive label *** (double click) click on screen. screen: (859, 221); slide: (55938, 51321). case_id: S0425, slide_id: A9, Nuclei index selected: 616536
+2022-08-11 15:05:02.097 *** Program closed.

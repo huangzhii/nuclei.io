@@ -1,0 +1,132 @@
+2022-09-02 01:40:13.069 *** Start program *** Start program
+2022-09-02 01:40:25.760 *** User Login *** id=640475916; email=zhihuang@stanford.edu; firstname=Zhi; lastname=Huang.
+2022-09-02 01:40:29.400 *** Open case *** /Applications/XAMPP/xamppfiles/htdocs/20220722_Eric_Yang
+2022-09-02 01:40:33.029 *** Open processed data
+2022-09-02 01:40:33.030 *** Preload all statistics at once.
+2022-09-02 01:40:33.968 *** Nuclei stat data loaded, took 0.94 seconds. Total number of nuclei: 843996
+2022-09-02 01:40:38.255 *** Mouse movement (LeftButton) ***  Mouse coords: (187, 132) (55071, 18424)
+2022-09-02 01:40:38.632 *** Mouse movement (LeftButton) ***  Mouse coords: (186, 121) (54260, 9501)
+2022-09-02 01:40:52.918 *** Mouse movement (LeftButton) ***  Mouse coords: (560, 275) (100790, 26185)
+2022-09-02 01:40:53.023 *** Mouse movement (LeftButton) ***  Mouse coords: (560, 275) (100790, 26184)
+2022-09-02 01:40:53.057 *** Mouse movement (LeftButton) ***  Mouse coords: (577, 294) (100806, 26202)
+2022-09-02 01:40:53.077 *** Mouse movement (LeftButton) ***  Mouse coords: (594, 318) (100806, 26207)
+2022-09-02 01:40:53.123 *** Mouse movement (LeftButton) ***  Mouse coords: (619, 352) (100813, 26216)
+2022-09-02 01:40:53.161 *** Mouse movement (LeftButton) ***  Mouse coords: (650, 404) (100820, 26233)
+2022-09-02 01:40:53.185 *** Mouse movement (LeftButton) ***  Mouse coords: (654, 414) (100793, 26194)
+2022-09-02 01:40:53.210 *** Mouse movement (LeftButton) ***  Mouse coords: (658, 423) (100794, 26192)
+2022-09-02 01:40:53.249 *** Mouse movement (LeftButton) ***  Mouse coords: (660, 425) (100792, 26186)
+2022-09-02 01:40:53.276 *** Mouse movement (LeftButton) ***  Mouse coords: (660, 426) (100790, 26185)
+2022-09-02 01:40:53.299 *** Mouse movement (LeftButton) ***  Mouse coords: (661, 426) (100791, 26184)
+2022-09-02 01:40:53.323 *** Mouse movement (LeftButton) ***  Mouse coords: (664, 427) (100793, 26185)
+2022-09-02 01:40:53.345 *** Mouse movement (LeftButton) ***  Mouse coords: (670, 428) (100795, 26185)
+2022-09-02 01:40:53.371 *** Mouse movement (LeftButton) ***  Mouse coords: (675, 428) (100795, 26184)
+2022-09-02 01:40:53.392 *** Mouse movement (LeftButton) ***  Mouse coords: (679, 429) (100794, 26185)
+2022-09-02 01:40:53.417 *** Mouse movement (LeftButton) ***  Mouse coords: (680, 429) (100791, 26184)
+2022-09-02 01:40:53.445 *** Mouse movement (LeftButton) ***  Mouse coords: (680, 429) (100790, 26184)
+2022-09-02 01:40:53.467 *** Mouse movement (LeftButton) ***  Mouse coords: (679, 428) (100789, 26183)
+2022-09-02 01:40:53.487 *** Mouse movement (LeftButton) ***  Mouse coords: (677, 424) (100788, 26180)
+2022-09-02 01:40:53.512 *** Mouse movement (LeftButton) ***  Mouse coords: (676, 423) (100789, 26183)
+2022-09-02 01:40:53.535 *** Mouse movement (LeftButton) ***  Mouse coords: (674, 419) (100788, 26180)
+2022-09-02 01:40:53.562 *** Mouse movement (LeftButton) ***  Mouse coords: (673, 418) (100789, 26183)
+2022-09-02 01:40:53.599 *** Mouse movement (LeftButton) ***  Mouse coords: (671, 415) (100788, 26181)
+2022-09-02 01:40:53.632 *** Mouse movement (LeftButton) ***  Mouse coords: (668, 409) (100788, 26179)
+2022-09-02 01:40:53.669 *** Mouse movement (LeftButton) ***  Mouse coords: (665, 395) (100787, 26171)
+2022-09-02 01:40:53.692 *** Mouse movement (LeftButton) ***  Mouse coords: (665, 393) (100790, 26182)
+2022-09-02 01:40:53.712 *** Mouse movement (LeftButton) ***  Mouse coords: (665, 392) (100790, 26183)
+2022-09-02 01:40:55.148 *** Mouse movement (LeftButton) ***  Mouse coords: (613, 80) (100741, 25889)
+2022-09-02 01:40:55.181 *** Mouse movement (LeftButton) ***  Mouse coords: (632, 88) (100759, 25897)
+2022-09-02 01:40:55.203 *** Mouse movement (LeftButton) ***  Mouse coords: (651, 102) (100776, 25910)
+2022-09-02 01:40:55.222 *** Mouse movement (LeftButton) ***  Mouse coords: (666, 117) (100791, 25924)
+2022-09-02 01:40:55.240 *** Mouse movement (LeftButton) ***  Mouse coords: (672, 123) (100796, 25930)
+2022-09-02 01:40:55.257 *** Mouse movement (LeftButton) ***  Mouse coords: (685, 141) (100809, 25947)
+2022-09-02 01:40:55.275 *** Mouse movement (LeftButton) ***  Mouse coords: (698, 159) (100821, 25964)
+2022-09-02 01:40:55.292 *** Mouse movement (LeftButton) ***  Mouse coords: (709, 176) (100831, 25980)
+2022-09-02 01:40:55.309 *** Mouse movement (LeftButton) ***  Mouse coords: (716, 187) (100838, 25990)
+2022-09-02 01:40:55.327 *** Mouse movement (LeftButton) ***  Mouse coords: (721, 193) (100843, 25996)
+2022-09-02 01:40:55.345 *** Mouse movement (LeftButton) ***  Mouse coords: (726, 198) (100847, 26001)
+2022-09-02 01:40:55.362 *** Mouse movement (LeftButton) ***  Mouse coords: (727, 198) (100848, 26001)
+2022-09-02 01:40:55.379 *** Mouse movement (LeftButton) ***  Mouse coords: (728, 199) (100849, 26002)
+2022-09-02 01:40:55.397 *** Mouse movement (LeftButton) ***  Mouse coords: (729, 199) (100850, 26002)
+2022-09-02 01:40:55.414 *** Mouse movement (LeftButton) ***  Mouse coords: (729, 199) (100850, 26002)
+2022-09-02 01:40:55.429 *** Mouse movement (LeftButton) ***  Mouse coords: (730, 200) (100851, 26003)
+2022-09-02 01:40:55.447 *** Mouse movement (LeftButton) ***  Mouse coords: (733, 203) (100854, 26005)
+2022-09-02 01:40:55.464 *** Mouse movement (LeftButton) ***  Mouse coords: (745, 213) (100865, 26015)
+2022-09-02 01:40:55.482 *** Mouse movement (LeftButton) ***  Mouse coords: (758, 222) (100877, 26023)
+2022-09-02 01:40:55.500 *** Mouse movement (LeftButton) ***  Mouse coords: (769, 230) (100888, 26031)
+2022-09-02 01:40:55.517 *** Mouse movement (LeftButton) ***  Mouse coords: (784, 237) (100902, 26037)
+2022-09-02 01:40:55.534 *** Mouse movement (LeftButton) ***  Mouse coords: (793, 241) (100911, 26041)
+2022-09-02 01:40:55.551 *** Mouse movement (LeftButton) ***  Mouse coords: (801, 243) (100918, 26043)
+2022-09-02 01:40:55.568 *** Mouse movement (LeftButton) ***  Mouse coords: (806, 244) (100923, 26044)
+2022-09-02 01:40:55.585 *** Mouse movement (LeftButton) ***  Mouse coords: (808, 245) (100925, 26045)
+2022-09-02 01:40:55.603 *** Mouse movement (LeftButton) ***  Mouse coords: (809, 246) (100926, 26046)
+2022-09-02 01:40:55.619 *** Mouse movement (LeftButton) ***  Mouse coords: (810, 246) (100927, 26046)
+2022-09-02 01:40:55.637 *** Mouse movement (LeftButton) ***  Mouse coords: (810, 246) (100927, 26046)
+2022-09-02 01:40:55.652 *** Mouse movement (LeftButton) ***  Mouse coords: (811, 247) (100928, 26047)
+2022-09-02 01:40:55.669 *** Mouse movement (LeftButton) ***  Mouse coords: (811, 247) (100928, 26047)
+2022-09-02 01:40:55.685 *** Mouse movement (LeftButton) ***  Mouse coords: (812, 247) (100928, 26047)
+2022-09-02 01:40:55.702 *** Mouse movement (LeftButton) ***  Mouse coords: (812, 247) (100928, 26047)
+2022-09-02 01:40:57.358 *** Interactive label *** Apply to case start.
+2022-09-02 01:41:00.651 *** Mouse movement (LeftButton) ***  Mouse coords: (907, 244) (101246, 25352)
+2022-09-02 01:41:00.731 *** Mouse movement (LeftButton) ***  Mouse coords: (908, 243) (101249, 25349)
+2022-09-02 01:41:00.757 *** Mouse movement (LeftButton) ***  Mouse coords: (933, 257) (101318, 25388)
+2022-09-02 01:41:00.779 *** Mouse movement (LeftButton) ***  Mouse coords: (952, 270) (101371, 25424)
+2022-09-02 01:41:00.797 *** Mouse movement (LeftButton) ***  Mouse coords: (986, 294) (101465, 25490)
+2022-09-02 01:41:00.814 *** Mouse movement (LeftButton) ***  Mouse coords: (1010, 313) (101532, 25543)
+2022-09-02 01:41:00.832 *** Mouse movement (LeftButton) ***  Mouse coords: (1018, 318) (101554, 25557)
+2022-09-02 01:41:00.849 *** Mouse movement (LeftButton) ***  Mouse coords: (1028, 326) (101581, 25579)
+2022-09-02 01:41:00.866 *** Mouse movement (LeftButton) ***  Mouse coords: (1034, 332) (101598, 25596)
+2022-09-02 01:41:00.883 *** Mouse movement (LeftButton) ***  Mouse coords: (1035, 333) (101601, 25598)
+2022-09-02 01:41:01.015 *** Mouse movement (LeftButton) ***  Mouse coords: (1035, 333) (101601, 25598)
+2022-09-02 01:41:01.037 *** Mouse movement (LeftButton) ***  Mouse coords: (1035, 332) (101601, 25596)
+2022-09-02 01:41:02.334 *** Interactive label *** Apply to case start.
+2022-09-02 01:41:05.372 *** Interactive label *** Apply to case done.
+2022-09-02 01:41:06.801 *** Interactive label *** Apply to case finish overlay create.
+2022-09-02 01:41:12.935 *** Interactive label: Sync start.
+2022-09-02 01:41:12.964 *** starting thread (client mode): 0x293cd070
+2022-09-02 01:41:12.965 *** Local version/idstring: SSH-2.0-paramiko_2.11.0
+2022-09-02 01:41:12.989 *** Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2022-09-02 01:41:12.989 *** Connected (version 2.0, client OpenSSH_5.3)
+2022-09-02 01:41:13.010 *** === Key exchange possibilities ===
+2022-09-02 01:41:13.010 *** kex algos: diffie-hellman-group-exchange-sha256, diffie-hellman-group-exchange-sha1, diffie-hellman-group14-sha1, diffie-hellman-group1-sha1
+2022-09-02 01:41:13.010 *** server key: ssh-rsa, ssh-rsa-cert-v01@openssh.com, ssh-dss
+2022-09-02 01:41:13.010 *** client encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-02 01:41:13.010 *** server encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-02 01:41:13.010 *** client mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-02 01:41:13.011 *** server mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-02 01:41:13.011 *** client compress: none, zlib@openssh.com
+2022-09-02 01:41:13.011 *** server compress: none, zlib@openssh.com
+2022-09-02 01:41:13.011 *** client lang: <none>
+2022-09-02 01:41:13.011 *** server lang: <none>
+2022-09-02 01:41:13.011 *** kex follows: False
+2022-09-02 01:41:13.011 *** === Key exchange agreements ===
+2022-09-02 01:41:13.011 *** Kex: diffie-hellman-group-exchange-sha256
+2022-09-02 01:41:13.011 *** HostKey: ssh-rsa
+2022-09-02 01:41:13.011 *** Cipher: aes128-ctr
+2022-09-02 01:41:13.011 *** MAC: hmac-sha2-256
+2022-09-02 01:41:13.011 *** Compression: none
+2022-09-02 01:41:13.011 *** === End of kex handshake ===
+2022-09-02 01:41:13.073 *** Got server p (2048 bits)
+2022-09-02 01:41:13.163 *** kex engine KexGexSHA256 specified hash_algo <built-in function openssl_sha256>
+2022-09-02 01:41:13.163 *** Switch to new keys ...
+2022-09-02 01:41:13.164 *** Adding ssh-rsa host key for 173.201.181.247: b'cca345f774a2d98448d0bcc78f04075d'
+2022-09-02 01:41:13.247 *** userauth is OK
+2022-09-02 01:41:13.275 *** Authentication (password) successful!
+2022-09-02 01:41:13.276 *** [chan 0] Max packet in: 32768 bytes
+2022-09-02 01:41:13.298 *** [chan 0] Max packet out: 32768 bytes
+2022-09-02 01:41:13.298 *** Secsh channel 0 opened.
+2022-09-02 01:41:13.324 *** [chan 0] Sesch channel 0 request ok
+2022-09-02 01:41:13.326 *** [chan 0] EOF received (0)
+2022-09-02 01:41:13.326 *** [chan 0] EOF sent (0)
+2022-09-02 01:41:13.327 *** [chan 1] Max packet in: 32768 bytes
+2022-09-02 01:41:13.410 *** [chan 1] Max packet out: 32768 bytes
+2022-09-02 01:41:13.410 *** Secsh channel 1 opened.
+2022-09-02 01:41:13.435 *** [chan 1] Sesch channel 1 request ok
+2022-09-02 01:41:13.457 *** [chan 1] Opened sftp connection (server version 3)
+2022-09-02 01:41:13.458 *** [chan 1] open(b'/home/b6o162rzivzp/NucFinder_DB/D9BA7592E9AE937B/interactive_nuclei_dict.pickle', 'wb')
+2022-09-02 01:41:13.484 *** [chan 1] open(b'/home/b6o162rzivzp/NucFinder_DB/D9BA7592E9AE937B/interactive_nuclei_dict.pickle', 'wb') -> 00000000
+2022-09-02 01:41:13.489 *** [chan 1] close(00000000)
+2022-09-02 01:41:13.557 *** [chan 1] stat(b'/home/b6o162rzivzp/NucFinder_DB/D9BA7592E9AE937B/interactive_nuclei_dict.pickle')
+2022-09-02 01:41:13.579 *** [chan 1] sftp session closed.
+2022-09-02 01:41:13.580 *** [chan 1] EOF sent (1)
+2022-09-02 01:41:13.680 *** EOF in transport thread
+2022-09-02 01:41:38.743 *** Program closed.

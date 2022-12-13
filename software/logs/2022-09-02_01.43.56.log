@@ -1,0 +1,63 @@
+2022-09-02 01:43:56.424 *** Start program *** Start program
+2022-09-02 01:44:01.774 *** Open case *** /Applications/XAMPP/xamppfiles/htdocs/20220722_Eric_Yang
+2022-09-02 01:44:10.559 *** User Login *** id=640475916; email=zhihuang@stanford.edu; firstname=Zhi; lastname=Huang.
+2022-09-02 01:44:13.206 *** Open processed data
+2022-09-02 01:44:13.206 *** Preload all statistics at once.
+2022-09-02 01:44:14.167 *** Nuclei stat data loaded, took 0.96 seconds. Total number of nuclei: 843996
+2022-09-02 01:44:26.418 *** Interactive label *** (double click) click on screen. screen: (716, 251); slide: (113852, 18926). case_id: 20220722_Eric_Yang, slide_id: 3BNI3N_44662.svs, Nuclei index selected: 167244
+2022-09-02 01:44:26.690 *** Interactive label *** Apply to case start.
+2022-09-02 01:44:28.069 *** Mouse movement (LeftButton) ***  Mouse coords: (853, 393) (114010, 19090)
+2022-09-02 01:44:28.246 *** Interactive label *** (double click) click on screen. screen: (853, 393); slide: (114010, 19090). case_id: 20220722_Eric_Yang, slide_id: 3BNI3N_44662.svs, Nuclei index selected: 160933
+2022-09-02 01:44:28.519 *** Interactive label *** Apply to case start.
+2022-09-02 01:44:31.425 *** Interactive label *** Apply to case done.
+2022-09-02 01:44:31.587 *** Interactive label *** Apply to case finish overlay create.
+2022-09-02 01:44:34.605 *** Interactive label: Sync start.
+2022-09-02 01:44:34.634 *** starting thread (client mode): 0x5f81e700
+2022-09-02 01:44:34.634 *** Local version/idstring: SSH-2.0-paramiko_2.11.0
+2022-09-02 01:44:34.661 *** Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2022-09-02 01:44:34.661 *** Connected (version 2.0, client OpenSSH_5.3)
+2022-09-02 01:44:34.682 *** === Key exchange possibilities ===
+2022-09-02 01:44:34.682 *** kex algos: diffie-hellman-group-exchange-sha256, diffie-hellman-group-exchange-sha1, diffie-hellman-group14-sha1, diffie-hellman-group1-sha1
+2022-09-02 01:44:34.682 *** server key: ssh-rsa, ssh-rsa-cert-v01@openssh.com, ssh-dss
+2022-09-02 01:44:34.682 *** client encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-02 01:44:34.682 *** server encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-02 01:44:34.682 *** client mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-02 01:44:34.682 *** server mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-02 01:44:34.682 *** client compress: none, zlib@openssh.com
+2022-09-02 01:44:34.682 *** server compress: none, zlib@openssh.com
+2022-09-02 01:44:34.683 *** client lang: <none>
+2022-09-02 01:44:34.683 *** server lang: <none>
+2022-09-02 01:44:34.683 *** kex follows: False
+2022-09-02 01:44:34.683 *** === Key exchange agreements ===
+2022-09-02 01:44:34.683 *** Kex: diffie-hellman-group-exchange-sha256
+2022-09-02 01:44:34.683 *** HostKey: ssh-rsa
+2022-09-02 01:44:34.683 *** Cipher: aes128-ctr
+2022-09-02 01:44:34.683 *** MAC: hmac-sha2-256
+2022-09-02 01:44:34.683 *** Compression: none
+2022-09-02 01:44:34.683 *** === End of kex handshake ===
+2022-09-02 01:44:34.747 *** Got server p (2048 bits)
+2022-09-02 01:44:34.838 *** kex engine KexGexSHA256 specified hash_algo <built-in function openssl_sha256>
+2022-09-02 01:44:34.839 *** Switch to new keys ...
+2022-09-02 01:44:34.839 *** Adding ssh-rsa host key for 173.201.181.247: b'cca345f774a2d98448d0bcc78f04075d'
+2022-09-02 01:44:34.923 *** userauth is OK
+2022-09-02 01:44:34.950 *** Authentication (password) successful!
+2022-09-02 01:44:34.951 *** [chan 0] Max packet in: 32768 bytes
+2022-09-02 01:44:34.973 *** [chan 0] Max packet out: 32768 bytes
+2022-09-02 01:44:34.973 *** Secsh channel 0 opened.
+2022-09-02 01:44:34.997 *** [chan 0] Sesch channel 0 request ok
+2022-09-02 01:44:35.003 *** [chan 0] EOF received (0)
+2022-09-02 01:44:35.004 *** [chan 0] EOF sent (0)
+2022-09-02 01:44:35.004 *** [chan 1] Max packet in: 32768 bytes
+2022-09-02 01:44:35.089 *** [chan 1] Max packet out: 32768 bytes
+2022-09-02 01:44:35.090 *** Secsh channel 1 opened.
+2022-09-02 01:44:35.116 *** [chan 1] Sesch channel 1 request ok
+2022-09-02 01:44:35.140 *** [chan 1] Opened sftp connection (server version 3)
+2022-09-02 01:44:35.141 *** [chan 1] open(b'/home/b6o162rzivzp/NucFinder_DB/4B2DF924D56F6BFE/interactive_nuclei_dict.pickle', 'wb')
+2022-09-02 01:44:35.167 *** [chan 1] open(b'/home/b6o162rzivzp/NucFinder_DB/4B2DF924D56F6BFE/interactive_nuclei_dict.pickle', 'wb') -> 00000000
+2022-09-02 01:44:35.169 *** [chan 1] close(00000000)
+2022-09-02 01:44:35.214 *** [chan 1] stat(b'/home/b6o162rzivzp/NucFinder_DB/4B2DF924D56F6BFE/interactive_nuclei_dict.pickle')
+2022-09-02 01:44:35.237 *** [chan 1] sftp session closed.
+2022-09-02 01:44:35.237 *** [chan 1] EOF sent (1)
+2022-09-02 01:44:35.337 *** EOF in transport thread
+2022-09-02 01:44:35.454 *** Interactive label: Sync finished.
+2022-09-02 01:44:47.323 *** Program closed.

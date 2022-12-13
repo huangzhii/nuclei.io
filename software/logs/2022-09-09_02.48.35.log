@@ -1,0 +1,45 @@
+2022-09-09 02:48:35.267 *** Start program *** Start program
+2022-09-09 02:49:39.446 *** starting thread (client mode): 0x177c3be0
+2022-09-09 02:49:39.447 *** Local version/idstring: SSH-2.0-paramiko_2.11.0
+2022-09-09 02:49:43.837 *** Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2022-09-09 02:49:43.837 *** Connected (version 2.0, client OpenSSH_5.3)
+2022-09-09 02:49:48.029 *** === Key exchange possibilities ===
+2022-09-09 02:49:48.029 *** kex algos: diffie-hellman-group-exchange-sha256, diffie-hellman-group-exchange-sha1, diffie-hellman-group14-sha1, diffie-hellman-group1-sha1
+2022-09-09 02:49:48.030 *** server key: ssh-rsa, ssh-rsa-cert-v01@openssh.com, ssh-dss
+2022-09-09 02:49:48.030 *** client encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-09 02:49:48.030 *** server encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-09 02:49:48.031 *** client mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-09 02:49:48.031 *** server mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-09 02:49:48.031 *** client compress: none, zlib@openssh.com
+2022-09-09 02:49:48.031 *** server compress: none, zlib@openssh.com
+2022-09-09 02:49:48.031 *** client lang: <none>
+2022-09-09 02:49:48.031 *** server lang: <none>
+2022-09-09 02:49:48.032 *** kex follows: False
+2022-09-09 02:49:48.032 *** === Key exchange agreements ===
+2022-09-09 02:49:48.032 *** Kex: diffie-hellman-group-exchange-sha256
+2022-09-09 02:49:48.032 *** HostKey: ssh-rsa
+2022-09-09 02:49:48.033 *** Cipher: aes128-ctr
+2022-09-09 02:49:48.033 *** MAC: hmac-sha2-256
+2022-09-09 02:49:48.033 *** Compression: none
+2022-09-09 02:49:48.034 *** === End of kex handshake ===
+2022-09-09 02:49:52.694 *** Got server p (2048 bits)
+2022-09-09 02:49:56.767 *** kex engine KexGexSHA256 specified hash_algo <built-in function openssl_sha256>
+2022-09-09 02:49:56.768 *** Switch to new keys ...
+2022-09-09 02:49:56.769 *** Adding ssh-rsa host key for 173.201.181.247: b'cca345f774a2d98448d0bcc78f04075d'
+2022-09-09 02:50:02.017 *** userauth is OK
+2022-09-09 02:50:06.616 *** Authentication (password) successful!
+2022-09-09 02:50:06.617 *** [chan 0] Max packet in: 32768 bytes
+2022-09-09 02:50:09.762 *** [chan 0] Max packet out: 32768 bytes
+2022-09-09 02:50:09.763 *** Secsh channel 0 opened.
+2022-09-09 02:50:12.706 *** [chan 0] Sesch channel 0 request ok
+2022-09-09 02:50:15.082 *** [chan 0] Opened sftp connection (server version 3)
+2022-09-09 02:50:15.083 *** [chan 0] stat(b'/home/b6o162rzivzp/NucFinder_DB/CFB1B411265361DF/interactive_nuclei_dict.pickle')
+2022-09-09 02:50:16.717 *** [chan 0] stat(b'/home/b6o162rzivzp/NucFinder_DB/CFB1B411265361DF/model.pickle')
+2022-09-09 02:50:17.765 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/CFB1B411265361DF/model.pickle', 'rb')
+2022-09-09 02:50:19.024 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/CFB1B411265361DF/model.pickle', 'rb') -> 00000000
+2022-09-09 02:50:36.708 *** [chan 0] close(00000000)
+2022-09-09 02:50:39.966 *** Interactive label *** Review annotations/active learning start.
+2022-09-09 02:50:50.079 *** Interactive label: Review annotations finished.
+2022-09-09 02:50:50.165 *** CACHEDIR=/home/zhihuang/.cache/matplotlib
+2022-09-09 02:50:50.166 *** Using fontManager instance from /home/zhihuang/.cache/matplotlib/fontlist-v330.json
+2022-09-09 02:50:50.549 *** Loaded backend qtagg version unknown.

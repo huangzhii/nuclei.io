@@ -1,0 +1,28 @@
+2022-08-12 13:29:21.016 *** Start program *** Start program
+2022-08-12 13:29:30.526 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S0425
+2022-08-12 13:29:33.188 *** Open processed data
+2022-08-12 13:29:33.189 *** Preload all statistics at once.
+2022-08-12 13:29:33.988 *** Nuclei stat data loaded, took 0.80 seconds. Total number of nuclei: 954361
+2022-08-12 13:29:43.350 *** Process image overlay spent 0.00 seconds.
+2022-08-12 13:29:43.452 *** Get cell color spent 0.10 seconds.
+2022-08-12 13:29:43.803 *** Process image overlay spent 0.00 seconds.
+2022-08-12 13:29:43.808 *** Get cell color spent 0.00 seconds.
+2022-08-12 13:29:44.528 *** Process image overlay spent 0.00 seconds.
+2022-08-12 13:29:44.618 *** Get cell color spent 0.09 seconds.
+2022-08-12 13:29:44.718 *** Mouse movement (LeftButton) ***  Mouse coords: (613, 413) (30666, 44847)
+2022-08-12 13:29:44.746 *** Mouse movement (LeftButton) ***  Mouse coords: (655, 422) (30178, 44604)
+2022-08-12 13:29:44.780 *** Mouse movement (LeftButton) ***  Mouse coords: (732, 440) (30520, 44691)
+2022-08-12 13:29:44.796 *** Mouse movement (LeftButton) ***  Mouse coords: (747, 445) (29915, 44565)
+2022-08-12 13:29:44.813 *** Mouse movement (LeftButton) ***  Mouse coords: (770, 452) (29993, 44584)
+2022-08-12 13:29:44.836 *** Mouse movement (LeftButton) ***  Mouse coords: (801, 463) (30072, 44624)
+2022-08-12 13:29:44.846 *** Mouse movement (LeftButton) ***  Mouse coords: (808, 464) (29837, 44525)
+2022-08-12 13:29:44.862 *** Mouse movement (LeftButton) ***  Mouse coords: (810, 465) (29788, 44526)
+2022-08-12 13:29:45.094 *** Process image overlay spent 0.00 seconds.
+2022-08-12 13:29:45.184 *** Get cell color spent 0.09 seconds.
+2022-08-12 13:29:45.391 *** Process image overlay spent 0.00 seconds.
+2022-08-12 13:29:45.423 *** Get cell color spent 0.03 seconds.
+2022-08-12 13:29:45.552 *** Process image overlay spent 0.00 seconds.
+2022-08-12 13:29:45.561 *** Get cell color spent 0.01 seconds.
+2022-08-12 13:29:59.622 *** Process image overlay spent 0.00 seconds.
+2022-08-12 13:29:59.630 *** Get cell color spent 0.01 seconds.
+2022-08-12 13:31:10.750 *** Program closed.

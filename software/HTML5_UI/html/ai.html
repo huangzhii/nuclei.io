@@ -1,0 +1,623 @@
+<div class="card mt-4">
+    <!--div class="card-header">
+        Current study
+    </div-->
+    <div class="card-body">
+        <div class="row">
+            <div class="col-8">
+                <h4 class="text-center font-weight-light my-4">Current Study</h4>
+            </div>
+            <div class="col-4">
+                <a href="javascript: void(0)" id="start_new_annotation"><small><i class="fa-solid fa-folder-open"></i> New</small></a>
+                <a href="javascript: void(0)" id="reset_annotation" style="display:none"><small><i class="fa-solid fa-trash-can"></i> Reset</small></a>
+            </div>
+        </div>
+
+        <div id="current_study_div" style="display:none">
+            <div class="row">
+                <div class="col-12">
+                    <small>Select tissue type:</small>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-12" id="select_tissue_div" style="display:inline-block;max-width:100%;">
+                    <select class="selectpicker" id="select_tissue" data-live-search="true"
+                            data-style="btn-outline-primary" data-size="5"
+                            >
+                            <!-- data-width="auto"-->
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12">
+                    <small>Nuclei class:</small>
+                    <a href="javascript:void(0)" id="addRow"><span class="badge bg-primary text-white rounded-pill"><i class="fa-solid fa-circle-plus"></i> Add class</span></a>
+                </div>
+
+                <div class="col-12 mt-1">
+
+                    <form method="post" action="">
+                        <div class="row">
+                            <div class="col-lg-12" id="newRow">
+                                <div class="inputFormRow" id=0>
+                                    <div class="input-group mb-1">                                        
+                                        <div class="input-group-prepend">
+                                            <a href="javascript:void(0)" id=0 class="btn btn-primary btnNucleiSelect" style="width:40px"><i class="fa-solid fa-check"></i></a>
+                                        </div>
+                                        <select class="select nucleiTypeSelect" style="width:55%" id=0 onchange="update_class_selection(this)">
+                                            <option value="Other" selected>Other</option>
+                                            <option value="Tumor">Tumor</option>
+                                            <option value="Fibroblast">Fibroblast</option>
+                                            <option value="Lymphocyte">Lymphocyte</option>
+                                            <option value="Mitotic figure">Mitotic figure</option>
+                                            <option value="Plasma cell">Plasma cell</option>
+                                            <option value="Normal epithelial">Normal epithelial</option>
+                                            <option value="Eosinophil">Eosinophil</option>
+                                            <option value="Neutrophil">Neutrophil</option>
+                                            <option value="Vascular endothelium">Vascular endothelium</option>
+                                            <option value="Apoptotic">Apoptotic</option>
+                                            <option value="Myoepithelial">Myoepithelial</option>
+                                            <option value="Macrophage">Macrophage</option>
+                                        </select>
+                                        <div class="input-group-append nuclei_color_picker" id=0>
+                                            <span class="input-group-text colorpicker-input-addon"><i class="nucclass_rgb" style="width:20px;height:20px;"></i></span>
+                                        </div>
+                                        <div class="input-group-append removeRowDiv">
+                                            <button id=0 type="button" class="btn btn-danger removeRowBtn"><i class="fa-solid fa-trash-can"></i></button>
+                                        </div>
+                                        <div class="input-group-append current_nuclei">
+                                            <span class="btn btn-outline-primary text-dark nuclei_count">0</span>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            
+            
+            <div class="row mt-2">
+                <div class="col-4">
+                    <!--button type="button" class="btn btn-outline-primary" id="click_to_label"><i class="fa-solid fa-arrow-pointer"></i> Double-click Label</button-->
+                    <button type="button" class="btn btn-outline-primary mt-1" id="review_annotations"><i class="fa-solid fa-arrows-spin"></i> Review & Active learning</button>
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <small>Number of targets: </small><span class="badge bg-primary text-white rounded-pill" id="curr_n_target">1</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <small>Total nuclei: </small><span class="badge bg-primary text-white rounded-pill" id="curr_n_nuclei">0</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <small>Overall fitting accuracy: </small><span class="badge bg-warning rounded-pill" id="curr_accuracy">--</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <small>Description:</small>
+                </div>
+                <div class="col-12">
+                    <input class="form-control form-control-sm" type="text" id="studyDescription" placeholder="Before sync, describe your work please.">
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="isPublicCheckbox" checked>
+                        <label class="form-check-label" for="isPublicCheckbox">
+                            <small>I wish to make this contribution public.</small>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row mt-2">
+                <div class="col-6">
+                    <div class="btn btn-success btn-small" id="apply_to_case" style="width:100%;">
+                        <small><i class="fas fa-angle-left"></i> Apply to Case</small>
+                    </div>
+                    <button class="btn btn-success" type="button" disabled id="apply_to_case_applying" style="width:100%; display:none">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <small>Applying ...</small>
+                    </button>
+                </div>
+                <div class="col-6">
+                    <div class="btn btn-outline-success btn-small" id="sync" style="width:100%;">
+                        <small><i class="fas fa-cloud"></i> Sync online</small>
+                    </div>
+                    
+                    <button class="btn btn-outline-success" type="button" disabled id="syncing" style="width:100%; display:none">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <small>Syncing ...</small>
+                    </button>
+                </div>
+
+
+                <div class="col-12 mt-4">
+                    <a href="javascript: void(0)" id="retrieve_last_saved_data">
+                        <small><i class="fa-solid fa-suitcase-medical"></i> Retrieve last saved data</small>
+                    </a>
+                </div>
+
+                <div class="col-12">
+                    <a href="javascript: void(0)" id="use_offline_model">
+                        <small><i class="fa-solid fa-hat-wizard"></i>Use prediction results from offline model</small>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="card mt-4">
+    <!--div class="card-header">
+        Current study
+    </div-->
+    <div class="card-body">
+        <h4 class="text-center font-weight-light my-4">Virtual Flow Cytometry</h4>
+        
+
+
+        <div id="virtual_flow_plot_div" style="width:95%;height:360px"></div>
+        
+        <div class="row mt-1">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12">
+                <small>X: </small><div id="vfc_dim1_div" style="display:inline-block;max-width:90%;">
+                    <select class="selectpicker" id="vfc_dim1" data-live-search="true"
+                            data-style="btn-outline-primary"  data-width="260px"  data-size="10">
+                    </select>
+                  </div>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                  <small>Y: </small><div id="vfc_dim2_div" style="display:inline-block;max-width:90%;">
+                      <select class="selectpicker" id="vfc_dim2" data-live-search="true"
+                              data-style="btn-outline-primary"  data-width="260px"  data-size="10">
+                      </select>
+                  </div>
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+        
+        <div class="row mt-2 mb-2">
+          
+          <div class="col-6">
+            <div class="btn btn-primary btn-small" id="update_vfc" style="width:100%; height:100%">
+              <small><i class="fa-solid fa-check"></i> Update</small>
+            </div>
+          </div>
+          <div class="col-6">
+              <div class="btn btn-primary btn-small disabled" id="auto_vfc" style="width:100%;">
+                  <small><i class="fa-solid fa-wand-magic-sparkles"></i> Autoflow</small>
+              </div>
+          </div>
+        </div>
+
+        <h4 class="text-center font-weight-light my-4">Quantitative Analysis</h4>
+
+        <div><small>WSI nuclei statistics:</small></div>
+        <div id="nuclei_barplot_div" style="width:95%;height:320px;"></div>
+        
+        <div id="feature_importance_frame" style="display:none;">
+          <div class="mt-2"><small>Feature importance:</small></div>
+          <div style="width: 100%; height: 500px; overflow-y: auto">
+            <div id="feature_barplot_div" style="width:95%; height:2400px;"></div>
+          </div>
+        </div>
+
+        <!--
+        <div class="mt-2"><small>Feature distribution:</small></div>
+        <div class="row">
+          <div class="col-12">
+            <div id="feature_distribution_div" style="display:inline-block;max-width:90%;">
+                <select class="selectpicker" id="feature_distribution_select" data-live-search="true"
+                        data-style="btn-outline-primary"  data-width="260px"  data-size="10">
+                </select>
+              </div>
+          </div>
+        <div id="feature_histogram_div" style="width:280px;height:200px;"></div>
+        -->
+        
+    </div>
+</div>
+
+
+
+<script>
+    cancerlist = [
+    'Colorectal Cancer (LNM experiment)'];
+</script>
+
+<script>
+
+
+    active_class_id = 0;
+    
+    $( document ).ready(function() {
+        for (let i = 0; i < cancerlist.length; i++) {
+            c = cancerlist[i];
+            if (c.length == 1){
+                //$('#select_tissue').append('<optgroup id="'+c+'" label="'+c+'"></optgroup>');
+                //$('#search_tissue').append('<optgroup id="'+c+'" label="'+c+'"></optgroup>');
+            } else{
+                // Append the option to select
+
+                $('#select_tissue').append('<option style="width:270px; font-size:80%" data-tokens="'+c+'" value="'+c+'">'+c+'</option>');
+            }
+        }
+        // Refresh the selectpicker
+        $("#select_tissue").selectpicker("refresh");
+        
+
+        //click "start_new_annotation"
+        $("#current_study_div").show();
+        $("#reset_annotation").show();
+        $("#start_new_annotation").hide();
+        
+        class_info = new Object();
+
+        init_first_class();
+    });
+
+    function update_class_selection(sel){
+        this_id = sel.id;
+        class_info[this_id]['classname'] = sel.value;
+        backend.update_classinfo(JSON.stringify(class_info), 'update class selection');
+    }
+    
+    function hex2rgb(hex) {
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return [parseInt(result[1], 16),
+                parseInt(result[2], 16),
+                parseInt(result[3], 16)];
+    }
+    function hsv2rgb(hsv) {
+        h=hsv[0];
+        s=hsv[1]/100;
+        v=hsv[2]/100;
+        var r, g, b, i, f, p, q, t;
+        i = Math.floor(h * 6);
+        f = h * 6 - i;
+        p = v * (1 - s);
+        q = v * (1 - f * s);
+        t = v * (1 - (1 - f) * s);
+        switch (i % 6) {
+            case 0: r = v, g = t, b = p; break;
+            case 1: r = q, g = v, b = p; break;
+            case 2: r = p, g = v, b = t; break;
+            case 3: r = p, g = q, b = v; break;
+            case 4: r = t, g = p, b = v; break;
+            case 5: r = v, g = p, b = q; break;
+        }
+        return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+    }
+    function init_first_class(){
+        // init other class
+        color = '#969696';
+        $obj = $('.inputFormRow').first()
+        $obj.find('.nuclei_color_picker').colorpicker({
+            popover: {
+                title: 'Adjust the color',
+                placement: 'top'
+            },
+            useAlpha: false,
+            color: color,
+        });
+
+        var colorpicker_timeout = null;
+        $obj.find('.nuclei_color_picker').on('colorpickerChange', function (e) {
+            thisid = $(this).attr('id');
+            clearTimeout(colorpicker_timeout);
+            colorpicker_timeout = setTimeout(function() {
+                // do stuff when user has been idle for 1 second
+                rgbcolor = hsv2rgb(e.value._color.color);
+                class_info[thisid]['rgbcolor'] = rgbcolor;
+                backend.update_classinfo(JSON.stringify(class_info), 'update color');
+            }, 1000);
+        });
+
+
+        $obj.find('.removeRowBtn').addClass('disabled');
+        $obj.find('.nucleiTypeSelect').prop('disabled', true);
+        class_id=0;
+        classname = $obj.find('.nucleiTypeSelect').val();
+
+        class_info[class_id] = new Object();
+        class_info[class_id]['classname'] = classname
+        class_info[class_id]['rgbcolor'] = hex2rgb(color);
+
+        backend.update_classinfo(JSON.stringify(class_info), 'init first class');
+        active_class_id = class_id
+        backend.set_active_class(active_class_id, classname, hex2rgb(color).toString());
+
+    }
+
+    $("#reset_annotation").click(function (){
+        backend.reset_annotation();
+        //delete current rows:
+        selected_rows = $('.inputFormRow');
+        for (let i=0; i<selected_rows.length;i++){
+            if ($(selected_rows[i]).attr('id') !== '0'){
+                $(selected_rows[i]).remove();
+            }
+        }
+        $("#curr_n_target").text(1);
+        $("#curr_n_nuclei").text(0);
+        $("#curr_accuracy").text('--');
+        var progress = 0;
+        $('#curr_init_progress').text(progress + '% Completed');
+        $('#curr_init_progress').css('width:', progress + '%');
+        $('#curr_init_progress').attr('style', 'width:'+ progress + '%');
+
+        $("#current_study_div").hide();
+        $("#reset_annotation").hide();
+        $("#start_new_annotation").show();
+    });
+
+    $("#review_annotations").click(function (){
+        backend.review_annotations();
+    });
+
+
+    $("#use_offline_model").click(function (){
+        backend.use_offline_model();
+    });
+
+    nuclei_color_list = [
+                        '#A52A2A', //brown
+                        '#FF0000', //red
+                        '#0000FF', //blue
+                        '#32CD32', //limegreen
+                        '#00FFFF', //cyan
+                        '#FFD700', //gold
+                        '#8A2BE2', //BlueViolet
+                        '#006400', //darkgreen
+                        '#BDB76B', //darkkhaki
+                        '#FF8C00', //darkorange
+                        '#FF1493', //deeppink
+                        '#FF00FF', //magenta
+                        ]
+    // add row (nuclei class)
+    n_added = 0;
+
+
+
+    $("#addRow").click(function () {
+        addRow();
+    });
+
+    function addRow(){
+        n_added = n_added+1;
+        id = n_added;
+        color = nuclei_color_list[id%nuclei_color_list.length];
+        $cloneobj = $('.inputFormRow').first().clone();
+        $cloneobj.attr('id', id);
+        $cloneobj.find('.nucleiTypeSelect').attr('id', id);
+        $cloneobj.attr('style', '');
+        $cloneobj.find('.removeRowBtn').removeClass('disabled');
+        $cloneobj.find('.nucleiTypeSelect').prop('disabled', false);
+        $cloneobj.find('.nuclei_count').text(0);
+        
+        //$cloneobj.find('.removeRowBtn').attr('id', 2);
+        //$cloneobj.find('.btnNucleiSelect').attr('id', 2);
+        //$cloneobj.find('.nucleiTypeSelect').attr('id', 2);
+        //$cloneobj.find('.nuclei_color_picker').attr('id', 2);
+        $cloneobj.find('.nuclei_color_picker').attr('id', id);
+        $cloneobj.find('.nuclei_color_picker').colorpicker({
+            popover: {
+                title: 'Adjust the color',
+                placement: 'top'
+            },
+            useAlpha: false,
+            color: color,
+        });
+
+        var colorpicker_timeout = null;
+        $cloneobj.find('.nuclei_color_picker').on('colorpickerChange', function (e) {
+            thisid = $(this).attr('id');
+            clearTimeout(colorpicker_timeout);
+            colorpicker_timeout = setTimeout(function() {
+                // do stuff when user has been idle for 1 second
+                rgbcolor = hsv2rgb(e.value._color.color);
+                class_info[thisid]['rgbcolor'] = rgbcolor;
+                backend.update_classinfo(JSON.stringify(class_info), 'update color');
+            }, 1000);
+        });
+
+        $('.inputFormRow').find('.btnNucleiSelect').html('<i class="fa-regular fa-circle"></i>');
+        $('.inputFormRow').find('.btnNucleiSelect').removeClass('btn-primary');
+        $('.inputFormRow').find('.btnNucleiSelect').addClass('btn-outline-secondary');
+
+        $cloneobj.find('.btnNucleiSelect').html('<i class="fas fa-check"></i>');
+        $cloneobj.find('.btnNucleiSelect').removeClass('btn-outline-secondary');
+        $cloneobj.find('.btnNucleiSelect').addClass('btn-primary');
+
+        $('#newRow').append($cloneobj);
+        console.log('Create '+id);
+
+
+        n_target = $(".inputFormRow").length;
+        $('#curr_n_target').text(n_target);
+        
+        class_info[id] = new Object();
+        class_info[id]['classname'] = classname
+        class_info[id]['rgbcolor'] = hex2rgb(color);
+        backend.update_classinfo(JSON.stringify(class_info), 'add row');
+
+        classname = $cloneobj.find('.nucleiTypeSelect').val();
+        active_class_id = id
+        backend.set_active_class(active_class_id, classname, hex2rgb(color).toString())
+
+    }
+
+
+
+
+
+    // remove row (nuclei class)
+    $('#newRow').on("click", ".removeRowBtn",function () {
+        if ($(this).hasClass('disabled')){
+            backend.log('cannot remove this row.')
+            return;
+        }
+        id = $(this).parents('.inputFormRow').attr('id');
+
+        
+        var new_total_nuclei = parseInt($('#curr_n_nuclei').text()) - parseInt($(this).parents('.inputFormRow').find('.nuclei_count').text());
+
+        $('#curr_n_nuclei').text(new_total_nuclei);
+
+        //console.log('Delete '+id);
+        $(".inputFormRow#"+id).remove();
+        
+        n_target = $(".inputFormRow").length;
+        $('#curr_n_target').text(n_target);
+
+        delete class_info[id];
+        
+        // Set active class first, then update classinfo.
+
+        if (active_class_id == id){
+            // Update new active class id.
+            class_list = Object.keys(class_info).map(Number);
+            var closest_new_id = class_list.reduce(function(prev, curr) {
+                return (Math.abs(curr - id) < Math.abs(prev - id) ? curr : prev);
+            });
+            $('.inputFormRow#'+closest_new_id).find('.btnNucleiSelect').html('<i class="fas fa-check"></i>');
+            $('.inputFormRow#'+closest_new_id).find('.btnNucleiSelect').removeClass('btn-outline-secondary');
+            $('.inputFormRow#'+closest_new_id).find('.btnNucleiSelect').addClass('btn-primary');
+            active_class_id = closest_new_id;
+            backend.set_active_class(active_class_id, classname, '')
+        }
+
+        backend.update_classinfo(JSON.stringify(class_info), 'remove row');
+
+
+    });
+    
+    
+
+
+    // click to select active nuclei class
+    $('#newRow').on("click", ".btnNucleiSelect", function () {
+        id = $(this).parents('.inputFormRow').attr('id');
+        console.log('check '+id);
+
+        $('.inputFormRow').find('.btnNucleiSelect').html('<i class="fa-regular fa-circle"></i>');
+        $('.inputFormRow').find('.btnNucleiSelect').removeClass('btn-primary');
+        $('.inputFormRow').find('.btnNucleiSelect').addClass('btn-outline-secondary');
+
+        $('.inputFormRow#'+id).find('.btnNucleiSelect').html('<i class="fas fa-check"></i>');
+        $('.inputFormRow#'+id).find('.btnNucleiSelect').removeClass('btn-outline-secondary');
+        $('.inputFormRow#'+id).find('.btnNucleiSelect').addClass('btn-primary');
+
+
+        classname = class_info[id]['classname']
+        color = class_info[id]['rgbcolor']
+        active_class_id = id
+        backend.set_active_class(id, classname, color.toString())
+    });
+
+
+    $('#click_to_label').click(function(){
+        send_classinfo_to_py();
+        $selected_row = $('.inputFormRow').find('.btnNucleiSelect.btn-primary').parents('.inputFormRow');
+        if ($selected_row.length == 0){
+            alert('Please select a nuclei type for labeling.')
+        }
+        if ($selected_row.length == 1){
+            //$('#click_to_label').removeClass('btn-outline-primary');
+            //$('#click_to_label').addClass('btn-primary');
+            backend.start_click_annotation();
+        }
+    });
+
+    $('#interactive_label').click(function(){
+        send_classinfo_to_py();
+        $selected_row = $('.inputFormRow').find('.btnNucleiSelect.btn-primary').parents('.inputFormRow');
+        if ($selected_row.length == 0){
+            alert('Please select a nuclei type for labeling.')
+        }
+        if ($selected_row.length == 1){
+            backend.start_AL_annotation();
+        }
+    });
+
+
+    $('#update_class_definition').click(function(){
+        send_classinfo_to_py();
+        $selected_row = $('.inputFormRow').find('.btnNucleiSelect.btn-primary').parents('.inputFormRow');
+        if ($selected_row.length == 0){
+            alert('Please select a nuclei type.')
+        }
+        if ($selected_row.length == 1){
+            backend.start_annotation();
+        }
+    });
+
+    $('#apply_to_case').click(function(){
+        $('#apply_to_case').hide();
+        $('#apply_to_case_applying').show();
+        backend.apply_to_case();
+    });
+
+    $('#sync').click(function(){
+        if (typeof userid === 'undefined') {
+            // variable is undefined
+            alert('User ID not found! Please log in.')
+        } else{
+            $('#sync').hide();
+            $('#syncing').show();
+            var obj = new Object();
+            obj.id = userid;
+            obj.tissueType = $('#select_tissue').val();
+            obj.studyDescription = $('#studyDescription').val();
+            obj.isPrivate = !$('#isPublicCheckbox').is(":checked");
+            var jsondata = JSON.stringify(obj);
+            backend.sync(jsondata);
+        }
+    });
+    
+</script>
+    
+
+
+
+<script>
+    /* virtual flow cytometry page */
+
+  $("#update_vfc").click(function (){
+      var obj = new Object();
+      obj.dim_1_select = $('#vfc_dim1 option:selected').text();
+      obj.dim_2_select = $('#vfc_dim2 option:selected').text();
+      var dim_info_json = JSON.stringify(obj);
+      let_py_update_vfc(dim_info_json)
+  });
+
+
+    
+</script>

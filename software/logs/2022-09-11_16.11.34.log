@@ -1,0 +1,34 @@
+2022-09-11 16:11:34.552 *** Start program *** Start program
+2022-09-11 16:11:41.302 *** Open case *** /home/zhihuang/Desktop/A14
+2022-09-11 16:11:43.376 *** Open processed data
+2022-09-11 16:11:43.376 *** Preload all statistics at once.
+2022-09-11 16:11:44.492 *** Nuclei stat data loaded, took 1.12 seconds. Total number of nuclei: 1470268
+2022-09-11 16:11:52.247 *** Interactive label *** Review annotations/active learning start.
+2022-09-11 16:11:59.664 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 1087763
+2022-09-11 16:11:59.697 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 1103319
+2022-09-11 16:11:59.711 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 1370094
+2022-09-11 16:11:59.721 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 525549
+2022-09-11 16:11:59.735 *** Interactive label *** Apply to case start.
+2022-09-11 16:12:03.717 *** Interactive label *** Apply to case done.
+2022-09-11 16:12:06.393 *** Interactive label *** Apply to case finish overlay create.
+2022-09-11 16:12:27.476 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 0
+2022-09-11 16:12:27.505 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 980183
+2022-09-11 16:12:27.518 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 980182
+2022-09-11 16:12:27.527 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 980181
+2022-09-11 16:12:27.535 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 980180
+2022-09-11 16:12:27.542 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 980179
+2022-09-11 16:12:27.550 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 980178
+2022-09-11 16:12:27.557 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 980177
+2022-09-11 16:12:27.564 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 980176
+2022-09-11 16:12:27.571 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 980167
+2022-09-11 16:12:27.579 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 980166
+2022-09-11 16:12:27.586 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 980187
+2022-09-11 16:12:27.593 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 980205
+2022-09-11 16:12:27.608 *** Interactive label *** Apply to case start.
+2022-09-11 16:12:31.399 *** Interactive label *** Apply to case done.
+2022-09-11 16:12:34.013 *** Interactive label *** Apply to case finish overlay create.
+2022-09-11 16:14:09.879 *** Interactive label: Review annotations finished.
+2022-09-11 16:14:09.895 *** Interactive label *** Apply to case start.
+2022-09-11 16:14:09.896 *** Interactive label *** Apply to case finish overlay create.
+2022-09-11 16:14:14.410 *** Interactive label *** Review annotations/active learning start.
+2022-09-11 16:15:04.917 *** Program closed.

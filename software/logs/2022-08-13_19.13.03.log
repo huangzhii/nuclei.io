@@ -1,0 +1,25 @@
+2022-08-13 19:13:03.667 *** Start program *** Start program
+2022-08-13 19:13:11.890 *** User Login *** id=640475916; email=zhihuang@stanford.edu; firstname=Zhi; lastname=Huang.
+2022-08-13 19:13:20.692 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S0425
+2022-08-13 19:13:23.340 *** Open processed data
+2022-08-13 19:13:23.341 *** Preload all statistics at once.
+2022-08-13 19:13:24.180 *** Nuclei stat data loaded, took 0.84 seconds. Total number of nuclei: 954361
+2022-08-13 19:13:29.490 *** Process image overlay spent 0.00 seconds.
+2022-08-13 19:13:29.493 *** Get cell color spent 0.00 seconds.
+2022-08-13 19:13:29.900 *** Process image overlay spent 0.00 seconds.
+2022-08-13 19:13:29.902 *** Get cell color spent 0.00 seconds.
+2022-08-13 19:13:31.478 *** Mouse movement (LeftButton) ***  Mouse coords: (498, 252) (27583, 40663)
+2022-08-13 19:13:31.486 *** Mouse movement (LeftButton) ***  Mouse coords: (498, 253) (27583, 40664)
+2022-08-13 19:13:31.498 *** Mouse movement (LeftButton) ***  Mouse coords: (500, 259) (27585, 40670)
+2022-08-13 19:13:31.516 *** Mouse movement (LeftButton) ***  Mouse coords: (518, 286) (27603, 40698)
+2022-08-13 19:13:31.532 *** Mouse movement (LeftButton) ***  Mouse coords: (526, 298) (27612, 40711)
+2022-08-13 19:13:31.549 *** Mouse movement (LeftButton) ***  Mouse coords: (544, 320) (27630, 40734)
+2022-08-13 19:13:31.566 *** Mouse movement (LeftButton) ***  Mouse coords: (562, 343) (27649, 40758)
+2022-08-13 19:13:31.582 *** Mouse movement (LeftButton) ***  Mouse coords: (578, 359) (27666, 40774)
+2022-08-13 19:13:31.599 *** Mouse movement (LeftButton) ***  Mouse coords: (596, 379) (27684, 40795)
+2022-08-13 19:13:31.616 *** Mouse movement (LeftButton) ***  Mouse coords: (606, 388) (27695, 40804)
+2022-08-13 19:13:31.632 *** Mouse movement (LeftButton) ***  Mouse coords: (612, 392) (27701, 40809)
+2022-08-13 19:13:31.649 *** Mouse movement (LeftButton) ***  Mouse coords: (614, 394) (27703, 40811)
+2022-08-13 19:13:31.666 *** Mouse movement (LeftButton) ***  Mouse coords: (617, 396) (27706, 40813)
+2022-08-13 19:13:31.682 *** Mouse movement (LeftButton) ***  Mouse coords: (618, 397) (27707, 40814)
+2022-08-13 19:14:41.311 *** Program closed.

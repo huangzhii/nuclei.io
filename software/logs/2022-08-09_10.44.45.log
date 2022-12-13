@@ -1,0 +1,12 @@
+2022-08-09 10:44:45.343 *** Start program *** Start program
+2022-08-09 10:44:54.912 *** Open processed data
+2022-08-09 10:44:54.912 *** Preload all statistics at once.
+2022-08-09 10:44:56.034 *** Nuclei stat data loaded, took 1.12 seconds. Total number of nuclei: 1470268
+2022-08-09 10:45:00.317 *** Process image overlay spent 0.01 seconds.
+2022-08-09 10:45:00.330 *** Get cell color spent 0.01 seconds.
+2022-08-09 10:45:00.519 *** Process image overlay spent 0.01 seconds.
+2022-08-09 10:45:00.530 *** Get cell color spent 0.01 seconds.
+2022-08-09 10:45:01.615 *** Process image overlay spent 0.01 seconds.
+2022-08-09 10:45:01.640 *** Get cell color spent 0.02 seconds.
+2022-08-09 10:45:01.700 *** Process image overlay spent 0.01 seconds.
+2022-08-09 10:45:01.779 *** Get cell color spent 0.08 seconds.

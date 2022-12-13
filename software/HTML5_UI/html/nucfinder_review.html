@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+        
+    <!--
+        qrc:///qtwebchannel/qwebchannel.js
+        you can only use that URL if you are viewing the page from within QWebEngineView.
+        Otherwise you might need to load the API file to your webserver.
+    -->
+    <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <!--popper.js should load before bootstrap.js and after jquery.js-->
+
+    <!--script src="../js/mdb.min.js"></script-->
+    <!--script src="../js/bootstrap.min.js"></script-->
+    <script src="../js/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <!--Bootstrap-select-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/bootstrap-select.min.js"></script>
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/i18n/defaults-*.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/0c31ad6a35.js" crossorigin="anonymous"></script>
+    <!--link rel="stylesheet" href="../css/mdb.min.css"-->
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+
+
+
+
+</head>
+
+<style>
+    .opacity-0-3
+    {
+        opacity: 0.3;
+    }
+</style>
+
+<body>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                    <a class="nav-link active" id="active-learning-tab" data-toggle="tab" href="#tab-active-learning" role="tab" aria-controls="tab-active-learning" aria-selected="true">Active Learning</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" id="review-tab" data-toggle="tab" href="#tab-review" role="tab" aria-controls="tab-review" aria-selected="false">Review Annotations</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" id="annotated-files-tab" data-toggle="tab" href="#tab-annotated-files" role="tab" aria-controls="tab-annotated-files" aria-selected="false">Annotated Images</a>
+                    </li>
+                </ul>
+                
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane" id="tab-active-learning" role="tabpanel" aria-labelledby="active-learning-tab">
+                        <div class="row mt-2">
+                            <div class="col-2">
+                                <a class="btn btn-warning" id="active_learning_next">
+                                    <i class="fa-solid fa-arrows-spin"></i> Next batch
+                                </a>
+                            </div>
+                            <div class="col-10">
+                                <p><i class="fa-solid fa-bolt"></i>
+                                Active learning accelerate your annotation by picking up a group of the most uncertain nuclei,
+                                from WSI, given your current machine learning model and study objectives.
+                                Annotating / Adjusting prioritized nuclei maximizes the information gain during annotation.
+                                </p>
+                                <p>
+                                <i class="fa-solid fa-thumbs-up"></i>
+                                You can adjust several incorrect labels, and then check the "Approve" button. Otherwise, you can leave
+                                it alone without any changes and exit the active learning session at any time.
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row active-learning-cards">
+                            <div class="card active-learning-nucleus-card mt-2" id=0 nuclei_id=-1 approved=0 style="display:none;width: 180px;">
+                                <div class="card-header" id="uncertainty" style="background-color: rgb(102, 153, 255, 120);">Uncertainty:</div>
+                                <div class="card-body">
+                                    <img id="al-nucleus-img" class="mb-1" style='width: 100%;'
+                                            src='data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkBAMAAACCzIhnAAAAMFBMVEVHcEyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIylQ6VFAAAAD3RSTlMAw+r1FQrZfTmpJkeXaFjt9PnvAAAD9klEQVRYw51YT0hUQRifw3vkf7A/yka0hIeWgpb0YCC1CiJEHjZIyP4cgrASYte6ZEHJFiVRoQcz6uAmpAUdlurSTcpDdUmQoqPVoW7hPthFELd938y8N2/mm7fuzEV35v2+me/7ft+fGULUYT0abWkrldrPTf/tJpsZ1sPJ8vd0tEd+bAJ0bCReEka+9V0lxPy2kjQOXg9HPIiXlJH/VC0iHPMaRZQxX3SIs6mSZhS+4YiaGf+b9qHm5qE2//faGIawv/N159LN+70DA70v/zxO8LnLSQTSz5f3XPPcd+LeVi5mUUXURdla6wtx+tQIk7SaVSB3GeKZxBDrPcNclBH1KYZQzmwzTCEnLbyhonYjWto/6dp+aRPqxL0ob60r1KE5RJPVHO6x+qiqTR3VRMuLo1Qb0Wg9MNWZ1EHsq/DBdmHmK5x1SU/YRtB13ZfZCGY8EBYWv8AFS0Hl8ythkKZ4wAA2UPhweLwuA6H5yRpBt3Q4ZAt8xE82FxCgMxocZZj9AnvtrJR7noPNWDTGVTaUQ6U3iXAqT6PzjAsvSglwtGUociPIuFvudwvwb0ZyrJ8ALwTCCigS81RxVtBUE4j4pgRXpi4u28v66GWWRdlm+Sw3eJdiG5aMRFFvufvgiFNI4lAcPMiVdrFOTgkONmKimRPsPK7tVrtlY+Yjn1OC76iOUeoN/tdfcD91niTt+bgciUw6+H6faEsvQJdl689S/wONdwjzDZ7WDbL+xymZa0VO8/lCt0e+BTkAJsDGzpi0+5qv1YRYThJg5YwnlI1MR0dHJ3V3VIKAjBj57Qll4+T4+PgdHyIejLiUOQKGK+JBBexLy/wvAnBDk7wUiv+DI7mbH8Ihc7Ka5LbrS5KSPCnRM3hm15oF4p73vD4/BLNIn+t+ktBBYBMpi7gQh8h8CW4ipVBgjBYCmzjpaiAQrJ2kCgjNDUuYHJ36kIGUikPV1xh5EKv0zMgaV85i/QRzpYYwGSSzc8JoaDkbTC4BWmrI3ydlUJH8Soh5kGF1loaYEsgeRLUjC2QlXYRAWLqoxatxf6R5Ea/KEzT1TamEGUiqJZqlPiXBhgyWYK0obmU7idvYLRJKsaDlcnKX4nxPulKSYHUGac+8ktSD6T8oJ/dA4VPLK6+kw9hkGi3ivK3pwgI1i7cKDLKBBOq6riGhJbYLCfyYX+mKyLExMQva5qpBPazYXGEtnP2h3PPoWzi0UawZnc6GNIpAZqeqdtSg6TVorU0aeINrgsFlhF95nuogr5B7YvUXK5Prm8El0eQqanDhNblWo5d3K/TybvJEYPAQYfLcYfKoYvJ0Q+zqH4hMnqEIOR187HIqP3aZPKlVfrj7D7SCwqKeiZGgAAAAAElFTkSuQmCC'>
+                                    <div id="al-select"></div>
+                                    <div class="mt-1">
+                                        <a class="btn btn-outline-primary btn-block" id="button_al_approve"><i class="fa-regular fa-thumbs-up"></i> Approve</a>
+                                        <a class="btn btn-primary btn-block" id="button_al_approved"><i class="fa-solid fa-thumbs-up"></i> Approved</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane active" id="tab-review" role="tabpanel" aria-labelledby="review-tab">
+                        <div class="row">
+                            <div class="col-12">
+                                <table id="nuclei-datatable" class="display"></table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="tab-annotated-files" role="tabpanel" aria-labelledby="annotated-files-tab">
+                        
+                        <div class="row m-2">
+                            <div class="col-4">
+                                <h5>Annotated files</h5>
+                            </div>
+                            <div class="col-8">
+                                <a class="btn btn-success" id="change_path_finished"><i class="fa-solid fa-clipboard-check"></i> Confirm</a>
+                            </div>
+                        </div>
+
+                        <form>
+                            <hr>
+                            <div class="form-group form_annotated_files">
+                                <div class="row mb-2">
+                                    <div class="col-1">
+                                        <b># nuclei</b>
+                                    </div>
+                                    <div class="col-5">
+                                        <b>Original file</b>
+                                    </div>
+                                    <div class="col-1">
+                                        <b>Exist?</b>
+                                    </div>
+                                    <div class="col-5">
+                                        <b>New file</b>
+                                        <!--a class="btn btn-success" id="apply_first_logic_to_all"><i class="fa-solid fa-arrow-down-short-wide"></i> Apply first logic to all</a-->
+                                    </div>
+                                </div>
+
+                                <div class="row annotated_files_row" id=0 style="display: none;">
+                                    <div class="col-1">
+                                        <div id="number_of_annotated_nuclei"></div>
+                                    </div>
+                                    <div class="col-5">
+                                        <div id="original_file_path"></div>
+                                    </div>
+                                    <div class="col-1">
+                                        <div id="status_found"><i class="fa-solid fa-check" style="color:#49be25;"></i></div>
+                                        <div id="status_not_found"><i class="fa-solid fa-question" style="color:#ff0000;"></i></div>
+                                    </div>
+                                    <div class="col-5">
+                                        <!--input class="form-control" type="file" id="new_file_path_selector">
+                                        <label for="new_file_path_selector"><span id="new_file_path"></span></label-->
+                                        <input type="text" class="form-control" id="new_file_path" placeholder="/absolute/path/to/.svs">
+                                    </div>
+                                    <hr>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<style>
+    body {
+        max-width: 1200px;
+        background-color: whitesmoke;
+        margin: 0 auto;
+    }
+</style>
+
+
+<script>
+    backend = null;
+    window.onload = function () {
+        new QWebChannel(qt.webChannelTransport, function(channel) {
+            backend = channel.objects.backend_review;
+            backend.log( "window.onload" );
+            
+            backend.sendjson_to_js.connect(function(jsonarray) {
+                //backend.log(jsonarray);
+                var jsonObj = JSON.parse(jsonarray);
+                if (jsonObj.hasOwnProperty('action')) {
+                    if (jsonObj['action'] == 'setup_active_learning'){
+                        setup_active_learning(jsonObj, backend);
+                    }
+                    if (jsonObj['action'] == 'nuclei_dict_for_review'){
+                        setup_review_datatable(jsonObj, backend);
+                    }
+                    if (jsonObj['action'] == 'need_update_file_locations'){
+                        update_filepaths(jsonObj, backend);
+                    }
+                }
+            });
+
+            backend.load_nuclei_dict(); // must init after sendjson_to_js
+            backend.init_active_learning(); // must init after sendjson_to_js
+
+
+        });
+    }
+
+
+
+
+    setup_active_learning = function(jsonObj, backend){
+        //remove previous
+        selected_rows = $('.active-learning-nucleus-card');
+        for (let i=0; i<selected_rows.length;i++){
+            if ($(selected_rows[i]).attr('id') !== '0'){
+                $(selected_rows[i]).remove();
+            }
+        }
+        
+        nuclei_img_small_paths = jsonObj['nuclei_img_small_paths'];
+        class_id = jsonObj['class_id'];
+        class_name = jsonObj['class_name'];
+        nuclei_id = jsonObj['list_of_nuclei_id'];
+        estimated_nuclei_class_id = jsonObj['estimated_nuclei_class_id']; // Associated class ID of each nuclei
+        estimated_nuclei_proba = jsonObj['estimated_nuclei_proba'];
+        for (i=0; i<nuclei_id.length; i++){
+            var imgtag_src = 'data:image/jpeg;base64,'+nuclei_img_small_paths[i];
+            var estimated_class = class_name[class_id.indexOf(estimated_nuclei_class_id[i])];
+            var probability = parseFloat(estimated_nuclei_proba[i]).toFixed(6);
+            var opacity = parseInt((0.5-Math.abs(0.5-probability))*255);
+            var max_row = Math.min(class_name.length, 5);
+            var new_class_option_tag = "<select size='"+max_row+"' class='active_learning_select_class' id='"+nuclei_id[i]+"'>";
+            for (j=0; j<class_name.length; j++){
+                cls = class_name[j];
+                if (cls === estimated_class){isSelected = 'selected'}
+                else {isSelected = ''}
+                new_class_option_tag = new_class_option_tag + "<option value='"+cls+"' "+isSelected+">"+cls+"</option>";
+            }
+            
+            $cloneobj = $('.active-learning-nucleus-card').first().clone();
+            $cloneobj.attr('id', (i+1)); // this change inputFormRow id
+            $cloneobj.attr('nuclei_id', nuclei_id[i]); // this change nuclei ID
+            $cloneobj.attr('style', 'width: 180px;'); // this removes "display:none"
+            $cloneobj.find('#uncertainty').text('Probability: ' + probability);
+            $cloneobj.find('#uncertainty').attr('style', "background-color: rgb(102, 153, 255, " + opacity + ");");
+            $cloneobj.find('#button_al_approved').hide();
+            $cloneobj.find('#al-select').html(new_class_option_tag);
+            $cloneobj.find('#al-nucleus-img').attr('src',imgtag_src);
+            $('.active-learning-cards').append($cloneobj);
+        }
+    }
+    
+
+    setup_review_datatable = function(jsonObj, backend){
+        
+        nuclei_img_small_paths = jsonObj['nuclei_img_small_paths'];
+        class_id = jsonObj['class_id'];
+        class_name = jsonObj['class_name'];
+        nuclei_id = jsonObj['nuclei_id'];
+        nuclei_class_id = jsonObj['nuclei_class_id']; // Associated class ID of each nuclei
+        nuclei_label_original = jsonObj['nuclei_label_original']; // Associated class label (0 or 1) of each nuclei
+        label_init_datetimes = jsonObj['label_init_datetime'];
+        var dataset = [];
+        for (i=0; i<nuclei_id.length; i++){
+            var case_id = nuclei_id[i].split("_")[0];
+            var slide_id = nuclei_id[i].split("_")[1];
+            var datetime = label_init_datetimes[i];
+            var case_slide = case_id + ' - ' + slide_id;
+
+            var imgtag = '<img src="data:image/jpeg;base64,'+nuclei_img_small_paths[i]+'">';
+
+            var original_class = class_name[class_id.indexOf(nuclei_class_id[i])];
+            var original_lbl = nuclei_label_original[i];
+            if (String(nuclei_label_original[i]) === '0'){
+                original_class = 'Other';
+            }
+            if (String(nuclei_label_original[i]) === 'Not Sure'){
+                original_class = 'Not Sure';
+            }
+            if (String(nuclei_label_original[i]) === 'Incorrect Segmentation'){
+                original_class = 'Incorrect Segmentation';
+            }
+
+            var new_class_option_tag = "<select size='5' class='select_newclass' id='"+nuclei_id[i]+"'>"
+            for (j=0; j<class_name.length; j++){
+                cls = class_name[j];
+                if (cls === original_class){isSelected = 'selected'}
+                else {isSelected = ''}
+                new_class_option_tag = new_class_option_tag + "<option value='"+cls+"' "+isSelected+">"+cls+"</option>";
+            }
+            
+            /*
+            if (original_class === 'Other'){isSelected = 'selected'}
+            else {isSelected = ''}
+            new_class_option_tag = new_class_option_tag + "<option value='Other' "+isSelected+">Other</option>";
+            */
+           
+            if (original_class === 'Not Sure'){isSelected = 'selected'}
+            else {isSelected = ''}
+            new_class_option_tag = new_class_option_tag + "<option value='Not Sure' "+isSelected+">Not Sure</option>";
+            if (original_class === 'Incorrect Segmentation'){isSelected = 'selected'}
+            else {isSelected = ''}
+            new_class_option_tag = new_class_option_tag + "<option value='Incorrect Segmentation' "+isSelected+">Incorrect Segmentation</option>";
+            
+
+            
+            var original_class_div = "<div id='original_class_name'>"+original_class+"</div>";
+            var new_class_div = "<div id='new_class_name' style='color:red;font-weight: bold;'></div>";
+            var init_datetime_div = "<div id='label_init_datetime'>"+datetime+"</div>";
+            var row = [imgtag, case_slide, init_datetime_div, original_class_div, new_class_div, new_class_option_tag];
+            dataset[i] = row;
+        }
+
+        var table = $('#nuclei-datatable').DataTable( {
+            scrollY: '75vh',
+            scrollCollapse: true,
+            paging: false,
+            searching: false,
+            data: dataset,
+            columns: [
+                { title: "Nuclei" },{ title: "Case & Slide"},{ title: "Initial label time" },{ title: "Original class"},{ title: "New class"},{ title: "Change class" }
+            ]
+        });
+        $('#nuclei-datatable tbody').on('click', 'tr', function () {
+            var data = table.row( this ).data();
+            var original_class = $(this).find('#original_class_name').text();
+            var nuclei_id = $(this).find('.select_newclass').attr('id');
+            backend.log( 'You clicked on '+nuclei_id+'\'s row, original class='+original_class);
+            backend.review_show_nuclei(nuclei_id);
+        });
+
+        $('.select_newclass').on('click', function () {
+            e = this;
+            var nuc_id = $(this).attr('id');
+            var new_class_selected = $(this).val();
+            var original_class_name = $(this).parent().parent().find('#original_class_name').text();
+            
+            $new_class_div = $(this).parent().parent().find('#new_class_name');
+            if (new_class_selected === original_class_name){
+                console.log('no change');
+                $new_class_div.text('');
+            }
+            else {
+                $new_class_div.text(new_class_selected);
+            }
+            backend.review_update_class(nuc_id, new_class_selected);
+        });
+    }
+
+
+    update_filepaths = function(jsonObj, backend){
+        //remove previous
+        selected_rows = $('.annotated_files_row');
+        for (let i=0; i<selected_rows.length;i++){
+            if ($(selected_rows[i]).attr('id') !== '0'){
+                $(selected_rows[i]).remove();
+            }
+        }
+
+        original_filepath_list = jsonObj['original_filepath_list'];
+        number_of_nuclei_annotated = jsonObj['number_of_nuclei_annotated'];
+        file_exist_list = jsonObj['file_exist_list'];
+        for (var i=0; i<original_filepath_list.length; i++){
+            
+            $cloneobj = $('.annotated_files_row').first().clone();
+            $cloneobj.attr('id', (i+1)); // this change inputFormRow id
+            $cloneobj.attr('style', ''); // this removes "display:none"
+            $cloneobj.find('#original_file_path').text(original_filepath_list[i]);
+            $cloneobj.find('#number_of_annotated_nuclei').text(number_of_nuclei_annotated[i]);
+            //$cloneobj.find('#new_file_path').text(original_filepath_list[i]);
+            if (file_exist_list[i] == 'True'){
+                $cloneobj.find('#status_found').show();
+                $cloneobj.find('#status_not_found').hide();
+                $cloneobj.find('#new_file_path').text(original_filepath_list[i]);
+            } else{
+                $cloneobj.find('#status_found').hide();
+                $cloneobj.find('#status_not_found').show();
+            }
+            $('.form_annotated_files').append($cloneobj);
+        }
+
+        /*
+        setTimeout(function () {
+            $('.nav-link').removeClass('active');
+            $('#annotated-files-tab').addClass('active');
+        }, 2000);
+        */
+    }
+
+    $('#change_path_finished').click(function(){
+        var new_paths = $(".annotated_files_row").find("#new_file_path");
+        new_paths_dir = [];
+        for(var i=0; i<new_paths.length;i++){
+            new_paths_dir[i] = $(new_paths[i]).val();
+        }
+        new_paths_dir.shift(); // JS: remove the first placeholder (id=0)
+
+        var obj = new Object();
+        obj.path = new_paths_dir;
+        var new_paths_json = JSON.stringify(obj);
+        backend.review_update_filepath(new_paths_json);
+    });
+
+
+
+
+    $( document ).ready(function() {
+
+
+        selected_rows = $('.active-learning-nucleus-card');
+        for (let i=0; i<selected_rows.length;i++){
+            if ($(selected_rows[i]).attr('id') !== '0'){
+                $(selected_rows[i]).remove();
+            }
+        }
+        
+        class_name = ['Other', 'Tumor'];
+        nuclei_id = [1310,2321,3465,4504]
+        estimated_nuclei_class_id = [0,1,0,1];
+        for (i=0; i<nuclei_id.length; i++){
+            var max_row = 2;
+            var new_class_option_tag = "<select size='"+max_row+"' class='active_learning_select_class' id='"+nuclei_id[i]+"'>";
+            for (j=0; j<class_name.length; j++){
+                if (j === 0){isSelected = 'selected'}
+                else {isSelected = ''}
+                cls=class_name[j];
+                new_class_option_tag = new_class_option_tag + "<option value='"+j+"' "+isSelected+">"+cls+"</option>";
+            }
+            $cloneobj = $('.active-learning-nucleus-card').first().clone();
+            $cloneobj.attr('id', (i+1)); // this change inputFormRow id
+            $cloneobj.attr('nuclei_id', nuclei_id[i]); // this change nuclei ID
+            $cloneobj.attr('style', 'width: 180px;'); // this removes "display:none"
+            $cloneobj.find('#button_al_approved').hide();
+            $cloneobj.find('#al-select').html(new_class_option_tag);
+            $('.active-learning-cards').append($cloneobj);
+        }
+
+
+
+
+        send_active_learning_to_mainwindow = function(){
+            cards = $('.active-learning-nucleus-card');
+            var obj = new Object();
+            obj.nuclei_id = [];
+            obj.class_name = [];
+            j=0;
+            for (var i=0; i < cards.length; i++){
+                if (i==0){continue;}
+                isApproved = $(cards[i]).attr("approved");
+                if (isApproved==1){
+                    nuclei_id = $(cards[i]).attr("nuclei_id");
+                    class_name = $(cards[i]).find('.active_learning_select_class option:selected').attr('value');
+                    console.log(nuclei_id + '   ' +class_name);
+                    obj.nuclei_id[j] = nuclei_id;
+                    obj.class_name[j] = class_name;
+                    j = j+1;
+                }
+            }
+            var jsonObj = JSON.stringify(obj);
+            backend.active_learning_next_batch(jsonObj);
+        }
+
+
+        $('#active_learning_next').click(function(){
+            send_active_learning_to_mainwindow()
+        });
+
+        $('.active-learning-cards').on("click", "#button_al_approve", function () {
+            $(this).parent().find('#button_al_approve').hide();
+            $(this).parent().find('#button_al_approved').show();
+            $(this).parent().parent().parent().find('#al-nucleus-img').addClass('opacity-0-3');
+            $(this).parent().parent().parent().find('.card-header').addClass('opacity-0-3');
+            $(this).parent().parent().parent().find('#al-select').addClass('opacity-0-3');
+            $(this).parent().parent().parent().find('.active_learning_select_class').attr('disabled');
+            $(this).parent().parent().parent().attr('approved', 1);
+        });
+
+        $('.active-learning-cards').on("click", "#button_al_approved", function () {
+            $(this).parent().find('#button_al_approve').show();
+            $(this).parent().find('#button_al_approved').hide();
+            $(this).parent().parent().parent().find('#al-nucleus-img').removeClass('opacity-0-3');
+            $(this).parent().parent().parent().find('.card-header').removeClass('opacity-0-3');
+            $(this).parent().parent().parent().find('#al-select').removeClass('opacity-0-3');
+            $(this).parent().parent().parent().find('.active_learning_select_class').removeAttr('disabled');
+            $(this).parent().parent().parent().attr('approved', 0);
+        });
+
+
+        $('.active-learning-cards').on("click", "#al-nucleus-img", function () {
+            var nuclei_id = $(this).parent().parent().attr('nuclei_id');
+            backend.log( 'You clicked on '+nuclei_id+'\'s row');
+            backend.review_show_nuclei(nuclei_id);
+        });
+
+
+        
+
+    });
+
+
+</script>

@@ -1,0 +1,16 @@
+2022-09-02 01:34:39.501 *** Start program *** Start program
+2022-09-02 01:34:44.966 *** Open case *** /Applications/XAMPP/xamppfiles/htdocs/20220722_Eric_Yang
+2022-09-02 01:34:52.835 *** User Login *** id=640475916; email=zhihuang@stanford.edu; firstname=Zhi; lastname=Huang.
+2022-09-02 01:34:55.350 *** Open processed data
+2022-09-02 01:34:55.351 *** Preload all statistics at once.
+2022-09-02 01:34:56.299 *** Nuclei stat data loaded, took 0.95 seconds. Total number of nuclei: 843996
+2022-09-02 01:35:11.401 *** Interactive label *** (double click) click on screen. screen: (868, 450); slide: (99083, 34670). case_id: 20220722_Eric_Yang, slide_id: 3BNI3N_44662.svs, Nuclei index selected: 430104
+2022-09-02 01:35:11.683 *** Interactive label *** Apply to case start.
+2022-09-02 01:35:13.668 *** Interactive label *** (double click) click on screen. screen: (911, 491); slide: (99104, 34690). case_id: 20220722_Eric_Yang, slide_id: 3BNI3N_44662.svs, Nuclei index selected: 430388
+2022-09-02 01:35:13.955 *** Interactive label *** Apply to case start.
+2022-09-02 01:35:16.557 *** Interactive label *** (double click) click on screen. screen: (665, 457); slide: (99308, 34825). case_id: 20220722_Eric_Yang, slide_id: 3BNI3N_44662.svs, Nuclei index selected: 469763
+2022-09-02 01:35:16.864 *** Interactive label *** Apply to case start.
+2022-09-02 01:35:19.737 *** Interactive label *** Apply to case done.
+2022-09-02 01:35:19.898 *** Interactive label *** Apply to case finish overlay create.
+2022-09-02 01:35:21.676 *** Interactive label: Sync start.
+2022-09-02 01:35:53.709 *** Program closed.

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+  <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+
+  <!--
+  <script src="/home/zhihuang/Desktop/nuclei.io_pyside6/software/HTML5_UI/js/bootstrap_4.6.1/popper.min.js"></script>
+  <script src="/home/zhihuang/Desktop/nuclei.io_pyside6/software/HTML5_UI/js/bootstrap_4.6.1/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" type="text/css" src="/home/zhihuang/Desktop/nuclei.io_pyside6/software/HTML5_UI/css/bootstrap_4.6.1/bootstrap.min.css"></link>
+  -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <!--popper.js should load before bootstrap.js and after jquery.js-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+
+
+  <!--Bootstrap-select-->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/bootstrap-select.min.js"></script>
+  <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/i18n/defaults-*.min.js"></script>
+
+
+
+  <script src="js/crypto-js.min.js"></script>
+  <script src="https://kit.fontawesome.com/0c31ad6a35.js" crossorigin="anonymous"></script>
+  
+  <script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
+
+    
+  <!--Color picker-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.4.0/js/bootstrap-colorpicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.4.0/css/bootstrap-colorpicker.css">
+
+
+</head>
+
+<body>
+
+  <div id='topnav'></div>
+  <div style="height: 100px;"></div>
+  <div class="layout_root" id='mainlayout'>
+    <div class="layout_child" id='layout_case_slide' style="display:none;"></div>
+    <div class="layout_child" id='layout_annotation' style="display:none;"></div>
+    <div class="layout_child" id='layout_ai' style="display:none;"></div>
+    <div class="layout_child" id='layout_toolbox' style="display:none;"></div>
+    <div class="layout_child" id='layout_community' style="display:none;"></div>
+  </div>
+  <div id="footerbar"></div>
+
+
+</body>
+</html>
+
+
+<script>
+  // Preventing using space key to scroll down.
+  // However, you will not be able to type space in a text area. will fix that bug.
+  /*
+  window.onkeydown = function(e) {
+      var elem = e.target.nodename;
+      if( elem !== 'TEXTAREA' && elem != 'INPUT' ) {
+          return !(e.keyCode == 32);
+      }
+  };
+  */
+  function disableSelection(target){
+  if (typeof target.onselectstart!="undefined") //For IE 
+      target.onselectstart=function(){return false}
+  else if (typeof target.style.MozUserSelect!="undefined") //For Firefox
+      target.style.MozUserSelect="none"
+  else //All other route (For Opera)
+      target.onmousedown=function(){return false}
+  target.style.cursor = "default"
+  }
+  disableSelection(document.body)
+</script>
+
+<script src="js/scripts.js"></script>
+<script type="text/javascript">
+  $( "#topnav" ).load( "html/topnav.html");
+  $( "#footerbar" ).load( "html/footer.html");
+
+  var layout_names = ['case_slide','annotation','ai','toolbox','community'];
+  for(let i=0; i<layout_names.length; i++){
+    layoutname = layout_names[i];
+    $( "#mainlayout #layout_"+layoutname ).load( "html/" + layoutname + ".html");
+  }
+
+  load_main_layout('case_slide');
+</script>
+
+
+<script>
+
+backend = null;
+case_nid = 0;
+
+function hsv2rgb(hsv) {
+        h=hsv[0];
+        s=hsv[1]/100;
+        v=hsv[2]/100;
+        var r, g, b, i, f, p, q, t;
+        i = Math.floor(h * 6);
+        f = h * 6 - i;
+        p = v * (1 - s);
+        q = v * (1 - f * s);
+        t = v * (1 - (1 - f) * s);
+        switch (i % 6) {
+            case 0: r = v, g = t, b = p; break;
+            case 1: r = q, g = v, b = p; break;
+            case 2: r = p, g = v, b = t; break;
+            case 3: r = p, g = q, b = v; break;
+            case 4: r = t, g = p, b = v; break;
+            case 5: r = v, g = p, b = q; break;
+        }
+        return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+    }
+
+window.onload = function () {
+
+  new QWebChannel(qt.webChannelTransport, function(channel) {
+      backend = channel.objects.backend;
+      
+      backend.log('WebChannel initiated.');
+  
+      backend.sendjson_to_js.connect(function(jsonarray) {
+          //backend.log(jsonarray);
+          var jsonObj = JSON.parse(jsonarray);
+          if (jsonObj.hasOwnProperty('action')) {
+              if (jsonObj['action'] == 'update_workspace'){
+                  case_id = jsonObj['case_id'];
+                  var case_dict = jsonObj['case_dict'];
+                  list_slides(case_dict, jsonObj);
+              }
+              if (jsonObj['action'] == 'clear_workspace'){
+                  clear_workspace();
+              }
+              if (jsonObj['action'] == 'update login navbar'){
+                  $("#username" ).text('Dr. ' +jsonObj['firstname'] + ' ' + jsonObj['lastname']);
+                  userid = jsonObj['userid']; // This variable will be used for sync button.
+                  $("#not_login_menu_list").hide();
+                  $("#has_login_menu_list").show();
+              }
+
+              if (jsonObj['action'] == 'update annotation count'){
+                    n_nuclei_dict = jsonObj['value'];
+                    class_ids = Object.keys(n_nuclei_dict);
+                    total_nuclei = 0;
+                    selected_rows = $('.inputFormRow');
+                    for (let i=0; i<selected_rows.length;i++){
+                        var this_id = $(selected_rows[i]).attr('id');
+                        if (class_ids.includes(this_id)){
+                          n_nuclei = n_nuclei_dict[this_id];
+                          //backend.log(this_id +': '+ n_nuclei);
+                          total_nuclei = total_nuclei + n_nuclei;
+                          $('.inputFormRow#'+this_id).find('.nuclei_count').text(n_nuclei);
+                        } else{
+                          $('.inputFormRow#'+this_id).find('.nuclei_count').text(0);
+                        }
+                    }
+                    /*
+                    for (var i=0; i<class_ids.length; i++){
+                        curr_id = class_ids[i];
+                        n_nuclei = n_nuclei_dict[curr_id];
+                        backend.log(curr_id);
+                        backend.log(n_nuclei);
+                        total_nuclei = total_nuclei + n_nuclei;
+                        $('.inputFormRow#'+curr_id).find('.nuclei_count').text(n_nuclei);
+                    }
+                    */
+
+                    $('#curr_n_nuclei').text(total_nuclei);
+              }
+              if (jsonObj['action'] == 'update_class_status'){
+                    n_nuclei_total = jsonObj['total_nuclei'];
+                    total_tumor_nuclei = jsonObj['total_tumor_nuclei'];
+                    total_other_nuclei = jsonObj['total_other_nuclei'];
+
+                    n_nuclei = jsonObj['number_of_selected'];
+
+                    if (jsonObj.hasOwnProperty('accuracy')) {
+                        accuracy = jsonObj['accuracy']
+                        $('#curr_accuracy').text(accuracy);
+                    }
+                    
+                    //backend.log(n_nuclei);
+                    //backend.log('------');
+                    //backend.log(accuracy);
+                    progress = parseFloat(n_nuclei/5*100).toFixed(2);
+                    if (progress>100){progress=100;}
+                    
+                    $('#curr_init_progress').text(progress + '% Completed');
+                    $('#curr_init_progress').css('width:', progress + '%');
+                    $('#curr_init_progress').attr('style', 'width:'+ progress + '%');
+                    $('#curr_n_nuclei').text(n_nuclei_total);
+                    $('#curr_tumor_nuclei').text(total_tumor_nuclei);
+                    $('#curr_other_nuclei').text(total_other_nuclei);
+              }
+              if (jsonObj['action'] == 'import_class_status'){
+                  $('#curr_n_target').text(jsonObj['n_class']);
+                  $('#curr_n_nuclei').text(jsonObj['n_nuclei']);
+                  // TODO: add total tumor nuclei and total other nuclei
+                  $('#curr_accuracy').text(jsonObj['test_acc']);
+                  $('#curr_init_progress').text(100 + '% Completed');
+                  $('#curr_init_progress').css('width:', 100 + '%');
+                  $('#curr_init_progress').attr('style', 'width:'+ 100 + '%');
+                  $('#tissueType').text(jsonObj['tissueType']);
+                  $('#studyDescription').text(jsonObj['description']);
+              }
+              if (jsonObj['action'] == 'apply2case_done'){
+                  //backend.log(jsonObj);
+                  accuracy = jsonObj['accuracy'];
+                  //backend.log(accuracy);
+                  $('#curr_accuracy').text(accuracy);
+                  $('#apply_to_case').show();
+                  $('#apply_to_case_applying').hide();
+              }
+              if (jsonObj['action'] == 'syncing_done'){
+                  $('#sync').show();
+                  $('#syncing').hide();
+              }
+              if (jsonObj['action'] == 'import: load_class_info'){
+                  var class_info_keys = Object.keys(jsonObj['classinfo']);
+                  
+                  class_info = new Object(); // init class_info from python
+                  for (var c=0; c<class_info_keys.length; c++){
+                      var cls_id = parseInt(class_info_keys[c]);
+                      var curr_class_info_from_py = jsonObj['classinfo'][cls_id];
+                      var hexcolor = curr_class_info_from_py['hexcolor'];
+                      class_info[cls_id] = new Object();
+                      class_info[cls_id]['classname'] = curr_class_info_from_py['classname'];
+                      class_info[cls_id]['rgbcolor'] = hex2rgb(hexcolor);
+                      if (cls_id==0){
+                          $firstobj = $('.inputFormRow').first();
+                          $firstobj.find('.nuclei_color_picker').colorpicker({
+                              popover: {
+                                  title: 'Adjust the color',
+                                  placement: 'top'
+                              },
+                              useAlpha: false,
+                              color: hexcolor,
+                          });
+                          $firstobj.find('.nuclei_count').text(parseInt(curr_class_info_from_py['n_curr_nuclei']));
+                      } else {
+                          $cloneobj = $('.inputFormRow').first().clone();
+                          $cloneobj.attr('id', cls_id); // this change inputFormRow id
+                          $cloneobj.attr('style', '');
+                          $cloneobj.find('.nuclei_color_picker').attr('id', cls_id);
+                          $cloneobj.find('.nuclei_color_picker').colorpicker({
+                              popover: {
+                                  title: 'Adjust the color',
+                                  placement: 'top'
+                              },
+                              useAlpha: false,
+                              color: hexcolor,
+                          });
+                          var colorpicker_timeout = null;
+                          $cloneobj.find('.nuclei_color_picker').on('colorpickerChange', function (e) {
+                              thisid = $(this).attr('id');
+                              clearTimeout(colorpicker_timeout);
+                              colorpicker_timeout = setTimeout(function() {
+                                  rgbcolor = hsv2rgb(e.value._color.color);
+                                  //backend.log('hsv '+e.value._color.color);
+                                  //backend.log('rgb '+rgbcolor);
+                                  class_info[thisid]['rgbcolor'] = rgbcolor;
+                                  backend.update_classinfo(JSON.stringify(class_info), 'update color');
+                              }, 1000);
+                          });
+                          $cloneobj.find('.nucleiTypeSelect').selectpicker('val', curr_class_info_from_py['classname']);
+                          $cloneobj.find('.nucleiTypeSelect').attr('style', 'width:55%;');
+                          $cloneobj.find('.removeRowBtn').removeClass('disabled');
+                          $cloneobj.find('.nucleiTypeSelect').prop('disabled', false);
+                          $cloneobj.find('.nuclei_count').text(parseInt(curr_class_info_from_py['n_curr_nuclei']));
+                          $('#newRow').append($cloneobj);
+                      }
+                  }
+
+                  // In case user need to add more customized classes.
+                  n_added = Math.max(...class_info_keys.map(Number));
+
+                  $('.inputFormRow').find('.btnNucleiSelect').html('<i class="fa-regular fa-circle"></i>');
+                  $('.inputFormRow').find('.btnNucleiSelect').removeClass('btn-primary');
+                  $('.inputFormRow').find('.btnNucleiSelect').addClass('btn-outline-secondary');
+              }
+
+              if (jsonObj['action'] == 'plot_virtual_flow_stat'){
+                  // plot_vfc, plot_stats, and plot_feature_importance are in ai.html.
+                  plot_vfc(backend, jsonObj);
+                  plot_stats(backend, jsonObj);
+                  if (jsonObj.hasOwnProperty('feature_importance')){
+                    $('#feature_importance_frame').show();
+                    plot_feature_importance(backend, jsonObj);
+                  }
+              }
+              if (jsonObj['action'] == 'update feature list'){
+                  feature_list = jsonObj['feature_list'];
+                  update_feature_list(backend, feature_list);
+              }
+          }
+
+          
+      });
+
+
+  });
+}
+
+$( document ).ready(function() {
+  //console.log( "webengineview: html document is ready." );
+  //backend.log( "webengineview: html document is ready." );
+
+
+});
+
+
+    function clear_workspace(){
+        $('.case_folder_manager .case-item').each(function( index ) {
+            var case_id = $( this ).attr('id');
+            if (case_id != 'case_n0'){
+                $('.case_folder_manager #case_n0').remove();
+            }
+        });
+
+    }
+
+
+    function list_slides(case_dict, jsonObj){
+        $('#workspace_helper').hide()
+        $('#browse_another_case_folder').show()
+        
+        case_nid = case_nid + 1;
+        var curr_nid = case_nid;
+        append_case(case_id, curr_nid, case_dict, jsonObj);
+        
+    }
+
+    function append_case(case_id, curr_nid, case_dict, jsonObj){
+        
+        var caseobj = $('.case_folder_manager #case_n0').clone();
+        caseobj.attr('style', ''); //remove style='display:none'
+        caseobj.attr('id', 'case_n' + curr_nid);
+        caseobj.find('.card-header').attr('data-target', '#case_n' + curr_nid + '_items');
+        caseobj.find('.card-header').attr('aria-controls', 'case_n' + curr_nid + '_items');
+        caseobj.find('.card-header .case-id').text(case_id);
+        caseobj.attr('id', 'case_n' + curr_nid);
+        caseobj.find('.card-header').attr('id', 'heading_' + curr_nid);
+        caseobj.find('.slide-items').attr('id', 'case_n' + curr_nid + '_items');
+        caseobj.find('.slide-items').attr('aria-labelledby', 'heading_' + curr_nid);
+        if ('assist_type' in jsonObj){
+            if (jsonObj['assist_type'] == 'Unassisted'){
+            }
+            else if (jsonObj['assist_type'] == 'Assisted'){
+                caseobj.find('.card-header').addClass('bg-white');
+            }
+            else if (jsonObj['assist_type'] == 'Preparation'){
+                caseobj.find('.card-header').addClass('bg-warning');
+            }
+        }
+        //backend.log('Case '+case_id+'  nid: ' + curr_nid);
+        var slide_nid = 0;
+        for (var slide_name in case_dict) {
+            slide_nid = slide_nid + 1;
+            //backend.log(slide_nid);
+            append_slide(caseobj, curr_nid, slide_nid, slide_name, case_dict[slide_name]);
+        }
+        $('.case_folder_manager').append(caseobj);
+    }
+
+    function append_slide(caseobj, case_nid, slide_nid, slide_name, slide_info){
+        
+        var slideobj = $(caseobj).find('#case_n'+case_nid+'_items .slide_group #slide_i0').clone();
+        slideobj.attr('style', ''); //remove style='display:none'
+        slideobj.attr('id', 'slide_i' + slide_nid);
+        var thumbnail_tag = '<img src="data:image/jpeg;base64,'+slide_info['thumbnail_small_base64']+'">';
+        var barcode_tag = '<img src="data:image/jpeg;base64,'+slide_info['label_base64']+'">';
+        
+        slideobj.find('.slide-thumbnail').html(thumbnail_tag);
+        slideobj.find('.slide-barcode').attr('title', barcode_tag);
+        slideobj.find('.slide-barcode').tooltip();
+        slideobj.find('.slide_name').text(slide_name);
+        if (slide_name.includes('PT')){
+            slideobj.addClass('bg-info');
+        }
+        slideobj.find('.slide_dimension').text(slide_info['width'] + ' x '+ slide_info['height']);
+        $(caseobj).find('#case_n'+case_nid+'_items .slide_group').append(slideobj);
+    }
+
+    
+</script>
+
+
+<script>
+  /*
+  Virtual Flow Cytometry
+  */
+
+
+  update_feature_list = function(backend, feature_list){
+    //$('#vfc_dim1').append('<option style="width:270px; font-size:80%" data-tokens="All tissue type" value="All tissue type">All</option>');
+    //$('#vfc_dim2').append('<option style="width:270px; font-size:80%" data-tokens="All tissue type" value="All tissue type">All</option>');
+    for (let i = 0; i < feature_list.length; i++) {
+        feature = feature_list[i];
+        //backend.log(feature);
+        $('#vfc_dim1').append('<option style="width:270px; font-size:80%" data-tokens="'+feature+'" value="'+feature+'">'+feature+'</option>');
+        $('#vfc_dim2').append('<option style="width:270px; font-size:80%" data-tokens="'+feature+'" value="'+feature+'">'+feature+'</option>');
+        $('#feature_distribution_select').append('<option style="width:270px; font-size:80%" data-tokens="'+feature+'" value="'+feature+'">'+feature+'</option>');
+        
+    }
+    // Refresh the selectpicker
+    $("#vfc_dim1").selectpicker("refresh");
+    $("#vfc_dim2").selectpicker("refresh");
+    $("#feature_distribution_select").selectpicker("refresh");
+
+    //$("#vfc_dim1").selectpicker('val', 'Morphology | area');
+    //$("#vfc_dim2").selectpicker('val', 'Haralick | heterogeneity');
+    
+
+
+    var obj = new Object();
+    //obj.dim_1_select = $('#vfc_dim1 option:selected').text();
+    //obj.dim_2_select = $('#vfc_dim2 option:selected').text();
+    var dim_info_json = JSON.stringify(obj);
+    let_py_update_vfc(dim_info_json); // no dim info, use most important 2 features.
+  }
+
+    let_py_update_vfc = function(dim_info_json){
+      backend.update_vfc(dim_info_json);
+  }
+
+
+    $("#auto_vfc").click(function (){
+        backend.auto_flowcytometry();
+    });
+
+
+    plot_vfc = function(backend, jsonObj){
+
+    var VFCplotly = document.getElementById('virtual_flow_plot_div'); // must use this variable later for plotly_click event.
+
+    var dim1 = jsonObj['data']['dim1'];
+    var dim2 = jsonObj['data']['dim2'];
+    var x_title = jsonObj['axis_title']['dim1'];
+    var y_title = jsonObj['axis_title']['dim2'];
+    
+    var class_name_array = jsonObj['class_name'];
+    var class_color_r = jsonObj['class_color_r'];
+    var class_color_g = jsonObj['class_color_g'];
+    var class_color_b = jsonObj['class_color_b'];
+    var main_window_selected = jsonObj['main_window_selected'];
+    var unique_class_name = class_name_array.filter((v, i, a) => a.indexOf(v) === i);
+    
+    $("#vfc_dim1").selectpicker('val', x_title);
+    $("#vfc_dim2").selectpicker('val', y_title);
+
+    var data = [];
+    for (let i=0; i<unique_class_name.length; i++){
+        classname = unique_class_name[i];
+        classname_matched_idx = class_name_array.reduce((a, e, i) => (e === classname) ? a.concat(i) : a, []);
+        rgb_color = 'rgb('+ class_color_r[classname_matched_idx[0]] +','+ class_color_g[classname_matched_idx[0]] +','+ class_color_b[classname_matched_idx[0]] +')'
+        dim1_subset = classname_matched_idx.map(x=>dim1[x]);
+        dim2_subset = classname_matched_idx.map(x=>dim2[x]);
+
+        // change opacity, if selected, then opacity high; if not selected, then opacity low.
+        main_window_selected_subset = classname_matched_idx.map(x=>main_window_selected[x]);
+        main_window_selected_subset = main_window_selected_subset.map(a => a === 0 ? 0.01 :a);
+        main_window_selected_subset = main_window_selected_subset.map(a => a === 1 ? 0.8 :a);
+        opacity = main_window_selected_subset
+
+
+        var trace = {
+            x: dim1_subset,
+            y: dim2_subset,
+            mode: 'markers',
+            type: 'scattergl', //faster than scatter
+            name: classname,
+            marker: { size: 6,
+                    color: rgb_color,
+                    opacity: opacity,
+                    }
+        };
+        data.push(trace);
+    }
+
+    var layout = {
+        xaxis: {
+        title: x_title,
+        autorange: true,
+        showgrid: true,
+        zeroline: true,
+        showline: true,
+        mirror: 'ticks'
+        },
+        yaxis: {
+        title: y_title,
+        autorange: true,
+        showgrid: true,
+        zeroline: true,
+        showline: true,
+        mirror: 'ticks'
+        },
+        margin: {
+        l: 40,
+        r: 30,
+        t: 0,
+        b: 30,
+        pad: 0,
+        },
+        plot_bgcolor: 'rgb(248,248,255)',
+        showlegend: true,
+        //hovermode: false, //for fastest performance
+        hovermode:'closest',
+        legend: {"orientation": "h",
+                x: 0,
+                y: 1 + 0.15*unique_class_name.length
+        },
+        modebar: {
+        // vertical modebar button layout
+        orientation: 'v',
+        // for demonstration purposes
+        bgcolor: 'rgb(100,100,100)',
+        color: 'white',
+        activecolor: 'rgb(255,100,100)'
+        },
+    };
+
+    var config = {
+        scrollZoom: true,
+        displayModeBar: true,
+        displaylogo: false,
+        responsive: true
+    };
+
+    Plotly.newPlot('virtual_flow_plot_div', data, layout, config); // Do not use VFCplotly variable.
+        
+    VFCplotly.on('plotly_click', function(data){ //plotly_doubleclick doesn't work
+        var x = null;
+        for(var i=0; i < data.points.length; i++){
+            x = data.points[i].x
+            y = data.points[i].y
+        }
+        var obj = new Object();
+        obj.x = x;
+        obj.y = y;
+        var loc_json = JSON.stringify(obj);
+        backend.click_VFC_plot(loc_json);
+    });
+
+
+    VFCplotly.on('plotly_selected', function(eventData) {
+        var obj = new Object();
+        if (eventData.hasOwnProperty('lassoPoints')){
+        // lasso selection
+        obj.type = 'lasso';
+        obj.points_x = eventData.lassoPoints.x;
+        obj.points_y = eventData.lassoPoints.y;
+        } else{
+        // rect selection
+        obj.type = 'rect';
+        obj.points_x = eventData.range.x;
+        obj.points_y = eventData.range.y;
+        }
+        var select_json = JSON.stringify(obj);
+        backend.VFC_select_subregion(select_json);
+    });
+
+    }
+
+
+
+    plot_stats = function(backend, jsonObj){
+
+    var nuclei_barplot_plotly = document.getElementById('nuclei_barplot_div'); // must use this variable later for plotly_click event.
+    var main_window_selected = jsonObj['main_window_selected'];
+    var main_window_selected_unique = main_window_selected.filter((v, i, a) => a.indexOf(v) === i);
+
+    if (main_window_selected_unique.length === 1){
+        // All nuclei are selected. Plot vanilla barplot.
+        var uniq_classname = jsonObj['barplot']['selected']['class_name_unique']
+        var uniq_class_nuclei_count = jsonObj['barplot']['selected']['class_count_unique']
+        var total_nuclei = uniq_class_nuclei_count.reduce((a, b) => a + b, 0)
+        var uniq_classcolor = jsonObj['barplot']['selected']['class_color_unique'] // list of 'rgb(*, *, *)' format
+
+        var text = [];
+        for (let i=0; i<uniq_classname.length; i++){
+            text.push(uniq_class_nuclei_count[i] + ' (' + (uniq_class_nuclei_count[i]/total_nuclei*100).toFixed(2) + '%)')
+        }
+
+        var data = [{
+            type: 'bar',
+            x: uniq_classname,
+            y: uniq_class_nuclei_count,
+            text: text,
+            textposition: 'top',
+            orientation: 'v',
+            marker:{
+            color: uniq_classcolor
+            }
+        }];
+    } else {
+        var uniq_classname_selected = jsonObj['barplot']['selected']['class_name_unique']
+        var uniq_class_nuclei_count_selected = jsonObj['barplot']['selected']['class_count_unique']
+        var total_nuclei_selected = uniq_class_nuclei_count_selected.reduce((a, b) => a + b, 0)
+        var uniq_classcolor_selected = jsonObj['barplot']['selected']['class_color_unique'] // list of 'rgb(*, *, *)' format
+
+        var uniq_classname_notselected = jsonObj['barplot']['not_selected']['class_name_unique']
+        var uniq_class_nuclei_count_notselected = jsonObj['barplot']['not_selected']['class_count_unique']
+        var total_nuclei_notselected = uniq_class_nuclei_count_notselected.reduce((a, b) => a + b, 0)
+        var uniq_classcolor_notselected = jsonObj['barplot']['not_selected']['class_color_unique'] // list of 'rgb(*, *, *)' format
+
+        
+        var text_selected = [];
+        for (let i=0; i<uniq_classname_selected.length; i++){
+            text_selected.push(uniq_class_nuclei_count_selected[i] + ' (' + (uniq_class_nuclei_count_selected[i]/total_nuclei_selected*100).toFixed(2) + '%)')
+        }
+        var text_notselected = [];
+        for (let i=0; i<uniq_classname_notselected.length; i++){
+            text_notselected.push(uniq_class_nuclei_count_notselected[i] + ' (' + (uniq_class_nuclei_count_notselected[i]/total_nuclei_notselected*100).toFixed(2) + '%)')
+        }
+
+        var data = [{
+                        type: 'bar',
+                        x: uniq_classname_selected,
+                        y: uniq_class_nuclei_count_selected,
+                        text: text_selected,
+                        textposition: 'top',
+                        orientation: 'v',
+                        name: 'ROI Selected',
+                        marker:{
+                        color: uniq_classcolor_selected
+                        }
+                    },
+                    {
+                        type: 'bar',
+                        x: uniq_classname_notselected,
+                        y: uniq_class_nuclei_count_notselected,
+                        text: text_notselected,
+                        textposition: 'top',
+                        orientation: 'v',
+                        name: 'Others',
+                        marker:{
+                        color: uniq_classcolor_notselected,
+                        opacity: 0.4
+                        }
+                    }
+                    ];
+    }
+
+    var layout = {
+        //title: 'Household Savings & Net Worth for Eight OECD Countries',
+        xaxis: {
+        autorange: true,
+        showgrid: true,
+        zeroline: true,
+        showline: true,
+        mirror: 'ticks'
+        },
+        yaxis: {
+        autorange: true,
+        showgrid: true,
+        zeroline: true,
+        showline: true,
+        mirror: 'ticks'
+        },
+        barmode: 'stack',
+        margin: {
+        l: 40,
+        r: 40,
+        t: 1,
+        b: 60,
+        pad: 0,
+        },
+        legend: {"orientation": "h",
+                x: 0,
+                y: 1.4
+        },
+        plot_bgcolor: 'rgb(248,248,255)',
+        modebar: {
+        // vertical modebar button layout
+        orientation: 'v',
+        // for demonstration purposes
+        bgcolor: 'rgb(100,100,100)',
+        color: 'white',
+        activecolor: 'rgb(255,100,100)'
+        },
+    };
+
+    var config = {
+        displayModeBar: true,
+        displaylogo: false,
+        responsive: true
+    };
+
+    Plotly.newPlot('nuclei_barplot_div', data, layout, config);
+    }
+
+
+    plot_feature_importance = function(backend, jsonObj){
+    var feature_importance_plotly = document.getElementById('feature_barplot_div'); // must use this variable later for plotly_click event.
+    var feature_importance = jsonObj['feature_importance']['feature_importance']
+    var feature_names = Object.keys(feature_importance);
+    var values = [];
+    var colors = []; //https://medialab.github.io/iwanthue/
+
+    for (let i=0; i<feature_names.length; i++){
+        fn = feature_names[i];
+        v = feature_importance[fn];
+        values.push(v);
+
+        if (fn.includes("Color |")){
+        colors.push('rgb(198,122,62)');
+        } else if (fn.includes("Color - cytoplasm |")){
+        colors.push('rgb(114,95,184)');
+        } else if (fn.includes("Morphology |")){
+        colors.push('rgb(98,181,89)');
+        } else if (fn.includes("Haralick |")){
+        colors.push('rgb(182,81,145)');
+        } else if (fn.includes("Gradient |")){
+        colors.push('rgb(181,172,68)');
+        } else if (fn.includes("Intensity |")){
+        colors.push('rgb(184,70,71)');
+        } else if (fn.includes("FSD |")){
+        colors.push('rgb(76,178,181)');
+        } else if (fn.includes("Spatial - Delaunay |")){
+        colors.push('rgb(85,111,47)');
+        } else {
+        colors.push('rgb(120,120,120)');
+        }
+    }
+
+    data = [{
+            x: values,
+            y: feature_names,
+            type: 'bar',
+            orientation: 'h',
+            marker:{
+                color: colors
+            },
+            transforms: [{
+                type: 'sort',
+                target: 'x',
+                order: 'ascending'
+            }]
+    }];
+
+    layout = {
+        xaxis: {
+            title: 'Feature importance',
+            autorange: true,
+            showgrid: true,
+            zeroline: true,
+            showline: true,
+            mirror: 'ticks'
+        },
+        yaxis: {
+            tickangle: -45,
+            autorange: true,
+            showgrid: true,
+            zeroline: true,
+            showline: true,
+            mirror: 'ticks'
+        },
+        margin: {
+            l: 150,
+            r: 1,
+            t: 1,
+            b: 60,
+            pad: 0,
+        },
+        plot_bgcolor: 'rgb(248,248,255)',
+        };
+
+    //plot top/data plot
+    var config = {
+        displayModeBar: false,
+        displaylogo: false,
+        responsive: true
+    };
+
+    Plotly.react("feature_barplot_div", data, layout, config);
+
+    }
+
+</script>

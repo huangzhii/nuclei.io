@@ -1,0 +1,11 @@
+2022-08-13 18:41:08.012 *** Start program *** Start program
+2022-08-13 18:41:18.737 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S0425
+2022-08-13 18:41:21.138 *** Open processed data
+2022-08-13 18:41:21.139 *** Preload all statistics at once.
+2022-08-13 18:41:21.969 *** Nuclei stat data loaded, took 0.83 seconds. Total number of nuclei: 954361
+2022-08-13 18:41:26.882 *** Process image overlay spent 0.00 seconds.
+2022-08-13 18:41:26.956 *** Get cell color spent 0.07 seconds.
+2022-08-13 18:41:27.178 *** Process image overlay spent 0.00 seconds.
+2022-08-13 18:41:27.187 *** Get cell color spent 0.01 seconds.
+2022-08-13 18:41:36.549 *** User Login *** id=640475916; email=zhihuang@stanford.edu; firstname=Zhi; lastname=Huang.
+2022-08-13 18:41:54.609 *** Program closed.

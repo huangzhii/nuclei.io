@@ -1,0 +1,122 @@
+
+<div class="card mt-1">
+    <!--div class="card-header">
+        Current study
+    </div-->
+    <div class="card-body">
+        <div id="workspace_helper">
+            <div class="m-2">
+                <div class="mb-4 d-flex align-items-center justify-content-center" style="color: #B0C9FF;">
+                    <i class="fa-solid fa-cloud-arrow-up fa-2xl"></i>
+                </div>
+                <div class="m-2 d-flex align-items-center justify-content-center">Drag your case folder or</div>
+                <div class="m-2 d-flex align-items-center justify-content-center">
+                    <button type="button" class="btn btn-primary browse_folder"><i class="fa-solid fa-folder-open"></i> Browse local</button>
+                </div>
+                <div class="m-2 d-flex align-items-center justify-content-center">
+                    or
+                </div>
+                <div class="m-2 d-flex align-items-center justify-content-center">
+                    <button type="button" class="btn btn-warning browse_cloud_storage"><i class="fa-solid fa-cloud"></i> Browse Cloud Storage</button>
+                </div>
+                <div class="m-2 d-flex align-items-center justify-content-center">
+                    or &nbsp; <a type="button" class="load_configuration"><i class="fa-solid fa-gear"></i> Load configuration</a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="m-2" id="browse_another_case_folder" style="display:none;">
+            <button type="button" class="btn btn-primary browse_folder"><i class="fa-solid fa-folder-plus"></i> Add another case</button>
+        </div>
+
+        <div class="case_folder_manager" id="case_folder_manager_object">
+            
+            <div class="card case-item" id="case_n0" style="display:none;">
+
+                <div class="card-header d-flex justify-content-left align-items-center btn" id="heading_0" style="height: 40px;"
+                        type="button" data-toggle="collapse" data-target="#case_n0_items" aria-expanded="true" aria-controls="case_n0_items">
+                        <span class="case-arrow"></span><i class="fa-solid fa-angle-right"></i> &nbsp;</span>
+                        <span class="case-id">Case #0</span>
+                </div>
+
+                <div id="case_n0_items" class="collapse slide-items" aria-labelledby="heading_0" data-parent="#case_folder_manager_object">
+                    <div class="card-body">
+                        <div class="slide_group">
+                            <a href="javascript:void(0)" id="slide_i0" class="slide_item list-group-item list-group-item-action flex-column align-items-start" style="display:none;">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="slide-thumbnail" data-toggle="tooltip" data-html="true" title=''>
+                                            <i class="fa-solid fa-image fa-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <div class="slide-barcode" data-toggle="tooltip" data-html="true" title='<img src="data:image/jpeg;base64,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">' >
+                                                            <i class="fa-solid fa-barcode"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-10 slide_name">
+                                                        A0
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <small class="slide_dimension">? x ? </small>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            </div>
+
+
+
+
+
+
+    </div>
+</div>
+
+
+<script>
+
+    $('.browse_folder').click(function(){
+        backend.log('Browse Folder');
+        backend.open_local_case_dialog()
+    })
+
+    
+    $('.card-body').on("click", '.slide_item', function () {
+        //backend.log('click');
+        //$('.slide_item').removeClass('bg-light');
+        //$(this).addClass('bg-light');
+    });
+    $('.card-body').on("dblclick", '.slide_item', function () {
+        backend.log('double click');
+        $('.slide_item').removeClass('bg-primary text-white');
+        $(this).addClass('bg-primary text-white');
+
+        $('.case-item .card-header').removeClass('font-weight-bold');
+        $(this).closest('.case-item').find('.card-header').addClass('font-weight-bold');
+
+        caseid = $(this).closest('.case-item').find('.case-id').text();
+        slideid = $(this).find('.slide_name').text();
+
+        $('#info_case_name').text(caseid);
+        $('#info_slide_name').text(slideid);
+        backend.open_local_slide(caseid, slideid);
+    });
+
+</script>

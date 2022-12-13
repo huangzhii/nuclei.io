@@ -1,0 +1,28 @@
+2022-08-08 18:40:56.830 *** Start program *** Start program
+2022-08-08 18:41:16.638 *** Open processed data
+2022-08-08 18:41:16.644 *** Preload all statistics at once.
+2022-08-08 18:41:23.094 *** Nuclei stat data loaded, took 6.45 seconds. Total number of nuclei: 2302478
+2022-08-08 18:41:33.144 *** Mouse movement ***  Mouse coords: (454, 343) (50784, 30577)
+2022-08-08 18:41:33.626 *** Mouse movement ***  Mouse coords: (453, 370) (50624, 34897)
+2022-08-08 18:41:33.767 *** Mouse movement ***  Mouse coords: (453, 370) (50624, 34897)
+2022-08-08 18:41:33.798 *** Mouse movement ***  Mouse coords: (453, 374) (50624, 35537)
+2022-08-08 18:41:33.836 *** Mouse movement ***  Mouse coords: (460, 390) (51744, 37457)
+2022-08-08 18:41:33.851 *** Mouse movement ***  Mouse coords: (464, 393) (51263, 35377)
+2022-08-08 18:41:33.890 *** Mouse movement ***  Mouse coords: (471, 400) (51744, 36017)
+2022-08-08 18:41:33.935 *** Mouse movement ***  Mouse coords: (475, 403) (51263, 35377)
+2022-08-08 18:41:33.945 *** Mouse movement ***  Mouse coords: (476, 404) (50784, 35057)
+2022-08-08 18:41:33.955 *** Mouse movement ***  Mouse coords: (476, 404) (50623, 34897)
+2022-08-08 18:41:33.967 *** Mouse movement ***  Mouse coords: (476, 404) (50623, 34897)
+2022-08-08 18:41:36.482 *** Process image overlay spent 0.03 seconds.
+2022-08-08 18:41:36.521 *** Get cell color spent 0.04 seconds.
+2022-08-08 18:41:37.004 *** Process image overlay spent 0.01 seconds.
+2022-08-08 18:41:37.014 *** Get cell color spent 0.01 seconds.
+2022-08-08 18:41:40.245 *** Process image overlay spent 0.01 seconds.
+2022-08-08 18:41:40.251 *** Get cell color spent 0.01 seconds.
+2022-08-08 18:41:40.519 *** Process image overlay spent 0.01 seconds.
+2022-08-08 18:41:40.524 *** Get cell color spent 0.00 seconds.
+2022-08-08 18:41:40.781 *** Process image overlay spent 0.01 seconds.
+2022-08-08 18:41:40.785 *** Get cell color spent 0.00 seconds.
+2022-08-08 18:41:40.963 *** Process image overlay spent 0.01 seconds.
+2022-08-08 18:41:40.967 *** Get cell color spent 0.00 seconds.
+2022-08-08 18:42:08.614 *** Program closed.

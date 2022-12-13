@@ -1,0 +1,53 @@
+2022-08-13 19:20:29.840 *** Start program *** Start program
+2022-08-13 19:20:37.523 *** User Login *** id=640475916; email=zhihuang@stanford.edu; firstname=Zhi; lastname=Huang.
+2022-08-13 19:20:48.157 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S0425
+2022-08-13 19:20:51.494 *** Open processed data
+2022-08-13 19:20:51.496 *** Preload all statistics at once.
+2022-08-13 19:20:52.376 *** Nuclei stat data loaded, took 0.88 seconds. Total number of nuclei: 954361
+2022-08-13 19:21:12.590 *** Process image overlay spent 0.00 seconds.
+2022-08-13 19:21:12.596 *** Get cell color spent 0.01 seconds.
+2022-08-13 19:21:12.645 *** Process image overlay spent 0.00 seconds.
+2022-08-13 19:21:12.647 *** Get cell color spent 0.00 seconds.
+2022-08-13 19:21:13.054 *** Mouse movement (LeftButton) ***  Mouse coords: (475, 227) (58766, 39162)
+2022-08-13 19:21:13.070 *** Mouse movement (LeftButton) ***  Mouse coords: (479, 231) (58779, 39175)
+2022-08-13 19:21:13.086 *** Mouse movement (LeftButton) ***  Mouse coords: (485, 236) (58798, 39191)
+2022-08-13 19:21:13.100 *** Mouse movement (LeftButton) ***  Mouse coords: (492, 241) (58820, 39207)
+2022-08-13 19:21:13.117 *** Mouse movement (LeftButton) ***  Mouse coords: (500, 248) (58846, 39229)
+2022-08-13 19:21:13.134 *** Mouse movement (LeftButton) ***  Mouse coords: (506, 252) (58865, 39242)
+2022-08-13 19:21:13.150 *** Mouse movement (LeftButton) ***  Mouse coords: (513, 259) (58887, 39264)
+2022-08-13 19:21:13.167 *** Mouse movement (LeftButton) ***  Mouse coords: (531, 277) (58945, 39321)
+2022-08-13 19:21:13.183 *** Mouse movement (LeftButton) ***  Mouse coords: (541, 286) (58976, 39350)
+2022-08-13 19:21:13.200 *** Mouse movement (LeftButton) ***  Mouse coords: (554, 298) (59018, 39388)
+2022-08-13 19:21:13.217 *** Mouse movement (LeftButton) ***  Mouse coords: (559, 303) (59034, 39404)
+2022-08-13 19:21:13.233 *** Mouse movement (LeftButton) ***  Mouse coords: (561, 304) (59040, 39407)
+2022-08-13 19:21:13.436 *** Mouse movement (LeftButton) ***  Mouse coords: (561, 305) (59040, 39411)
+2022-08-13 19:21:13.451 *** Mouse movement (LeftButton) ***  Mouse coords: (561, 307) (59040, 39417)
+2022-08-13 19:21:13.458 *** Mouse movement (LeftButton) ***  Mouse coords: (561, 309) (59040, 39423)
+2022-08-13 19:21:13.467 *** Mouse movement (LeftButton) ***  Mouse coords: (562, 312) (59043, 39433)
+2022-08-13 19:21:13.483 *** Mouse movement (LeftButton) ***  Mouse coords: (562, 315) (59043, 39442)
+2022-08-13 19:21:13.534 *** Mouse movement (LeftButton) ***  Mouse coords: (563, 317) (59046, 39449)
+2022-08-13 19:21:13.550 *** Mouse movement (LeftButton) ***  Mouse coords: (566, 329) (59056, 39487)
+2022-08-13 19:21:13.566 *** Mouse movement (LeftButton) ***  Mouse coords: (568, 336) (59062, 39509)
+2022-08-13 19:21:13.583 *** Mouse movement (LeftButton) ***  Mouse coords: (570, 348) (59069, 39547)
+2022-08-13 19:21:13.600 *** Mouse movement (LeftButton) ***  Mouse coords: (572, 354) (59075, 39567)
+2022-08-13 19:21:13.654 *** Mouse movement (LeftButton) ***  Mouse coords: (572, 355) (59075, 39570)
+2022-08-13 19:21:13.670 *** Mouse movement (LeftButton) ***  Mouse coords: (574, 357) (59081, 39576)
+2022-08-13 19:21:13.685 *** Mouse movement (LeftButton) ***  Mouse coords: (578, 360) (59094, 39586)
+2022-08-13 19:21:13.700 *** Mouse movement (LeftButton) ***  Mouse coords: (584, 363) (59113, 39595)
+2022-08-13 19:21:13.717 *** Mouse movement (LeftButton) ***  Mouse coords: (587, 364) (59123, 39598)
+2022-08-13 19:21:13.733 *** Mouse movement (LeftButton) ***  Mouse coords: (592, 366) (59139, 39605)
+2022-08-13 19:21:13.750 *** Mouse movement (LeftButton) ***  Mouse coords: (595, 367) (59148, 39608)
+2022-08-13 19:21:13.767 *** Mouse movement (LeftButton) ***  Mouse coords: (597, 368) (59155, 39611)
+2022-08-13 19:21:13.857 *** Mouse movement (LeftButton) ***  Mouse coords: (598, 368) (59158, 39611)
+2022-08-13 19:21:13.872 *** Mouse movement (LeftButton) ***  Mouse coords: (599, 367) (59161, 39608)
+2022-08-13 19:21:13.894 *** Mouse movement (LeftButton) ***  Mouse coords: (600, 367) (59164, 39608)
+2022-08-13 19:21:13.905 *** Mouse movement (LeftButton) ***  Mouse coords: (600, 366) (59164, 39605)
+2022-08-13 19:21:15.431 *** Interactive label *** Apply to case start.
+2022-08-13 19:21:18.240 *** Interactive label *** Apply to case done.
+2022-08-13 19:21:18.371 *** Interactive label *** Apply to case finish overlay create.
+2022-08-13 19:21:18.375 *** Process image overlay spent 0.00 seconds.
+2022-08-13 19:21:18.377 *** Get cell color spent 0.00 seconds.
+2022-08-13 19:21:39.111 *** Process image overlay spent 0.00 seconds.
+2022-08-13 19:21:39.116 *** Get cell color spent 0.00 seconds.
+2022-08-13 19:21:45.766 *** User Login *** id=640475916; email=zhihuang@stanford.edu; firstname=Zhi; lastname=Huang.
+2022-08-13 19:22:17.652 *** Program closed.

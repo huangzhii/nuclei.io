@@ -1,0 +1,194 @@
+
+<div class="card mt-1">
+    <div class="card-header">
+        <div>NucFinder Network</div>
+    </div>
+    <div class="card-body">
+
+        <div class="input-group">
+            <!--input type="text" class="form-control" placeholder="Search"-->
+            <div id="search_tissue_div" style="display:inline-block;">
+                <select class="selectpicker" id="search_tissue" data-live-search="true"
+                        data-style="btn-outline-secondary"  data-width="200px"  data-size="5">
+                </select>
+            </div>
+            <div class="input-group-append">
+                <button id="search_network" class="btn btn-outline-success" type="button">Search</button>
+            </div>
+        </div>
+            
+        <div class="list-group nucfinder_search_results mt-2">
+
+            <div class="list-group-item list-group-item-action flex-column align-items-start mt-2" id="0_hidden" style="display:none;">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="mt-2"><i class="fas fa-circle-user fa-2xl"></i></div>
+                    </div>
+                    <div class="col-9">
+                        
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <small><b><div id="firstlastname">Dr. First Last name</div></b></small>
+                                </div>
+                                <div class="row">
+                                    <small><div id="affiliation">Affiliation</div></small>
+                                </div>
+                                <div class="row">
+                                    <small><div id="create_date"></div></small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                    
+                <div class="row">
+                    <div class="col-12">
+                        <span class="badge bg-secondary text-white rounded-pill"><div id="tissueType"></div></span>
+                    </div>
+                    <div class="col-12">
+                        <small><div id="studyDescription"></div></small>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <span class="badge bg-primary text-white rounded-pill"><div id="n_class"></div></span>
+                        <span class="badge bg-primary text-white rounded-pill"><div id="n_nuclei"></div></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div id="overall_acc"></div>
+                    </div>
+                    <div class="col-6">
+                        <a href="#" id="import">
+                            <div class="dataset_import_div" dataset_id="" tissueType="">
+                                <small><i class="fas fa-cloud-arrow-down"></i> Import</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+    cancerlist = [
+    'Colorectal Cancer (LNM experiment)'];
+
+    $( document ).ready(function() {
+        $('#search_tissue').append('<option style="width:270px; font-size:80%" data-tokens="All tissue type" value="All tissue type">All tissue type</option>');
+        for (let i = 0; i < cancerlist.length; i++) {
+            c = cancerlist[i];
+            if (c.length == 1){
+                //$('#select_tissue').append('<optgroup id="'+c+'" label="'+c+'"></optgroup>');
+                //$('#search_tissue').append('<optgroup id="'+c+'" label="'+c+'"></optgroup>');
+            } else{
+                // Append the option to select
+
+                $('#search_tissue').append('<option style="width:270px; font-size:80%" data-tokens="'+c+'" value="'+c+'">'+c+'</option>');
+            }
+        }
+        // Refresh the selectpicker
+        $("#search_tissue").selectpicker("refresh");
+        
+    });
+
+    // import dataset
+    $('.nucfinder_search_results').on("click", "#import", function () {
+        var dataset_id = $(this).children('.dataset_import_div').attr('dataset_id');
+        var tissuetype = $(this).children('.dataset_import_div').attr('tissueType');
+        backend.import_nucfinder(dataset_id);
+        $('#current_study_div #select_tissue').selectpicker('val', tissuetype);
+        $("#current_study_div").show();
+        $("#reset_annotation").show();
+        $("#start_new_annotation").hide();
+
+        //delete current rows:
+        selected_rows = $('.inputFormRow');
+        for (let i=0; i<selected_rows.length;i++){
+            if ($(selected_rows[i]).attr('id') !== '0'){
+                $(selected_rows[i]).remove();
+            }
+        }
+    });
+    
+
+    $('#search_network').click(function(){
+        // clear current search results
+        var save = $('.nucfinder_search_results #0_hidden').detach();
+        $('.nucfinder_search_results').empty().append(save);
+
+
+        var jsondata = {tissuetype: $('#search_tissue').val()};
+
+        backend.log(jsondata);
+
+        $.ajax({
+            type: 'post',
+            url: 'https://nuclei.io/php/search_nucfinder_db.php',
+            data: jsondata,
+            success: function(data) {
+                console.log(data);
+                //backend.log(data);
+                jsonstring = data.substring(data.indexOf("{") - 1);
+                jsonstring = JSON.parse(jsonstring);
+                //console.log(jsonstring);
+                //backend.log(jsonstring);
+                if (jsonstring.status.valueOf() === 'fail'){
+                    console.log(jsonstring.message);
+                    //backend.log('FAIL');
+                    //backend.log(jsonstring.message);
+                    alert(jsonstring.message);
+                }
+                if (jsonstring.status.valueOf() === 'success'){
+                    var result_rows = jsonstring['rows'];
+                    for (var r=0; r<result_rows.length; r++){
+                        var row = result_rows[r];
+                        var cloneobj = $('.nucfinder_search_results #0_hidden').clone();
+                        cloneobj.attr('id', r);
+                        cloneobj.attr('style', ''); //remove style='display:none'
+                        
+                        cloneobj.find('.dataset_import_div').attr('dataset_id', row['id']);
+                        cloneobj.find('.dataset_import_div').attr('tissueType', row['cancertype']);
+                        cloneobj.find('#firstlastname').html('Dr. '+row['firstname']+' '+row['lastname']);
+                        cloneobj.find('#affiliation').html(row['affiliation']);
+                        cloneobj.find('#tissueType').html(row['cancertype']);
+                        cloneobj.find('#studyDescription').html(row['studydescription']);
+                        cloneobj.find('#create_date').html(row['createtime']);
+                        cloneobj.find('#n_class').html(row['numberofclass'] + ' types');
+                        cloneobj.find('#n_nuclei').html(row['numberofnuclei'] + ' nuclei');
+
+
+                        var acc_numeric = parseFloat(row['accuracy'])*100;
+                        var acc = (acc_numeric.toFixed(2)).toString() + '%';
+                        color_theme = 'danger';
+                        if (acc_numeric > 80){color_theme='warning';}
+                        if (acc_numeric > 95){color_theme='success';}
+                        var acc_pill = '<span class="badge bg-'+color_theme+' text-white rounded-pill">'+acc+'</span>';
+                        cloneobj.find('#overall_acc').html(acc_pill);
+
+
+
+                        $('.nucfinder_search_results').append(cloneobj);
+                    }
+                    
+                }
+            },
+            error: function(e) {
+                console.log(e);
+                //backend.log('ERROR');
+                //backend.log(e);
+            }
+        });
+    });
+</script>
+

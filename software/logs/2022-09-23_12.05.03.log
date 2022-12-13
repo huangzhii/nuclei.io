@@ -1,0 +1,66 @@
+2022-09-23 12:05:03.814 *** Start program *** Start program
+2022-09-23 12:05:10.927 *** Open case *** /Applications/XAMPP/xamppfiles/htdocs/20220722_Eric_Yang
+2022-09-23 12:05:26.790 *** Open processed data
+2022-09-23 12:05:26.793 *** Preload all statistics at once.
+2022-09-23 12:05:27.863 *** Nuclei stat data loaded, took 1.07 seconds. Total number of nuclei: 443911
+2022-09-23 12:05:31.456 *** Mouse movement (LeftButton) ***  Mouse coords: (389, 386) (45940, 28305)
+2022-09-23 12:05:31.501 *** Mouse movement (LeftButton) ***  Mouse coords: (403, 386) (48180, 28305)
+2022-09-23 12:05:31.535 *** Mouse movement (LeftButton) ***  Mouse coords: (421, 387) (48820, 28465)
+2022-09-23 12:05:31.567 *** Mouse movement (LeftButton) ***  Mouse coords: (441, 387) (49140, 28305)
+2022-09-23 12:05:31.591 *** Mouse movement (LeftButton) ***  Mouse coords: (452, 387) (47700, 28305)
+2022-09-23 12:05:31.616 *** Mouse movement (LeftButton) ***  Mouse coords: (461, 386) (47379, 28145)
+2022-09-23 12:05:31.642 *** Mouse movement (LeftButton) ***  Mouse coords: (472, 385) (47699, 28145)
+2022-09-23 12:05:31.698 *** Mouse movement (LeftButton) ***  Mouse coords: (477, 385) (46739, 28304)
+2022-09-23 12:05:31.744 *** Mouse movement (LeftButton) ***  Mouse coords: (479, 384) (46260, 28144)
+2022-09-23 12:05:33.057 *** Mouse movement (LeftButton) ***  Mouse coords: (332, 371) (69187, 53764)
+2022-09-23 12:05:33.155 *** Mouse movement (LeftButton) ***  Mouse coords: (332, 371) (69187, 53764)
+2022-09-23 12:05:33.197 *** Mouse movement (LeftButton) ***  Mouse coords: (414, 425) (74849, 57493)
+2022-09-23 12:05:33.226 *** Mouse movement (LeftButton) ***  Mouse coords: (534, 518) (77474, 60186)
+2022-09-23 12:05:33.250 *** Mouse movement (LeftButton) ***  Mouse coords: (625, 592) (75471, 58874)
+2022-09-23 12:05:33.298 *** Mouse movement (LeftButton) ***  Mouse coords: (659, 624) (71535, 55974)
+2022-09-23 12:05:33.320 *** Mouse movement (LeftButton) ***  Mouse coords: (672, 635) (70085, 54524)
+2022-09-23 12:05:33.348 *** Mouse movement (LeftButton) ***  Mouse coords: (675, 637) (69394, 53902)
+2022-09-23 12:05:33.370 *** Mouse movement (LeftButton) ***  Mouse coords: (675, 638) (69187, 53833)
+2022-09-23 12:05:33.393 *** Mouse movement (LeftButton) ***  Mouse coords: (676, 638) (69256, 53764)
+2022-09-23 12:05:33.417 *** Mouse movement (LeftButton) ***  Mouse coords: (677, 638) (69256, 53764)
+2022-09-23 12:05:40.641 *** starting thread (client mode): 0x87797ee0
+2022-09-23 12:05:40.642 *** Local version/idstring: SSH-2.0-paramiko_2.11.0
+2022-09-23 12:05:40.665 *** Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2022-09-23 12:05:40.665 *** Connected (version 2.0, client OpenSSH_5.3)
+2022-09-23 12:05:40.682 *** === Key exchange possibilities ===
+2022-09-23 12:05:40.683 *** kex algos: diffie-hellman-group-exchange-sha256, diffie-hellman-group-exchange-sha1, diffie-hellman-group14-sha1, diffie-hellman-group1-sha1
+2022-09-23 12:05:40.683 *** server key: ssh-rsa, ssh-rsa-cert-v01@openssh.com, ssh-dss
+2022-09-23 12:05:40.683 *** client encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-23 12:05:40.683 *** server encrypt: aes128-ctr, aes192-ctr, aes256-ctr, arcfour256, arcfour128, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, aes192-cbc, aes256-cbc, arcfour, rijndael-cbc@lysator.liu.se
+2022-09-23 12:05:40.683 *** client mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-23 12:05:40.683 *** server mac: hmac-md5, hmac-sha1, umac-64@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-ripemd160, hmac-ripemd160@openssh.com, hmac-sha1-96, hmac-md5-96
+2022-09-23 12:05:40.683 *** client compress: none, zlib@openssh.com
+2022-09-23 12:05:40.683 *** server compress: none, zlib@openssh.com
+2022-09-23 12:05:40.683 *** client lang: <none>
+2022-09-23 12:05:40.684 *** server lang: <none>
+2022-09-23 12:05:40.684 *** kex follows: False
+2022-09-23 12:05:40.684 *** === Key exchange agreements ===
+2022-09-23 12:05:40.684 *** Kex: diffie-hellman-group-exchange-sha256
+2022-09-23 12:05:40.684 *** HostKey: ssh-rsa
+2022-09-23 12:05:40.685 *** Cipher: aes128-ctr
+2022-09-23 12:05:40.685 *** MAC: hmac-sha2-256
+2022-09-23 12:05:40.685 *** Compression: none
+2022-09-23 12:05:40.685 *** === End of kex handshake ===
+2022-09-23 12:05:40.778 *** Got server p (2048 bits)
+2022-09-23 12:05:40.957 *** kex engine KexGexSHA256 specified hash_algo <built-in function openssl_sha256>
+2022-09-23 12:05:40.961 *** Switch to new keys ...
+2022-09-23 12:05:40.961 *** Adding ssh-rsa host key for 173.201.181.247: b'cca345f774a2d98448d0bcc78f04075d'
+2022-09-23 12:05:41.102 *** userauth is OK
+2022-09-23 12:05:41.138 *** Authentication (password) successful!
+2022-09-23 12:05:41.139 *** [chan 0] Max packet in: 32768 bytes
+2022-09-23 12:05:41.158 *** [chan 0] Max packet out: 32768 bytes
+2022-09-23 12:05:41.159 *** Secsh channel 0 opened.
+2022-09-23 12:05:41.189 *** [chan 0] Sesch channel 0 request ok
+2022-09-23 12:05:41.226 *** [chan 0] Opened sftp connection (server version 3)
+2022-09-23 12:05:41.228 *** [chan 0] stat(b'/home/b6o162rzivzp/NucFinder_DB/34A578B649A57F6C/interactive_nuclei_dict.pickle')
+2022-09-23 12:05:41.249 *** [chan 0] stat(b'/home/b6o162rzivzp/NucFinder_DB/34A578B649A57F6C/model.pickle')
+2022-09-23 12:05:41.269 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/34A578B649A57F6C/model.pickle', 'rb')
+2022-09-23 12:05:41.289 *** [chan 0] open(b'/home/b6o162rzivzp/NucFinder_DB/34A578B649A57F6C/model.pickle', 'rb') -> 00000000
+2022-09-23 12:05:46.197 *** [chan 0] close(00000000)
+2022-09-23 12:05:46.269 *** Interactive label *** Apply to case start.
+2022-09-23 12:06:20.407 *** Program closed.

@@ -1,0 +1,21 @@
+2022-08-11 13:34:38.742 *** Start program *** Start program
+2022-08-11 13:34:47.219 *** Open case *** /media/zhihuang/Drive14/Google_Colon_lnm_pos_2015_slides/slides/S1654
+2022-08-11 13:34:50.991 *** Open processed data
+2022-08-11 13:34:50.992 *** Preload all statistics at once.
+2022-08-11 13:34:52.422 *** Nuclei stat data loaded, took 1.43 seconds. Total number of nuclei: 259792
+2022-08-11 13:34:55.608 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:34:55.627 *** Get cell color spent 0.02 seconds.
+2022-08-11 13:34:55.790 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:34:55.798 *** Get cell color spent 0.01 seconds.
+2022-08-11 13:34:55.901 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:34:55.909 *** Get cell color spent 0.01 seconds.
+2022-08-11 13:34:56.209 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:34:56.210 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:34:56.421 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:34:56.422 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:35:02.491 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:35:02.492 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:35:02.544 *** Process image overlay spent 0.00 seconds.
+2022-08-11 13:35:02.545 *** Get cell color spent 0.00 seconds.
+2022-08-11 13:35:03.294 *** Interactive label *** (double click) click on screen. screen: (616, 261); slide: (119148, 33209). case_id: S1654, slide_id: A37, Nuclei index selected: 108537
+2022-08-11 13:35:38.597 *** Program closed.

@@ -1,0 +1,90 @@
+
+<nav class="nuclei-io-navbar navbar fixed-top navbar-expand navbar-dark bg-dark">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="nav-item active" id="menu_case_management">
+            <a class="nav-link" href="javascript:void(0)">Case/Slide</a>
+            </li>
+            <li class="nav-item" id="menu_annotation">
+            <a class="nav-link" href="javascript:void(0)">Annotation</a>
+            </li>
+            <li class="nav-item" id="menu_ai">
+            <a class="nav-link" href="javascript:void(0)">AI</a>
+            </li>
+            <li class="nav-item" id="menu_toolbox">
+            <a class="nav-link" href="javascript:void(0)">Toolbox</a>
+            </li>
+            <li class="nav-item" id="menu_community">
+            <a class="nav-link" href="javascript:void(0)">Community</a>
+            </li>
+
+        </ul>
+        
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-xl fa-circle-user"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <div id="not_login_menu_list">
+                    <a class="dropdown-item" href="javascript:void(0)" id="menu_login"><i class="fa-solid fa-user"></i> Login/Sign Up</a></a>
+                    <a class="dropdown-item text-secondary" href="javascript:void(0)" id="menu_forgotpwd"><i class="fa-solid fa-unlock-keyhole"></i> Forgot password?</a></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-secondary" href="javascript:void(0)" id="menu_about"><i class="fa-solid fa-circle-question"></i> About</a></a>
+                </div>
+                <div id="has_login_menu_list" style="display:none;">
+                    <a class="dropdown-item" href="javascript:void(0)" id="menu_login"><i class="fa-solid fa-user"></i> <span id="username"></span></a></a>
+                    <a class="dropdown-item text-secondary" href="javascript:void(0)" id="menu_editprofile"><i class="fa-solid fa-address-card"></i> Edit profile</a></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="javascript:void(0)" id="menu_logout"><i class="fa-solid fa-right-to-bracket"></i> Log out</a></a>
+                </div>
+
+            </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    $('#menu_case_management').on("click",function(){
+        load_main_layout('case_slide');
+        $('.nav-item').removeClass('active');
+        $(this).addClass('active');
+    })
+    $('#menu_annotation').on("click",function(){
+        load_main_layout('annotation');
+        $('.nav-item').removeClass('active');
+        $(this).addClass('active');
+    })
+    $('#menu_ai').on("click",function(){
+        load_main_layout('ai');
+        $('.nav-item').removeClass('active');
+        $(this).addClass('active');
+    })
+    $('#menu_toolbox').on("click",function(){
+        load_main_layout('toolbox');
+        $('.nav-item').removeClass('active');
+        $(this).addClass('active');
+    })
+    $('#menu_community').on("click",function(){
+        load_main_layout('community');
+        $('.nav-item').removeClass('active');
+        $(this).addClass('active');
+    })
+</script>
+
+
+
+<script>
+    $('#menu_login').on("click",function(){
+        backend.open_user_login_window();
+    })
+    
+    $('#menu_logout').on("click",function(){
+        backend.clear_user_profile();
+        $("#username" ).text('');
+        $("#not_login_menu_list").show();
+        $("#has_login_menu_list").hide();
+    })
+
+</script>

@@ -1,0 +1,25 @@
+2022-09-11 16:09:26.805 *** Start program *** Start program
+2022-09-11 16:09:31.656 *** Open case *** /home/zhihuang/Desktop/A14
+2022-09-11 16:09:33.616 *** Open processed data
+2022-09-11 16:09:33.617 *** Preload all statistics at once.
+2022-09-11 16:09:34.810 *** Nuclei stat data loaded, took 1.19 seconds. Total number of nuclei: 1470268
+2022-09-11 16:09:42.339 *** Mouse movement (LeftButton) ***  Mouse coords: (737, 452) (78578, 36862)
+2022-09-11 16:09:42.358 *** Mouse movement (LeftButton) ***  Mouse coords: (738, 443) (78595, 36743)
+2022-09-11 16:09:42.374 *** Mouse movement (LeftButton) ***  Mouse coords: (738, 428) (78578, 36640)
+2022-09-11 16:09:42.391 *** Mouse movement (LeftButton) ***  Mouse coords: (735, 387) (78527, 36196)
+2022-09-11 16:09:42.407 *** Mouse movement (LeftButton) ***  Mouse coords: (728, 351) (78459, 36282)
+2022-09-11 16:09:42.424 *** Mouse movement (LeftButton) ***  Mouse coords: (714, 303) (78339, 36077)
+2022-09-11 16:09:42.441 *** Mouse movement (LeftButton) ***  Mouse coords: (700, 266) (78339, 36265)
+2022-09-11 16:09:42.458 *** Mouse movement (LeftButton) ***  Mouse coords: (678, 218) (78203, 36077)
+2022-09-11 16:09:42.474 *** Mouse movement (LeftButton) ***  Mouse coords: (652, 171) (78134, 36094)
+2022-09-11 16:09:42.491 *** Mouse movement (LeftButton) ***  Mouse coords: (640, 153) (78373, 36589)
+2022-09-11 16:09:42.507 *** Mouse movement (LeftButton) ***  Mouse coords: (639, 151) (78561, 36862)
+2022-09-11 16:09:47.945 *** Interactive label *** Review annotations/active learning start.
+2022-09-11 16:09:55.571 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 947819
+2022-09-11 16:09:55.612 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 310409
+2022-09-11 16:09:55.627 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 1307873
+2022-09-11 16:09:55.639 *** Interactive label *** (active learning) click on screen. case_id: A14, slide_id: SS7324_2_15_7a8d582fc1d84e43a307b4d48182820d.svs, Nuclei index selected: 188369
+2022-09-11 16:09:55.657 *** Interactive label *** Apply to case start.
+2022-09-11 16:09:55.722 *** CACHEDIR=/home/zhihuang/.cache/matplotlib
+2022-09-11 16:09:55.723 *** Using fontManager instance from /home/zhihuang/.cache/matplotlib/fontlist-v330.json
+2022-09-11 16:09:55.980 *** Loaded backend qtagg version unknown.
