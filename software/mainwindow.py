@@ -46,9 +46,9 @@ import cv2
 from functools import partial
 import traceback
 from PIL import Image
+from matplotlib import path
 from natsort import os_sorted
 from gui.utils import im_2_b64
-
 opj = os.path.join
 
 
@@ -167,12 +167,16 @@ class MainWindow(QMainWindow):
 
 
     def openLocalSlide(self, filepath):
+        self.ui.statusBar.message.setText("Open file ...")
         self.slide = RotatableOpenSlide(filepath, rotation=self.rotation)
-        thumbnail = self.slide.associated_images['thumbnail']
+        #thumbnail = self.slide.associated_images['thumbnail']
         self.slideDescription = self.slide.properties['tiff.ImageDescription']
         self.slideDescription = self.slideDescription.replace('\r', ' ').replace('\n', ' ')
         if (tiffslide.PROPERTY_NAME_OBJECTIVE_POWER in self.slide.properties):
             self.slideMagnification = self.slide.properties[tiffslide.PROPERTY_NAME_OBJECTIVE_POWER]
+            if self.slideMagnification is None:
+                print('Slide magnification is None. now hard-coded to 60.')
+                self.slideMagnification = 60
         else:
             self.slideMagnification = 1
         if (tiffslide.PROPERTY_NAME_MPP_X in self.slide.properties):
@@ -227,11 +231,12 @@ class MainWindow(QMainWindow):
         stat = slide_statistics.SlideStatistics(self, self.stat_folder, preload=True)
 
         
-        dict2send = {}
-        dict2send['action'] = 'update feature list'
-        fl = ['%s | %s' % (v[0], v[1]) for v in stat.feature_columns]
-        dict2send['feature_list'] = fl
-        self.backend.py2js(dict2send)
+        if hasattr(stat, 'feature_columns'):
+            dict2send = {}
+            dict2send['action'] = 'update feature list'
+            fl = ['%s | %s' % (v[0], v[1]) for v in stat.feature_columns]
+            dict2send['feature_list'] = fl
+            self.backend.py2js(dict2send)
 
         
 
@@ -364,8 +369,8 @@ class MainWindow(QMainWindow):
         else:
         '''
         self.mouse_offset_x = 0
-        self.mouse_offset_y = -self.ui.toolBar.size().height()/2
-        #TODO: exact mouse zoom in not fixed.
+        self.mouse_offset_y = -self.ui.toolBar.size().height()#/2
+        #TODO: exact mouse" zoom in not fixed.
         #TODO: Task for GUI folks.
 
         if wheelEvent:
@@ -375,6 +380,7 @@ class MainWindow(QMainWindow):
             new_pos = (new_x, new_y)
         else:
             event_pos = self.mapToGlobal(event_pos)
+            #print("mouse_offset_y", self.mouse_offset_y)
             new_x = event_pos.x() + self.ui.MainImage.pos().x()+self.mouse_offset_x
             new_y = event_pos.y() + self.ui.MainImage.pos().y()+self.mouse_offset_y
             new_pos = QPoint(new_x, new_y)
@@ -423,6 +429,21 @@ class MainWindow(QMainWindow):
         '''
         self.setCenterTo(cx, cy)
         self.showImage()
+
+    def clear_subset_nuclei(self):
+        '''
+        Instead of showing the subset nuclei from the virtual flow cytometry,
+        show all nuclei on the entire WSI.
+        '''
+        if hasattr(self, 'nucstat') and self.nucstat is not None:
+            self.nucstat.isSelected_to_VFC[:] = True
+            self.nucstat.isSelected_from_VFC[:] = True
+            self.datamodel.send_dim_info_for_VFC()
+            self.showImage()
+
+    def open_visualization_setting(self):
+        print("TODO: Open visualization setting.")
+
 
     def resizeEvent(self, event):
         QMainWindow.resizeEvent(self, event)
@@ -488,6 +509,8 @@ class MainWindow(QMainWindow):
 
     @Slot(str)
     def openCaseFolder(self, foldername):
+
+        accept_file_types = ['svs', 'tiff', 'tif']
         self.case_id = os.path.basename(os.path.normpath(foldername))
         for c in self.all_case_folders:
             if self.all_case_folders[c]['foldername'] == foldername:
@@ -500,12 +523,12 @@ class MainWindow(QMainWindow):
 
         svs_files_in_root = False
         for d in os.listdir(foldername):
-            if d.endswith('.svs'):
+            if d.lower().split('.')[-1] in accept_file_types:
                 svs_files_in_root = True
 
         if svs_files_in_root:
             # multiple svs files, and all results are combined in stardist_results folder.
-            cassette_list = [d for d in os.listdir(foldername) if d.endswith('.svs')]
+            cassette_list = [d for d in os.listdir(foldername) if d.lower().split('.')[-1] in accept_file_types]
         else:
             cassette_list = [d for d in os.listdir(foldername) if os.path.isdir(os.path.join(foldername,d))]
         
@@ -516,15 +539,21 @@ class MainWindow(QMainWindow):
         if svs_files_in_root:
             for f in cassette_list:
                 try:
-                    if f.lower().endswith('.svs'):
+                    if f.lower().split('.')[-1] in accept_file_types:
                         fname = opj(foldername, f)
                         d = f
                         case_dict[d] = {}
                         slide = RotatableOpenSlide(fname, rotation=self.rotation)
-                        thumbnail = slide.associated_images['thumbnail']
+
+                        try:
+                            thumbnail = slide.associated_images['thumbnail']
+                        except:
+                            print('Slide does not have thumbnail.')
+                            thumbnail = Image.fromarray(np.ones((100,100,3),dtype=np.uint8)*200)
                         try:
                             label = slide.associated_images['label']
                         except:
+                            print('Slide does not have label.')
                             label = Image.fromarray(np.ones((100,100,3),dtype=np.uint8)*200)
                         
                         w, h = thumbnail.size
@@ -541,19 +570,37 @@ class MainWindow(QMainWindow):
                         label_resize = label.resize((w_new, h_new))
                         label_base64 = str(im_2_b64(label_resize))
                         label_base64 = label_base64.lstrip('b\'').rstrip('\'')
-
-                        magnitude = int(slide.properties['aperio.AppMag'])
                         try:
-                            height = int(slide.properties['tiffslide.level[0].height'])
-                            width = int(slide.properties['tiffslide.level[0].width'])
-                        except Exception as e:
-                            print(e)
-                            height = int(slide.properties['openslide.level[0].height'])
-                            width = int(slide.properties['openslide.level[0].width'])
-                        month,day,year = slide.properties['aperio.Date'].split('/')
-                        if len(year) == 2: year = '20' + year
-                        createtime = slide.properties['aperio.Time']
-                        timezone = slide.properties['aperio.Time Zone']
+                            magnitude = int(slide.properties['aperio.AppMag'])
+                        except:
+                            print('Slide does not have magnitude.')
+                            print('Now temporarily hard-code magnitude = 40')
+                            magnitude = 40
+
+                        # check if slide has properties.
+                        if hasattr(slide, 'properties'):
+                            try:
+                                height = int(slide.properties['tiffslide.level[0].height'])
+                                width = int(slide.properties['tiffslide.level[0].width'])
+                            except Exception as e:
+                                print(e)
+                                height = int(slide.properties['openslide.level[0].height'])
+                                width = int(slide.properties['openslide.level[0].width'])
+                        else:
+                            raise Exception('Cannot access slide properties.')
+                        
+                        if 'aperio.Date' in slide.properties:
+                            month, day, year = slide.properties['aperio.Date'].split('/')
+                            if len(year) == 2: year = '20' + year
+                            createtime = slide.properties['aperio.Time']
+                            if 'aperio.Time Zone' in slide.properties:
+                                timezone = slide.properties['aperio.Time Zone']
+                            else:
+                                timezone = 'nan'
+                        else:
+                            month, day, year, timezone = 0, 0, 0, 'nan'
+                            createtime = 'nan'
+                        
                         case_dict[d]['svs_fname'] = fname
                         case_dict[d]['thumbnail'] = thumbnail
                         case_dict[d]['label'] = label
@@ -567,8 +614,7 @@ class MainWindow(QMainWindow):
                         case_dict[d]['year'] = int(year)
                         case_dict[d]['createtime'] = createtime
                         case_dict[d]['timezone'] = timezone
-
-                    if f.lower() in ['statistics', 'stardist_results']:
+                    elif f.lower() in ['statistics', 'stardist_results']:
                         case_dict[d]['nuclei_stat'] = os.path.join(foldername, d, f)
                         if 'svs_fname' not in case_dict[d]:
                             case_dict.pop(d, None)
@@ -583,7 +629,7 @@ class MainWindow(QMainWindow):
                 files = os.listdir(os.path.join(foldername, d))
                 for f in files:
                     try:
-                        if f.lower().endswith('.svs'):
+                        if f.lower().split('.')[-1] in accept_file_types:
                             case_dict[d] = {}
                             fname = foldername + os.sep + d + os.sep + f
                             slide = RotatableOpenSlide(fname, rotation=self.rotation)
@@ -644,7 +690,55 @@ class MainWindow(QMainWindow):
                     'case_id': self.case_id,
                     'case_dict': case_dict}
         self.backend.py2js(dict2send) # this is to update workspace layout
+    
+    
+    
+    
+    def show_highlight_nucleus_from_VFC(self, dim1, dim2):
+        idx_order = np.argmin((self.datamodel.VFC_dim1_val - dim1)**2 + (self.datamodel.VFC_dim2_val - dim2)**2)
 
+        x, y = self.nucstat.centroid[idx_order,:]
+        idx_raw = self.nucstat.index[idx_order]
+        #self.highlight_nuclei = {}
+        #self.highlight_nuclei['index'] = idx_raw
+
+        self.log.write('Virtual Flow *** show single-clicked nuclei in WSI. Centroid on slide: (%d, %d).' % (x, y))
+
+        slide_dimension = self.slide.level_dimensions[0] # highest resolution, size around 80000*40000
+        self.setZoomValue(1) # the smaller, the larger cell looks like
+        self.relativeCoords = np.array([x/slide_dimension[0],
+                                                y/slide_dimension[1]]).astype(float)
+        if (self.relativeCoords[1]>1.0):
+            self.relativeCoords[1]=1.0
+
+        self.relativeCoords -= 0.5
+        
+        image_dims=self.slide.level_dimensions[0]
+        self.ui.statusBar.message.setText('Position: (%d,%d)' % (int((self.relativeCoords[0]+0.5)*image_dims[0]), int((self.relativeCoords[1]+0.5)*image_dims[1])))
+        self.processingStep = self.id+1
+        self.showImage()
+        self.updateScrollbars()
+
+
+    def show_selected_nuclei_from_VFC(self, selectdict):
+        if selectdict['type'] == 'lasso':
+            x = np.array(selectdict['points_x']).astype(float)
+            y = np.array(selectdict['points_y']).astype(float)
+            polypoints = np.c_[x,y]
+            poly_path = path.Path(polypoints)
+            index_bool = poly_path.contains_points(np.c_[self.datamodel.VFC_dim1_val, self.datamodel.VFC_dim2_val])
+
+
+        elif selectdict['type'] == 'rect':
+            x = np.array(selectdict['points_x']).astype(float)
+            y = np.array(selectdict['points_y']).astype(float)
+            xmin, xmax = np.min(x), np.max(x)
+            ymin, ymax = np.min(y), np.max(y)
+            index_bool = (self.datamodel.VFC_dim1_val > xmin) & (self.datamodel.VFC_dim1_val < xmax) & (self.datamodel.VFC_dim2_val > ymin) & (self.datamodel.VFC_dim2_val < ymax)
+            
+        self.nucstat.isSelected_from_VFC = index_bool
+        self.processingStep = self.id+1
+        self.showImage_part2(self.npi, self.processingStep)
 
     def closeEvent(self, event):
         print('Program closed.')

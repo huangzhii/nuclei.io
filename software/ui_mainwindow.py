@@ -212,6 +212,9 @@ class Ui_MainWindow(object):
         self.mainImageGridLayout.addWidget(self.statusBar, 3, 0, 1, 2) # row, col, rowspan, colspan
 
         self.web = QWebEngineView(self.horizontalSplitter)
+        from PySide6.QtWebEngineCore import QWebEngineSettings
+        self.web.settings().setAttribute(QWebEngineSettings.LocalContentCanAccessRemoteUrls, True)
+        
         self.web.setObjectName(u"web")
         self.horizontalSplitter.addWidget(self.web)
         self.web.setMinimumWidth(300)

@@ -72,6 +72,8 @@ class WebDialog(QDialog):
             self.layout.setContentsMargins(0, 0, 0, 0)
 
             self.web_dialog = QWebEngineView()
+            from PySide6.QtWebEngineCore import QWebEngineSettings
+            self.web_dialog.settings().setAttribute(QWebEngineSettings.LocalContentCanAccessRemoteUrls, True)
             self.web_dialog.setContextMenuPolicy(Qt.NoContextMenu)
 
             self.backend_dialog = Backend_Dialog(self, self.web_dialog, self.MainWindow)

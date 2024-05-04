@@ -55,7 +55,12 @@ def showOverlayML(self):
 
     slide_width, slide_height = self.slide.level_dimensions[0]
     canvas_width, canvas_height = self.mainImageSize
-    slide_magnification = np.int(self.slide.properties['aperio.AppMag'])
+
+    if 'aperio.AppMag' not in self.slide.properties:
+        # TODO hard coded for now
+        slide_magnification = 60
+    else:
+        slide_magnification = np.int64(self.slide.properties['aperio.AppMag'])
 
 
     if self.currentZoom > 15:
@@ -126,7 +131,22 @@ def showOverlayML(self):
     else:
         st = time.time()
         select_index = (self.nucstat.centroid[:,0] > x) & (self.nucstat.centroid[:,0] < (x+width)) & (self.nucstat.centroid[:,1] > y) & (self.nucstat.centroid[:,1] < (y+height))
+        
+        
+        # overlap with isSelected_from_VFC
+        select_index = select_index & self.nucstat.isSelected_from_VFC
+        # overlap with class visibility
+        if hasattr(self, 'datamodel') and hasattr(self.datamodel, 'classinfo') and self.datamodel.classinfo is not None:
+            if any(self.datamodel.classinfo['isVisible'] == 0):
+                print(1)
+                # get prediction that is not visible
+                idx_not_visible = ~self.nucstat.prediction['class_name'].isin(self.datamodel.classinfo.loc[self.datamodel.classinfo['isVisible']==0, 'classname'])
+                select_index = select_index & idx_not_visible
+
+
+
         select_index_id = np.where(select_index)[0]
+
 
         time_elapsed = time.time() - st
         print('Process image overlay spent %.2f seconds.' % time_elapsed)
@@ -187,44 +207,17 @@ def showOverlayML(self):
             '''
             Show polygon
             '''
+            show_bounding_box = False
+            fillContour = False
 
-            contour_ROI = self.nucstat.contour[select_index_id,:,:].astype(np.int32)
-            if np.sum(contour_ROI==0) > 0: # not stardist
-                st = time.time()
-                painter = QPainter()
-                painter.begin(pixmap)
-                for k in range(len(cellcolor)):
-                    contour = self.nucstat.contour[select_index_id[k],:,:].reshape(-1,2)
-                    contour = contour[np.sum(contour, axis=1)>0,:] # keep valid contour, remove 0
-                    
-                    if self.currentZoom > 2: # 4x downsample for faster drawing:
-                        contour = contour[0:len(contour):4, :]
-                    elif self.currentZoom > 1: # 2x downsample for faster drawing:
-                        contour = contour[0:len(contour):2, :]
-                    
-                    contour = np.vstack((contour, contour[0,:])).astype(int)
-                    contour[:,0] = np.int32((contour[:,0]-x)/self.currentZoom)+1 # don't use uint32, negative value will overflow.
-                    contour[:,1] = np.int32((contour[:,1]-y)/self.currentZoom)+1
-                    contour_qpolygon = array2d_to_qpolygonf(contour[:,0], contour[:,1])
-                    painter.setPen(QPen(Qt.black, 1, Qt.SolidLine))
-                    #painter.setBrush(QBrush(Qt.red, Qt.SolidPattern))
-                    #painter.setBrush(QBrush(Qt.red, Qt.VerPattern))
-                    color = cellcolor[k]
-                    painter.setBrush(QBrush(QColor(color[0],color[1],color[2],color[3])))
-                    painter.drawPolygon(contour_qpolygon)
-
-                painter.end()
-                self.ui.MachineLearningOverlay.setPixmap(pixmap)
-                print('Rendering nuclei contour: ', time.time() - st)
-
-
-            else: # stardist
-
+            if show_bounding_box:
+                centroids_ROI = self.nucstat.centroids[select_index_id,:].astype(np.int32)
+                """
                 painter = QPainter()
                 painter.begin(pixmap)
 
-                contour_ROI[...,0] = np.int32((contour_ROI[...,0]-x)/self.currentZoom)+1
-                contour_ROI[...,1] = np.int32((contour_ROI[...,1]-y)/self.currentZoom)+1
+                centroids_ROI[...,0] = np.int32((centroids_ROI[...,0]-x)/self.currentZoom)+1
+                centroids_ROI[...,1] = np.int32((centroids_ROI[...,1]-y)/self.currentZoom)+1
                 st = time.time()
                 for k in range(len(cellcolor)):
                     contour_qpolygon = array2d_to_qpolygonf(contour_ROI[k,:,0], contour_ROI[k,:,1])
@@ -238,6 +231,64 @@ def showOverlayML(self):
                 painter.end()
                 self.ui.MachineLearningOverlay.setPixmap(pixmap)
                 print('Rendering nuclei contour: ', time.time() - st)
+                """
+
+            else:
+                contour_ROI = self.nucstat.contour[select_index_id,:,:].astype(np.int32)
+                if np.sum(contour_ROI==0) > 0: # not stardist
+                    st = time.time()
+                    painter = QPainter()
+                    painter.begin(pixmap)
+                    for k in range(len(cellcolor)):
+                        contour = self.nucstat.contour[select_index_id[k],:,:].reshape(-1,2)
+                        contour = contour[np.sum(contour, axis=1)>0,:] # keep valid contour, remove 0
+                        
+                        if self.currentZoom > 2: # 4x downsample for faster drawing:
+                            contour = contour[0:len(contour):4, :]
+                        elif self.currentZoom > 1: # 2x downsample for faster drawing:
+                            contour = contour[0:len(contour):2, :]
+                        
+                        contour = np.vstack((contour, contour[0,:])).astype(int)
+                        contour[:,0] = np.int32((contour[:,0]-x)/self.currentZoom)+1 # don't use uint32, negative value will overflow.
+                        contour[:,1] = np.int32((contour[:,1]-y)/self.currentZoom)+1
+                        contour_qpolygon = array2d_to_qpolygonf(contour[:,0], contour[:,1])
+                        
+                        color = cellcolor[k]
+                        if fillContour:
+                            painter.setPen(QPen(Qt.black, 1, Qt.SolidLine))
+                            painter.setBrush(QBrush(QColor(color[0],color[1],color[2],color[3])))
+                        else:
+                            painter.setPen(QPen(QColor(color[0],color[1],color[2],255), 3, Qt.SolidLine))
+                            painter.setBrush(QBrush(Qt.NoBrush))
+                        painter.drawPolygon(contour_qpolygon)
+
+                    painter.end()
+                    self.ui.MachineLearningOverlay.setPixmap(pixmap)
+                    print('Rendering nuclei contour: ', time.time() - st)
+
+
+                else: # stardist
+
+                    painter = QPainter()
+                    painter.begin(pixmap)
+
+                    contour_ROI[...,0] = np.int32((contour_ROI[...,0]-x)/self.currentZoom)+1
+                    contour_ROI[...,1] = np.int32((contour_ROI[...,1]-y)/self.currentZoom)+1
+                    st = time.time()
+                    for k in range(len(cellcolor)):
+                        contour_qpolygon = array2d_to_qpolygonf(contour_ROI[k,:,0], contour_ROI[k,:,1])
+                        color = cellcolor[k]
+                        if fillContour:
+                            painter.setPen(QPen(Qt.black, 1, Qt.SolidLine))
+                            painter.setBrush(QBrush(QColor(color[0],color[1],color[2],color[3])))
+                        else:
+                            painter.setPen(QPen(QColor(color[0],color[1],color[2],255), 3, Qt.SolidLine))
+                            painter.setBrush(QBrush(Qt.NoBrush))
+                        painter.drawPolygon(contour_qpolygon)
+
+                    painter.end()
+                    self.ui.MachineLearningOverlay.setPixmap(pixmap)
+                    print('Rendering nuclei contour: ', time.time() - st)
 
 
 

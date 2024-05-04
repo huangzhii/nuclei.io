@@ -1,8 +1,0 @@
-2022-08-13 05:48:56.508 *** Start program *** Start program
-2022-08-13 05:49:04.086 *** Open case *** /media/zhihuang/Drive3/Google_Colon_lnm_pos_2015_slides/slides/S0425
-2022-08-13 05:49:06.641 *** Open processed data
-2022-08-13 05:49:06.642 *** Preload all statistics at once.
-2022-08-13 05:49:07.809 *** Nuclei stat data loaded, took 1.17 seconds. Total number of nuclei: 954361
-2022-08-13 05:49:10.406 *** CACHEDIR=/home/zhihuang/.cache/matplotlib
-2022-08-13 05:49:10.407 *** Using fontManager instance from /home/zhihuang/.cache/matplotlib/fontlist-v330.json
-2022-08-13 05:49:10.869 *** Loaded backend qtagg version unknown.

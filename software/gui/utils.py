@@ -82,9 +82,9 @@ def np_2_b64(np_array):
     return s
 
 
-
+'''
 import multiprocess as mp
-
+mp.freeze_support() # this is for packaging nuclei.app software.
 def parfun(f, q_in, q_out):
     while True:
         i, x = q_in.get()
@@ -104,3 +104,4 @@ def parmap(f, X, nprocs=mp.cpu_count()):
     res = [q_out.get() for _ in range(len(sent))]
     [p.join() for p in proc]
     return [x for i, x in sorted(res)]
+'''

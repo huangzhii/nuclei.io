@@ -41,7 +41,6 @@ def vidImageToQImage(self):
 
 
 def showImage(self):
-
     '''
     Hide overlay
     '''
@@ -159,8 +158,6 @@ def showImage(self):
                                             self.rotation,
                                             self.zPosition,
                                             additional_dict))
-
-
 
     if self.getZoomValue() < 1:
         '''

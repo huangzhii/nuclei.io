@@ -78,10 +78,10 @@ def showOverlayAnnotation(self):
             rect_image_x2 = coordinates[1][0]
             rect_image_y2 = coordinates[1][1]
 
-            window_x1 = np.int((rect_image_x1-x)/self.currentZoom)
-            window_y1 = np.int((rect_image_y1-y)/self.currentZoom)
-            window_x2 = np.int((rect_image_x2-x)/self.currentZoom)
-            window_y2 = np.int((rect_image_y2-y)/self.currentZoom)
+            window_x1 = np.int64((rect_image_x1-x)/self.currentZoom)
+            window_y1 = np.int64((rect_image_y1-y)/self.currentZoom)
+            window_x2 = np.int64((rect_image_x2-x)/self.currentZoom)
+            window_y2 = np.int64((rect_image_y2-y)/self.currentZoom)
             xy = [window_x1, window_y1, window_x2, window_y2]
 
             pt1, pt2 = coordinates
@@ -100,15 +100,15 @@ def showOverlayAnnotation(self):
         elif shapeType == 'Ellipse':
             points = coordinates
             radius = 5000
-            x1 = np.int(points[0]-radius/2)
-            x2 = np.int(points[0]+radius/2)
-            y1 = np.int(points[1]-radius/2)
-            y2 = np.int(points[1]+radius/2)
+            x1 = np.int64(points[0]-radius/2)
+            x2 = np.int64(points[0]+radius/2)
+            y1 = np.int64(points[1]-radius/2)
+            y2 = np.int64(points[1]+radius/2)
             x, y, width, height = self.region[0][0], self.region[0][1], self.region[1][0], self.region[1][1]
-            window_x1 = np.int((x1-x)/self.currentZoom)
-            window_y1 = np.int((y1-y)/self.currentZoom)
-            window_x2 = np.int((x2-x)/self.currentZoom)
-            window_y2 = np.int((y2-y)/self.currentZoom)
+            window_x1 = np.int64((x1-x)/self.currentZoom)
+            window_y1 = np.int64((y1-y)/self.currentZoom)
+            window_x2 = np.int64((x2-x)/self.currentZoom)
+            window_y2 = np.int64((y2-y)/self.currentZoom)
             xy = [window_x1, window_y1, window_x2, window_y2]
 
 

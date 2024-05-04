@@ -29,14 +29,15 @@ import ast
 import time
 import random
 from datetime import datetime
-from gui.utils import im_2_b64, parmap
+from gui.utils import im_2_b64
+#from gui.uitils import parmap
 from PIL import Image
 from collections import Counter
 
 import pickle
 import copy
 import xgboost as xgb
-from sklearn.metrics import accuracy_score, confusion_matrix
+import sklearn
 from tqdm import tqdm
 import paramiko
 import platform
@@ -70,6 +71,7 @@ class DataModel():
     activeClassID = None
     activeClassName = None
     activeClassRGB = None
+    force_update_ML = True
 
     data_X = None
     data_info = None
@@ -143,12 +145,134 @@ class DataModel():
     
     def setActiveClassID(self,
                          class_id: int):
-        classname, rgbcolor = self.classinfo.loc[class_id,:]
-        self.activeClassID = class_id
-        self.activeClassName = classname
-        self.activeClassRGB = rgbcolor
+        if hasattr(self, 'classinfo'):
+            classname, rgbcolor, isVisible = self.classinfo.loc[class_id,:]
+            self.activeClassID = class_id
+            self.activeClassName = classname
+            self.activeClassRGB = rgbcolor
+        else:
+            print('Warning: No classinfo found.')
+
+    def annotate_ROI_from_prediction(self,
+                                     ROI_dict = None,
+                                     testing_ratio = 0.3
+                                     ):
+        if not hasattr(self.MainWindow, 'nucstat') or self.MainWindow.nucstat is None:
+            print('No nucstat! Annotation exit.')
+            return
+        print('Start annotate ROI from current prediction.')
+
+        ROI_type = ROI_dict['type']
+        ROI_points = ROI_dict['points']
+        ROI_points_global = ROI_dict['points_global']
+        ROI_rotation = ROI_dict['rotation']
+        
+        if ROI_type == 'Polygon':
+            # clear current polygon drawing
+            if hasattr(self.MainWindow.ui, 'drawPolygonPoints'):
+                delattr(self.MainWindow.ui, 'drawPolygonPoints')
+            self.MainWindow.ui.polygon_in_progress = False
+
+        if ROI_type == 'Rect':
+
+            [[x1, y1], [x2, y2]] = ROI_points_global
+            x1, x2 = np.sort([x1, x2])
+            y1, y2 = np.sort([y1, y2])
+
+            subset_index = (self.MainWindow.nucstat.centroid[:,0] > x1) & (self.MainWindow.nucstat.centroid[:,0] < x2) & \
+                            (self.MainWindow.nucstat.centroid[:,1] > y1) & (self.MainWindow.nucstat.centroid[:,1] < y2)
+
+        elif ROI_type == 'Polygon':
+            p = path.Path(ROI_points_global)
+            subset_index = p.contains_points(self.MainWindow.nucstat.centroid)
+
+        subset_index = np.where(subset_index)[0]
+        subset_index_vals = self.MainWindow.nucstat.index[subset_index]
+
+        if len(subset_index) > 10000:
+            reply = QMessageBox.information(self, 'Notification',
+                                        'Warning: You have selected a very large region with over 10,000 nuclei, we suggest you to choose a smaller ROI for annotation.',
+                                        QMessageBox.Ok)
+            return
 
 
+        bool_idx_exist = (self.data_info['case_id'].values == self.MainWindow.case_id) & \
+                        (self.data_info['slide_id'].values == self.MainWindow.slide_id) & \
+                        np.isin(self.data_info['nuclei_index'].values, subset_index_vals)
+
+        if np.sum(bool_idx_exist) > 0:
+            '''
+            If ROI selection overlaps with previous nuclei index, then just overwrite it.
+            Before overwrite, remove all previous nuclei annotations.
+            '''
+            self.data_X = self.data_X.loc[~bool_idx_exist,:]
+            self.data_info = self.data_info.loc[~bool_idx_exist,:]
+
+
+        label_type_list = np.repeat('ROI_training', len(subset_index)).astype(object)
+
+        if len(subset_index) > 20:
+            # only enable testing when more than 20 nuclei annotated.
+            if testing_ratio > 0:
+                boollist_isTesting = np.random.sample(len(subset_index)) < testing_ratio
+            else:
+                boollist_isTesting = np.ones(len(subset_index)).astype(bool)
+            label_type_list[boollist_isTesting] = 'ROI_random_testing'
+        
+        self.MainWindow.ui.statusBar.statusbar_pbar.setValue(0)
+        # parmap seems not working well.
+        #new_rows = parmap(lambda tuple_in: self.add_data_row(tuple_in[0], tuple_in[1], class_id),
+        #                    [(ix, lbl) for ix, lbl in zip(subset_index, label_type_list)]
+        #                    )
+        new_rows = []
+        class_ids = []
+        for idx, lbl in zip(subset_index, label_type_list):
+            # Get curren prediction
+            class_id = int(self.MainWindow.nucstat.prediction.loc[idx,'label'])
+            class_ids.append(class_id)
+            row = self.add_data_row(idx, lbl, class_id)
+            new_rows.append(row)
+
+        new_rows = pd.concat(new_rows, axis=0, ignore_index=True)
+        
+
+
+        self.data_info = pd.concat([self.data_info, new_rows], axis=0, ignore_index=True)
+
+        learning_feature_idx = []
+        for v in self.MainWindow.nucstat.feature_columns:
+            learning_feature_idx.append(v in self.MainWindow.nucstat.learning_features)
+        learning_feature_idx = np.array(learning_feature_idx)
+        tuple_indices = [(self.MainWindow.case_id, self.MainWindow.slide_id, class_id, idx) for idx, class_id in zip(subset_index, class_ids)]
+        feat = pd.DataFrame(self.MainWindow.nucstat.feature[np.isin(self.MainWindow.nucstat.index, subset_index_vals), :][:, learning_feature_idx], index=tuple_indices) # M_nuclei x N_features            
+        
+        if not hasattr(self, 'data_X') or self.data_X is None:
+            self.data_X = feat
+        else:
+            self.data_X = pd.concat([self.data_X, feat], axis=0)
+
+
+        print('%d new nuclei annotated.' % len(new_rows))
+
+        self.MainWindow.ui.statusBar.statusbar_pbar.setValue(100)
+
+
+        for idx, class_id in zip(subset_index, class_ids):
+            new_ROI_dict = {}
+            new_ROI_dict['type'] = 'doubleclick'
+            new_ROI_dict['class_ID'] = class_id
+            new_ROI_dict['points_global'] = self.MainWindow.nucstat.contour[idx]
+            new_ROI_dict['class_name'] = self.classinfo.loc[class_id, 'classname']
+            new_ROI_dict['class_rgbcolor'] = self.classinfo.loc[class_id, 'rgbcolor']
+            self.MainWindow.annotation.add_annotation(new_ROI_dict)
+        self.updateAnnotationToWebEngine()
+
+        # clear drawing
+        pixmap = QPixmap(self.MainWindow.ui.DrawingOverlay.size())
+        pixmap.fill(Qt.transparent)
+        self.MainWindow.ui.DrawingOverlay.setPixmap(pixmap)
+        if self.force_update_ML:
+            self.apply_to_case()
 
     def activeLearning(self,
                         ROI_dict = None):
@@ -159,11 +283,48 @@ class DataModel():
 
         pass
 
+
     def analyzeROI(self,
                         ROI_dict = None):
         if not hasattr(self.MainWindow, 'nucstat') or self.MainWindow.nucstat is None:
             print('No nucstat! Annotation exit.')
             return
+        print('Start analyze ROI.')
+
+        ROI_type = ROI_dict['type']
+        ROI_points = ROI_dict['points']
+        ROI_points_global = ROI_dict['points_global']
+        ROI_rotation = ROI_dict['rotation']
+        
+        if ROI_type == 'Polygon':
+            # clear current polygon drawing
+            if hasattr(self.MainWindow.ui, 'drawPolygonPoints'):
+                delattr(self.MainWindow.ui, 'drawPolygonPoints')
+            self.MainWindow.ui.polygon_in_progress = False
+
+
+        if ROI_type == 'Rect':
+
+            [[x1, y1], [x2, y2]] = ROI_points_global
+            x1, x2 = np.sort([x1, x2])
+            y1, y2 = np.sort([y1, y2])
+
+            index_bool = (self.MainWindow.nucstat.centroid[:,0] > x1) & (self.MainWindow.nucstat.centroid[:,0] < x2) & \
+                            (self.MainWindow.nucstat.centroid[:,1] > y1) & (self.MainWindow.nucstat.centroid[:,1] < y2)
+
+        elif ROI_type == 'Polygon':
+            p = path.Path(ROI_points_global)
+            index_bool = p.contains_points(self.MainWindow.nucstat.centroid)
+
+        # get all nuclei within ROI
+
+        self.MainWindow.nucstat.isSelected_to_VFC = index_bool
+        self.send_dim_info_for_VFC()
+        # clear drawing
+        pixmap = QPixmap(self.MainWindow.ui.DrawingOverlay.size())
+        pixmap.fill(Qt.transparent)
+        self.MainWindow.ui.DrawingOverlay.setPixmap(pixmap)
+
         pass
 
 
@@ -243,11 +404,16 @@ class DataModel():
                 boollist_isTesting = np.ones(len(subset_index)).astype(bool)
             label_type_list[boollist_isTesting] = 'ROI_random_testing'
         
-        
         self.MainWindow.ui.statusBar.statusbar_pbar.setValue(0)
-        new_rows = parmap(lambda tuple_in: self.add_data_row(tuple_in[0], tuple_in[1], class_id),
-                            [(ix, lbl) for ix, lbl in zip(subset_index, label_type_list)]
-                            )
+        # parmap seems not working well.
+        #new_rows = parmap(lambda tuple_in: self.add_data_row(tuple_in[0], tuple_in[1], class_id),
+        #                    [(ix, lbl) for ix, lbl in zip(subset_index, label_type_list)]
+        #                    )
+        new_rows = []
+        for idx, lbl in zip(subset_index, label_type_list):
+            row = self.add_data_row(idx, lbl, class_id)
+            new_rows.append(row)
+
         new_rows = pd.concat(new_rows, axis=0, ignore_index=True)
         
 
@@ -282,7 +448,8 @@ class DataModel():
         pixmap.fill(Qt.transparent)
         self.MainWindow.ui.DrawingOverlay.setPixmap(pixmap)
 
-        self.apply_to_case()
+        if self.force_update_ML:
+            self.apply_to_case()
         return
 
 
@@ -435,7 +602,8 @@ class DataModel():
 
 
         self.updateAnnotationToWebEngine()
-        self.apply_to_case()
+        if self.force_update_ML:
+            self.apply_to_case()
     
     def updateAnnotationToWebEngine(self):
         dict_to_send = {'action': 'update annotation count',
@@ -447,7 +615,9 @@ class DataModel():
 
 
     def get_merged_lbl_data(self,
-                            stage=''):
+                            stage='',
+                            force_retrain=False
+                            ):
 
         '''
         replace NA by 0
@@ -556,9 +726,18 @@ class DataModel():
                     datadict,
                     modelclass='All_class',
                     trained_for='All_class',
-                    warmstart=False
+                    warmstart=False,
+                    force_retrain=False,
                     ):
         print('---- ML train ----')
+
+        if force_retrain:
+            # force retrain, then we need to clear all previous model, and update data.
+            if hasattr(self, 'model'):
+                delattr(self, 'model')
+            if hasattr(self, 'ML_result'):
+                delattr(self, 'ML_result')
+            
         
         if not hasattr(self, 'model'):
             self.model = {}
@@ -577,7 +756,7 @@ class DataModel():
         X_train = datadict[trained_for]['train']['X']
         y_train = datadict[trained_for]['train']['y']
             
-        if hasattr(self, 'ML_X_train_last') and np.array_equal(X_train, self.ML_X_train_last) and np.array_equal(y_train, self.ML_y_train_last):
+        if not force_retrain and hasattr(self, 'ML_X_train_last') and np.array_equal(X_train, self.ML_X_train_last) and np.array_equal(y_train, self.ML_y_train_last):
             st = time.time()
             clf = self.ML_clf_last
             et = time.time()
@@ -596,8 +775,8 @@ class DataModel():
 
         self.model[modelclass] = clf
         y_train_pred = clf.predict(X_train)
-        train_acc = accuracy_score(y_train, y_train_pred)
-        train_cmat = confusion_matrix(y_train, y_train_pred)
+        train_acc = sklearn.metrics.accuracy_score(y_train, y_train_pred)
+        train_cmat = sklearn.metrics.confusion_matrix(y_train, y_train_pred)
 
         if modelclass == 'Apply_all':
             self.X_train_last_used = X_train
@@ -609,8 +788,8 @@ class DataModel():
             X_test = datadict[trained_for]['test']['X']
             y_test = datadict[trained_for]['test']['y']
             y_test_pred = clf.predict(X_test)
-            test_acc = accuracy_score(y_test, y_test_pred)
-            test_cmat = confusion_matrix(y_test, y_test_pred)
+            test_acc = sklearn.metrics.accuracy_score(y_test, y_test_pred)
+            test_cmat = sklearn.metrics.confusion_matrix(y_test, y_test_pred)
             print('[Model for %s] train elapsed %.2f seconds' % (trained_for, time.time()-st))
             print('train acc = %.2f' % train_acc)
             print('test acc = %.2f' % test_acc)
@@ -665,7 +844,14 @@ class DataModel():
             
 
             #TODO: Could this be improved? In another experiment, I found xgboost predict_proba is already paralleled.
-            proba_ = np.array(clf.predict_proba(X_test))
+            
+            if clf.n_features_in_ == X_test.shape[1]:
+                proba_ = np.array(clf.predict_proba(X_test))
+            else:
+                print("Number of features mismatch. Maybe the nuclei features increased?")
+                print("Start training again.")
+                self.apply2case(force_retrain=True)
+                
             y_pred = np.argmax(proba_, axis=1)
             y_pred_proba = np.max(proba_, axis=1)#np.array(clf.predict_proba(X_test))[:,1]
 
@@ -723,6 +909,22 @@ class DataModel():
                 et = time.time()
                 self.MainWindow.log.write('Interactive label *** Save current model to %s, cost %.2f seconds.' % (temp_dir, et-st))
             '''
+            #save dict file to temp_annotation_file dir, in case the system crashes.
+            save_ = True
+            if save_:
+                self.model["data_info"] = self.data_info
+                self.model["classinfo"] = self.classinfo
+                self.model["dataX"] = self.data_X
+                st = time.time()
+                temp_dir = os.path.join(self.MainWindow.wd, 'Cache', 'Temp_annotation_file')
+                os.makedirs(temp_dir, exist_ok=True)
+                curr_datetime = datetime.now().strftime("%Y-%m-%d_%H.%M.%S")
+                save_path = os.path.join(temp_dir, 'model_timestamp=%s.pickle' % (curr_datetime))
+                with open(save_path, 'wb') as f:
+                    pickle.dump(self.model, f)
+                et = time.time()
+                self.MainWindow.log.write('Interactive label *** Save current model to %s, cost %.2f seconds.' % (temp_dir, et-st))
+
 
             
     def load_offline_probability(self):
@@ -786,11 +988,12 @@ class DataModel():
         
 
 
-    def apply2case(self):
+    def apply2case(self,
+                   force_retrain=False):
         
         self.MainWindow.ui.statusBar.statusbar_pbar.setValue(0)
         try:
-            datadict = self.get_merged_lbl_data(stage='apply2case')
+            datadict = self.get_merged_lbl_data(stage='apply2case', force_retrain=force_retrain)
         except Exception as e:
             print(e)
             self.MainWindow.backend.py2js({'action': 'apply2case_done'})
@@ -842,7 +1045,8 @@ class DataModel():
             else:
                 clf = self.ML_train(datadict,
                                     modelclass = 'Apply_all',
-                                    trained_for = 'All_class')
+                                    trained_for = 'All_class',
+                                    force_retrain=force_retrain)
             
 
             self.MainWindow.ui.statusBar.statusbar_pbar.setValue(40)
@@ -1030,8 +1234,8 @@ class DataModel():
         self.VFC_dim2_val = dim2
 
         # 1: selected; 0: not selected.
-        if hasattr(self.MainWindow.nucstat, 'VFC_index_selected'): # previously isSelected
-            idx_selected = self.MainWindow.nucstat.VFC_index_selected.reshape(-1).astype(float) # Object of type int32 is not JSON serializable
+        if hasattr(self.MainWindow.nucstat, 'isSelected_to_VFC'): # previously isSelected
+            idx_selected = self.MainWindow.nucstat.isSelected_to_VFC.reshape(-1).astype(float) # Object of type int32 is not JSON serializable
         else:
             idx_selected = np.array([1] * len(dim1)).astype(float)
 
@@ -1173,7 +1377,7 @@ class DataModel():
             ymin, ymax = np.min(y), np.max(y)
             index_bool = (self.VFC_dim1_val > xmin) & (self.VFC_dim1_val < xmax) & (self.VFC_dim2_val > ymin) & (self.VFC_dim2_val < ymax)
             
-        self.nucstat['isSelected_from_VFC'] = index_bool
+        self.nucstat.isSelected_from_VFC = index_bool
         self.processingStep = self.id+1
         self.showImage_part2(self.npi, self.processingStep)
 

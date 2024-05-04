@@ -132,7 +132,7 @@ class ValueDial(QWidget):
         textRect = QRect()
 
         qp = QPainter(self)
-        qp.setRenderHints(qp.Antialiasing)
+        qp.setRenderHints(QPainter.Antialiasing)
         for p in range(0, fullRange + rangeOffset, self.notchSize()):
             value = self.minimum() + p
             value_to_360 = value*15

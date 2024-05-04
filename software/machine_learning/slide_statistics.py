@@ -155,20 +155,30 @@ class SlideStatistics():
         if self.preload:
             print('Preload all statistics at once.')
             self.MainWindow.log.write('Preload all statistics at once.')
-
+            #self.datafolder = self.datafolder.replace("stardist_results", "cellvit")
             folder_name = os.path.basename(self.datafolder)
             parent_folder_name = self.datafolder.rstrip(os.sep).split(os.sep)[-2]
 
             if (folder_name == 'stardist_results') or (parent_folder_name == 'stardist_results'):
-                self.index = pd.read_csv(os.path.join(self.datafolder, 'nuclei_stat_index.csv'), index_col=0).values.reshape(-1).astype(int)
+                #self.index = pd.read_csv(os.path.join(self.datafolder, 'nuclei_stat_index.csv'), index_col=0).values.reshape(-1).astype(int)
                 self.contour = np.load(os.path.join(self.datafolder, 'contours.npy'), allow_pickle=True)
                 self.centroid = np.load(os.path.join(self.datafolder, 'centroids.npy'), allow_pickle=True)
                 self.probability = np.load(os.path.join(self.datafolder, 'probability.npy'), allow_pickle=True)
-            
+                """
+
+            if (folder_name == 'cellvit') or (parent_folder_name == 'cellvit'):
+                #self.index = pd.read_csv(os.path.join(self.datafolder, 'nuclei_stat_index.csv'), index_col=0).values.reshape(-1).astype(int)
+                self.contour = np.load(os.path.join(self.datafolder, 'contours.npy'), allow_pickle=True)
+                self.centroid = np.load(os.path.join(self.datafolder, 'centroids.npy'), allow_pickle=True)
+                self.probability = np.load(os.path.join(self.datafolder, 'type_probability.npy'), allow_pickle=True)
+                """
                 if os.path.exists(os.path.join(self.datafolder, 'nuclei_stat_f16.npy')):
                     self.feature = np.load(os.path.join(self.datafolder, 'nuclei_stat_f16.npy'))
-                else:
+                elif os.path.exists(os.path.join(self.datafolder, 'nuclei_stat.npy')):
                     self.feature = np.load(os.path.join(self.datafolder, 'nuclei_stat.npy'))
+                else:
+                    print('No pre-computed features!')
+                    self.feature = np.zeros((len(self.contour), 0))
 
                 if os.path.exists(os.path.join(self.datafolder, 'DL_features_32.npy')):
                     print('Found deep learning features (patch=128).')
@@ -182,6 +192,12 @@ class SlideStatistics():
                                                     np.load(os.path.join(self.datafolder, 'DL_features_32_patch64.npy'))],
                                                     axis=1)
 
+                if os.path.exists(os.path.join(self.datafolder, 'PLIP_finetuned_features.npy')):
+                    print('Found fine-tuned features.')
+                    self.feature = np.concatenate([self.feature,
+                                                    np.load(os.path.join(self.datafolder, 'PLIP_finetuned_features.npy'))],
+                                                    axis=1)
+                                                            
                 if os.path.exists(os.path.join(self.datafolder, 'nuclei_stat_plasma32_f16.npy')):
                     print('Found plasma cell features (N_feat = 32).')
                     self.feature = np.concatenate([self.feature,
@@ -194,6 +210,7 @@ class SlideStatistics():
                                                     np.load(os.path.join(self.datafolder, 'DL_plasma_32_patch128.npy'))],
                                                     axis=1)
                                                             
+                                                            
                 prob_threshold = 0.5
                 self.select_nuclei_idx = self.probability > prob_threshold
                 print('%d / %d' % (np.sum(self.select_nuclei_idx),len(self.select_nuclei_idx)) )
@@ -203,32 +220,36 @@ class SlideStatistics():
                 self.index = np.arange(len(self.centroid))
 
                 self.feature[np.isnan(self.feature)] = 0
-                self.feature_columns = pd.read_csv(os.path.join(self.datafolder, 'nuclei_stat_columns.csv'), index_col=0).values[:,0]
-                self.feature_columns = np.array([ast.literal_eval(v) for v in self.feature_columns])
-                for i in range(len(self.feature_columns)):
-                    if self.feature_columns[i,0] == 'Gradient':
-                        self.feature_columns[i,1] = self.feature_columns[i,1].replace('Gradient.','')
-                    if self.feature_columns[i,0] == 'Intensity':
-                        self.feature_columns[i,1] = self.feature_columns[i,1].replace('Intensity.','')
-                self.feature_columns = list(tuple(map(tuple, self.feature_columns)))
+                if os.path.exists(os.path.join(self.datafolder, 'nuclei_stat_columns.csv')):
+                    self.feature_columns = pd.read_csv(os.path.join(self.datafolder, 'nuclei_stat_columns.csv'), index_col=0).values[:,0]
+                    self.feature_columns = np.array([ast.literal_eval(v) for v in self.feature_columns])
+                    for i in range(len(self.feature_columns)):
+                        if self.feature_columns[i,0] == 'Gradient':
+                            self.feature_columns[i,1] = self.feature_columns[i,1].replace('Gradient.','')
+                        if self.feature_columns[i,0] == 'Intensity':
+                            self.feature_columns[i,1] = self.feature_columns[i,1].replace('Intensity.','')
+                    self.feature_columns = list(tuple(map(tuple, self.feature_columns)))
 
-                if os.path.exists(os.path.join(self.datafolder, 'DL_features_32.npy')):
-                    self.feature_columns += [('DL patch 128', '%d' % v) for v in range(1, 32+1)]
-                    self.learning_features += [('DL patch 128', '%d' % v) for v in range(1, 32+1)]
+                    if os.path.exists(os.path.join(self.datafolder, 'DL_features_32.npy')):
+                        self.feature_columns += [('DL patch 128', '%d' % v) for v in range(1, 32+1)]
+                        self.learning_features += [('DL patch 128', '%d' % v) for v in range(1, 32+1)]
 
-                if os.path.exists(os.path.join(self.datafolder, 'DL_features_32_patch64.npy')):
-                    self.feature_columns += [('DL patch 64', '%d' % v) for v in range(1, 32+1)]
-                    self.learning_features += [('DL patch 64', '%d' % v) for v in range(1, 32+1)]
+                    if os.path.exists(os.path.join(self.datafolder, 'DL_features_32_patch64.npy')):
+                        self.feature_columns += [('DL patch 64', '%d' % v) for v in range(1, 32+1)]
+                        self.learning_features += [('DL patch 64', '%d' % v) for v in range(1, 32+1)]
 
-                if os.path.exists(os.path.join(self.datafolder, 'DL_plasma_32_patch128.npy')):
-                    self.feature_columns += [('DL plasma 32', '%d' % v) for v in range(1, 32+1)]
-                    self.learning_features += [('DL plasma 32', '%d' % v) for v in range(1, 32+1)]
+                    if os.path.exists(os.path.join(self.datafolder, 'PLIP_finetuned_features.npy')):
+                        self.feature_columns += [('Finetuned', '%d' % v) for v in range(1, 512+1)]
+                        self.learning_features += [('Finetuned', '%d' % v) for v in range(1, 512+1)]
 
-                if os.path.exists(os.path.join(self.datafolder, 'nuclei_stat_plasma32_f16.npy')):
-                    self.feature_columns += [('Plasma polar', '%d' % v) for v in range(1, 32+1)]
-                    self.learning_features += [('Plasma polar', '%d' % v) for v in range(1, 32+1)]
+                    if os.path.exists(os.path.join(self.datafolder, 'DL_plasma_32_patch128.npy')):
+                        self.feature_columns += [('DL plasma 32', '%d' % v) for v in range(1, 32+1)]
+                        self.learning_features += [('DL plasma 32', '%d' % v) for v in range(1, 32+1)]
 
-            
+                    if os.path.exists(os.path.join(self.datafolder, 'nuclei_stat_plasma32_f16.npy')):
+                        self.feature_columns += [('Plasma polar', '%d' % v) for v in range(1, 32+1)]
+                        self.learning_features += [('Plasma polar', '%d' % v) for v in range(1, 32+1)]
+
             elif folder_name == 'statistics':
 
                 self.index = pd.read_csv(os.path.join(self.datafolder, 'nuclei_stat_index.csv'), index_col=0).values.reshape(-1).astype(int)
@@ -264,7 +285,12 @@ class SlideStatistics():
                                                                 )).T,
                                                         index=self.index,
                                                         columns = ['label','proba','class_name','color_r','color_g','color_b'])
- 
+
+            # isSelect for subsetting nuclei for active learning or virtual flow cytometry visualization
+            self.isSelected_to_VFC = np.repeat(True, len(self.index))
+            # isSelect_from_VFC was used to highlight nuclei from region selected from virtual flow cytometry
+            self.isSelected_from_VFC = np.repeat(True, len(self.index))
+            
         else: # no preload
             pass
 

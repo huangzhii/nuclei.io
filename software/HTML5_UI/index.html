@@ -2,9 +2,11 @@
 <html lang="en">
 <meta charset="utf-8">
 <head>
+
   <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
 
   <script src="js/jquery-3.6.0.min.js"></script>
+  
 
   <!--
   <script src="/home/zhihuang/Desktop/nuclei.io_pyside6/software/HTML5_UI/js/bootstrap_4.6.1/popper.min.js"></script>
@@ -12,34 +14,40 @@
   <link rel="stylesheet" type="text/css" src="/home/zhihuang/Desktop/nuclei.io_pyside6/software/HTML5_UI/css/bootstrap_4.6.1/bootstrap.min.css"></link>
   -->
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-  <!--popper.js should load before bootstrap.js and after jquery.js-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-
-
+  <script src="js/popper.min.js"></script>
+  
+  <link rel="stylesheet" href="3rd_party/bootstrap-4.6.2-dist/css/bootstrap.min.css"></link>
+  <script src="3rd_party/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
 
   <!--Bootstrap-select-->
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="3rd_party/bootstrap-select@1.13.18/bootstrap-select.min.css">
   <!-- Latest compiled and minified JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/bootstrap-select.min.js"></script>
+  <!--script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/bootstrap-select.min.js"></script-->
+  <script src="3rd_party/bootstrap-select@1.13.18/bootstrap-select.min.js"></script>
   <!-- (Optional) Latest compiled and minified JavaScript translation files -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/i18n/defaults-*.min.js"></script>
-
-
+  <!--script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/i18n/defaults-*.min.js"></script-->
 
   <script src="js/crypto-js.min.js"></script>
-  <script src="https://kit.fontawesome.com/0c31ad6a35.js" crossorigin="anonymous"></script>
-  
-  <script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
-
-    
+  <script src="3rd_party/fontawesome-free-6.4.0-web/js/all.min.js" crossorigin="anonymous"></script>
+  <script src="3rd_party/plotly-2.9.0/plotly.min.js"></script>
   <!--Color picker-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.4.0/js/bootstrap-colorpicker.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.4.0/css/bootstrap-colorpicker.css">
+  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.4.0/js/bootstrap-colorpicker.min.js"></script-->
+  <script src="3rd_party/bootstrap-colorpicker@3.4.0/bootstrap-colorpicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="3rd_party/bootstrap-colorpicker@3.4.0/bootstrap-colorpicker.css">
 
-
+  <!--disable touch scroll overscroll on mac OS (two finger gesture)-->
+  <style>
+    html {
+        overscroll-behavior-x: none;
+        overscroll-behavior-y: none;
+    } 
+    body {
+        overscroll-behavior-x: none;
+        overscroll-behavior-y: none;
+    }
+  </style>
+  
 </head>
 
 <body>
@@ -48,8 +56,8 @@
   <div style="height: 100px;"></div>
   <div class="layout_root" id='mainlayout'>
     <div class="layout_child" id='layout_case_slide' style="display:none;"></div>
-    <div class="layout_child" id='layout_annotation' style="display:none;"></div>
     <div class="layout_child" id='layout_ai' style="display:none;"></div>
+    <div class="layout_child" id='layout_annotation' style="display:none;"></div>
     <div class="layout_child" id='layout_toolbox' style="display:none;"></div>
     <div class="layout_child" id='layout_community' style="display:none;"></div>
   </div>
@@ -303,6 +311,11 @@ window.onload = function () {
               if (jsonObj['action'] == 'update feature list'){
                   feature_list = jsonObj['feature_list'];
                   update_feature_list(backend, feature_list);
+              }
+              if (jsonObj['action'] == 'ICD11 query result update'){
+                  query_result = jsonObj['data'];
+                  //backend.log(query_result);
+                  put_ICD11_query_result_to_datatable(query_result);
               }
           }
 

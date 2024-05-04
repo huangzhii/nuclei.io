@@ -64,7 +64,7 @@ def whenKeyPressed(self, event):
     if event.text() in ['w', 'a', 's', 'd']:
         imgarea_p1 = self.region[0]
         imgarea_w =  self.region[1]
-        imgCenter = (np.int(imgarea_p1[0] + imgarea_w[0]/2), np.int(imgarea_p1[1] + imgarea_w[1]/2))
+        imgCenter = (np.int64(imgarea_p1[0] + imgarea_w[0]/2), np.int64(imgarea_p1[1] + imgarea_w[1]/2))
         movestep = 300*self.getZoomValue()
         if event.text() == 'w': # press w key to move up
             newCenter = (imgCenter[0], imgCenter[1]-movestep)
@@ -75,7 +75,7 @@ def whenKeyPressed(self, event):
         if event.text() == 'd':
             newCenter = (imgCenter[0]+movestep, imgCenter[1])
         self.setCenter(newCenter)
-        self.update
+        #self.update
 
 
 def whenKeyReleased(self, event):

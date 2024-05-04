@@ -283,9 +283,10 @@ def rightClickImage(self, event):
         Dependent on the current mode, the menu displayed has different options. 
     """
     menu = QMenu(self)
+    iconfolder = os.path.join(self.wd, 'Artwork', 'canvas_menu')
 
     if not self.imageOpened:
-        addmenu = menu.addAction('Open local slide', self.onFileOpen)
+        addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'folder-icon.png')), 'Open local slide', self.onFileOpen)
         action = menu.exec_(self.mapToTruePos(event.pos()))
         return
 
@@ -324,6 +325,10 @@ def rightClickImage(self, event):
         addmenu = menu.addAction('Cancel', self.draw.cancelPolygon)
         addmenu = menu.addAction('Remove last point', self.draw.removeLastPolygonPoint)
         
+        addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'thumbs-up-line-icon.png')), 'Annotate ROI from prediction', partial(self.datamodel.annotate_ROI_from_prediction, annotation_dict))
+        addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'circle-arrow-icon.png')), 'Select ROI for active learning', partial(self.datamodel.activeLearning, annotation_dict))
+        addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'bar-chart-icon.png')), 'Select ROI for analysis', partial(self.datamodel.analyzeROI, annotation_dict))
+        
         #menu.addSeparator()
         #addmenu = menu.addAction('Select ROI for active learning', partial(self.interactive_labeling_proceed, mydict))
         #addmenu = menu.addAction('Select ROI for analysis', partial(self.analyzeROI, mydict))
@@ -341,7 +346,11 @@ def rightClickImage(self, event):
                                         partial(self.datamodel.annotate_single_nuclei, posx, posy, cx, cy, cls_id))
 
     menu.addSeparator()
-    addmenu = menu.addAction('Set as center', partial(self.setAsCenter,cx,cy))
+    iconfolder = os.path.join(self.wd, 'Artwork', 'canvas_menu')
+    addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'target-focus-line-icon.png')), 'Set as center', partial(self.setAsCenter,cx,cy))
+    addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'eye-icon.png')), 'Clear subsetting', partial(self.clear_subset_nuclei))
+    addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'repair-fix-repairing-icon.png')), 'Visualization Setting', partial(self.open_visualization_setting))
+
     #addmenu = menu.addAction('Reset canvas', self.clear_all_MainWindow_selection)
     #addmenu = menu.addAction('Remove this ROI annotation', partial(self.annotation.removeAnnotation, (posx, posy), (cx, cy)))
     action = menu.exec_(self.mapToTruePos(event.pos()))
@@ -401,6 +410,7 @@ def releaseImage(self, event):
                                             partial(self.datamodel.annotate_all_nuclei_within_ROI, annotation_dict, cls_id))
 
             menu.addSeparator()
+            addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'thumbs-up-line-icon.png')), 'Annotate ROI from prediction', partial(self.datamodel.annotate_ROI_from_prediction, annotation_dict))
             addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'circle-arrow-icon.png')), 'Select ROI for active learning', partial(self.datamodel.activeLearning, annotation_dict))
             addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'bar-chart-icon.png')), 'Select ROI for analysis', partial(self.datamodel.analyzeROI, annotation_dict))
             action = menu.exec_(self.mapToTruePos(event.pos())) # after mouse release, auto pop up menu

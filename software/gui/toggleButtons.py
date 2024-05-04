@@ -1,7 +1,7 @@
 
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect, Signal, QLineF, QEvent,
-    QSize, QTime, QUrl, Qt, QEasingCurve, QPropertyAnimation)
+    QSize, QTime, QUrl, Qt, QEasingCurve, QPropertyAnimation, Property)
 from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QCursor, QFont, QFontDatabase, QGradient, QMouseEvent,
     QIcon, QImage, QKeySequence, QLinearGradient,
@@ -38,6 +38,7 @@ class PyToggle(QCheckBox):
 
         # Create animation
         self._circle_position = 3
+        
         self.animation = QPropertyAnimation(self, b"circle_position", self)
         self.animation.setEasingCurve(animation_curve)
         self.animation.setDuration(500)
@@ -46,8 +47,7 @@ class PyToggle(QCheckBox):
         self.stateChanged.connect(self.start_transition)
     
     # Create new set and get properties
-    #@Property(float) #Get
-    @property
+    @Property(float)
     def circle_position(self):
         return self._circle_position
     

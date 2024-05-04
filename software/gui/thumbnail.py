@@ -12,6 +12,7 @@
 import cv2
 import numpy as np
 from gui import show_image
+from PIL import Image
 
 class Thumbnail():
     
@@ -22,11 +23,20 @@ class Thumbnail():
     size = None
     slide = None
 
-    def __init__(self, sl ):
+    def __init__(self, sl):
+
+        
         try:
-            thumbNail = sl.get_thumbnail(size=(300, 300), use_embedded=True) # tiffslide
+            thumbNail = sl.associated_images['thumbnail']
+            # re-get thumbnail.
+            try:
+                thumbNail = sl.get_thumbnail(size=(300, 300), use_embedded=True) # tiffslide
+            except:
+                thumbNail = sl.get_thumbnail(size=(300, 300)) # openslide
         except:
-            thumbNail = sl.get_thumbnail(size=(300, 300)) # openslide
+            print('Slide does not have thumbnail.')
+            thumbNail = Image.fromarray(np.ones((300,300,3),dtype=np.uint8)*200)
+
         
         self.thumbnail = thumbNail
         self.thumbnail_numpy = np.array(self.thumbnail, dtype=np.uint8)

@@ -16,18 +16,23 @@
         <div id="current_study_div" style="display:none">
             <div class="row">
                 <div class="col-12">
-                    <small>Select tissue type:</small>
+                    <small>Select study:</small>
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col-12" id="select_tissue_div" style="display:inline-block;max-width:100%;">
-                    <select class="selectpicker" id="select_tissue" data-live-search="true"
-                            data-style="btn-outline-primary" data-size="5"
-                            >
-                            <!-- data-width="auto"-->
-                    </select>
+                <div class="col-12">
+                    <select id="select_tissue" class="form-control"></select>
+                    <div id="customValueInput" class="mt-3 d-none">
+                        <div class="input-group">
+                            <input id="customInput" type="text" class="form-control" placeholder="Enter study name">
+                            <div class="input-group-append">
+                                <button id="confirmButton" class="btn btn-primary" type="button">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
 
             <div class="row mt-2">
                 <div class="col-12">
@@ -41,13 +46,24 @@
                         <div class="row">
                             <div class="col-lg-12" id="newRow">
                                 <div class="inputFormRow" id=0>
-                                    <div class="input-group mb-1">                                        
-                                        <div class="input-group-prepend">
+                                    <div class="input-group mb-1">
+                                        <div class="input-group-prepend" title="Select to start annotating this class.">
                                             <a href="javascript:void(0)" id=0 class="btn btn-primary btnNucleiSelect" style="width:40px"><i class="fa-solid fa-check"></i></a>
                                         </div>
-                                        <select class="select nucleiTypeSelect" style="width:55%" id=0 onchange="update_class_selection(this)">
+                                        <div class="input-group-prepend" title="Show/hide this class of nuclei on canvas.">
+                                            <a href="javascript:void(0)" id=0 visible=1 class="btn btn-outline-secondary btnNucleiShowHide"><i class="fa-solid fa-eye"></i></a>
+                                        </div>
+                                        <select class="select nucleiTypeSelect" style="width:40%" id=0 onchange="update_class_selection(this)">
                                             <option value="Other" selected>Other</option>
                                             <option value="Tumor">Tumor</option>
+                                            <option value="Artifacts">Artifacts/Not Cell</option>
+                                            <option value="PDL1+">PDL1+</option>
+                                            <option value="Neuron">Neuron</option>
+                                            <option value="Pyramidal neuron">Pyramidal neuron</option>
+                                            <option value="Granule neuron">Granule neuron</option>
+                                            <option value="Astrocyte">Astrocyte</option>
+                                            <option value="Oligodendrocyte">Oligodendrocyte</option>
+                                            <option value="Microglial">Microglial</option>
                                             <option value="Fibroblast">Fibroblast</option>
                                             <option value="Lymphocyte">Lymphocyte</option>
                                             <option value="Mitotic figure">Mitotic figure</option>
@@ -123,8 +139,6 @@
                 </div>
             </div>
             
-
-            
             <div class="row mt-2">
                 <div class="col-6">
                     <div class="btn btn-success btn-small" id="apply_to_case" style="width:100%;">
@@ -147,6 +161,10 @@
                 </div>
 
 
+                <div class="col-12">
+                    <input type="checkbox" id="force_update" checked> <small>Force Update</small>
+                </div>
+                
                 <div class="col-12 mt-4">
                     <a href="javascript: void(0)" id="retrieve_last_saved_data">
                         <small><i class="fa-solid fa-suitcase-medical"></i> Retrieve last saved data</small>
@@ -248,30 +266,56 @@
 
 
 <script>
-    cancerlist = [
-    'Colorectal Cancer (LNM experiment)'];
-</script>
+    
+    function initialize_study_select(){
+        var cancerlist = ['Colorectal Cancer (LNM experiment)', 'Brain WSI'];
+        var select = $("#select_tissue");
+        var customInput = $("#customInput");
+        var customValueInput = $("#customValueInput");
 
-<script>
+        // Populate the select element with options
+        for (var i = 0; i < cancerlist.length; i++) {
+            var option = $("<option></option>").text(cancerlist[i]);
+            select.append(option);
+        }
 
+        // Add "Other" option
+        var otherOption = $("<option></option>").text("Other");
+        select.append(otherOption);
+
+        // Show input field when "Other" option is selected
+        select.change(function() {
+        if (select.val() === "Other") {
+            customValueInput.removeClass("d-none");
+            $("#customInput").val("");
+        } else {
+            customValueInput.addClass("d-none");
+        }
+        // Confirm button click event
+        $("#confirmButton").click(function() {
+            var newOption = $("#customInput").val().trim();
+            if (newOption !== "" && !cancerlist.includes(newOption)) {
+                // Insert the new option before "Other" in the array
+                var index = cancerlist.indexOf("Other");
+                cancerlist.splice(index, 0, newOption);
+                cancerlist.push(newOption);
+                var option = $("<option></option>").text(newOption);
+                select.append(option);
+                select.val(newOption);
+            }
+            customValueInput.addClass("d-none");
+        });
+
+        });
+
+    }
+    
 
     active_class_id = 0;
     
     $( document ).ready(function() {
-        for (let i = 0; i < cancerlist.length; i++) {
-            c = cancerlist[i];
-            if (c.length == 1){
-                //$('#select_tissue').append('<optgroup id="'+c+'" label="'+c+'"></optgroup>');
-                //$('#search_tissue').append('<optgroup id="'+c+'" label="'+c+'"></optgroup>');
-            } else{
-                // Append the option to select
-
-                $('#select_tissue').append('<option style="width:270px; font-size:80%" data-tokens="'+c+'" value="'+c+'">'+c+'</option>');
-            }
-        }
-        // Refresh the selectpicker
-        $("#select_tissue").selectpicker("refresh");
         
+        initialize_study_select();
 
         //click "start_new_annotation"
         $("#current_study_div").show();
@@ -349,6 +393,7 @@
         class_info[class_id] = new Object();
         class_info[class_id]['classname'] = classname
         class_info[class_id]['rgbcolor'] = hex2rgb(color);
+        class_info[class_id]['isVisible'] = 1;
 
         backend.update_classinfo(JSON.stringify(class_info), 'init first class');
         active_class_id = class_id
@@ -386,6 +431,18 @@
     $("#use_offline_model").click(function (){
         backend.use_offline_model();
     });
+
+    $('#force_update').change(function() {
+        // Check if the checkbox is checked or unchecked
+        if ($(this).is(':checked')) {
+            backend.log('Force update checkbox is checked');
+            backend.force_update("Enable");
+        } else {
+            backend.log('Force update checkbox is unchecked');
+            backend.force_update("Disable");
+        }
+    });
+
 
     nuclei_color_list = [
                         '#A52A2A', //brown
@@ -466,6 +523,7 @@
         class_info[id] = new Object();
         class_info[id]['classname'] = classname
         class_info[id]['rgbcolor'] = hex2rgb(color);
+        class_info[id]['isVisible'] = 1;
         backend.update_classinfo(JSON.stringify(class_info), 'add row');
 
         classname = $cloneobj.find('.nucleiTypeSelect').val();
@@ -527,10 +585,12 @@
         id = $(this).parents('.inputFormRow').attr('id');
         console.log('check '+id);
 
+        // First, disable all classes.
         $('.inputFormRow').find('.btnNucleiSelect').html('<i class="fa-regular fa-circle"></i>');
         $('.inputFormRow').find('.btnNucleiSelect').removeClass('btn-primary');
         $('.inputFormRow').find('.btnNucleiSelect').addClass('btn-outline-secondary');
 
+        // Then, enable the selected class.
         $('.inputFormRow#'+id).find('.btnNucleiSelect').html('<i class="fas fa-check"></i>');
         $('.inputFormRow#'+id).find('.btnNucleiSelect').removeClass('btn-outline-secondary');
         $('.inputFormRow#'+id).find('.btnNucleiSelect').addClass('btn-primary');
@@ -540,6 +600,24 @@
         color = class_info[id]['rgbcolor']
         active_class_id = id
         backend.set_active_class(id, classname, color.toString())
+    });
+
+
+    // click to show / hide a certain nuclei class
+    $('#newRow').on("click", ".btnNucleiShowHide", function () {
+        id = $(this).parents('.inputFormRow').attr('id');
+        var isVisible = parseInt($('.inputFormRow#'+id).find('.btnNucleiShowHide').attr('visible'));
+        if (isVisible){
+            // set to not visible
+            $('.inputFormRow#'+id).find('.btnNucleiShowHide').html('<i class="fa-regular fa-eye-slash"></i>');
+        } else {
+            $('.inputFormRow#'+id).find('.btnNucleiShowHide').html('<i class="fa-regular fa-eye"></i>');
+        }
+        isVisible = 1-isVisible;
+        $('.inputFormRow#'+id).find('.btnNucleiShowHide').attr('visible', isVisible);
+        classname = class_info[id]['classname']
+        class_info[id]['isVisible'] = isVisible
+        backend.set_class_visibility(JSON.stringify(class_info), 'update class visibility');
     });
 
 

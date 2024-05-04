@@ -1,3 +1,8 @@
+"""
+Functions within file adopted from SlideRunner project:
+https://github.com/DeepMicroscopy/SlideRunner
+"""
+
 import os
 import multiprocessing
 import queue

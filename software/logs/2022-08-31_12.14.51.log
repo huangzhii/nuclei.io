@@ -1,9 +1,0 @@
-2022-08-31 12:14:51.724 *** Start program *** Start program
-2022-08-31 12:15:02.215 *** Open case *** /Applications/XAMPP/xamppfiles/htdocs/20220722_Eric_Yang
-2022-08-31 12:15:06.103 *** Open processed data
-2022-08-31 12:15:06.104 *** Preload all statistics at once.
-2022-08-31 12:15:06.647 *** Nuclei stat data loaded, took 0.54 seconds. Total number of nuclei: 670699
-2022-08-31 12:15:11.017 *** Mouse movement (LeftButton) ***  Mouse coords: (767, 475) (116012, 51864)
-2022-08-31 12:15:21.970 *** Mouse movement (LeftButton) ***  Mouse coords: (947, 467) (100187, 49132)
-2022-08-31 12:15:25.445 *** Interactive label *** (double click) click on screen. screen: (623, 366); slide: (99846, 49083). case_id: 20220722_Eric_Yang, slide_id: 3BQMJY_44661.svs, Nuclei index selected: 473558
-2022-08-31 12:15:34.807 *** Program closed.
