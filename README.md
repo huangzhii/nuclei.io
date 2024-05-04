@@ -9,6 +9,16 @@ If you are a pathologist/user/developer who plan to use this software for annota
 
 We are also releasing a Youtube tutorial soon. Please stay tuned!
 
+## Download an example whole slide image.
+```bash
+cd nuclei.io/
+mkdir example_data;
+cd example_data;
+mkdir CMU_Aperio;
+wget -O CMU_Aperio/CMU-1.svs https://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/CMU-1.svs
+wget -O CMU_Aperio/CMU-2.svs https://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/CMU-2.svs
+
+
 ## Initialization
 We use Anaconda to manage the codes.
 
@@ -22,7 +32,6 @@ conda activate nuclei.io
 
 Step 2. Install dependencies
 ```bash
-cd nuclei.io/
 pip install --upgrade pip  # enable PEP 660 support
 pip install -e .
 ```
@@ -31,3 +40,4 @@ Step 3. Open software
 ```bash
 python software/main.py
 ```
+Now, on the sidebar, click "Browse local", and open the folder `example_data/CMU_Aperio`.

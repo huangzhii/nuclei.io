@@ -58,8 +58,8 @@
     <div class="layout_child" id='layout_case_slide' style="display:none;"></div>
     <div class="layout_child" id='layout_ai' style="display:none;"></div>
     <div class="layout_child" id='layout_annotation' style="display:none;"></div>
-    <div class="layout_child" id='layout_toolbox' style="display:none;"></div>
-    <div class="layout_child" id='layout_community' style="display:none;"></div>
+    <!--div class="layout_child" id='layout_toolbox' style="display:none;"></div-->
+    <!--div class="layout_child" id='layout_community' style="display:none;"></div-->
   </div>
   <div id="footerbar"></div>
 
@@ -96,7 +96,7 @@
   $( "#topnav" ).load( "html/topnav.html");
   $( "#footerbar" ).load( "html/footer.html");
 
-  var layout_names = ['case_slide','annotation','ai','toolbox','community'];
+  var layout_names = ['case_slide','annotation','ai'];//,'toolbox','community'];
   for(let i=0; i<layout_names.length; i++){
     layoutname = layout_names[i];
     $( "#mainlayout #layout_"+layoutname ).load( "html/" + layoutname + ".html");

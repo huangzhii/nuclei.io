@@ -3,10 +3,12 @@ __pycache__
 *.pyc
 *.egg-info
 dist
-
+/example_data
 
 # Log
 *.log
+*.svs
+*.tiff
 *.log.*
 *.pickle
 

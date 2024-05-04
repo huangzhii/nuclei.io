@@ -47,24 +47,23 @@ class ToolBar(QWidget):
         
         self.icon = {}
         self.icon['View'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "cursor-icon.png")),"View",self.MainWindow)
-        self.icon['Ruler'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "ruler-measurement-icon.png")),"Ruler",self.MainWindow)
-        self.icon['FreeRuler'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "measuring-tape-icon.png")),"Free ruler",self.MainWindow)
+        #self.icon['Ruler'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "ruler-measurement-icon.png")),"Ruler",self.MainWindow)
+        #self.icon['FreeRuler'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "measuring-tape-icon.png")),"Free ruler",self.MainWindow)
         self.icon['Ellipse'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "ellipse-shape-line-icon.png")),"Circle",self.MainWindow)
         self.icon['Rect'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "object-select-icon.png")),"Rectangle",self.MainWindow)
         self.icon['Polygon'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "hexagon-shape-icon.png")),"Polygon",self.MainWindow)
-        self.icon['Freehand'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "signature-icon.png")),"Freehand",self.MainWindow)
-        self.icon['Eraser'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "eraser-icon.png")),"Eraser",self.MainWindow)
-        self.icon['Text'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "font-icon.png")),"Text",self.MainWindow)
-        self.icon['MagicWand'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "magic-icon.png")),"Magic wand",self.MainWindow)
+        #self.icon['Freehand'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "signature-icon.png")),"Freehand",self.MainWindow)
+        #self.icon['Eraser'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "eraser-icon.png")),"Eraser",self.MainWindow)
+        #self.icon['Text'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "font-icon.png")),"Text",self.MainWindow)
+        #self.icon['MagicWand'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "magic-icon.png")),"Magic wand",self.MainWindow)
 
-
-        self.icon['Screenshot'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "camera-icon.png")),"Screenshot",self.MainWindow)
-        self.icon['Fullscreen'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "full-screen-arrow-icon.png")),"Full screen",self.MainWindow)
-        self.icon['Discussion'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "chat-icon.png")),"Discussion",self.MainWindow)
-        self.icon['Twitter'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "twitter-app-icon.png")),"Twitter",self.MainWindow)
-        self.icon['Upload'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "cloud-upload-icon.png")),"Upload to cloud",self.MainWindow)
-        self.icon['Download'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "cloud-download-icon.png")),"Download to local",self.MainWindow)
-        self.icon['Live'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "live-icon.png")),"Live",self.MainWindow)
+        #self.icon['Screenshot'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "camera-icon.png")),"Screenshot",self.MainWindow)
+        #self.icon['Fullscreen'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "full-screen-arrow-icon.png")),"Full screen",self.MainWindow)
+        #self.icon['Discussion'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "chat-icon.png")),"Discussion",self.MainWindow)
+        #self.icon['Twitter'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "twitter-app-icon.png")),"Twitter",self.MainWindow)
+        #self.icon['Upload'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "cloud-upload-icon.png")),"Upload to cloud",self.MainWindow)
+        #self.icon['Download'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "cloud-download-icon.png")),"Download to local",self.MainWindow)
+        #self.icon['Live'] = QAction(QIcon(os.path.join(wd, 'Artwork', 'toolbar', "live-icon.png")),"Live",self.MainWindow)
 
 
         for mode in self.icon:

@@ -191,7 +191,7 @@ class MainWindow(QMainWindow):
         self.updateOverview()
 
         self.annotation = slide_annotations.SlideAnnotations(self)
-        self.annotation.load_annotation_from_database()
+        #self.annotation.load_annotation_from_database()
 
         self.nucstat = self.openProcessedData(filepath)
 

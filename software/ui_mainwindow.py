@@ -179,7 +179,7 @@ class Ui_MainWindow(object):
         self.CanvasUtility_layout.addWidget(self.placeholder_1, 1, 0, 3, 4) # row, col, rowspan, colspan
         self.CanvasUtility_layout.addWidget(self.toggle_buttons_widget, 4, 1, 1, 1) # row, col, rowspan, colspan
         self.CanvasUtility_layout.addWidget(self.zoomSlider, 4, 2, 1, 2) # row, col, rowspan, colspan
-        self.CanvasUtility_layout.addWidget(self.rotation_dial, 4, 4, 1, 1) # row, col, rowspan, colspan
+        #self.CanvasUtility_layout.addWidget(self.rotation_dial, 4, 4, 1, 1) # row, col, rowspan, colspan
 
         
         self.MainCanvas_layout.addWidget(self.CanvasUtility_parentWidget)
