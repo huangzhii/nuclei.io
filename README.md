@@ -1,7 +1,12 @@
 # nuclei.io: Human-in-the-loop active learning framework for pathology image analysis
 
+<img src="assets/images/under_construction_PNG42.png" alt="UNDER CONSTRUCTION" height="200">
+
+Note: This website is under construction for final release. ETA: `5/20/2024`.
+
+
 ## Read me
-This software is an open-release under the study of **A pathologist–AI collaboration framework for enhancing diagnostic accuracies and efficiencies** published in *Nature Biomedical Engineering*.
+This software is an open-release under the study of **A pathologist–AI collaboration framework for enhancing diagnostic accuracies and efficiencies** published in **Nature Biomedical Engineering**.
 
 For the full information, please visit our homepage: https://huangzhii.github.io/nuclei-HAI/
 
