@@ -307,6 +307,9 @@ class InteractiveReviewDialog(QDialog):
         We get the slierbar zoom value, and then update the image patch.
         '''
         MainWindow = self.MainWindow
+
+        if not hasattr(self, "for_sliderbar"):
+            return
         slide = self.for_sliderbar['slide']
         contour = self.for_sliderbar['contour']
         idx_bool = self.for_sliderbar['idx_bool']
@@ -534,6 +537,8 @@ class InteractiveReviewDialog(QDialog):
 
     def init_active_learning_from_python(self):
         dict2send = {'action': 'setup_active_learning'}
+        if self.MainWindow.datamodel.classinfo is None:
+            return
         dict2send['class_id'] = list(self.MainWindow.datamodel.classinfo.index.astype(float)) # must be float to send json
         dict2send['class_name'] = list(self.MainWindow.datamodel.classinfo['classname'].values.astype(str))
         
