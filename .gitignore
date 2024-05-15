@@ -7,10 +7,7 @@ dist
 
 # Log
 *.log
-*.svs
-*.tiff
 *.log.*
-*.pickle
 
 # Editor
 .idea

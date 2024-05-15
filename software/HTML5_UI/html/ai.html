@@ -167,12 +167,12 @@
 
                 <div class="col-12">
                     <a href="javascript: void(0)" id="save_offline_model">
-                        <small><i class="fa-solid fa-hat-wizard"></i>Save offline model</small>
+                        <small><i class="fa-solid fa-floppy-disk"></i> Save model offline</small>
                     </a>
                 </div>
                 <div class="col-12">
                     <a href="javascript: void(0)" id="use_offline_model">
-                        <small><i class="fa-solid fa-hat-wizard"></i>Load offline model</small>
+                        <small><i class="fa-solid fa-folder-open"></i> Load offline model</small>
                     </a>
                 </div>
                 
@@ -657,8 +657,8 @@
     });
 
     $('#apply_to_case').click(function(){
-        $('#apply_to_case').hide();
-        $('#apply_to_case_applying').show();
+        //$('#apply_to_case').hide();
+        //$('#apply_to_case_applying').show();
         backend.apply_to_case();
     });
 
