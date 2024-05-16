@@ -15,7 +15,7 @@
 </div>
 
 <div style="flex: 0 38%;">
-  <img src="assets/images/nuclei_demo.png" style="width: 100%;"/>
+  <img src="assets/images/nuclei_demo.png" style="width: 50%;"/>
   <p>Install nuclei.io and run on your Macbook now!</p>
 </div>
 
