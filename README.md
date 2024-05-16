@@ -37,6 +37,7 @@ conda install openslide -c conda-forge # install openslide using conda.
 pip install --upgrade pip  # enable PEP 660 support
 pip install -e .
 ```
+Note: for MacOS user, exception will raise while installing `torch==2.3.0` and `torchvision==0.18.0`. Instead, you can comment out `torch` and `torchvision` in `requirements.txt` while proceeding `pip install -e .`, and later install `torch` and `torchvision` manually.
 
 ## Download example whole slide image.
 
