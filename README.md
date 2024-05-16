@@ -93,3 +93,15 @@ After that, you can follow our Youtube tutorial on how to annotate and analyze t
   <p>nuclei.io annotation session during CRC lymph node metastasis experiment.</p>
 </div>
 </div>
+
+
+## Standing on the shoulders of giants
+
+This software and research could not have been accomplished without being inspired by the ideas and codes from existing, exceptional visualization and feature calculation tools:
+
+- [QuPath](https://qupath.github.io/)
+- [SlideRunner](https://github.com/DeepMicroscopy/SlideRunner)
+- [Qt for Python](https://doc.qt.io/qtforpython-6/)
+- [OpenSlide](https://openslide.org/)
+- [Stardist](https://github.com/stardist/stardist)
+- [HistomicsTK](https://github.com/DigitalSlideArchive/HistomicsTK)
