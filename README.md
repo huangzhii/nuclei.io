@@ -1,13 +1,26 @@
 # nuclei.io: Human-in-the-loop active learning framework for pathology image analysis
 
-## Read me
-This software is an open-release under the study of **A pathologist–AI collaboration framework for enhancing diagnostic accuracies and efficiencies** published in **Nature Biomedical Engineering**.
+## Introduction
 
-For the full information, please visit our homepage: https://huangzhii.github.io/nuclei-HAI/
+<div style="display: flex; align-items: flex-start; justify-content: space-between;">
 
-If you are a pathologist/user/developer who plan to use this software for annotating / analyzing whole slide pathology images, please follow the tutorial below.
+<div style="flex: 0 58%; margin-right: 10px;">
+  <p>This software is an open-release under the study of <b>A pathologist–AI collaboration framework for enhancing diagnostic accuracies and efficiencies</b> published in <b>Nature Biomedical Engineering</b>.</p>
 
-We are also releasing a Youtube tutorial soon. Please stay tuned!
+  <p>For the full information, please visit our homepage: https://huangzhii.github.io/nuclei-HAI/</p>
+
+  <p>If you are a pathologist/user/developer who plan to use this software for annotating / analyzing whole slide pathology images, please follow the tutorial below.
+
+  <p>We are also releasing a Youtube tutorial soon. Please stay tuned!</p>
+</div>
+
+<div style="flex: 0 38%;">
+  <img src="assets/images/nuclei_demo.png" style="width: 100%;"/>
+  <p>Install nuclei.io and run on your Macbook now!</p>
+</div>
+
+</div>
+
 
 
 ## Initialization
@@ -54,3 +67,29 @@ python software/main.py
 Now, on the sidebar, click "Browse local", and open the folder `example_data/CMU_Aperio/CMU-1/`.
 
 After that, you can follow our Youtube tutorial on how to annotate and analyze the whole slide image.
+
+
+## Gallery
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+<div style="flex: 0 48%; margin-bottom: 10px;">
+  <img src="assets/images/nuclei_reader_study.png" style="width: 100%;"/>
+  <p>nuclei.io user study diagram.</p>
+</div>
+
+<div style="flex: 0 48%; margin-bottom: 10px;">
+  <img src="assets/images/nuclei_reader_study_screenshot.png" style="width: 100%;"/>
+  <p>nuclei.io experiment screenshot.</p>
+</div>
+
+<div style="flex: 0 48%; margin-bottom: 10px;">
+  <img src="assets/images/nuclei_screenshot.png" style="width: 100%;"/>
+  <p>nuclei.io for neuropathology.</p>
+</div>
+
+<div style="flex: 0 48%; margin-bottom: 10px;">
+  <img src="assets/images/nuclei_IMG_5762.jpg" style="width: 100%;"/>
+  <p>nuclei.io annotation session during CRC lymph node metastasis experiment.</p>
+</div>
+</div>
