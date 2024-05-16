@@ -3,3 +3,5 @@ experimental_data_example/**/*.npy filter=lfs diff=lfs merge=lfs -text
 experimental_data_example/**/*.csv filter=lfs diff=lfs merge=lfs -text
 experimental_data_example/**/*.tiff filter=lfs diff=lfs merge=lfs -text
 experimental_data_example/**/*.pkl filter=lfs diff=lfs merge=lfs -text
+feature_pre-calculation/**/*.torchmdl filter=lfs diff=lfs merge=lfs -text
+

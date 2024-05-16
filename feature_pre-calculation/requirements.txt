@@ -1,0 +1,10 @@
+numpy==1.24.2
+matplotlib==3.5.2
+pandas==1.4.3
+tensorflow==2.16.1
+stardist==0.9.1
+scikit-learn==1.2.1
+fastdist==1.1.6
+multiprocess==0.70.14
+torch==2.3.0
+torchvision==0.18.0
