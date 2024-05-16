@@ -57,8 +57,8 @@ wget -O CMU_Aperio/CMU-2/CMU-2.svs https://openslide.cs.cmu.edu/download/opensli
 ### Step 2. Run feature pre-calculation code for whole slide images.
 Here, we simply run below python script to process the example images.
 ```python
-python feature_pre-calculation/main.py --slidepath "example_data/CMU_Aperio/CMU-1/CMU-1.svs" --stardist_dir "../example_data/CMU_Aperio/CMU-1/stardist_results" --stage "all"
-python feature_pre-calculation/main.py --slidepath "example_data/CMU_Aperio/CMU-2/CMU-2.svs" --stardist_dir "../example_data/CMU_Aperio/CMU-2/stardist_results" --stage "all"
+python feature_pre-calculation/main.py --slidepath "example_data/CMU_Aperio/CMU-1/CMU-1.svs" --stardist_dir "example_data/CMU_Aperio/CMU-1/stardist_results" --stage "all"
+python feature_pre-calculation/main.py --slidepath "example_data/CMU_Aperio/CMU-2/CMU-2.svs" --stardist_dir "example_data/CMU_Aperio/CMU-2/stardist_results" --stage "all"
 ```
 
 ## Start using nuclei.io to annotate and visualize your data.

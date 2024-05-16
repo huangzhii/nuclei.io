@@ -131,7 +131,8 @@ if __name__ == '__main__':
             model_init = torchvision.models.convnext_tiny(weights=True, progress=True)
             from nuc_stat_DL import train_init, Thread1, Thread2, parmap
             from nuc_stat_DL import Convnext_tiny_DeepFeature as Net
-            args.DL_model_dir = 'PanNuke_DL_pretrain_patchsize=64x64/model_statedict_epoch=100.torchmdl'
+            current_file_path = os.path.dirname(os.path.abspath(__file__))
+            args.DL_model_dir = opj(current_file_path, 'PanNuke_DL_pretrain_patchsize=64x64', 'model_statedict_epoch=100.torchmdl')
 
         print('feature name: %s' % args.dl_feature)
 
