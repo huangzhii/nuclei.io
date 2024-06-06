@@ -1,0 +1,23 @@
+setuptools
+pyside6==6.4.3
+numpy==1.24.2
+matplotlib==3.5.2
+pandas==1.4.3
+opencv-python==4.6.0.66
+scipy==1.8.1
+tiffslide==1.5.0
+multiprocess==0.70.14
+xgboost==1.7.4
+scikit-learn==1.2.1
+tqdm==4.64.1
+paramiko==3.0.0
+mysql-connector==2.2.9
+natsort==8.2.0
+requests==2.28.2
+
+# Dependencies for feature pre-calculation:
+tensorflow-cpu==2.16.1
+stardist==0.9.1
+fastdist==1.1.6
+torch
+torchvision

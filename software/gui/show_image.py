@@ -1,12 +1,7 @@
-#############################################################################
-##
-## Copyright (C) 2022 nuclei.io
-## Contact: https://www.nuclei.io/
-##
-## This script author: Zhi Huang
-## This script contributors: Zhi Huang
-## This script created on: 07/30/2022
-#############################################################################
+"""
+Functions within file adopted from SlideRunner project:
+https://github.com/DeepMicroscopy/SlideRunner
+"""
 
 from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QCursor, QFont, QFontDatabase, QGradient,

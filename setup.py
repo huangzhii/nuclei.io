@@ -1,6 +1,14 @@
+import platform
 from setuptools import setup
 
-with open("requirements.txt") as f:
+system = platform.system().lower()
+
+if system == "darwin":
+    requirements_file = "requirements_mac.txt"
+else:
+    requirements_file = "requirements.txt"
+
+with open(requirements_file) as f:
     requirements = f.read().splitlines()
 
 with open("README.md") as readme_file:
