@@ -10,9 +10,8 @@
   <p>For the full information, please visit our homepage: https://huangzhii.github.io/nuclei-HAI/</p>
 
   <p>If you are a pathologist/user/developer who plan to use this software for annotating / analyzing whole slide pathology images, please follow the tutorial below.
-
-  <p>We are also releasing a Youtube tutorial soon. Please stay tuned!</p>
 </div>
+
 
 <div style="flex: 0 38%;">
   <img src="assets/images/nuclei_demo.png" style="width: 50%;"/>
@@ -21,6 +20,10 @@
 
 </div>
 
+
+
+## Youtube tutorial
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0zsdcTNJteE/0.jpg)](https://www.youtube.com/watch?v=0zsdcTNJteE)
 
 
 ## Initialization
