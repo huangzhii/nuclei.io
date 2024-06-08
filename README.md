@@ -23,6 +23,7 @@
 
 
 ## Youtube tutorial
+Watch our 8-minute comprehensive tutorial on how to install and use nuclei.io by clicking the link below!
 [![Youtube play](https://img.youtube.com/vi/0zsdcTNJteE/0.jpg)](https://www.youtube.com/watch?v=0zsdcTNJteE)
 
 
