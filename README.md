@@ -13,6 +13,8 @@
 
 The codebase is built with Python, so you can plug in your AI/ML model in any way you want!
 
+⚠️ Note: We are working hard to resolve the OS compatibility issue for a better user experience. Feel free to submit pull requests and improve it!
+
 ## Introduction
 
 <div style="display: flex; align-items: flex-start; justify-content: space-between;">
