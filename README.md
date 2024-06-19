@@ -143,3 +143,8 @@ This software and research could not have been accomplished without being inspir
 - [OpenSlide](https://openslide.org/)
 - [Stardist](https://github.com/stardist/stardist)
 - [HistomicsTK](https://github.com/DigitalSlideArchive/HistomicsTK)
+
+
+## Other great softwares for pathology image annotation
+
+- [Quick Annotator](https://github.com/choosehappy/QuickAnnotator): Improve annotation efficiency of histologic structures.
