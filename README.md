@@ -1,6 +1,18 @@
 # nuclei.io: Human-in-the-loop active learning framework for pathology image analysis
 
 
+
+## Introduction
+
+<div style="display: flex; align-items: flex-start; justify-content: space-between;">
+
+<div style="flex: 0 58%; margin-right: 10px;">
+  <p>This software is an open-release under the study of <b>A pathologist–AI collaboration framework for enhancing diagnostic accuracies and efficiencies</b> published in <b>Nature Biomedical Engineering</b>.</p>
+
+  <p>For the full information, please visit our homepage: https://huangzhii.github.io/nuclei-HAI/</p>
+
+
+
 <div style="flex: 0 48%; margin-bottom: 10px;">
   <img src="assets/images/10s_demo.gif" style="width: 100%;"/>
 </div>
@@ -15,14 +27,6 @@ The codebase is built with Python, so you can plug in your AI/ML model in any wa
 
 ⚠️ Note: We are working hard to resolve the OS compatibility issue for a better user experience. Feel free to submit pull requests and improve it!
 
-## Introduction
-
-<div style="display: flex; align-items: flex-start; justify-content: space-between;">
-
-<div style="flex: 0 58%; margin-right: 10px;">
-  <p>This software is an open-release under the study of <b>A pathologist–AI collaboration framework for enhancing diagnostic accuracies and efficiencies</b> published in <b>Nature Biomedical Engineering</b>.</p>
-
-  <p>For the full information, please visit our homepage: https://huangzhii.github.io/nuclei-HAI/</p>
 
   <p>If you are a pathologist/user/developer who plan to use this software for annotating / analyzing whole slide pathology images, please follow the tutorial below.
 </div>
