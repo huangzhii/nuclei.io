@@ -1,5 +1,18 @@
 # nuclei.io: Human-in-the-loop active learning framework for pathology image analysis
 
+
+<div style="flex: 0 48%; margin-bottom: 10px;">
+  <img src="assets/images/10s_demo.gif" style="width: 100%;"/>
+</div>
+
+**Nuclei.io** is a python-based platform, it can help achieve:
+- Easy & fast human-in-the-loop active learning with real-time feedback.
+- Single cell level annotation;
+- Virtual flow cytometry & dynamic visualization;
+- WSI-level cell statistics.
+
+The codebase is built with Python, so you can plug in your AI/ML model in any way you want!
+
 ## Introduction
 
 <div style="display: flex; align-items: flex-start; justify-content: space-between;">
@@ -21,18 +34,6 @@
 
 
 
-<div style="flex: 0 48%; margin-bottom: 10px;">
-  <img src="assets/images/10s_demo.gif" style="width: 100%;"/>
-  <p>nuclei.io experiment screenshot.</p>
-</div>
-
-**Nuclei.io** is a python-based platform, it can help achieve:
-- Easy & fast human-in-the-loop active learning with real-time feedback.
-- Single cell level annotation;
-- Virtual flow cytometry & dynamic visualization;
-- WSI-level cell statistics.
-
-The codebase is built with Python, so you can plug in your AI/ML model in any way you want!
 
 ## Youtube tutorial
 Watch our 8-minute comprehensive tutorial on how to install and use nuclei.io by clicking the link below!
