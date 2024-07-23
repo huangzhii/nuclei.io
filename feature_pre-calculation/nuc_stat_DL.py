@@ -93,9 +93,15 @@ def parfun(f, q_in, q_out):
         q_out.put((i, f(x)))
 
 def parmap(f, X, nprocs=mp.cpu_count()):
+    import platform
     q_in = mp.Queue(1)
     q_out = mp.Queue()
-    proc = [mp.Process(target=parfun, args=(f, q_in, q_out)) for _ in range(nprocs)]
+    if platform.system() == "Windows":
+        import threading
+        proc = [ threading.Thread(target=parfun, args=(f, q_in, q_out)) for _ in range(nprocs)]
+    else:
+        proc = [mp.Process(target=parfun, args=(f, q_in, q_out)) for _ in range(nprocs)]
+    
     for p in proc:
         p.daemon = True
         p.start()
