@@ -442,10 +442,10 @@ class SlideProperty():
         self.pbar_nucstat = tqdm(total=int(len(self.nuclei_index)))
         st = time.time()
 
-        nucstat = parmap(lambda id: self._nuc_stat_func_parallel(id), self.nuclei_index)
-        #nucstat = []
-        #for id in self.nuclei_index:
-        #    nucstat.append(self._nuc_stat_func_parallel(id, update_n=1))
+        # nucstat = parmap(lambda id: self._nuc_stat_func_parallel(id), self.nuclei_index)
+        nucstat = []
+        for id in self.nuclei_index:
+           nucstat.append(self._nuc_stat_func_parallel(id, update_n=1))
         nucstat = np.array(nucstat)
         df_feature = pd.DataFrame(nucstat, index=self.nuclei_index, columns=self.feature_columns)
         et = time.time()
@@ -658,7 +658,10 @@ class SlideProperty():
             category_color = self.feature_columns.get_level_values('Category') == category
             self.category_idx_dict[category] = category_color
         
-        mat_delaunay = parmap(lambda id: self._delaunay_parallel(id), self.nuclei_index)
+        # mat_delaunay = parmap(lambda id: self._delaunay_parallel(id), self.nuclei_index)
+        mat_delaunay = []
+        for id in self.nuclei_index:
+           mat_delaunay.append(self._delaunay_parallel(id, update_n=1))
         mat_delaunay = np.array(mat_delaunay)
         
         delaunay_columns = copy.deepcopy(self.delaunay_measure_list)

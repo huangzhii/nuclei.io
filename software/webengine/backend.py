@@ -166,8 +166,22 @@ class Backend(QObject):
             return
         '''
 
+    @Slot(str)
+    def force_update(self, status):
+        if status == 'Enable':
+            self.MainWindow.datamodel.force_update_ML = True
+        else:
+            self.MainWindow.datamodel.force_update_ML = False
+        return
+    
+    @Slot()
+    def save_model_offline(self):
+        print('save_model_offline')
+        self.MainWindow.datamodel.save_model_offline()
+        return
+    
     @Slot()
     def use_offline_model(self):
         print('use_offline_model')
-        self.MainWindow.datamodel.load_offline_probability()
+        self.MainWindow.datamodel.load_offline_model()
         return

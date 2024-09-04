@@ -16,7 +16,7 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QPainter, QPalette, QPixmap, QRadialGradient, QPen,
     QTransform)
     
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QGridLayout, QStackedLayout, QMainWindow, QMenu, QLabel,
+from PySide6.QtWidgets import (QApplication, QFileDialog, QHBoxLayout, QGridLayout, QStackedLayout, QMainWindow, QMenu, QLabel,
     QMenuBar, QPlainTextEdit, QSizePolicy, QSplitter, QScrollBar, QProgressBar, QPushButton, QDial,
     QStatusBar, QWidget, QMessageBox)
 
@@ -892,7 +892,8 @@ class DataModel():
             # for i in feature_importance.index: print(i, feature_importance.loc[i,'feature_importance'])
             # print(feature_importance)
             self.send_dim_info_for_VFC()
-            self.MainWindow.backend.py2js({'action': 'apply2case_done', 'data_dict': self.ML_result})
+            # TODO: also update classinfo to frontend
+            # self.MainWindow.backend.py2js({'action': 'apply2case_done', 'data_dict': self.ML_result})
             print('Interactive label: Apply to case done.')
             self.MainWindow.log.write('Interactive label *** Apply to case done.')
 
@@ -927,26 +928,81 @@ class DataModel():
 
 
             
-    def load_offline_probability(self):
-        if self.MainWindow.stat_folder is not None and \
-            os.path.exists(opj(self.MainWindow.stat_folder, 'plasma_CNN_results', 'plasma_CNN_proba.csv')):
-
-            y_proba = pd.read_csv(opj(self.MainWindow.stat_folder, 'plasma_CNN_results', 'plasma_CNN_proba.csv'), index_col=0).values.astype(float)
-            y_proba = y_proba[self.MainWindow.nucstat.select_nuclei_idx,:]
-            y_pred = np.argmax(y_proba, axis=1).astype(int)
-
-            if hasattr(self.MainWindow.nucstat, 'prediction'):
-                self.MainWindow.nucstat.prediction['label'] = y_pred
-                self.MainWindow.nucstat.prediction['proba'] = y_proba[:,1]
-                print('Successfully replaced the nucstat.prediction.')
-            else:
-                print('Object not found: self.MainWindow.nucstat.prediction.')
+    def load_offline_model(self):
+        options = QFileDialog.Options()
+        file_name, _ = QFileDialog.getOpenFileName(
+            self.MainWindow,
+            "Load Model",
+            "",
+            "Pickle Files (*.pkl);;All Files (*)",
+            options=options
+        )
+        
+        if file_name:
+            try:
+                with open(file_name, 'rb') as f:
+                    loaded_model = pickle.load(f)
                 
+                # Update the current model with the loaded data
+                self.classinfo = loaded_model['classinfo']
+                self.data_info = loaded_model['data_info']
+                self.data_X = loaded_model['data_X']
+                if 'model' in loaded_model and loaded_model['model'] is not None:
+                    self.model = loaded_model['model']
+                if 'ML_result' in loaded_model and loaded_model['ML_result'] is not None:
+                    self.ML_result = loaded_model['ML_result']
+                
+                print(f"Model loaded successfully from {file_name}")
+                self.MainWindow.log.write(f"Interactive label *** Model loaded offline from {file_name}")
+                
+                self.MainWindow.backend.py2js({'action': 'update_classinfo', 'data': self.classinfo.to_dict()})
+                # Update the UI and apply the model to the current case
+                self.updateAnnotationToWebEngine()
+                if self.MainWindow.imageOpened:
+                    self.apply_to_case()
+            except Exception as e:
+                print(f"Error loading model: {e}")
+                self.MainWindow.log.write(f"Interactive label *** Error loading model offline: {e}")        
+            
 
-
-            return
-        else:
-            print('No available deep learning results.')
+    def save_model_offline(self):
+        options = QFileDialog.Options()
+        
+        # Get the total number of cells
+        total_cells = len(self.data_info) if hasattr(self, 'data_info') else 0
+        
+        # Generate default filename with current date and time, and number of cells
+        default_filename = f"nuclei.io-model-{total_cells}cells-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.pkl"
+        
+        file_name, _ = QFileDialog.getSaveFileName(
+            self.MainWindow,
+            "Save Model",
+            default_filename,
+            "Pickle Files (*.pkl);;All Files (*)",
+            options=options
+        )
+        
+        if file_name:
+            if not file_name.endswith('.pkl'):
+                file_name += '.pkl'
+            
+            model_to_save = {
+                'classinfo': self.classinfo,
+                'data_info': self.data_info,
+                'data_X': self.data_X,
+                'model': self.model if hasattr(self, 'model') else None,
+                'ML_result': self.ML_result if hasattr(self, 'ML_result') else None
+            }
+            
+            try:
+                with open(file_name, 'wb') as f:
+                    pickle.dump(model_to_save, f)
+                print(f"Model saved successfully to {file_name}")
+                self.MainWindow.log.write(f"Interactive label *** Model saved offline to {file_name}")
+            except Exception as e:
+                print(f"Error saving model: {e}")
+                self.MainWindow.log.write(f"Interactive label *** Error saving model offline: {e}")
+        
 
     def closeMLThread(self):
         if hasattr(self.MainWindow, 'ML_thread'):

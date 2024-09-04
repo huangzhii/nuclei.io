@@ -166,7 +166,7 @@
                 </div>
 
                 <div class="col-12">
-                    <a href="javascript: void(0)" id="save_offline_model">
+                    <a href="javascript: void(0)" id="save_model_offline">
                         <small><i class="fa-solid fa-floppy-disk"></i> Save model offline</small>
                     </a>
                 </div>
@@ -427,9 +427,6 @@
     });
 
 
-    $("#use_offline_model").click(function (){
-        backend.use_offline_model();
-    });
 
     $('#force_update').change(function() {
         // Check if the checkbox is checked or unchecked
@@ -442,6 +439,13 @@
         }
     });
 
+
+    $("#save_model_offline").click(function (){
+        backend.save_model_offline();
+    });
+    $("#use_offline_model").click(function (){
+        backend.use_offline_model();
+    });
 
     nuclei_color_list = [
                         '#A52A2A', //brown

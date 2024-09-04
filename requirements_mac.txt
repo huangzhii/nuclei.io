@@ -16,7 +16,7 @@ natsort==8.2.0
 requests==2.28.2
 
 # Dependencies for feature pre-calculation:
-tensorflow-cpu==2.16.1
+tensorflow
 stardist==0.9.1
 fastdist==1.1.6
 torch
