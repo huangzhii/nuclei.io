@@ -447,7 +447,7 @@ class SlideProperty():
         if system == "darwin": # MacOS
             nucstat = []
             for id in self.nuclei_index:
-               nucstat.append(self._nuc_stat_func_parallel(id, update_n=1))
+               nucstat.append(self._nuc_stat_func_parallel(id, nprocs=1))
         else:
             nucstat = parmap(self._nuc_stat_func_parallel, self.nuclei_index, nprocs=np.min([mp.cpu_count(), 32]))
         nucstat = np.array(nucstat)
@@ -666,7 +666,7 @@ class SlideProperty():
         if system == "darwin": # MacOS
             mat_delaunay = []
             for id in self.nuclei_index:
-               mat_delaunay.append(self._delaunay_parallel(id, update_n=1))
+               mat_delaunay.append(self._delaunay_parallel(id, nprocs=1))
         else:
             mat_delaunay = parmap(self._delaunay_parallel, self.nuclei_index, nprocs=np.min([mp.cpu_count(), 32]))
         mat_delaunay = np.array(mat_delaunay)
