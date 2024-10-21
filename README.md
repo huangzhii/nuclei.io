@@ -66,6 +66,7 @@ conda create -n nuclei.io python=3.10
 conda activate nuclei.io
 # Install dependencies
 conda install openslide -c conda-forge # install openslide using conda.
+conda install openslide-python -c conda-forge # install openslide-python binding using conda.
 ```
 
 ### Step 2. Install the software.

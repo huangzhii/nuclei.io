@@ -7,7 +7,6 @@ from stardist.plot import render_label
 from csbdeep.utils import normalize
 import matplotlib.pyplot as plt
 from skimage import morphology
-import openslide
 import numpy as np
 import pandas as pd
 import time
@@ -71,6 +70,7 @@ class SlideSegmentation():
         print("Read data ...", datetime.now().strftime("%H:%M:%S"))
 
         try:
+            import openslide
             self.slide = openslide.OpenSlide(self.args.slidepath)
         except:
             print('OpenSlide failed. Try TiffSlide.')

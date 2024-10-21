@@ -9,7 +9,6 @@ Created on Thu Feb 24 16:15:25 2022
 
 import numpy as np
 import pandas as pd
-import openslide
 import platform
 import os
 import argparse
@@ -40,6 +39,7 @@ import matplotlib.pyplot as plt
 import multiprocess as mp
 from histomicstk_scripts import compute_fsd_features, compute_intensity_features, compute_gradient_features
 from scipy.ndimage import zoom
+import concurrent.futures
 
 opj = os.path.join
 
@@ -56,7 +56,7 @@ def parmap(f, X, nprocs=mp.cpu_count()):
     q_out = mp.Queue()
     if platform.system() == "Windows":
         import threading
-        proc = [ threading.Thread(target=parfun, args=(f, q_in, q_out)) for _ in range(nprocs) ]
+        proc = [ threading.Thread(target=parfun, args=(f, q_in, q_out)) for _ in range(nprocs)]
     else:
         proc = [mp.Process(target=parfun, args=(f, q_in, q_out)) for _ in range(nprocs)]
     
@@ -122,6 +122,7 @@ class SlideProperty():
     def read_stardist_data(self):
         print("Read data ...", datetime.now().strftime("%H:%M:%S"))
         if self.args.read_image_method == 'openslide':
+            import openslide
             self.slide = openslide.OpenSlide(self.args.slidepath)
             self.dimension = self.slide.dimensions
         elif self.args.read_image_method == 'tiffslide':
@@ -442,10 +443,13 @@ class SlideProperty():
         self.pbar_nucstat = tqdm(total=int(len(self.nuclei_index)))
         st = time.time()
 
-        # nucstat = parmap(lambda id: self._nuc_stat_func_parallel(id), self.nuclei_index)
-        nucstat = []
-        for id in self.nuclei_index:
-           nucstat.append(self._nuc_stat_func_parallel(id, update_n=1))
+        system = platform.system().lower()
+        if system == "darwin": # MacOS
+            nucstat = []
+            for id in self.nuclei_index:
+               nucstat.append(self._nuc_stat_func_parallel(id, update_n=1))
+        else:
+            nucstat = parmap(self._nuc_stat_func_parallel, self.nuclei_index, nprocs=np.min([mp.cpu_count(), 32]))
         nucstat = np.array(nucstat)
         df_feature = pd.DataFrame(nucstat, index=self.nuclei_index, columns=self.feature_columns)
         et = time.time()
@@ -466,8 +470,8 @@ class SlideProperty():
         
     
     
-    def _nuc_stat_func_parallel(self, id, update_n=mp.cpu_count()):
-        self.pbar_nucstat.update(update_n)
+    def _nuc_stat_func_parallel(self, id, nprocs=mp.cpu_count()):
+        self.pbar_nucstat.update(nprocs)
         
         x1, y1 = np.min(self.contours[id,:,0]), np.min(self.contours[id,:,1])
         x2, y2 = np.max(self.contours[id,:,0]), np.max(self.contours[id,:,1])
@@ -555,8 +559,8 @@ class SlideProperty():
     
     
     
-    def _delaunay_parallel(self, i):
-        self.pbar_delaunay.update(mp.cpu_count())
+    def _delaunay_parallel(self, i, nprocs=mp.cpu_count()):
+        self.pbar_delaunay.update(nprocs)
         
         neighbour_i = self.indptr[self.indices[i]:self.indices[i+1]]
         loc_source = self.tri.points[i]
@@ -658,10 +662,13 @@ class SlideProperty():
             category_color = self.feature_columns.get_level_values('Category') == category
             self.category_idx_dict[category] = category_color
         
-        # mat_delaunay = parmap(lambda id: self._delaunay_parallel(id), self.nuclei_index)
-        mat_delaunay = []
-        for id in self.nuclei_index:
-           mat_delaunay.append(self._delaunay_parallel(id, update_n=1))
+        system = platform.system().lower()
+        if system == "darwin": # MacOS
+            mat_delaunay = []
+            for id in self.nuclei_index:
+               mat_delaunay.append(self._delaunay_parallel(id, update_n=1))
+        else:
+            mat_delaunay = parmap(self._delaunay_parallel, self.nuclei_index, nprocs=np.min([mp.cpu_count(), 32]))
         mat_delaunay = np.array(mat_delaunay)
         
         delaunay_columns = copy.deepcopy(self.delaunay_measure_list)
@@ -718,3 +725,4 @@ class SlideProperty():
                 fig.savefig(opj(savedir, 'group_%02d.png' % group), dpi=300)
                 fig.clear()
                 plt.close(fig)
+
