@@ -4,6 +4,7 @@ __pycache__
 *.egg-info
 dist
 /example_data
+/.vscode
 
 # Log
 *.log
