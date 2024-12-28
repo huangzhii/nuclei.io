@@ -218,7 +218,7 @@ def leftClickImage(self, event):
     """
         Callback function for a left click in the main image
     """
-    print('left click')
+    print('left click image')
     
     if not (self.imageOpened):
         return
@@ -376,7 +376,7 @@ def releaseImage(self, event):
                             self.screenToSlide((posx, posy))]
             selected_width = np.abs(points_global[0][0] - points_global[1][0])
             selected_height = np.abs(points_global[0][1] - points_global[1][1])
-            print(selected_width, selected_height)
+            print("Selected area width: %d, height: %d" % (selected_width, selected_height))
             if max((selected_width, selected_height)) < 5:
                 print('Selected area too small. Will not show menu.')
                 return

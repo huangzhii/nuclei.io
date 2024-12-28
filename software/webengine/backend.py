@@ -64,6 +64,8 @@ class Backend(QObject):
                 if 'assist_type' in dict:
                     dict2js['assist_type'] = dict['assist_type']
                 for d in dict['case_dict']:
+                    if 'svs_fname' not in dict['case_dict'][d]:
+                        raise Exception('The folder you selected does not contain any SVS files. Did you select a parent folder?')
                     dict2js['case_dict'][d] = {}
                     for val in ['svs_fname','thumbnail_small_base64','label_base64','magnitude','height','width',
                                 'month','day','year','createtime','timezone']:
