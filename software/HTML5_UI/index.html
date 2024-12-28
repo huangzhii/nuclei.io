@@ -223,6 +223,10 @@ window.onload = function () {
                   $('#tissueType').text(jsonObj['tissueType']);
                   $('#studyDescription').text(jsonObj['description']);
               }
+              if (jsonObj['action'] == 'show_IHC_evaluation_result'){
+                    query_result = jsonObj['data'];
+                    backend.log(query_result);
+              }
               if (jsonObj['action'] == 'apply2case_done'){
                   //backend.log(jsonObj);
                   accuracy = jsonObj['accuracy'];

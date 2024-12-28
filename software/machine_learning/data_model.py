@@ -363,19 +363,35 @@ class DataModel():
         print("Selected region shape: ", selected_region.shape)
         # @Jake: Now, given the selected_region, run IHC evaluation, return embeddding, dict of results.
         # below is fake output:
+        # Run vector database search, get the closest top 10 matches in weblinks.
+
+        similar_weblinks = [
+            {
+                'image_url': 'https://images.proteinatlas.org/60655/137304_B_7_5.jpg',
+                'page_url': 'https://www.proteinatlas.org/ENSG00000111602-TIMELESS/tissue/cerebral+cortex#img'
+            },
+            {
+                'image_url': 'https://images.proteinatlas.org/3387/11301_B_6_3.jpg', 
+                'page_url': 'https://www.proteinatlas.org/ENSG00000170312-CDK1/cancer/pancreatic+cancer#img'
+            },
+            # Add more similar results as needed
+        ]
+
         whole_region_embedding = np.random.rand(7*7, 512)
         whole_region_results = {'staining_intensity': "moderate",
                                 'staining_location': "nuclear",
                                 'staining_quantity': "25-75%",
                                 'tissue_type': "Breast",
-                                'cancerous': 'cancer'
+                                'cancerous': 'cancer',
+                                'similar_weblinks': similar_weblinks,
                                 }
 
         
         print('IHC evaluation done.')
         # Finally, send the evaluation result to the web engine for visualization.
-        # self.send_dim_info_for_VFC()
-
+        dict2send = {"action": "show_IHC_evaluation_result",
+                     "data": whole_region_results}
+        self.MainWindow.backend.py2js(whole_region_results) # send total nuclei count, active nuclei count, accuracy, etc.
 
 
 
