@@ -27,7 +27,8 @@ import sys
 import os
 import json
 import webbrowser
-
+import numpy as np
+from PIL import Image
 
 class Backend_Dialog(QObject):
     #tutorial:https://www.cnblogs.com/aloe-n/p/10052830.html
@@ -91,7 +92,7 @@ class WebDialog(QDialog):
 
 class IHC_Evaulation_Dialog:
     def __init__(self, main_window):
-        self.main_window = main_window
+        self.MainWindow = main_window
         self.tissue_list = ['adipose', 'adrenal gland', 'appendix', 'bone marrow', 'breast',
                         'bronchus', 'carcinoid', 'caudate', 'cerebellum',
                         'cerebral cortex', 'cervical', 'cervix', 'colon', 'colorectal',
@@ -122,9 +123,24 @@ class IHC_Evaulation_Dialog:
                             'Neuronal cells', 'Leydig cells', 'Cells in white pulp', 'Langerhans'] # Dec 4 -- added remaining cell types in hpa11m
 
     def show_menu(self, annotation_dict):
-        dialog = QDialog(self.main_window)
+        dialog = QDialog(self.MainWindow)
         dialog.setWindowTitle("IHC Staining Evaluation")
         layout = QVBoxLayout()
+
+        ROI_type = annotation_dict['type']
+        ROI_points_global = annotation_dict['points_global']
+        if ROI_type == 'Rect':
+            [[x1, y1], [x2, y2]] = ROI_points_global
+            x1, x2 = np.sort([x1, x2])
+            y1, y2 = np.sort([y1, y2])
+            # Read region and ensure proper RGB conversion
+            selected_region = self.MainWindow.slide.read_region(location=(x1,y1), level=0, size=(x2-x1,y2-y1))
+            # Convert from RGBA to RGB explicitly
+            selected_region = Image.fromarray(np.array(selected_region)[...,:3])  # Keep only RGB channels
+            selected_region = selected_region.convert('RGBA')
+            
+
+
 
         # Add title and subtitle
         title_label = QLabel("Protein Atlas IHC Evaluator")
@@ -141,6 +157,41 @@ class IHC_Evaulation_Dialog:
         subtitle_label.setFont(subtitle_font)
         subtitle_label.setAlignment(Qt.AlignCenter)
         layout.addWidget(subtitle_label)
+
+        # Add image display and dimensions
+        if ROI_type == 'Rect':
+            width = x2-x1
+            height = y2-y1
+            
+            # Convert PIL Image to QPixmap and scale if needed
+            selected_region = selected_region.convert('RGB')
+            img_qt = QPixmap.fromImage(QImage(
+                selected_region.tobytes(),
+                selected_region.width,
+                selected_region.height,
+                QImage.Format_RGB888
+            ))
+            
+            # Scale to fit within 400x400 while maintaining aspect ratio
+            scaled_pixmap = img_qt.scaled(
+                400, 400,
+                Qt.KeepAspectRatio,
+                Qt.SmoothTransformation
+            )
+            
+            # Create and add image label
+            image_label = QLabel()
+            image_label.setPixmap(scaled_pixmap)
+            image_label.setAlignment(Qt.AlignCenter)
+            layout.addWidget(image_label)
+            
+            # Add dimensions label
+            dim_label = QLabel(f"Region selected: {width} × {height} pixels")
+            dim_label.setAlignment(Qt.AlignCenter)
+            dim_note = QLabel("Recommended region size: 1000-5000 pixels per dimension")
+            dim_note.setAlignment(Qt.AlignCenter)
+            layout.addWidget(dim_label)
+            layout.addWidget(dim_note)
 
         # Add some spacing between header and content
         layout.addSpacing(20)
@@ -220,7 +271,7 @@ class IHC_Evaulation_Dialog:
             additional_info = additional_input.toPlainText()
 
             # Proceed with IHC evaluation using the collected parameters
-            self.main_window.datamodel.IHC_evaluation(
+            self.MainWindow.datamodel.IHC_evaluation(
                 annotation_dict,
                 tissue_type=tissue,
                 cell_type=cell,

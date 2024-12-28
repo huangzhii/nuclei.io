@@ -1,4 +1,3 @@
-
 <nav class="nuclei-io-navbar navbar fixed-top navbar-expand navbar-dark bg-dark">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
@@ -10,6 +9,9 @@
             </li>
             <li class="nav-item" id="menu_annotation">
             <a class="nav-link" href="javascript:void(0)"><small>Annotation</small></a>
+            </li>
+            <li class="nav-item" id="menu_ihc_evaluation">
+            <a class="nav-link" href="javascript:void(0)"><small>IHC Evaluation</small></a>
             </li>
             <!--li class="nav-item" id="menu_toolbox">
             <a class="nav-link" href="javascript:void(0)"><small>Toolbox</small></a>
@@ -68,6 +70,11 @@
     })
     $('#menu_community').on("click",function(){
         load_main_layout('community');
+        $('.nav-item').removeClass('active');
+        $(this).addClass('active');
+    })
+    $('#menu_ihc_evaluation').on("click",function(){
+        load_main_layout('ihc_evaluation');
         $('.nav-item').removeClass('active');
         $(this).addClass('active');
     })

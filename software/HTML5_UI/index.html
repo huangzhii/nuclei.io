@@ -60,6 +60,7 @@
     <div class="layout_child" id='layout_annotation' style="display:none;"></div>
     <!--div class="layout_child" id='layout_toolbox' style="display:none;"></div-->
     <!--div class="layout_child" id='layout_community' style="display:none;"></div-->
+    <div class="layout_child" id='layout_ihc_evaluation' style="display:none;"></div>
   </div>
   <div id="footerbar"></div>
 
@@ -96,7 +97,7 @@
   $( "#topnav" ).load( "html/topnav.html");
   $( "#footerbar" ).load( "html/footer.html");
 
-  var layout_names = ['case_slide','annotation','ai'];//,'toolbox','community'];
+  var layout_names = ['case_slide','annotation','ai','ihc_evaluation'];
   for(let i=0; i<layout_names.length; i++){
     layoutname = layout_names[i];
     $( "#mainlayout #layout_"+layoutname ).load( "html/" + layoutname + ".html");
@@ -225,7 +226,11 @@ window.onload = function () {
               }
               if (jsonObj['action'] == 'show_IHC_evaluation_result'){
                     query_result = jsonObj['data'];
-                    backend.log(query_result);
+                    // backend.log(query_result);
+                    updateIHCEvaluationResults(query_result);
+                    load_main_layout('ihc_evaluation');
+                    $('.nav-item').removeClass('active');
+                    $('#menu_ihc_evaluation').addClass('active');
               }
               if (jsonObj['action'] == 'apply2case_done'){
                   //backend.log(jsonObj);

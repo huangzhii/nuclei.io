@@ -355,8 +355,6 @@ class DataModel():
 
             self.MainWindow.nucstat.isSelected_to_VFC = index_bool
 
-        time.sleep(10)
-        breakpoint()
         # the slide object: self.MainWindow.slide
         # the selected region: x1, x2, y1, y2
         selected_region = self.MainWindow.slide.read_region(location=(x1,y1), level=0, size=(x2-x1,y2-y1), as_array=True)
@@ -380,7 +378,7 @@ class DataModel():
         whole_region_embedding = np.random.rand(7*7, 512)
         whole_region_results = {'staining_intensity': "moderate",
                                 'staining_location': "nuclear",
-                                'staining_quantity': "25-75%",
+                                'staining_quantity': random.choice(['none', '<25%', '25-75%', '>75%']),
                                 'tissue_type': "Breast",
                                 'cancerous': 'cancer',
                                 'similar_weblinks': similar_weblinks,
@@ -391,9 +389,7 @@ class DataModel():
         # Finally, send the evaluation result to the web engine for visualization.
         dict2send = {"action": "show_IHC_evaluation_result",
                      "data": whole_region_results}
-        self.MainWindow.backend.py2js(whole_region_results) # send total nuclei count, active nuclei count, accuracy, etc.
-
-
+        self.MainWindow.backend.py2js(dict2send) # send total nuclei count, active nuclei count, accuracy, etc.
 
         # clear drawing
         pixmap = QPixmap(self.MainWindow.ui.DrawingOverlay.size())

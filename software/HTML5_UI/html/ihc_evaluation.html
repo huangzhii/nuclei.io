@@ -1,0 +1,110 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- IHC Evaluation Results Panel -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title mb-0">IHC Evaluation Results</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th scope="row">Staining Intensity</th>
+                <td id="staining_intensity">-</td>
+              </tr>
+              <tr>
+                <th scope="row">Staining Location</th>
+                <td id="staining_location">-</td>
+              </tr>
+              <tr>
+                <th scope="row">Staining Quantity</th>
+                <td id="staining_quantity">-</td>
+              </tr>
+              <tr>
+                <th scope="row">Tissue Type</th>
+                <td id="tissue_type">-</td>
+              </tr>
+              <tr>
+                <th scope="row">Cancer Status</th>
+                <td id="cancer_status">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Similar Cases Panel -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title mb-0">Similar Cases</h5>
+        </div>
+        <div class="card-body">
+          <div id="similar_cases_container" class="row">
+            <!-- Similar cases will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Update this section in your existing index.html script that handles 'show_IHC_evaluation_result'
+function updateIHCEvaluationResults(data) {
+  // Update evaluation results
+  $('#staining_intensity').text(data.staining_intensity);
+  $('#staining_location').text(data.staining_location);
+  $('#staining_quantity').text(data.staining_quantity);
+  $('#tissue_type').text(data.tissue_type);
+  $('#cancer_status').text(data.cancerous);
+
+  // Clear and update similar cases
+  const similarCasesContainer = $('#similar_cases_container');
+  similarCasesContainer.empty();
+
+  // Add similar cases
+  data.similar_weblinks.forEach(link => {
+    const caseElement = `
+      <div class="col-md-6 mb-3">
+        <div class="card">
+          <img src="${link.image_url}" class="card-img-top" alt="Similar case image">
+          <div class="card-body p-2">
+            <a href="${link.page_url}" target="_blank" class="btn btn-sm btn-primary w-100">View Case</a>
+          </div>
+        </div>
+      </div>
+    `;
+    similarCasesContainer.append(caseElement);
+  });
+}
+
+// Add this to your existing WebChannel message handler in index.html
+if (jsonObj['action'] == 'show_IHC_evaluation_result') {
+  updateIHCEvaluationResults(jsonObj['data']);
+}
+</script>
+
+<style>
+.card {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-bottom: 1rem;
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.table th {
+  width: 40%;
+  background-color: #f8f9fa;
+}
+
+#similar_cases_container img {
+  height: 200px;
+  object-fit: cover;
+}
+</style>
