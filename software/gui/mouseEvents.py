@@ -328,7 +328,7 @@ def rightClickImage(self, event):
         addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'thumbs-up-line-icon.png')), 'Annotate ROI from prediction', partial(self.datamodel.annotate_ROI_from_prediction, annotation_dict))
         addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'circle-arrow-icon.png')), 'Select ROI for active learning', partial(self.datamodel.activeLearning, annotation_dict))
         addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'bar-chart-icon.png')), 'Select ROI for analysis', partial(self.datamodel.analyzeROI, annotation_dict))
-        
+
         #menu.addSeparator()
         #addmenu = menu.addAction('Select ROI for active learning', partial(self.interactive_labeling_proceed, mydict))
         #addmenu = menu.addAction('Select ROI for analysis', partial(self.analyzeROI, mydict))
@@ -413,6 +413,10 @@ def releaseImage(self, event):
             addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'thumbs-up-line-icon.png')), 'Annotate ROI from prediction', partial(self.datamodel.annotate_ROI_from_prediction, annotation_dict))
             addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'circle-arrow-icon.png')), 'Select ROI for active learning', partial(self.datamodel.activeLearning, annotation_dict))
             addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'bar-chart-icon.png')), 'Select ROI for analysis', partial(self.datamodel.analyzeROI, annotation_dict))
+            if self.ui.mode == 'Rect':
+                addmenu = menu.addAction(QIcon(os.path.join(iconfolder, 'bar-chart-icon.png')), 'Evaluate IHC staining',
+                                         partial(self.IHC_Eval.show_menu, annotation_dict))
+
             action = menu.exec_(self.mapToTruePos(event.pos())) # after mouse release, auto pop up menu
 
 

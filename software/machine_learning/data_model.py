@@ -326,7 +326,63 @@ class DataModel():
         self.MainWindow.ui.DrawingOverlay.setPixmap(pixmap)
 
         pass
+    
+    def IHC_evaluation(self,
+                       annotation_dict=None, 
+                       tissue_type=None,
+                       cell_type=None,
+                       antibody=None,
+                       additional_info=None,
+                       ):
+        print('Start INTERPRET IHC ROI.')
 
+        ROI_type = annotation_dict['type']
+        ROI_points = annotation_dict['points']
+        ROI_points_global = annotation_dict['points_global']
+        ROI_rotation = annotation_dict['rotation']
+
+        if ROI_type != 'Rect':
+            return
+
+        [[x1, y1], [x2, y2]] = ROI_points_global
+        x1, x2 = np.sort([x1, x2])
+        y1, y2 = np.sort([y1, y2])
+
+        if hasattr(self.MainWindow, 'nucstat'):
+            # get all nuclei within ROI
+            index_bool = (self.MainWindow.nucstat.centroid[:,0] > x1) & (self.MainWindow.nucstat.centroid[:,0] < x2) & \
+                            (self.MainWindow.nucstat.centroid[:,1] > y1) & (self.MainWindow.nucstat.centroid[:,1] < y2)
+
+            self.MainWindow.nucstat.isSelected_to_VFC = index_bool
+
+        time.sleep(10)
+        breakpoint()
+        # the slide object: self.MainWindow.slide
+        # the selected region: x1, x2, y1, y2
+        selected_region = self.MainWindow.slide.read_region(location=(x1,y1), level=0, size=(x2-x1,y2-y1), as_array=True)
+        print("Selected region shape: ", selected_region.shape)
+        # @Jake: Now, given the selected_region, run IHC evaluation, return embeddding, dict of results.
+        # below is fake output:
+        whole_region_embedding = np.random.rand(7*7, 512)
+        whole_region_results = {'staining_intensity': "moderate",
+                                'staining_location': "nuclear",
+                                'staining_quantity': "25-75%",
+                                'tissue_type': "Breast",
+                                'cancerous': 'cancer'
+                                }
+
+        
+        print('IHC evaluation done.')
+        # Finally, send the evaluation result to the web engine for visualization.
+        # self.send_dim_info_for_VFC()
+
+
+
+
+        # clear drawing
+        pixmap = QPixmap(self.MainWindow.ui.DrawingOverlay.size())
+        pixmap.fill(Qt.transparent)
+        self.MainWindow.ui.DrawingOverlay.setPixmap(pixmap)
 
     def annotate_all_nuclei_within_ROI(self,
                                         ROI_dict = None,

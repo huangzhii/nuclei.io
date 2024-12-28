@@ -20,7 +20,7 @@ from PySide6.QtWebChannel import QWebChannel
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QVBoxLayout, QGridLayout, QStackedLayout, QMainWindow, QMenu, QLabel,
     QMenuBar, QPlainTextEdit, QSizePolicy, QSplitter, QScrollBar, QProgressBar, QPushButton, QDial, QToolBar,
-    QStatusBar, QWidget, QDialog)
+    QStatusBar, QWidget, QDialog, QComboBox, QDialogButtonBox)
 
 
 import sys
@@ -89,3 +89,141 @@ class WebDialog(QDialog):
 
             self.show()
 
+class IHC_Evaulation_Dialog:
+    def __init__(self, main_window):
+        self.main_window = main_window
+        self.tissue_list = ['adipose', 'adrenal gland', 'appendix', 'bone marrow', 'breast',
+                        'bronchus', 'carcinoid', 'caudate', 'cerebellum',
+                        'cerebral cortex', 'cervical', 'cervix', 'colon', 'colorectal',
+                        'duodenum', 'endometrial', 'endometrium', 'epididymis',
+                        'esophagus', 'fallopian tube', 'gallbladder', 'glioma',
+                        'head and neck', 'heart muscle', 'hippocampus', 'kidney', 'liver',
+                        'lung', 'lymph node', 'lymphoma', 'melanoma', 'nasopharynx',
+                        'oral mucosa', 'ovarian', 'ovary', 'pancreas', 'pancreatic',
+                        'parathyroid gland', 'placenta', 'prostate', 'rectum', 'renal',
+                        'salivary gland', 'seminal vesicle', 'skeletal muscle', 'skin',
+                        'small intestine', 'smooth muscle', 'soft', 'spleen', 'stomach',
+                        'testis', 'thyroid', 'thyroid gland', 'tonsil', 'urinary bladder',
+                        'urothelial', 'vagina'] # N = 58 (Pancreas and Pancreatic cancer are merged. If not perged, N = 65)
+        
+        self.cell_type_list = ['Glandular cells', 'Exocrine glandular cells', 'Tumor cells',
+                            'Cholangiocytes', 'Adipocytes', 'Squamous epithelial cells',
+                            'Glial cells', 'Cells in endometrial stroma', 'Cells in red pulp',
+                            'Alveolar cells', 'Respiratory epithelial cells',
+                            'Cells in granular layer', 'Endothelial cells', 'Fibroblasts',
+                            'Decidual cells', 'Cells in glomeruli', 'Myocytes',
+                            'Cells in seminiferous ducts', 'Hematopoietic cells',
+                            'Germinal center cells', 'Cardiomyocytes', 'Urothelial cells',
+                            'Trophoblastic cells', 'Smooth muscle cells',
+                            'Ovarian stroma cells', 'Follicle cells', 'Epidermal cells',
+                            'Chondrocytes', 'Hepatocytes', 'Lymphoid tissue',
+                            'Non-germinal center cells', 'Cells in molecular layer',
+                            'Keratinocytes', 'Peripheral nerve', 'Cells in tubules',
+                            'Neuronal cells', 'Leydig cells', 'Cells in white pulp', 'Langerhans'] # Dec 4 -- added remaining cell types in hpa11m
+
+    def show_menu(self, annotation_dict):
+        dialog = QDialog(self.main_window)
+        dialog.setWindowTitle("IHC Staining Evaluation")
+        layout = QVBoxLayout()
+
+        # Add title and subtitle
+        title_label = QLabel("Protein Atlas IHC Evaluator")
+        title_font = QFont()
+        title_font.setPointSize(16)
+        title_font.setBold(True)
+        title_label.setFont(title_font)
+        title_label.setAlignment(Qt.AlignCenter)
+        layout.addWidget(title_label)
+
+        subtitle_label = QLabel("AI-based evaluation trained on 10M IHC images")
+        subtitle_font = QFont()
+        subtitle_font.setPointSize(9)
+        subtitle_label.setFont(subtitle_font)
+        subtitle_label.setAlignment(Qt.AlignCenter)
+        layout.addWidget(subtitle_label)
+
+        # Add some spacing between header and content
+        layout.addSpacing(20)
+
+        # Tissue type selection
+        tissue_layout = QHBoxLayout()
+        tissue_label = QLabel("Tissue type:")
+        tissue_combo = QComboBox()
+        tissue_combo.addItems(self.tissue_list)
+        tissue_input = QPlainTextEdit()
+        tissue_input.setMaximumHeight(30)
+        tissue_input.setPlaceholderText("or type manually")
+        # Set placeholder text color to gray
+        palette = tissue_input.palette()
+        palette.setColor(QPalette.PlaceholderText, QColor("#808080"))
+        tissue_input.setPalette(palette)
+        tissue_layout.addWidget(tissue_label)
+        tissue_layout.addWidget(tissue_combo)
+        tissue_layout.addWidget(tissue_input)
+        layout.addLayout(tissue_layout)
+
+        # Cell type selection
+        cell_layout = QHBoxLayout()
+        cell_label = QLabel("Cell type:")
+        cell_combo = QComboBox()
+        cell_combo.addItems(self.cell_type_list)
+        cell_input = QPlainTextEdit()
+        cell_input.setMaximumHeight(30)
+        cell_input.setPlaceholderText("or type manually")
+        # Set placeholder text color to gray
+        palette = cell_input.palette()
+        palette.setColor(QPalette.PlaceholderText, QColor("#808080"))
+        cell_input.setPalette(palette)
+        cell_layout.addWidget(cell_label)
+        cell_layout.addWidget(cell_combo)
+        cell_layout.addWidget(cell_input)
+        layout.addLayout(cell_layout)
+
+        # Antibody name
+        antibody_label = QLabel("Antibody (gene) name (optional):")
+        antibody_input = QPlainTextEdit()
+        antibody_input.setMaximumHeight(50)
+        antibody_input.setPlaceholderText("Example: CDK1")
+        palette = antibody_input.palette()
+        palette.setColor(QPalette.PlaceholderText, QColor("#808080")) # Set placeholder text color to gray
+        antibody_input.setPalette(palette)
+        layout.addWidget(antibody_label)
+        layout.addWidget(antibody_input)
+
+        # Additional information
+        additional_label = QLabel("Additional information (optional):")
+        additional_input = QPlainTextEdit()
+        additional_input.setMaximumHeight(100)
+        additional_input.setPlaceholderText("Example: Pancreas adenocarcinoma, I stained CDK1 for tumor cells. What is your interpretation?")
+        palette = additional_input.palette()
+        palette.setColor(QPalette.PlaceholderText, QColor("#808080")) # Set placeholder text color to gray
+        additional_input.setPalette(palette)
+        layout.addWidget(additional_label)
+        layout.addWidget(additional_input)
+
+        # Add OK and Cancel buttons
+        button_box = QDialogButtonBox(
+            QDialogButtonBox.Ok | QDialogButtonBox.Cancel
+        )
+        button_box.button(QDialogButtonBox.Ok).setText("Run")
+        button_box.accepted.connect(dialog.accept)
+        button_box.rejected.connect(dialog.reject)
+        layout.addWidget(button_box)
+
+        dialog.setLayout(layout)
+
+        if dialog.exec() == QDialog.Accepted:
+            # Get the selected/entered values
+            tissue = tissue_input.toPlainText() or tissue_combo.currentText()
+            cell = cell_input.toPlainText() or cell_combo.currentText()
+            antibody = antibody_input.toPlainText()
+            additional_info = additional_input.toPlainText()
+
+            # Proceed with IHC evaluation using the collected parameters
+            self.main_window.datamodel.IHC_evaluation(
+                annotation_dict,
+                tissue_type=tissue,
+                cell_type=cell,
+                antibody=antibody,
+                additional_info=additional_info
+            )

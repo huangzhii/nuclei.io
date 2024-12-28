@@ -151,6 +151,8 @@ class MainWindow(QMainWindow):
 
         self.ui.rotation_dial.valueChanged.connect(partial(self.ui.rotation_dial.value_changed, self))
 
+        self.IHC_Eval = dialog.IHC_Evaulation_Dialog(self)
+
         self.changeScrollbars = partial(scrollbar.changeScrollbars, self)
         self.updateScrollbars = partial(scrollbar.updateScrollbars, self)
         self.ui.horizontalScrollBar.valueChanged.connect(self.changeScrollbars) # valueChanged passes (self, value)
