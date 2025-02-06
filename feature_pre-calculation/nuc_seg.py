@@ -42,7 +42,16 @@ class SlideSegmentation():
         
         
         self.wsi_mask = self.simple_get_mask()
-        self.model = StarDist2D.from_pretrained(stardist_pretrain)
+        
+        # Load model from local path instead of downloading
+        local_model_path = os.path.join(os.path.dirname(__file__), 'models', stardist_pretrain)
+        if os.path.exists(local_model_path):
+            print(f"Loading StarDist model from local path: {local_model_path}")
+            self.model = StarDist2D(None, name=stardist_pretrain, basedir=os.path.join(os.path.dirname(__file__), 'models'))
+        else:
+            print(f"Local model not found at {local_model_path}, attempting to download...")
+            self.model = StarDist2D.from_pretrained(stardist_pretrain)
+        
         
         self.level = 0
         try:

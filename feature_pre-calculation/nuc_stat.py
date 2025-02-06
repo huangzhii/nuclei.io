@@ -351,7 +351,7 @@ class SlideProperty():
                             symmetric=False, normed=True)
         glcm = glcm[0:level-1,0:level-1,:,:] # remove white background
         # graycoprops results 2-dimensional array.
-        # results[d, a] is the property ‘prop’ for the d’th distance and the a’th angle.
+        # results[d, a] is the property 'prop' for the d'th distance and the a'th angle.
         stat_haralick = {}
         for v in ['contrast', 'homogeneity', 'dissimilarity', 'ASM', 'energy', 'correlation']:
             stat_haralick[v] = np.mean(graycoprops(glcm, v))
@@ -437,29 +437,33 @@ class SlideProperty():
         features = feat_color + feat_color_cyto + feat_morphology + feat_haralick + feat_gradient + feat_intensity + feat_fsd
         self.feature_columns = pd.MultiIndex.from_tuples(features, names=['Category','Feature'])
         
-        
         print('Step [2/3]: Run nuc_stat_func parallel ...', datetime.now().strftime("%H:%M:%S"))
-        #self.nuclei_index = self.nuclei_index[:1000]
-        self.pbar_nucstat = tqdm(total=int(len(self.nuclei_index)))
         st = time.time()
 
-        system = platform.system().lower()
-        if system == "darwin": # MacOS
+        # Set start method to 'spawn' for macOS compatibility
+        if platform.system() == 'Darwin':
+            mp.set_start_method('spawn', force=True)
+
+        # Use fewer processes on macOS to reduce memory overhead
+        n_processes = max(1, mp.cpu_count() // 2) if platform.system() == 'Darwin' else mp.cpu_count()
+        chunk_size = max(1, len(self.nuclei_index) // (n_processes * 4))
+
+        with mp.Pool(processes=n_processes) as pool:
             nucstat = []
-            for id in self.nuclei_index:
-               nucstat.append(self._nuc_stat_func_parallel(id, nprocs=1))
-        else:
-            nucstat = parmap(self._nuc_stat_func_parallel, self.nuclei_index, nprocs=np.min([mp.cpu_count(), 32]))
+            for result in tqdm(
+                pool.imap(self._nuc_stat_func_wrapper_no_pbar, self.nuclei_index, chunksize=chunk_size),
+                total=len(self.nuclei_index),
+                desc="Processing nuclei"
+            ):
+                nucstat.append(result)
+
         nucstat = np.array(nucstat)
         df_feature = pd.DataFrame(nucstat, index=self.nuclei_index, columns=self.feature_columns)
         et = time.time()
         print('Done nuc_stat_func parallel ...', datetime.now().strftime("%H:%M:%S"))
         print('Time elapsed: %.2f' % (et-st))
 
-        
-        
         print('Step [3/3]: Get delaunay graph features ...')
-        self.pbar_delaunay = tqdm(total=int(len(self.nuclei_index)))
         st = time.time()
         df_delaunay = self._get_delaunay_graph_stat_parallel(nucstat, distance_threshold=200)
         self.nuc_stat_processed = pd.concat([df_feature, df_delaunay], axis=1)
@@ -635,7 +639,6 @@ class SlideProperty():
         nucstat_scaled = StandardScaler().fit_transform(nucstat)
         nucstat_scaled = nucstat_scaled.astype(np.float64)
         self.nucstat_scaled = nucstat_scaled
-        
 
         st=time.time()
         self.delaunay_distance_threshold = distance_threshold
@@ -661,14 +664,24 @@ class SlideProperty():
         for category in self.cosine_measure_list:
             category_color = self.feature_columns.get_level_values('Category') == category
             self.category_idx_dict[category] = category_color
-        
-        system = platform.system().lower()
-        if system == "darwin": # MacOS
+
+        # Set start method to 'spawn' for macOS compatibility
+        if platform.system() == 'Darwin':
+            mp.set_start_method('spawn', force=True)
+
+        # Use fewer processes on macOS to reduce memory overhead
+        n_processes = max(1, mp.cpu_count() // 2) if platform.system() == 'Darwin' else min(mp.cpu_count(), 32)
+        chunk_size = max(1, len(self.nuclei_index) // (n_processes * 4))
+
+        with mp.Pool(processes=n_processes) as pool:
             mat_delaunay = []
-            for id in self.nuclei_index:
-               mat_delaunay.append(self._delaunay_parallel(id, nprocs=1))
-        else:
-            mat_delaunay = parmap(self._delaunay_parallel, self.nuclei_index, nprocs=np.min([mp.cpu_count(), 32]))
+            for result in tqdm(
+                pool.imap(self._delaunay_parallel, self.nuclei_index, chunksize=chunk_size),
+                total=len(self.nuclei_index),
+                desc="Computing Delaunay features"
+            ):
+                mat_delaunay.append(result)
+        
         mat_delaunay = np.array(mat_delaunay)
         
         delaunay_columns = copy.deepcopy(self.delaunay_measure_list)
