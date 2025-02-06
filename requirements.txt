@@ -13,7 +13,7 @@ natsort==8.2.0
 
 # Dependencies for feature pre-calculation:
 tensorflow_intel==2.12.0; platform_system != "Darwin"  # for Windows and Linux
-tensorflow==2.12.0; platform_system == "Darwin"  # for macOS
+tensorflow==2.16.1; platform_system == "Darwin"  # for macOS
 stardist==0.9.1
 fastdist==1.1.6
 transformers
