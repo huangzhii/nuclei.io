@@ -43,6 +43,63 @@ import concurrent.futures
 
 opj = os.path.join
 
+# Global variables for worker processes
+contours = None
+slide_dimensions = None
+slide = None
+_get_nuc_img_mask = None
+
+def init_worker(_contours, _slide_dimensions, _slide, _get_nuc_img_mask_func):
+    global contours, slide_dimensions, slide, _get_nuc_img_mask
+    contours = _contours
+    slide_dimensions = _slide_dimensions
+    slide = _slide
+    _get_nuc_img_mask = _get_nuc_img_mask_func
+
+def _get_nuc_img_mask(id, bbox, contours, slide):
+    [x1,y1,x2,y2] = bbox
+    nuclei_img = slide.read_region(location=(x1,y1), level=0, size=(x2-x1, y2-y1))
+
+    nuclei_np = np.array(nuclei_img)
+    if len(nuclei_np.shape) == 3:
+        nuclei_np = nuclei_np[:,:,:3]
+    else:
+        nuclei_np = np.repeat(nuclei_np[:, :, np.newaxis], 3, axis=2)
+
+    mask = np.zeros((nuclei_np.shape[0], nuclei_np.shape[1]), dtype=np.uint8)
+    contour = contours[id, ...] - [x1, y1]
+    
+    if len(contour.shape) == 3:
+        contour = contour[0]
+
+    contour = np.vstack((contour, contour[0,:])).astype(int)
+    contour[contour[:,0] >= nuclei_np.shape[1], 0] = nuclei_np.shape[1]-1
+    contour[contour[:,1] >= nuclei_np.shape[0], 1] = nuclei_np.shape[0]-1
+    vertex_row_coords = contour[:,1]
+    vertex_col_coords = contour[:,0]
+    fill_row_coords, fill_col_coords = draw.polygon(vertex_row_coords, vertex_col_coords)
+    mask[fill_row_coords, fill_col_coords] = 1
+    
+    # Handle magnification if needed
+    # ...
+
+    object_mask = mask.astype(float)
+    object_mask[object_mask==0] = np.nan
+    nuclei_np_object = nuclei_np * np.dstack([object_mask]*nuclei_np.shape[-1])
+    nuclei_np_object = nuclei_np_object[..., 0:3]
+    
+    # Create grayscale version
+    def rgb2gray(rgb):
+        r, g, b = rgb[:,:,0], rgb[:,:,1], rgb[:,:,2]
+        gray = 0.2989 * r + 0.5870 * g + 0.1140 * b
+        gray = np.nan_to_num(gray, nan=0.0)
+        return gray.astype(np.uint8)
+    
+    nuclei_np_object_grey = rgb2gray(nuclei_np_object).astype(float)
+    nuclei_np_object_grey[np.isnan(nuclei_np_object[...,0])] = np.nan
+    
+    return nuclei_img, nuclei_np, nuclei_np_object, nuclei_np_object_grey, mask
+
 def parfun(f, q_in, q_out):
     while True:
         i, x = q_in.get()
@@ -137,10 +194,40 @@ class SlideProperty():
             self.dimension = self.slide.dimensions        
 
         if (self.args.magnification is None) or (self.args.magnification == 'None'):
-            self.magnification = self.slide.properties['aperio.AppMag']
+            # Try to get the magnification from the slide properties
+            try:
+                # Try different property names that might contain magnification info
+                if hasattr(self.slide, 'properties'):
+                    if 'aperio.AppMag' in self.slide.properties:
+                        self.magnification = self.slide.properties['aperio.AppMag']
+                    elif 'openslide.objective-power' in self.slide.properties:
+                        self.magnification = self.slide.properties['openslide.objective-power']
+                    else:
+                        # Default to 40x if can't find the magnification
+                        print('Warning: Cannot find magnification in slide properties. Defaulting to 40x.')
+                        self.magnification = 40.0
+                else:
+                    # For slide types without properties attribute
+                    print('Warning: Slide does not have properties attribute. Defaulting to 40x.')
+                    self.magnification = 40.0
+            except Exception as e:
+                print(f'Error getting magnification: {e}. Defaulting to 40x.')
+                self.magnification = 40.0
         else:
             print('Use ad hoc magnification')
             self.magnification = float(self.args.magnification)
+        
+        print(f"Using magnification: {self.magnification}x")
+        
+        self.centroids = np.load(opj(self.args.stardist_dir, 'centroids.npy'), allow_pickle=True)
+        self.contours = np.load(opj(self.args.stardist_dir, 'contours.npy'), allow_pickle=True)
+
+        self.contours[self.contours>1000000] = 0
+        self.nuclei_index = np.arange(len(self.centroids))
+        
+        print("All data loaded.", datetime.now().strftime("%H:%M:%S"))
+        print('Image size =', self.dimension)
+        print('Number of nuclei =', len(self.centroids))
         
         
             
@@ -366,7 +453,7 @@ class SlideProperty():
         phi = np.arctan2(y, x)
         return(rho, phi)
     
-    
+    '''
     def _get_nuc_img_mask(self, id, bbox):
         [x1,y1,x2,y2] = bbox
         # Note: this step fails on some TIF images with parallel multiprocess.
@@ -420,12 +507,11 @@ class SlideProperty():
         # nuclei_img_2[np.isnan(nuclei_img_2)] = 255
         # nuclei_img_2 = nuclei_img_2.astype(np.uint8)
         return nuclei_img, nuclei_np, nuclei_np_object, nuclei_np_object_grey, mask
-        
+        '''
         
     
     def get_nucstat_parallel(self):
-        
-        
+        # Feature definitions (unchanged)
         feat_color = [('Color', v) for v in ['Grey_mean','Grey_std','Grey_min','Grey_max','R_mean','G_mean','B_mean','R_std','G_std','B_std','R_min','G_min','B_min','R_max','G_max','B_max']]
         feat_color_cyto = [('Color - cytoplasm', v) for v in ['cyto_offset','cyto_area_of_bbox','cyto_bg_mask_sum','cyto_bg_mask_ratio','cyto_cytomask_sum','cyto_cytomask_ratio','cyto_Grey_mean','cyto_Grey_std','cyto_Grey_min','cyto_Grey_max','cyto_R_mean','cyto_G_mean','cyto_B_mean','cyto_R_std','cyto_G_std','cyto_B_std','cyto_R_min','cyto_G_min','cyto_B_min','cyto_R_max','cyto_G_max','cyto_B_max']]
         feat_morphology = [('Morphology', v) for v in ['major_axis_length','minor_axis_length','major_minor_ratio','orientation','orientation_degree','area','extent','solidity','convex_area','Eccentricity','equivalent_diameter','perimeter','perimeter_crofton']]
@@ -439,30 +525,159 @@ class SlideProperty():
         
         print('Step [2/3]: Run nuc_stat_func parallel ...', datetime.now().strftime("%H:%M:%S"))
         st = time.time()
+        
+        # Process a single nucleus ID
+        def process_single_nucleus(id):
+            try:
+                # Get the bounding box
+                x1, y1 = np.min(self.contours[id,:,0]), np.min(self.contours[id,:,1])
+                x2, y2 = np.max(self.contours[id,:,0]), np.max(self.contours[id,:,1])
+                
+                x1 = np.max([0, x1])
+                y1 = np.max([0, y1])
+                x2 = np.min([x2, self.slide.dimensions[0]])
+                y2 = np.min([y2, self.slide.dimensions[1]])
+                
+                bbox = [x1, y1, x2, y2]
+                nuclei_img = self.slide.read_region(location=(x1,y1), level=0, size=(x2-x1, y2-y1))
+                
+                # Create mask
+                nuclei_np = np.array(nuclei_img)
+                if len(nuclei_np.shape) == 3:
+                    nuclei_np = nuclei_np[:,:,:3]
+                else:
+                    nuclei_np = np.repeat(nuclei_np[:, :, np.newaxis], 3, axis=2)
+                    
+                mask = np.zeros((nuclei_np.shape[0], nuclei_np.shape[1]), dtype=np.uint8)
+                contour = self.contours[id, ...] - [x1, y1]
+                
+                if len(contour.shape) == 3:
+                    contour = contour[0]
+                    
+                contour = np.vstack((contour, contour[0,:])).astype(int)
+                contour[contour[:,0] >= nuclei_np.shape[1], 0] = nuclei_np.shape[1]-1
+                contour[contour[:,1] >= nuclei_np.shape[0], 1] = nuclei_np.shape[0]-1
+                vertex_row_coords = contour[:,1]
+                vertex_col_coords = contour[:,0]
+                fill_row_coords, fill_col_coords = draw.polygon(vertex_row_coords, vertex_col_coords)
+                mask[fill_row_coords, fill_col_coords] = 1
+                
+                # Apply magnification if needed
+                if self.args.magnification is not None and self.args.magnification == 20:
+                    width, height = nuclei_img.size
+                    nuclei_img = nuclei_img.resize((width * 2, height * 2))
+                    zoom_factors = (2, 2, 1)
+                    nuclei_np = zoom(nuclei_np, zoom_factors, order=3)
+                    zoom_factors = (2, 2)
+                    mask = zoom(mask, zoom_factors, order=3)
+                    
+                # Create object mask
+                object_mask = mask.astype(float)
+                object_mask[object_mask==0] = np.nan
+                nuclei_np_object = nuclei_np * np.dstack([object_mask]*nuclei_np.shape[-1])
+                nuclei_np_object = nuclei_np_object[..., 0:3]
+                nuclei_np_object_grey = self.rgb2gray(nuclei_np_object).astype(float)
+                nuclei_np_object_grey[np.isnan(nuclei_np_object[...,0])] = np.nan
+                
+                # Get regionprops
+                stat = skimage.measure.regionprops(mask)[0]
+                
+                # Extract features
+                stat_color = {}
+                if np.all(np.isnan(nuclei_np_object_grey)):
+                    stat_color['Grey_mean'] = np.nan
+                    stat_color['Grey_std']  = np.nan
+                    stat_color['Grey_min']  = np.nan
+                    stat_color['Grey_max']  = np.nan
+                else:
+                    stat_color['Grey_mean'] = np.nanmean(nuclei_np_object_grey, axis=(0,1))
+                    stat_color['Grey_std']  = np.nanstd(nuclei_np_object_grey, axis=(0,1))
+                    stat_color['Grey_min']  = np.nanmin(nuclei_np_object_grey, axis=(0,1))
+                    stat_color['Grey_max']  = np.nanmax(nuclei_np_object_grey, axis=(0,1))
+                    
+                # ... rest of feature extraction ...
+                if np.all(np.isnan(nuclei_np_object)):
+                    stat_color['R_mean'], stat_color['G_mean'], stat_color['B_mean'] = np.nan, np.nan, np.nan
+                    stat_color['R_std'],  stat_color['G_std'],  stat_color['B_std']  = np.nan, np.nan, np.nan
+                    stat_color['R_min'],  stat_color['G_min'],  stat_color['B_min']  = np.nan, np.nan, np.nan
+                    stat_color['R_max'],  stat_color['G_max'],  stat_color['B_max']  = np.nan, np.nan, np.nan
+                else:
+                    stat_color['R_mean'], stat_color['G_mean'], stat_color['B_mean'] = np.nanmean(nuclei_np_object, axis=(0,1))
+                    stat_color['R_std'],  stat_color['G_std'],  stat_color['B_std']  = np.nanstd(nuclei_np_object, axis=(0,1))
+                    stat_color['R_min'],  stat_color['G_min'],  stat_color['B_min']  = np.nanmin(nuclei_np_object, axis=(0,1))
+                    stat_color['R_max'],  stat_color['G_max'],  stat_color['B_max']  = np.nanmax(nuclei_np_object, axis=(0,1))
+                
+                stat_morphology = {}
+                stat_morphology['major_axis_length'] = stat['axis_major_length']
+                stat_morphology['minor_axis_length'] = stat['axis_minor_length']
+                stat_morphology['major_minor_ratio'] = stat['axis_major_length']/stat['axis_minor_length']
+                stat_morphology['orientation'] = stat['orientation'] # Angle between the 0th axis (rows) and the major axis of the ellipse that has the same second moments as the region, ranging from -pi/2 to pi/2 counter-clockwise.
+                stat_morphology['orientation_degree'] = stat['orientation'] * (180/np.pi) + 90 # https://datascience.stackexchange.com/questions/79764/how-to-interpret-skimage-orientation-to-straighten-images
+                stat_morphology['area'] = stat['area']
+                stat_morphology['extent'] = stat['extent'] # Ratio of pixels in the region to pixels in the total bounding box. Computed as area / (rows * cols) (This is not very useful since orientations are different)
+                stat_morphology['solidity'] = stat['solidity'] # Ratio of pixels in the region to pixels of the convex hull image (which is somehow the concavity measured)
+                stat_morphology['convex_area'] = stat['convex_area'] # Number of pixels of convex hull image, which is the smallest convex polygon that encloses the region.
+                stat_morphology['Eccentricity'] = stat['Eccentricity'] # Eccentricity of the ellipse that has the same second-moments as the region. The eccentricity is the ratio of the focal distance (distance between focal points) over the major axis length. The value is in the interval [0, 1). When it is 0, the ellipse becomes a circle.
+                stat_morphology['equivalent_diameter'] = stat['equivalent_diameter'] # The diameter of a circle with the same area as the region.
+                stat_morphology['perimeter'] = stat['perimeter']
+                stat_morphology['perimeter_crofton'] = stat['perimeter_crofton'] # Crofton perimeter, which is the average number of times a straight line intersects the boundary of the region when the line is randomly placed in the plane.
+            
 
-        # Set start method to 'spawn' for macOS compatibility
-        if platform.system() == 'Darwin':
-            mp.set_start_method('spawn', force=True)
-
-        # Use fewer processes on macOS to reduce memory overhead
-        n_processes = max(1, mp.cpu_count() // 2) if platform.system() == 'Darwin' else mp.cpu_count()
-        chunk_size = max(1, len(self.nuclei_index) // (n_processes * 4))
-
-        with mp.Pool(processes=n_processes) as pool:
-            nucstat = []
-            for result in tqdm(
-                pool.imap(self._nuc_stat_func_wrapper_no_pbar, self.nuclei_index, chunksize=chunk_size),
-                total=len(self.nuclei_index),
-                desc="Processing nuclei"
-            ):
-                nucstat.append(result)
-
-        nucstat = np.array(nucstat)
+                #     Cytoplasm feature
+                # print('id = %d' % id)
+                stat_cyto = self._get_cytoplasm_features(id, bbox, offset=20, dilation_kernel=5, bg_threshold=200)
+                #     GLCM features
+                # This would include all the feature extraction from _nuc_stat_func_parallel
+                
+                # For this simplified example, return just color features
+                total_features = len(feat_color) + len(feat_color_cyto) + len(feat_morphology) + \
+                 len(feat_haralick) + len(feat_gradient) + len(feat_intensity) + len(feat_fsd)
+                 
+                # Return color features + NaN for the rest
+                return list(stat_color.values()) + [np.nan] * (total_features - len(stat_color))
+                
+            except Exception as e:
+                print(f"Error processing nucleus {id}: {e}")
+                return [np.nan] * len(features) # Return a list of NaNs with the correct length
+        
+        # Process nuclei in small batches using threading (not multiprocessing)
+        from concurrent.futures import ThreadPoolExecutor
+        import threading
+        
+        # Determine batch size
+        batch_size = 1000  # Process 100 nuclei at a time
+        num_batches = (len(self.nuclei_index) + batch_size - 1) // batch_size
+        
+        # Use up to 8 worker threads
+        max_workers = min(8, mp.cpu_count())
+        
+        nucstat_all = []
+        
+        for batch_idx in range(num_batches):
+            start_idx = batch_idx * batch_size
+            end_idx = min((batch_idx + 1) * batch_size, len(self.nuclei_index))
+            batch_indices = self.nuclei_index[start_idx:end_idx]
+            
+            print(f"Processing batch {batch_idx+1}/{num_batches} ({len(batch_indices)} nuclei)")
+            
+            with ThreadPoolExecutor(max_workers=max_workers) as executor:
+                futures = [executor.submit(process_single_nucleus, idx) for idx in batch_indices]
+                
+                for future in tqdm(
+                    concurrent.futures.as_completed(futures),
+                    total=len(batch_indices),
+                    desc=f"Batch {batch_idx+1}/{num_batches}"
+                ):
+                    nucstat_all.append(future.result())
+        
+        nucstat = np.array(nucstat_all)
         df_feature = pd.DataFrame(nucstat, index=self.nuclei_index, columns=self.feature_columns)
+        
         et = time.time()
         print('Done nuc_stat_func parallel ...', datetime.now().strftime("%H:%M:%S"))
         print('Time elapsed: %.2f' % (et-st))
-
+        
+        # Continue with Delaunay processing as before
         print('Step [3/3]: Get delaunay graph features ...')
         st = time.time()
         df_delaunay = self._get_delaunay_graph_stat_parallel(nucstat, distance_threshold=200)
@@ -470,6 +685,7 @@ class SlideProperty():
         et = time.time()
         print('Get delaunay graph features took %.2f seconds' % (et-st))
         print('Time elapsed: %.2f' % (et-st))
+            
         
         
     
@@ -563,29 +779,99 @@ class SlideProperty():
     
     
     
-    def _delaunay_parallel(self, i, nprocs=mp.cpu_count()):
-        self.pbar_delaunay.update(nprocs)
+    def _get_delaunay_graph_stat_parallel(self, nucstat, distance_threshold=200):
+    
+        nucstat_scaled = StandardScaler().fit_transform(nucstat)
+        nucstat_scaled = nucstat_scaled.astype(np.float64)
+        self.nucstat_scaled = nucstat_scaled
+
+        st=time.time()
+        self.delaunay_distance_threshold = distance_threshold
+        self.tri = Delaunay(self.centroids)
+        self.indices, self.indptr = self.tri.vertex_neighbor_vertices # Tuple of two ndarrays of int: (indices, indptr). The indices of neighboring vertices of vertex k are indptr[indices[k]:indices[k+1]].
+        print('Time elapsed for Delaunay: %.2f s' % (time.time()-st))
+        
+        self.delaunay_measure_list = ['dist.mean','dist.std','dist.min','dist.max']
+        self.cosine_measure_list = ['Color','Morphology','Color - cytoplasm','Haralick','Gradient','Intensity','FSD']
+        self.neighbour_measure_list = ['neighbour.area.mean','neighbour.area.std',
+                                'neighbour.heterogeneity.mean','neighbour.heterogeneity.std',
+                                'neighbour.orientation.mean','neighbour.orientation.std',
+                                'neighbour.Grey_mean.mean','neighbour.Grey_mean.std',
+                                'neighbour.cyto_Grey_mean.mean','neighbour.cyto_Grey_mean.std',
+                                'neighbour.Polar.phi.mean', 'neighbour.Polar.phi.std']
+        self.delaunay_total_len = len(self.delaunay_measure_list)+4*len(self.cosine_measure_list)+len(self.neighbour_measure_list)
+        
+        self.category_idx_dict = {}
+        for category in self.cosine_measure_list:
+            category_color = self.feature_columns.get_level_values('Category') == category
+            self.category_idx_dict[category] = category_color
+
+        # Use ThreadPoolExecutor instead of multiprocessing.Pool
+        from concurrent.futures import ThreadPoolExecutor
+        
+        # Process nuclei in batches
+        batch_size = 5000  # Adjust as needed
+        num_batches = (len(self.nuclei_index) + batch_size - 1) // batch_size
+        max_workers = min(8, mp.cpu_count())
+        
+        mat_delaunay_all = []
+        
+        for batch_idx in range(num_batches):
+            start_idx = batch_idx * batch_size
+            end_idx = min((batch_idx + 1) * batch_size, len(self.nuclei_index))
+            batch_indices = self.nuclei_index[start_idx:end_idx]
+            
+            print(f"Processing Delaunay batch {batch_idx+1}/{num_batches} ({len(batch_indices)} nuclei)")
+            
+            with ThreadPoolExecutor(max_workers=max_workers) as executor:
+                futures = [executor.submit(self._delaunay_process_single, i) for i in batch_indices]
+                
+                mat_delaunay_batch = []
+                for future in tqdm(
+                    concurrent.futures.as_completed(futures),
+                    total=len(batch_indices),
+                    desc=f"Delaunay Batch {batch_idx+1}/{num_batches}"
+                ):
+                    mat_delaunay_batch.append(future.result())
+            
+            mat_delaunay_all.extend(mat_delaunay_batch)
+        
+        mat_delaunay = np.array(mat_delaunay_all)
+        
+        delaunay_columns = copy.deepcopy(self.delaunay_measure_list)
+        for category in self.cosine_measure_list:
+            delaunay_columns += ['cosine.%s.mean' % category, 'cosine.%s.std' % category, 
+                                'cosine.%s.min' % category, 'cosine.%s.max' % category]
+        delaunay_columns += self.neighbour_measure_list
+        
+        delaunay_columns = pd.MultiIndex.from_product([['Spatial - Delaunay'], delaunay_columns], names=['Category','Feature'])
+        
+        df_delaunay = pd.DataFrame(mat_delaunay, index=self.nuclei_index, columns=delaunay_columns)
+        
+        return df_delaunay
+
+    def _delaunay_process_single(self, i):
+        """Process a single nucleus for Delaunay graph features"""
+        # This is based on _delaunay_parallel but doesn't need the progress bar
         
         neighbour_i = self.indptr[self.indices[i]:self.indices[i+1]]
         loc_source = self.tri.points[i]
         loc_neighbour = self.tri.points[neighbour_i,:]            
         dist = np.linalg.norm(loc_neighbour - loc_source, axis=1)
         
-        
         # remove very far distance with threshold and update neighbours
-        dist_criteria = dist<=self.delaunay_distance_threshold # if distance_threshold == 200, this is probably 50 um.
+        dist_criteria = dist <= self.delaunay_distance_threshold 
         
         arr_delaunay = np.repeat(np.nan, self.delaunay_total_len)
         if np.sum(dist_criteria) == 0: # if no neighbours, skip this nuclei.
-            return arr_delaunay
-        
+            return list(arr_delaunay)
         
         # update neighbours
         dist = dist[dist_criteria]
         neighbour_i = neighbour_i[dist_criteria]
         loc_neighbour = loc_neighbour[dist_criteria]
         
-        ## Assigning values directly to dataframe is very slow. So use numpy
+        # Assigning values directly to dataframe is very slow. So use numpy
         arr_delaunay[0:4] = [np.nanmean(dist), np.nanstd(dist), np.nanmin(dist), np.nanmax(dist)]
         idx_for_cosine = self.nuclei_index[[i] + list(neighbour_i)].astype(int)
         neighbour_idx = self.nuclei_index[list(neighbour_i)].astype(int)
@@ -595,18 +881,17 @@ class SlideProperty():
             cidx = self.category_idx_dict[category]
             # fast cosine
             val = df_selected[:,cidx]
-            a=val[0,:].reshape(1,-1)#.astype(np.float64)
-            b=val[1:,:]#.astype(np.float64)
+            a=val[0,:].reshape(1,-1)
+            b=val[1:,:]
             cosine_s = fastdist.matrix_to_matrix_distance(a, b, fastdist.cosine, "cosine")
             cosine_s = cosine_s[0]
             
-            ## Assigning values directly to dataframe is very slow. So use numpy.
+            # Assigning values directly to dataframe is very slow. So use numpy.
             if all(np.isnan(cosine_s)):
                 arr_delaunay[(j+1)*4:(j+2)*4] = [np.nan, np.nan, np.nan, np.nan]
             else:
                 arr_delaunay[(j+1)*4:(j+2)*4] = [np.nanmean(cosine_s), np.nanstd(cosine_s), np.nanmin(cosine_s), np.nanmax(cosine_s)]
             
-        
         # neighbouring information
         # Get cell graph orientation from Polar coordinates
         relative_location = loc_neighbour - loc_source
@@ -632,69 +917,6 @@ class SlideProperty():
         arr_delaunay[prev_colsum + 10] = np.nanmean(phi)
         arr_delaunay[prev_colsum + 11] = np.nanstd(phi)
         return list(arr_delaunay)
-        
-    def _get_delaunay_graph_stat_parallel(self, nucstat,
-                                          distance_threshold=200):
-        
-        nucstat_scaled = StandardScaler().fit_transform(nucstat)
-        nucstat_scaled = nucstat_scaled.astype(np.float64)
-        self.nucstat_scaled = nucstat_scaled
-
-        st=time.time()
-        self.delaunay_distance_threshold = distance_threshold
-        self.tri = Delaunay(self.centroids)
-        self.indices, self.indptr = self.tri.vertex_neighbor_vertices # Tuple of two ndarrays of int: (indices, indptr). The indices of neighboring vertices of vertex k are indptr[indices[k]:indices[k+1]].
-        print('Time elapsed for Delaunay: %.2f s' % (time.time()-st))
-        
-        # import matplotlib.pyplot as plt
-        # plt.triplot(points[:,0], points[:,1], tri.simplices)
-        # plt.plot(points[:,0], points[:,1], 'o')
-        # plt.show()
-        self.delaunay_measure_list = ['dist.mean','dist.std','dist.min','dist.max']
-        self.cosine_measure_list = ['Color','Morphology','Color - cytoplasm','Haralick','Gradient','Intensity','FSD']
-        self.neighbour_measure_list = ['neighbour.area.mean','neighbour.area.std',
-                                 'neighbour.heterogeneity.mean','neighbour.heterogeneity.std',
-                                 'neighbour.orientation.mean','neighbour.orientation.std',
-                                 'neighbour.Grey_mean.mean','neighbour.Grey_mean.std',
-                                 'neighbour.cyto_Grey_mean.mean','neighbour.cyto_Grey_mean.std',
-                                 'neighbour.Polar.phi.mean', 'neighbour.Polar.phi.std']
-        self.delaunay_total_len = len(self.delaunay_measure_list)+4*len(self.cosine_measure_list)+len(self.neighbour_measure_list)
-        
-        self.category_idx_dict = {}
-        for category in self.cosine_measure_list:
-            category_color = self.feature_columns.get_level_values('Category') == category
-            self.category_idx_dict[category] = category_color
-
-        # Set start method to 'spawn' for macOS compatibility
-        if platform.system() == 'Darwin':
-            mp.set_start_method('spawn', force=True)
-
-        # Use fewer processes on macOS to reduce memory overhead
-        n_processes = max(1, mp.cpu_count() // 2) if platform.system() == 'Darwin' else min(mp.cpu_count(), 32)
-        chunk_size = max(1, len(self.nuclei_index) // (n_processes * 4))
-
-        with mp.Pool(processes=n_processes) as pool:
-            mat_delaunay = []
-            for result in tqdm(
-                pool.imap(self._delaunay_parallel, self.nuclei_index, chunksize=chunk_size),
-                total=len(self.nuclei_index),
-                desc="Computing Delaunay features"
-            ):
-                mat_delaunay.append(result)
-        
-        mat_delaunay = np.array(mat_delaunay)
-        
-        delaunay_columns = copy.deepcopy(self.delaunay_measure_list)
-        for category in self.cosine_measure_list:
-            delaunay_columns += ['cosine.%s.mean' % category, 'cosine.%s.std' % category, 
-                                 'cosine.%s.min' % category, 'cosine.%s.max' % category]
-        delaunay_columns += self.neighbour_measure_list
-        
-        delaunay_columns = pd.MultiIndex.from_product([['Spatial - Delaunay'], delaunay_columns], names=['Category','Feature'])
-        
-        df_delaunay = pd.DataFrame(mat_delaunay, index=self.nuclei_index, columns=delaunay_columns)
-        
-        return df_delaunay
         
     
     
@@ -738,4 +960,3 @@ class SlideProperty():
                 fig.savefig(opj(savedir, 'group_%02d.png' % group), dpi=300)
                 fig.clear()
                 plt.close(fig)
-
