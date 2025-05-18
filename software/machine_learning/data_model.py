@@ -750,7 +750,21 @@ class DataModel():
         if platform.system() == 'Darwin': # mac OS
             tree_method = None
         else:
-            tree_method = "gpu_hist"
+            # Check if GPU is available for XGBoost
+            try:
+                import xgboost as xgb_test
+                # Create a small test dataset
+                test_X = np.random.rand(10, 5)
+                test_y = np.random.randint(0, 2, 10)
+                # Try to train with GPU
+                test_clf = xgb.XGBClassifier(n_estimators=2, tree_method="gpu_hist")
+                test_clf.fit(test_X, test_y)
+                tree_method = "gpu_hist"
+                print("GPU is available for XGBoost")
+            except Exception as e:
+                print(f"GPU not available for XGBoost: {e}")
+                tree_method = None
+                
         clf = xgb.XGBClassifier(max_depth = 8, tree_method=tree_method, eval_metric='logloss', random_state=0)
         
         X_train = datadict[trained_for]['train']['X']
